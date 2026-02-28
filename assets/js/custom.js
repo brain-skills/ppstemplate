@@ -291,3 +291,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+const openBtn = document.getElementById("openSearch");
+const closeBtn = document.getElementById("closeSearch");
+const overlay = document.getElementById("mobileSearchOverlay");
+const input = document.getElementById("mobileSearchInput");
+
+openBtn.addEventListener("click", () => {
+  overlay.style.display = "flex";
+  input.focus();
+});
+
+closeBtn.addEventListener("click", () => {
+  overlay.style.display = "none";
+});

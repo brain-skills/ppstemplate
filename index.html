@@ -58,12 +58,49 @@
   </head>
   <body>
     <header>
-      <div class="top-bar">
+      <div class="top-bar position-relative">
         <div
           class="container d-flex py-3 justify-content-between align-items-center"
         >
+          <div
+            id="mobileSearchOverlay"
+            class="position-absolute top-0 start-0 w-100 h-100 align-items-center px-3"
+            style="display: none; z-index: 1060; background-color: inherit"
+          >
+            <div
+              class="d-flex w-100 bg-white rounded overflow-hidden"
+              style="height: 40px"
+            >
+              <input
+                type="text"
+                placeholder="Search..."
+                id="mobileSearchInput"
+                class="border-0 px-3 flex-grow-1"
+                style="outline: none"
+              />
+              <div
+                class="d-flex align-items-center px-3 gap-3"
+                style="background-color: #3498db"
+              >
+                <img
+                  src="./assets/images/icons/icon_search.svg"
+                  alt="Search"
+                  width="18"
+                  style="filter: brightness(0) invert(1)"
+                />
+                <button
+                  type="button"
+                  id="closeSearch"
+                  class="border-0 bg-transparent text-white fs-4 p-0"
+                  style="line-height: 1"
+                >
+                  &times;
+                </button>
+              </div>
+            </div>
+          </div>
           <button
-            class="btn p-0 border-0 bg-transparent d-flex d-lg-none"
+            class="btn p-0 border-0 bg-transparent d-flex d-xl-none"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#mobileMenu"
@@ -78,7 +115,7 @@
             />
           </button>
           <nav
-            class="top-bar__menu d-none d-lg-flex align-items-center gap-3 gap-xxl-4 fs-6"
+            class="top-bar__menu d-none d-xl-flex align-items-center gap-3 gap-xxl-4 fs-6"
           >
             <a href="./classes.html">Classes and Courses</a>
             <a href="./staff.html">Staff</a>
@@ -94,12 +131,12 @@
             <div class="top-bar__search d-flex align-items-center">
               <div
                 class="d-none d-xxl-flex bg-white-20 px-2 px-xxl-3 py-1 rounded align-items-center"
+                style="background: rgba(255, 255, 255, 0.2)"
               >
                 <input
                   type="text"
                   placeholder="Search"
                   class="border-0 bg-transparent text-white"
-                  aria-label="Search"
                 />
                 <img
                   src="./assets/images/icons/icon_search.svg"
@@ -108,8 +145,8 @@
               </div>
 
               <button
+                id="openSearch"
                 class="d-xxl-none bg-transparent border-0 p-1"
-                aria-label="Open Search"
               >
                 <img
                   src="./assets/images/icons/icon_search.svg"
