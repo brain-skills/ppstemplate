@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const resetBtn = document.getElementById("resetFiltersBtn");
   const filtersForm = document.getElementById("filtersForm");
 
@@ -49,13 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         breakpoints: {
           0: { slidesPerView: 1, spaceBetween: 14 },
-          768: { slidesPerView: 2, spaceBetween: 18 },
+          768: { slidesPerView: 1, spaceBetween: 18 },
           1200: { slidesPerView: 3, spaceBetween: 24 },
         },
       });
     }
   } else {
-
   }
 
   function startCountdown(el, hours, minutes, seconds) {
@@ -103,8 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (countdownEl) startCountdown(countdownEl, 5, 0, 0);
 
   (function galleryTabs() {
-    const tabs = Array.from(document.querySelectorAll("#galleryTabs .gallery-tab"));
-    const items = Array.from(document.querySelectorAll("#galleryGrid .gallery-item"));
+    const tabs = Array.from(
+      document.querySelectorAll("#galleryTabs .gallery-tab"),
+    );
+    const items = Array.from(
+      document.querySelectorAll("#galleryGrid .gallery-item"),
+    );
     if (!tabs.length || !items.length) return;
 
     const defaultCategory = "outdoor";
@@ -138,7 +140,15 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
   (function fontScaler() {
-    const tags = { h1: 1.5, h2: 1.3, h3: 1.1, h4: 0.9, h5: 0.7, p: 0.6, span: 0.4 };
+    const tags = {
+      h1: 1.5,
+      h2: 1.3,
+      h3: 1.1,
+      h4: 0.9,
+      h5: 0.7,
+      p: 0.6,
+      span: 0.4,
+    };
     const baseSizes = new Map();
     const DOWN_FACTOR = 0.5;
     const SOFT_FLOOR = 0.85;
@@ -173,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const delta = (percent - 100) / 100; 
+      const delta = (percent - 100) / 100;
 
       Object.entries(tags).forEach(([tag, mult]) => {
         const upCap = 1 + 0.5 * mult;
@@ -206,9 +216,15 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.value = String(start);
     applyFontScalingByStep(start);
 
-    slider.addEventListener("input", () => setStepAndSave(Number(slider.value)));
-    increase.addEventListener("click", () => setStepAndSave(Number(slider.value) + 1));
-    decrease.addEventListener("click", () => setStepAndSave(Number(slider.value) - 1));
+    slider.addEventListener("input", () =>
+      setStepAndSave(Number(slider.value)),
+    );
+    increase.addEventListener("click", () =>
+      setStepAndSave(Number(slider.value) + 1),
+    );
+    decrease.addEventListener("click", () =>
+      setStepAndSave(Number(slider.value) - 1),
+    );
   })();
 
   (function sectionHashObserver() {
@@ -235,9 +251,43 @@ document.addEventListener("DOMContentLoaded", () => {
         root: null,
         threshold: [0.2, 0.35, 0.5, 0.65],
         rootMargin: "-20% 0px -55% 0px",
-      }
+      },
     );
 
     sections.forEach((sec) => observer.observe(sec));
   })();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPath = window.location.pathname;
+
+  const navLinks = document.querySelectorAll(".nav-container a");
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+
+    const linkPath = link.getAttribute("href");
+
+    if (linkPath && currentPath.includes(linkPath.replace("./", "/"))) {
+      link.classList.add("active");
+    }
+
+    if (currentPath === "/" || currentPath === "/index.html") {
+      if (
+        link.getAttribute("href") === "./index.html" ||
+        link.getAttribute("href") === "/"
+      ) {
+        link.classList.add("active");
+      }
+    }
+  });
+
+  const mobileLinks = document.querySelectorAll(".mobile-menu__link");
+  mobileLinks.forEach((link) => {
+    link.classList.remove("active");
+    const linkHref = link.getAttribute("href");
+    if (linkHref && currentPath.includes(linkHref.replace("./", "/"))) {
+      link.classList.add("active");
+    }
+  });
 });
