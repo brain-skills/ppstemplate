@@ -465,3 +465,125 @@ document.addEventListener("DOMContentLoaded", () => {
     input.focus();
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("newsGrid");
+  const paginationWrap = document.getElementById("newsPagination");
+
+  if (!grid || !paginationWrap) return;
+
+  // Must match your columns:
+  const items = Array.from(
+    grid.querySelectorAll(":scope > .col-12.col-md-6.col-lg-4"),
+  );
+  if (!items.length) return;
+
+  const perPage = 6; // ✅ 3 + 3 per page
+  const totalPages = Math.ceil(items.length / perPage);
+
+  if (totalPages <= 1) {
+    paginationWrap.style.display = "none";
+    return;
+  }
+
+  function getPageFromUrl() {
+    const url = new URL(window.location.href);
+    const p = parseInt(url.searchParams.get("page") || "1", 10);
+    if (!Number.isFinite(p)) return 1;
+    return Math.min(Math.max(p, 1), totalPages);
+  }
+
+  function setPageToUrl(page) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("page", String(page));
+    window.history.pushState({}, "", url);
+  }
+
+  function renderPage(page) {
+    const start = (page - 1) * perPage;
+    const end = start + perPage;
+
+    items.forEach((el, idx) => {
+      el.style.display = idx >= start && idx < end ? "" : "none";
+    });
+  }
+
+  function renderPagination(currentPage) {
+    const ul = document.createElement("ul");
+    ul.className = "pagination pagination-sm justify-content-start mb-0";
+
+    const addBtn = (
+      label,
+      page,
+      disabled = false,
+      active = false,
+      aria = "",
+    ) => {
+      const li = document.createElement("li");
+      li.className = "page-item";
+      if (disabled) li.classList.add("disabled");
+      if (active) li.classList.add("active");
+
+      const a = document.createElement("a");
+      a.className = "page-link";
+      a.href = "#";
+      a.textContent = label;
+      if (aria) a.setAttribute("aria-label", aria);
+
+      if (!disabled && !active) a.dataset.page = String(page);
+
+      li.appendChild(a);
+      ul.appendChild(li);
+    };
+
+    // Prev
+    addBtn("‹", currentPage - 1, currentPage === 1, false, "Previous page");
+
+    // Pages
+    for (let p = 1; p <= totalPages; p++) {
+      addBtn(String(p), p, false, p === currentPage, `Page ${p}`);
+    }
+
+    // Next
+    addBtn(
+      "›",
+      currentPage + 1,
+      currentPage === totalPages,
+      false,
+      "Next page",
+    );
+
+    paginationWrap.innerHTML = "";
+    paginationWrap.appendChild(ul);
+
+    ul.addEventListener("click", (e) => {
+      const link = e.target.closest("a.page-link");
+      if (!link) return;
+
+      e.preventDefault();
+
+      const page = parseInt(link.dataset.page || "", 10);
+      if (!Number.isFinite(page)) return;
+
+      goToPage(page);
+    });
+  }
+
+  function goToPage(page) {
+    const safePage = Math.min(Math.max(page, 1), totalPages);
+
+    renderPage(safePage);
+    renderPagination(safePage);
+    setPageToUrl(safePage);
+
+    // Optional: smooth scroll to cards
+    grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Initial
+  goToPage(getPageFromUrl());
+
+  // Back/Forward support
+  window.addEventListener("popstate", () => {
+    goToPage(getPageFromUrl());
+  });
+});
