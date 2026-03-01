@@ -587,3 +587,24 @@ document.addEventListener("DOMContentLoaded", () => {
     goToPage(getPageFromUrl());
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".collapse").forEach((el) => {
+    const id = el.id;
+
+    const update = () => {
+      const isOpen = el.classList.contains("show");
+      document.querySelectorAll(`[data-bs-target="#${id}"]`).forEach((btn) => {
+        const row = btn.closest(".files-row");
+        const icon = row?.querySelector(".files-toggle__chev");
+        if (!icon) return;
+        icon.classList.remove("bi-chevron-right", "bi-chevron-down");
+        icon.classList.add(isOpen ? "bi-chevron-down" : "bi-chevron-right");
+      });
+    };
+
+    el.addEventListener("shown.bs.collapse", update);
+    el.addEventListener("hidden.bs.collapse", update);
+    update();
+  });
+});

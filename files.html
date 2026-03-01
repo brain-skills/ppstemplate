@@ -388,323 +388,1146 @@
           </nav>
         </div>
       </section>
-      <section class="py-4 pb-5" style="padding-top: 20px">
+      <section class="py-4 pb-5 pt-4">
         <div class="container">
-          <!-- Page title -->
           <div class="d-flex align-items-center gap-2 mb-3">
             <i class="bi bi-folder2-open text-primary fs-4"></i>
             <h1 class="h4 mb-0 fw-semibold">Files and Documents</h1>
           </div>
 
-          <!-- Search -->
-          <div class="files-search mb-3">
-            <i class="bi bi-search files-search__icon"></i>
+          <div class="mb-4 position-relative">
             <input
               type="search"
-              class="form-control files-search__input"
+              class="form-control rounded bg-white"
               placeholder="Search files"
               aria-label="Search files"
             />
-          </div>
 
-          <!-- Tabs -->
-          <ul class="nav files-tabs mb-3" role="tablist">
+            <i
+              class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"
+            ></i>
+          </div>
+          <ul class="nav nav-underline mb-3" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="files-tabs__link active" type="button" role="tab">
+              <button
+                class="nav-link active"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-1"
+                type="button"
+                role="tab"
+              >
                 Official documentation
               </button>
             </li>
+
             <li class="nav-item" role="presentation">
-              <button class="files-tabs__link" type="button" role="tab">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-2"
+                type="button"
+                role="tab"
+              >
                 For applicants to school
               </button>
             </li>
+
             <li class="nav-item" role="presentation">
-              <button class="files-tabs__link" type="button" role="tab">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-3"
+                type="button"
+                role="tab"
+              >
                 For students and parents
               </button>
             </li>
+
             <li class="nav-item" role="presentation">
-              <button class="files-tabs__link" type="button" role="tab">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-4"
+                type="button"
+                role="tab"
+              >
                 For partners
               </button>
             </li>
+
             <li class="nav-item" role="presentation">
-              <button class="files-tabs__link" type="button" role="tab">
+              <button
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-5"
+                type="button"
+                role="tab"
+              >
                 For the media
               </button>
             </li>
           </ul>
 
-          <!-- Layout -->
-          <div class="row g-3">
-            <!-- LEFT: tree/list -->
-            <div class="col-12 col-lg-8">
-              <div class="files-card">
-                <!-- Header row (optional) -->
-                <div class="files-card__head">
-                  <div class="files-card__head-left">
-                    <span class="text-muted fw-semibold small"
-                      >Folder Title</span
-                    >
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
+              <div class="row">
+                <div class="col-12 col-lg-8">
+                  <div class="files-card">
+                    <div class="files-tree" id="filesTree">
+                      <div class="files-row files-row--folder">
+                        <button
+                          class="files-toggle"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                          aria-controls="folder-1"
+                        >
+                          <i class="bi bi-chevron-down files-toggle__chev"></i>
+                        </button>
+
+                        <img
+                          src="./assets/images/icons/icon_folder.svg"
+                          alt=""
+                        />
+
+                        <button
+                          type="button"
+                          class="files-title"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                        >
+                          Folder Title
+                        </button>
+
+                        <div
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="text-muted small">12 documents</span>
+                          <button
+                            class="files-dl"
+                            type="button"
+                            aria-label="Download"
+                          >
+                            <i class="bi bi-download"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="collapse show" id="folder-1">
+                        <div
+                          class="files-row files-row--folder files-row--nested"
+                        >
+                          <button
+                            class="files-toggle"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                            aria-controls="folder-1-1"
+                          >
+                            <i
+                              class="bi bi-chevron-right files-toggle__chev"
+                            ></i>
+                          </button>
+                          <img
+                            src="./assets/images/icons/icon_folder.svg"
+                            alt=""
+                          />
+
+                          <button
+                            type="button"
+                            class="files-title"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                          >
+                            Folder Title
+                          </button>
+
+                          <div
+                            class="d-flex flex-row align-items-center gap-3 ms-auto"
+                          >
+                            <span class="text-muted small">183 documents</span>
+                            <button
+                              class="files-dl"
+                              type="button"
+                              aria-label="Download"
+                            >
+                              <i class="bi bi-download"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="collapse" id="folder-1-1">
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="text-muted small"> </span>
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="collapse" id="folder-1-2"></div>
+                      </div>
+                      <div class="collapse" id="folder-2"></div>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+                    </div>
                   </div>
-                  <div class="files-card__head-right text-muted small"></div>
                 </div>
 
-                <!-- Tree list -->
-                <div class="files-tree" id="filesTree">
-                  <!-- Folder 1 -->
-                  <div class="files-row files-row--folder">
-                    <button
-                      class="files-toggle"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#folder-1"
-                      aria-expanded="true"
-                      aria-controls="folder-1"
-                    >
-                      <i class="bi bi-chevron-down files-toggle__chev"></i>
-                    </button>
-
-                    <i class="bi bi-folder2 files-ico files-ico--folder"></i>
-
-                    <button
-                      type="button"
-                      class="files-title"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#folder-1"
-                      aria-expanded="true"
-                    >
-                      Folder Title
-                    </button>
-
-                    <div class="files-meta ms-auto">
-                      <span class="text-muted small">12 documents</span>
-                      <button
-                        class="files-dl"
-                        type="button"
-                        aria-label="Download"
-                      >
-                        <i class="bi bi-download"></i>
-                      </button>
+                <div
+                  class="col-12 col-lg-4 roudned bg-blue-5 p-3 border-start border-5 border-blue"
+                >
+                  <aside class="files-side">
+                    <div class="files-side__inner">
+                      <h3 class="fs-4 fw-semibold mb-2">
+                        Welcome to file storage!
+                      </h3>
+                      <p class="text-muted mb-2">
+                        The “Documentation” section of our website is a
+                        comprehensive repository designed to serve the diverse
+                        needs of everyone connected to the school.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Here you will find essential documents and forms for
+                        prospective students, current pupils, parents, faculty,
+                        staff, and partners.
+                      </p>
+                      <p class="text-muted mb-2">
+                        The section includes applications, enrollment
+                        guidelines, internal policies, consent forms, and
+                        resources to support smooth day-to-day operations.
+                      </p>
+                      <p class="text-muted mb-0">
+                        We encourage all users to regularly visit this area to
+                        stay informed and access materials they may need.
+                      </p>
                     </div>
-                  </div>
-
-                  <div class="collapse show" id="folder-1">
-                    <!-- nested folder -->
-                    <div class="files-row files-row--folder files-row--nested">
-                      <button
-                        class="files-toggle"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#folder-1-1"
-                        aria-expanded="false"
-                        aria-controls="folder-1-1"
-                      >
-                        <i class="bi bi-chevron-right files-toggle__chev"></i>
-                      </button>
-
-                      <i class="bi bi-folder2 files-ico files-ico--folder"></i>
-
-                      <button
-                        type="button"
-                        class="files-title"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#folder-1-1"
-                        aria-expanded="false"
-                      >
-                        Folder Title
-                      </button>
-
-                      <div class="files-meta ms-auto">
-                        <span class="text-muted small">183 documents</span>
-                        <button
-                          class="files-dl"
-                          type="button"
-                          aria-label="Download"
-                        >
-                          <i class="bi bi-download"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="collapse" id="folder-1-1">
-                      <!-- documents inside nested folder -->
-                      <button
-                        type="button"
-                        class="files-row files-row--doc files-row--nested-2"
-                      >
-                        <span class="files-toggle files-toggle--spacer"></span>
-                        <i
-                          class="bi bi-file-earmark-text files-ico files-ico--doc"
-                        ></i>
-                        <span class="files-title">Document Title</span>
-                        <span class="files-meta ms-auto">
-                          <span class="text-muted small"> </span>
-                          <span class="files-dl"
-                            ><i class="bi bi-download"></i
-                          ></span>
-                        </span>
-                      </button>
-
-                      <button
-                        type="button"
-                        class="files-row files-row--doc files-row--nested-2"
-                      >
-                        <span class="files-toggle files-toggle--spacer"></span>
-                        <i
-                          class="bi bi-file-earmark-text files-ico files-ico--doc"
-                        ></i>
-                        <span class="files-title">Document Title</span>
-                        <span class="files-meta ms-auto">
-                          <span class="files-dl"
-                            ><i class="bi bi-download"></i
-                          ></span>
-                        </span>
-                      </button>
-
-                      <button
-                        type="button"
-                        class="files-row files-row--doc files-row--nested-2"
-                      >
-                        <span class="files-toggle files-toggle--spacer"></span>
-                        <i
-                          class="bi bi-file-earmark-text files-ico files-ico--doc"
-                        ></i>
-                        <span class="files-title">Document Title</span>
-                        <span class="files-meta ms-auto">
-                          <span class="files-dl"
-                            ><i class="bi bi-download"></i
-                          ></span>
-                        </span>
-                      </button>
-                    </div>
-
-                    <!-- another folder in folder-1 -->
-                    <div class="files-row files-row--folder files-row--nested">
-                      <button
-                        class="files-toggle"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#folder-1-2"
-                        aria-expanded="false"
-                      >
-                        <i class="bi bi-chevron-right files-toggle__chev"></i>
-                      </button>
-                      <i class="bi bi-folder2 files-ico files-ico--folder"></i>
-                      <button
-                        type="button"
-                        class="files-title"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#folder-1-2"
-                        aria-expanded="false"
-                      >
-                        Folder Title
-                      </button>
-                      <div class="files-meta ms-auto">
-                        <span class="text-muted small">4 documents</span>
-                        <button
-                          class="files-dl"
-                          type="button"
-                          aria-label="Download"
-                        >
-                          <i class="bi bi-download"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="collapse" id="folder-1-2"></div>
-                  </div>
-
-                  <!-- Folder 2 -->
-                  <div class="files-row files-row--folder">
-                    <button
-                      class="files-toggle"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#folder-2"
-                      aria-expanded="false"
-                    >
-                      <i class="bi bi-chevron-right files-toggle__chev"></i>
-                    </button>
-                    <i class="bi bi-folder2 files-ico files-ico--folder"></i>
-                    <button
-                      type="button"
-                      class="files-title"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#folder-2"
-                      aria-expanded="false"
-                    >
-                      Folder Title
-                    </button>
-                    <div class="files-meta ms-auto">
-                      <span class="text-muted small">156 documents</span>
-                      <button
-                        class="files-dl"
-                        type="button"
-                        aria-label="Download"
-                      >
-                        <i class="bi bi-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="collapse" id="folder-2"></div>
-
-                  <!-- Flat documents list (like bottom of screenshot) -->
-                  <button type="button" class="files-row files-row--doc">
-                    <span class="files-toggle files-toggle--spacer"></span>
-                    <i
-                      class="bi bi-file-earmark-text files-ico files-ico--doc"
-                    ></i>
-                    <span class="files-title">Document Title</span>
-                    <span class="files-meta ms-auto">
-                      <span class="files-dl"
-                        ><i class="bi bi-download"></i
-                      ></span>
-                    </span>
-                  </button>
-
-                  <button type="button" class="files-row files-row--doc">
-                    <span class="files-toggle files-toggle--spacer"></span>
-                    <i
-                      class="bi bi-file-earmark-text files-ico files-ico--doc"
-                    ></i>
-                    <span class="files-title">Document Title</span>
-                    <span class="files-meta ms-auto">
-                      <span class="files-dl"
-                        ><i class="bi bi-download"></i
-                      ></span>
-                    </span>
-                  </button>
+                  </aside>
                 </div>
               </div>
             </div>
+            <div class="tab-pane fade" id="tab-2" role="tabpanel">
+              <div class="row">
+                <div class="col-12 col-lg-8">
+                  <div class="files-card">
+                    <div class="files-tree" id="filesTree">
+                      <div class="files-row files-row--folder">
+                        <button
+                          class="files-toggle"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                          aria-controls="folder-1"
+                        >
+                          <i class="bi bi-chevron-down files-toggle__chev"></i>
+                        </button>
 
-            <!-- RIGHT: info panel -->
-            <div class="col-12 col-lg-4">
-              <aside class="files-side">
-                <div class="files-side__inner">
-                  <h3 class="h6 fw-semibold mb-2">Welcome to file storage!</h3>
-                  <p class="text-muted mb-2">
-                    The “Documentation” section of our website is a
-                    comprehensive repository designed to serve the diverse needs
-                    of everyone connected to the school.
-                  </p>
-                  <p class="text-muted mb-2">
-                    Here you will find essential documents and forms for
-                    prospective students, current pupils, parents, faculty,
-                    staff, and partners.
-                  </p>
-                  <p class="text-muted mb-2">
-                    The section includes applications, enrollment guidelines,
-                    internal policies, consent forms, and resources to support
-                    smooth day-to-day operations.
-                  </p>
-                  <p class="text-muted mb-0">
-                    We encourage all users to regularly visit this area to stay
-                    informed and access materials they may need.
-                  </p>
+                        <img
+                          src="./assets/images/icons/icon_folder.svg"
+                          alt=""
+                        />
+
+                        <button
+                          type="button"
+                          class="files-title"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                        >
+                          Folder Title
+                        </button>
+
+                        <div
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="text-muted small">12 documents</span>
+                          <button
+                            class="files-dl"
+                            type="button"
+                            aria-label="Download"
+                          >
+                            <i class="bi bi-download"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="collapse show" id="folder-1">
+                        <div
+                          class="files-row files-row--folder files-row--nested"
+                        >
+                          <button
+                            class="files-toggle"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                            aria-controls="folder-1-1"
+                          >
+                            <i
+                              class="bi bi-chevron-right files-toggle__chev"
+                            ></i>
+                          </button>
+                          <img
+                            src="./assets/images/icons/icon_folder.svg"
+                            alt=""
+                          />
+
+                          <button
+                            type="button"
+                            class="files-title"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                          >
+                            Folder Title
+                          </button>
+
+                          <div
+                            class="d-flex flex-row align-items-center gap-3 ms-auto"
+                          >
+                            <span class="text-muted small">183 documents</span>
+                            <button
+                              class="files-dl"
+                              type="button"
+                              aria-label="Download"
+                            >
+                              <i class="bi bi-download"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="collapse" id="folder-1-1">
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="text-muted small"> </span>
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="collapse" id="folder-1-2"></div>
+                      </div>
+                      <div class="collapse" id="folder-2"></div>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </aside>
+
+                <!-- RIGHT: info panel -->
+                <div
+                  class="col-12 col-lg-4 roudned bg-blue-5 p-3 border-start border-5 border-blue"
+                >
+                  <aside class="files-side">
+                    <div class="files-side__inner">
+                      <h3 class="fs-4 fw-semibold mb-2">
+                        Welcome to file storage!
+                      </h3>
+                      <p class="text-muted mb-2">
+                        The “Documentation” section of our website is a
+                        comprehensive repository designed to serve the diverse
+                        needs of everyone connected to the school.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Here you will find essential documents and forms for
+                        prospective students, current pupils, parents, faculty,
+                        staff, and partners.
+                      </p>
+                      <p class="text-muted mb-2">
+                        The section includes applications, enrollment
+                        guidelines, internal policies, consent forms, and
+                        resources to support smooth day-to-day operations.
+                      </p>
+                      <p class="text-muted mb-0">
+                        We encourage all users to regularly visit this area to
+                        stay informed and access materials they may need.
+                      </p>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-3" role="tabpanel">
+              <div class="row">
+                <div class="col-12 col-lg-8">
+                  <div class="files-card">
+                    <div class="files-tree" id="filesTree">
+                      <div class="files-row files-row--folder">
+                        <button
+                          class="files-toggle"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                          aria-controls="folder-1"
+                        >
+                          <i class="bi bi-chevron-down files-toggle__chev"></i>
+                        </button>
+
+                        <img
+                          src="./assets/images/icons/icon_folder.svg"
+                          alt=""
+                        />
+
+                        <button
+                          type="button"
+                          class="files-title"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                        >
+                          Folder Title
+                        </button>
+
+                        <div
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="text-muted small">12 documents</span>
+                          <button
+                            class="files-dl"
+                            type="button"
+                            aria-label="Download"
+                          >
+                            <i class="bi bi-download"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="collapse show" id="folder-1">
+                        <div
+                          class="files-row files-row--folder files-row--nested"
+                        >
+                          <button
+                            class="files-toggle"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                            aria-controls="folder-1-1"
+                          >
+                            <i
+                              class="bi bi-chevron-right files-toggle__chev"
+                            ></i>
+                          </button>
+                          <img
+                            src="./assets/images/icons/icon_folder.svg"
+                            alt=""
+                          />
+
+                          <button
+                            type="button"
+                            class="files-title"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                          >
+                            Folder Title
+                          </button>
+
+                          <div
+                            class="d-flex flex-row align-items-center gap-3 ms-auto"
+                          >
+                            <span class="text-muted small">183 documents</span>
+                            <button
+                              class="files-dl"
+                              type="button"
+                              aria-label="Download"
+                            >
+                              <i class="bi bi-download"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="collapse" id="folder-1-1">
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="text-muted small"> </span>
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="collapse" id="folder-1-2"></div>
+                      </div>
+                      <div class="collapse" id="folder-2"></div>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RIGHT: info panel -->
+                <div
+                  class="col-12 col-lg-4 roudned bg-blue-5 p-3 border-start border-5 border-blue"
+                >
+                  <aside class="files-side">
+                    <div class="files-side__inner">
+                      <h3 class="fs-4 fw-semibold mb-2">
+                        Welcome to file storage!
+                      </h3>
+                      <p class="text-muted mb-2">
+                        The “Documentation” section of our website is a
+                        comprehensive repository designed to serve the diverse
+                        needs of everyone connected to the school.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Here you will find essential documents and forms for
+                        prospective students, current pupils, parents, faculty,
+                        staff, and partners.
+                      </p>
+                      <p class="text-muted mb-2">
+                        The section includes applications, enrollment
+                        guidelines, internal policies, consent forms, and
+                        resources to support smooth day-to-day operations.
+                      </p>
+                      <p class="text-muted mb-0">
+                        We encourage all users to regularly visit this area to
+                        stay informed and access materials they may need.
+                      </p>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-4" role="tabpanel">
+              <div class="row">
+                <div class="col-12 col-lg-8">
+                  <div class="files-card">
+                    <div class="files-tree" id="filesTree">
+                      <div class="files-row files-row--folder">
+                        <button
+                          class="files-toggle"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                          aria-controls="folder-1"
+                        >
+                          <i class="bi bi-chevron-down files-toggle__chev"></i>
+                        </button>
+
+                        <img
+                          src="./assets/images/icons/icon_folder.svg"
+                          alt=""
+                        />
+
+                        <button
+                          type="button"
+                          class="files-title"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                        >
+                          Folder Title
+                        </button>
+
+                        <div
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="text-muted small">12 documents</span>
+                          <button
+                            class="files-dl"
+                            type="button"
+                            aria-label="Download"
+                          >
+                            <i class="bi bi-download"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="collapse show" id="folder-1">
+                        <div
+                          class="files-row files-row--folder files-row--nested"
+                        >
+                          <button
+                            class="files-toggle"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                            aria-controls="folder-1-1"
+                          >
+                            <i
+                              class="bi bi-chevron-right files-toggle__chev"
+                            ></i>
+                          </button>
+                          <img
+                            src="./assets/images/icons/icon_folder.svg"
+                            alt=""
+                          />
+
+                          <button
+                            type="button"
+                            class="files-title"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                          >
+                            Folder Title
+                          </button>
+
+                          <div
+                            class="d-flex flex-row align-items-center gap-3 ms-auto"
+                          >
+                            <span class="text-muted small">183 documents</span>
+                            <button
+                              class="files-dl"
+                              type="button"
+                              aria-label="Download"
+                            >
+                              <i class="bi bi-download"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="collapse" id="folder-1-1">
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="text-muted small"> </span>
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="collapse" id="folder-1-2"></div>
+                      </div>
+                      <div class="collapse" id="folder-2"></div>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RIGHT: info panel -->
+                <div
+                  class="col-12 col-lg-4 roudned bg-blue-5 p-3 border-start border-5 border-blue"
+                >
+                  <aside class="files-side">
+                    <div class="files-side__inner">
+                      <h3 class="fs-4 fw-semibold mb-2">
+                        Welcome to file storage!
+                      </h3>
+                      <p class="text-muted mb-2">
+                        The “Documentation” section of our website is a
+                        comprehensive repository designed to serve the diverse
+                        needs of everyone connected to the school.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Here you will find essential documents and forms for
+                        prospective students, current pupils, parents, faculty,
+                        staff, and partners.
+                      </p>
+                      <p class="text-muted mb-2">
+                        The section includes applications, enrollment
+                        guidelines, internal policies, consent forms, and
+                        resources to support smooth day-to-day operations.
+                      </p>
+                      <p class="text-muted mb-0">
+                        We encourage all users to regularly visit this area to
+                        stay informed and access materials they may need.
+                      </p>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-5" role="tabpanel">
+              <div class="row">
+                <div class="col-12 col-lg-8">
+                  <div class="files-card">
+                    <div class="files-tree" id="filesTree">
+                      <div class="files-row files-row--folder">
+                        <button
+                          class="files-toggle"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                          aria-controls="folder-1"
+                        >
+                          <i class="bi bi-chevron-down files-toggle__chev"></i>
+                        </button>
+
+                        <img
+                          src="./assets/images/icons/icon_folder.svg"
+                          alt=""
+                        />
+
+                        <button
+                          type="button"
+                          class="files-title"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#folder-1"
+                          aria-expanded="true"
+                        >
+                          Folder Title
+                        </button>
+
+                        <div
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="text-muted small">12 documents</span>
+                          <button
+                            class="files-dl"
+                            type="button"
+                            aria-label="Download"
+                          >
+                            <i class="bi bi-download"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="collapse show" id="folder-1">
+                        <div
+                          class="files-row files-row--folder files-row--nested"
+                        >
+                          <button
+                            class="files-toggle"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                            aria-controls="folder-1-1"
+                          >
+                            <i
+                              class="bi bi-chevron-right files-toggle__chev"
+                            ></i>
+                          </button>
+                          <img
+                            src="./assets/images/icons/icon_folder.svg"
+                            alt=""
+                          />
+
+                          <button
+                            type="button"
+                            class="files-title"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#folder-1-1"
+                            aria-expanded="false"
+                          >
+                            Folder Title
+                          </button>
+
+                          <div
+                            class="d-flex flex-row align-items-center gap-3 ms-auto"
+                          >
+                            <span class="text-muted small">183 documents</span>
+                            <button
+                              class="files-dl"
+                              type="button"
+                              aria-label="Download"
+                            >
+                              <i class="bi bi-download"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="collapse" id="folder-1-1">
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="text-muted small"> </span>
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="files-row files-row--doc files-row--nested-2"
+                          >
+                            <i
+                              class="bi bi-file-earmark-text files-ico files-ico--doc"
+                            ></i>
+                            <span class="files-title">Document Title</span>
+                            <span
+                              class="d-flex flex-row align-items-center gap-3 ms-auto"
+                            >
+                              <span class="files-dl"
+                                ><i class="bi bi-download"></i
+                              ></span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="collapse" id="folder-1-2"></div>
+                      </div>
+                      <div class="collapse" id="folder-2"></div>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+
+                      <button type="button" class="files-row files-row--doc">
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span
+                          class="d-flex flex-row align-items-center gap-3 ms-auto"
+                        >
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RIGHT: info panel -->
+                <div
+                  class="col-12 col-lg-4 roudned bg-blue-5 p-3 border-start border-5 border-blue"
+                >
+                  <aside class="files-side">
+                    <div class="files-side__inner">
+                      <h3 class="fs-4 fw-semibold mb-2">
+                        Welcome to file storage!
+                      </h3>
+                      <p class="text-muted mb-2">
+                        The “Documentation” section of our website is a
+                        comprehensive repository designed to serve the diverse
+                        needs of everyone connected to the school.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Here you will find essential documents and forms for
+                        prospective students, current pupils, parents, faculty,
+                        staff, and partners.
+                      </p>
+                      <p class="text-muted mb-2">
+                        The section includes applications, enrollment
+                        guidelines, internal policies, consent forms, and
+                        resources to support smooth day-to-day operations.
+                      </p>
+                      <p class="text-muted mb-0">
+                        We encourage all users to regularly visit this area to
+                        stay informed and access materials they may need.
+                      </p>
+                    </div>
+                  </aside>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -880,7 +1703,7 @@
         </nav>
 
         <div class="d-flex flex-column align-items-center align-items-xl-start">
-          <h5 class="fs-2 fw-medium mb-4 d-none d-xl-flex">Contacts</h5>
+          <h5 class="fs-3 fw-medium mb-4 d-none d-xl-flex">Contacts</h5>
           <address
             class="d-flex flex-column gap-2 align-items-center align-items-xl-start"
           >
