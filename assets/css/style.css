@@ -756,3 +756,11 @@ footer address:hover img {
 .btn[class*="btn-outline"]:hover img {
   filter: brightness(0) invert(1);
 }
+.top-bar__search input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn:hover img {
+  transform: scale(1.12);
+}

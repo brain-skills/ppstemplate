@@ -453,3 +453,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchWrapper = document.querySelector(".top-bar__search");
+  const input = searchWrapper?.querySelector("input");
+  const button = searchWrapper?.querySelector("button");
+
+  if (!input || !button) return;
+
+  button.addEventListener("click", () => {
+    input.focus();
+  });
+});
