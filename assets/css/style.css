@@ -1,21 +1,11 @@
-/* =========================================================
-   1) Theme variables
-   ========================================================= */
 :root {
   --blue: #2696db;
   --text-grey: #777;
 
-  /* Bootstrap theme bridge */
   --bs-primary: var(--blue);
   --bs-primary-rgb: 38, 150, 219;
 }
 
-/* =========================================================
-   2) Base / reset
-   - Global box model
-   - Body defaults
-   - Remove default heading/paragraph margins
-   ========================================================= */
 * {
   box-sizing: border-box;
 }
@@ -34,12 +24,8 @@ p {
   margin: 0;
 }
 
-/* =========================================================
-   3) Small utilities (custom helpers)
-   - Use carefully because they may conflict with Bootstrap utils
-   ========================================================= */
 .mb-3 {
-  margin-bottom: 12px !important; /* ⚠ conflicts with Bootstrap .mb-3 (Bootstrap expects 1rem) */
+  margin-bottom: 12px !important;
 }
 .border-blue {
   border-color: #2696db !important;
@@ -48,9 +34,6 @@ p {
   color: #31313180;
 }
 
-/* =========================================================
-   4) Buttons
-   ========================================================= */
 .btn-outline-blue {
   border: 2px solid var(--bs-primary);
   color: var(--bs-primary);
@@ -60,9 +43,6 @@ p {
   color: #fff;
 }
 
-/* =========================================================
-   5) Background helper classes
-   ========================================================= */
 .bg-blue-10 {
   background-color: #2696db0d;
 }
@@ -86,16 +66,45 @@ p {
   background-color: #2696db0d;
 }
 
-/* =========================================================
-   6) Layout container tweaks
-   ========================================================= */
 .container {
-  max-width: 1472px !important; /* ⚠ overrides Bootstrap container widths on all breakpoints */
+  max-width: 1472px !important;
 }
 
-/* =========================================================
-   7) Header: spacing helper
-   ========================================================= */
+@media (min-width: 576px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
 .white-gap {
   height: 49px;
   background-color: #fff;
@@ -103,9 +112,6 @@ p {
   z-index: 1;
 }
 
-/* =========================================================
-   8) Top bar (blue strip)
-   ========================================================= */
 .top-bar {
   width: 100%;
   background: #2f8ed9;
@@ -113,7 +119,6 @@ p {
   font-size: 18px;
 }
 
-/* Top bar links */
 .top-bar__menu a {
   color: rgba(255, 255, 255, 0.95);
   text-decoration: none;
@@ -125,18 +130,13 @@ p {
   opacity: 0.7;
 }
 
-/* Top bar search placeholder */
 .top-bar__search input::placeholder {
   color: rgba(255, 255, 255, 0.7);
   opacity: 1;
   max-width: 600px;
-  font-size: 18px; /* ⚠ placeholder only; input font-size remains from Bootstrap/default */
+  font-size: 18px;
 }
 
-/* =========================================================
-   9) Main nav pill (white floating navigation)
-   - With decorative pseudo corners
-   ========================================================= */
 .nav-container {
   position: absolute;
   top: 75px;
@@ -156,7 +156,6 @@ p {
   height: 100px;
 }
 
-/* Decorative corner “cuts” */
 .nav-container::before,
 .nav-container::after {
   content: "";
@@ -180,7 +179,6 @@ p {
   top: 46px;
 }
 
-/* Nav icon recolor on hover / active */
 .nav-container a:not(.nav-logo):hover {
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
     hue-rotate(183deg) brightness(92%) contrast(92%);
@@ -190,25 +188,18 @@ p {
     hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
-/* Keep logo untouched */
 .nav-logo,
 .nav-logo:hover,
 .nav-logo.active {
   filter: none !important;
 }
 
-/* =========================================================
-   10) Responsive tweaks
-   ========================================================= */
-
-/* Only on huge screens: make .vh-100 apply */
 @media (min-width: 1440px) {
   .vh-100 {
-    height: 100vh !important; /* ⚠ overrides Bootstrap behavior only at 1440+ */
+    height: 100vh !important;
   }
 }
 
-/* Reduce nav padding and placeholder font on smaller widths */
 @media (max-width: 1400px) {
   .nav-container {
     padding: 15px 55px !important;
@@ -219,10 +210,9 @@ p {
   }
 }
 
-/* Mobile hero adjustments */
 @media (max-width: 575px) {
   .main-section {
-    margin-top: -90px; /* ⚠ can cause overlap; depends on header positioning */
+    margin-top: -90px;
   }
 
   .main-content p {
@@ -230,18 +220,12 @@ p {
   }
 }
 
-/* =========================================================
-   11) Cards / hover effects
-   ========================================================= */
 .info-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
   background-color: rgba(38, 150, 219, 0.1);
 }
 
-/* =========================================================
-   12) Enrollment floating images positioning
-   ========================================================= */
 .enrollment-first-img {
   right: 1% !important;
 }
@@ -254,19 +238,16 @@ p {
   top: 60%;
 }
 
-/* Enrollment text width control */
 .enrollment-section {
   width: 50%;
 }
+
 @media (max-width: 1200px) {
   .enrollment-section {
     width: 100%;
   }
 }
 
-/* =========================================================
-   13) Schedule table (cells + toggle pill)
-   ========================================================= */
 .class-cell,
 .individual-cell,
 .meeting-cell {
@@ -276,7 +257,6 @@ p {
   vertical-align: middle;
 }
 
-/* Toggle pill track */
 .pill-track {
   background-color: #f1f5f9;
   padding: 4px;
@@ -299,14 +279,10 @@ p {
   box-shadow: 0 2px 6px rgba(13, 110, 253, 0.3);
 }
 
-/* Lunch row highlight */
 .lunch-row {
   background-color: #eeb8230d !important;
 }
 
-/* =========================================================
-   14) Swiper controls + pagination styling
-   ========================================================= */
 .swiper-button-prev,
 .swiper-button-next {
   width: 50px !important;
@@ -320,11 +296,11 @@ p {
   font-size: 22px !important;
 }
 .swiper-button-next {
-  top: 10% !important; /* ⚠ positioning can look odd on different slider heights */
+  top: 10% !important;
   right: 2% !important;
 }
 .swiper-button-prev {
-  top: 10% !important; /* ⚠ positioning can look odd on different slider heights */
+  top: 10% !important;
   left: 2% !important;
 }
 
@@ -338,7 +314,6 @@ p {
   right: 6% !important;
 }
 
-/* Pagination bullets */
 .swiper-pagination {
   position: relative !important;
   margin-top: 40px !important;
@@ -347,6 +322,7 @@ p {
   gap: 15px;
   justify-content: center;
 }
+
 .swiper-pagination-bullet {
   width: 12px !important;
   height: 8px !important;
@@ -355,6 +331,7 @@ p {
   background-color: #4fca2d33 !important;
   border: none !important;
 }
+
 .swiper-pagination-bullet-active {
   width: 140px !important;
   height: 8px !important;
@@ -362,9 +339,6 @@ p {
   border-radius: 12px !important;
 }
 
-/* =========================================================
-   15) Countdown time boxes
-   ========================================================= */
 .time-box {
   padding: 10px 14px;
   border-radius: 6px;
@@ -377,22 +351,17 @@ p {
   transition: background-color 0.2s ease;
 }
 
-/* =========================================================
-   16) Gallery
-   ========================================================= */
 .gallery-tab.active {
   color: #0d6efd !important;
   font-weight: 700 !important;
 }
+
 .gallery-img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
 }
 
-/* =========================================================
-   17) Footer
-   ========================================================= */
 .footer-logo {
   max-width: 300px;
 }
@@ -400,42 +369,39 @@ p {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Footer links */
 footer a {
   transition:
     color 0.3s ease,
     transform 0.25s ease;
   text-decoration: none;
 }
+
 footer a:hover {
   color: #2696db !important;
   transform: translateY(-2px);
   text-decoration: underline;
 }
 
-/* Footer address icon hover effect */
 footer address img {
   transition:
     transform 0.25s ease,
     filter 0.3s ease;
 }
+
 footer address:hover img {
   transform: scale(1.1);
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
     hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
-/* Slider accent */
 #fontSlider {
   accent-color: #0d6efd;
 }
 
-/* =========================================================
-   18) Mobile offcanvas menu
-   ========================================================= */
 .mobile-menu.offcanvas {
   border-right: 1px solid rgba(0, 0, 0, 0.06);
 }
+
 .mobile-menu__link {
   display: flex;
   align-items: center;
@@ -446,33 +412,31 @@ footer address:hover img {
   color: #111;
   font-size: 14px;
 }
+
 .mobile-menu__link:hover {
   background: rgba(0, 0, 0, 0.04);
 }
+
 .mobile-menu__link.active {
   background: rgba(38, 150, 219, 0.1);
   color: #0b4f7d;
 }
 
-/* =========================================================
-   19) Bootstrap tweaks / overrides
-   ========================================================= */
 .dropdown-toggle::after {
   display: none !important;
 }
 
-/* =========================================================
-   20) Events slider: make slides equal height (card layout)
-   ========================================================= */
 #events .swiper-wrapper {
   align-items: stretch !important;
 }
+
 #events .swiper-slide {
   height: auto !important;
   display: flex !important;
   flex-direction: column;
   align-self: stretch !important;
 }
+
 #events .swiper-slide > img {
   width: 100%;
   display: block;
@@ -480,18 +444,17 @@ footer address:hover img {
   object-fit: cover;
   border-radius: 12px;
 }
+
 #events .swiper-slide > .p-3.shadow.rounded {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
+
 #events .swiper-slide > .p-3.shadow.rounded > div:last-child {
   margin-top: auto;
 }
 
-/* =========================================================
-   21) Schedule component (filters + header + table)
-   ========================================================= */
 .schedule-filters {
   position: relative;
   padding-bottom: 18px;
@@ -514,6 +477,7 @@ footer address:hover img {
   background: #fff;
   box-shadow: none !important;
 }
+
 .schedule-select:focus {
   border-color: rgba(38, 150, 219, 0.35);
   box-shadow: 0 0 0 0.2rem rgba(38, 150, 219, 0.1) !important;
@@ -534,6 +498,7 @@ footer address:hover img {
   padding: 8px 0;
   opacity: 0.85;
 }
+
 .schedule-reset:hover {
   opacity: 1;
 }
@@ -583,16 +548,17 @@ footer address:hover img {
   text-underline-offset: 3px;
 }
 
-/* Table look */
 .schedule-table-wrap {
   border: 1px solid rgba(38, 150, 219, 0.18);
   border-radius: 8px;
   overflow: auto;
 }
+
 .schedule-table {
   font-size: 12px;
   border-collapse: collapse;
 }
+
 .schedule-table th,
 .schedule-table td {
   border: 1px solid rgba(38, 150, 219, 0.16);
@@ -601,18 +567,21 @@ footer address:hover img {
   background: #fff;
   min-width: 140px;
 }
+
 .schedule-table thead th {
   background: #f8fbff;
   text-align: center;
   font-weight: 700;
   color: #111827;
 }
+
 .schedule-table thead th small {
   display: block;
   color: #94a3b8;
   font-weight: 600;
   font-size: 10px;
 }
+
 .schedule-table thead th div {
   font-size: 11px;
   font-weight: 700;
@@ -623,14 +592,17 @@ footer address:hover img {
   min-width: 120px !important;
   background: #f0f8ff !important;
 }
+
 .time-cell {
   background: #f0f8ff;
   min-width: 120px !important;
 }
+
 .time-main {
   font-weight: 700;
   color: #111827;
 }
+
 .time-sub {
   font-size: 10px;
   color: #94a3b8;
@@ -647,9 +619,11 @@ footer address:hover img {
 .class-cell {
   color: #111827;
 }
+
 .meeting-cell {
   color: #111827;
 }
+
 .individual-cell {
   background: #eefaf2;
 }
@@ -661,9 +635,11 @@ footer address:hover img {
   font-weight: 700;
   text-transform: lowercase;
 }
+
 .tag-green {
   color: #22c55e;
 }
+
 .tag-pink {
   color: #ec4899;
 }
@@ -672,16 +648,17 @@ footer address:hover img {
   background: #fff7e6 !important;
   padding: 8px 0 !important;
 }
+
 .lunch-link {
   font-size: 12px;
   color: #2696db;
   text-decoration: none;
 }
+
 .lunch-link:hover {
   text-decoration: underline;
 }
 
-/* Make reset button drop below on smaller screens */
 @media (max-width: 991px) {
   .schedule-reset {
     position: static;
@@ -690,17 +667,11 @@ footer address:hover img {
   }
 }
 
-/* =========================================================
-   22) Icon coloring helper (turns SVG/IMG icons blue)
-   ========================================================= */
 .blue-icon {
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
     hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
-/* =========================
-   ENROLLMENT (Responsive)
-========================= */
 .enrollment-card {
   background: rgba(38, 150, 219, 0.06);
   border-left: 5px solid #2696db;
@@ -752,6 +723,7 @@ footer address:hover img {
     top: 0;
   }
 }
+
 .btn[class*="btn-outline"] img {
   transition: 0.2s ease;
 }
@@ -759,6 +731,7 @@ footer address:hover img {
 .btn[class*="btn-outline"]:hover img {
   filter: brightness(0) invert(1);
 }
+
 .top-bar__search input:focus {
   outline: none !important;
   box-shadow: none !important;
@@ -768,7 +741,6 @@ footer address:hover img {
   transform: scale(1.12);
 }
 
-/* Contact section */
 .contact-card {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -805,11 +777,11 @@ footer address:hover img {
   color: #0d6efd;
   text-decoration: none;
 }
+
 .contact-line a:hover {
   text-decoration: underline;
 }
 
-/* Map */
 .map-wrap {
   height: 100%;
   min-height: 320px;
@@ -836,13 +808,12 @@ footer address:hover img {
   }
 }
 
-/* ===== Contact form on background (like screenshot) ===== */
 .contact-hero {
   position: relative;
   padding: 60px 0;
   min-height: 420px;
 
-  background-image: url("./assets/images/contact/contact-bg.jpg"); /* <- change to your image */
+  background-image: url("./assets/images/contact/contact-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -956,17 +927,19 @@ footer address:hover img {
   border-radius: 4px;
 }
 
-/* Responsive */
 @media (max-width: 767px) {
   .contact-hero {
     padding: 40px 0;
   }
+
   .contact-hero__card {
     padding: 18px 16px;
   }
+
   .contact-hero__grid {
     grid-template-columns: 1fr;
   }
+
   .contact-hero__textarea {
     min-height: 120px;
   }
@@ -989,8 +962,6 @@ footer address:hover img {
   border-bottom: 2px solid #0d6efd;
 }
 
-/* ===== Files list UI (global) ===== */
-
 .files-card {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -1005,13 +976,11 @@ footer address:hover img {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* container spacing */
 .files-tree {
   padding: 10px;
   background: #fff;
 }
 
-/* single row */
 .files-row {
   width: 100%;
   display: flex;
@@ -1023,7 +992,7 @@ footer address:hover img {
 
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  background: #f6fbff; /* light blue like screenshot */
+  background: #f6fbff;
 }
 
 .files-row:hover {
