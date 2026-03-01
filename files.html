@@ -382,422 +382,329 @@
                 >
               </li>
               <li class="breadcrumb-item active text-dark" aria-current="page">
-                Events
+                Files
               </li>
             </ol>
           </nav>
         </div>
       </section>
-      <section class="py-4 py-xxl-5">
+      <section class="py-4 pb-5" style="padding-top: 20px">
         <div class="container">
-          <!-- Title -->
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <img
-              src="./assets/images/icons/icon_event.svg"
-              alt="event icon"
-              width="30"
-              height="30"
-              class="blue-icon"
-            />
-            <h2 class="mb-0 fw-bold fs-2">Events</h2>
+          <!-- Page title -->
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-folder2-open text-primary fs-4"></i>
+            <h1 class="h4 mb-0 fw-semibold">Files and Documents</h1>
           </div>
 
-          <div class="row g-3 mt-2" id="eventsGrid">
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
+          <!-- Search -->
+          <div class="files-search mb-3">
+            <i class="bi bi-search files-search__icon"></i>
+            <input
+              type="search"
+              class="form-control files-search__input"
+              placeholder="Search files"
+              aria-label="Search files"
+            />
+          </div>
 
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
+          <!-- Tabs -->
+          <ul class="nav files-tabs mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="files-tabs__link active" type="button" role="tab">
+                Official documentation
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="files-tabs__link" type="button" role="tab">
+                For applicants to school
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="files-tabs__link" type="button" role="tab">
+                For students and parents
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="files-tabs__link" type="button" role="tab">
+                For partners
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="files-tabs__link" type="button" role="tab">
+                For the media
+              </button>
+            </li>
+          </ul>
 
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
+          <!-- Layout -->
+          <div class="row g-3">
+            <!-- LEFT: tree/list -->
+            <div class="col-12 col-lg-8">
+              <div class="files-card">
+                <!-- Header row (optional) -->
+                <div class="files-card__head">
+                  <div class="files-card__head-left">
+                    <span class="text-muted fw-semibold small"
+                      >Folder Title</span
+                    >
                   </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
+                  <div class="files-card__head-right text-muted small"></div>
                 </div>
-              </article>
+
+                <!-- Tree list -->
+                <div class="files-tree" id="filesTree">
+                  <!-- Folder 1 -->
+                  <div class="files-row files-row--folder">
+                    <button
+                      class="files-toggle"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#folder-1"
+                      aria-expanded="true"
+                      aria-controls="folder-1"
+                    >
+                      <i class="bi bi-chevron-down files-toggle__chev"></i>
+                    </button>
+
+                    <i class="bi bi-folder2 files-ico files-ico--folder"></i>
+
+                    <button
+                      type="button"
+                      class="files-title"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#folder-1"
+                      aria-expanded="true"
+                    >
+                      Folder Title
+                    </button>
+
+                    <div class="files-meta ms-auto">
+                      <span class="text-muted small">12 documents</span>
+                      <button
+                        class="files-dl"
+                        type="button"
+                        aria-label="Download"
+                      >
+                        <i class="bi bi-download"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="collapse show" id="folder-1">
+                    <!-- nested folder -->
+                    <div class="files-row files-row--folder files-row--nested">
+                      <button
+                        class="files-toggle"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#folder-1-1"
+                        aria-expanded="false"
+                        aria-controls="folder-1-1"
+                      >
+                        <i class="bi bi-chevron-right files-toggle__chev"></i>
+                      </button>
+
+                      <i class="bi bi-folder2 files-ico files-ico--folder"></i>
+
+                      <button
+                        type="button"
+                        class="files-title"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#folder-1-1"
+                        aria-expanded="false"
+                      >
+                        Folder Title
+                      </button>
+
+                      <div class="files-meta ms-auto">
+                        <span class="text-muted small">183 documents</span>
+                        <button
+                          class="files-dl"
+                          type="button"
+                          aria-label="Download"
+                        >
+                          <i class="bi bi-download"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="collapse" id="folder-1-1">
+                      <!-- documents inside nested folder -->
+                      <button
+                        type="button"
+                        class="files-row files-row--doc files-row--nested-2"
+                      >
+                        <span class="files-toggle files-toggle--spacer"></span>
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span class="files-meta ms-auto">
+                          <span class="text-muted small"> </span>
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="files-row files-row--doc files-row--nested-2"
+                      >
+                        <span class="files-toggle files-toggle--spacer"></span>
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span class="files-meta ms-auto">
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="files-row files-row--doc files-row--nested-2"
+                      >
+                        <span class="files-toggle files-toggle--spacer"></span>
+                        <i
+                          class="bi bi-file-earmark-text files-ico files-ico--doc"
+                        ></i>
+                        <span class="files-title">Document Title</span>
+                        <span class="files-meta ms-auto">
+                          <span class="files-dl"
+                            ><i class="bi bi-download"></i
+                          ></span>
+                        </span>
+                      </button>
+                    </div>
+
+                    <!-- another folder in folder-1 -->
+                    <div class="files-row files-row--folder files-row--nested">
+                      <button
+                        class="files-toggle"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#folder-1-2"
+                        aria-expanded="false"
+                      >
+                        <i class="bi bi-chevron-right files-toggle__chev"></i>
+                      </button>
+                      <i class="bi bi-folder2 files-ico files-ico--folder"></i>
+                      <button
+                        type="button"
+                        class="files-title"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#folder-1-2"
+                        aria-expanded="false"
+                      >
+                        Folder Title
+                      </button>
+                      <div class="files-meta ms-auto">
+                        <span class="text-muted small">4 documents</span>
+                        <button
+                          class="files-dl"
+                          type="button"
+                          aria-label="Download"
+                        >
+                          <i class="bi bi-download"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="collapse" id="folder-1-2"></div>
+                  </div>
+
+                  <!-- Folder 2 -->
+                  <div class="files-row files-row--folder">
+                    <button
+                      class="files-toggle"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#folder-2"
+                      aria-expanded="false"
+                    >
+                      <i class="bi bi-chevron-right files-toggle__chev"></i>
+                    </button>
+                    <i class="bi bi-folder2 files-ico files-ico--folder"></i>
+                    <button
+                      type="button"
+                      class="files-title"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#folder-2"
+                      aria-expanded="false"
+                    >
+                      Folder Title
+                    </button>
+                    <div class="files-meta ms-auto">
+                      <span class="text-muted small">156 documents</span>
+                      <button
+                        class="files-dl"
+                        type="button"
+                        aria-label="Download"
+                      >
+                        <i class="bi bi-download"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="collapse" id="folder-2"></div>
+
+                  <!-- Flat documents list (like bottom of screenshot) -->
+                  <button type="button" class="files-row files-row--doc">
+                    <span class="files-toggle files-toggle--spacer"></span>
+                    <i
+                      class="bi bi-file-earmark-text files-ico files-ico--doc"
+                    ></i>
+                    <span class="files-title">Document Title</span>
+                    <span class="files-meta ms-auto">
+                      <span class="files-dl"
+                        ><i class="bi bi-download"></i
+                      ></span>
+                    </span>
+                  </button>
+
+                  <button type="button" class="files-row files-row--doc">
+                    <span class="files-toggle files-toggle--spacer"></span>
+                    <i
+                      class="bi bi-file-earmark-text files-ico files-ico--doc"
+                    ></i>
+                    <span class="files-title">Document Title</span>
+                    <span class="files-meta ms-auto">
+                      <span class="files-dl"
+                        ><i class="bi bi-download"></i
+                      ></span>
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
+            <!-- RIGHT: info panel -->
+            <div class="col-12 col-lg-4">
+              <aside class="files-side">
+                <div class="files-side__inner">
+                  <h3 class="h6 fw-semibold mb-2">Welcome to file storage!</h3>
+                  <p class="text-muted mb-2">
+                    The “Documentation” section of our website is a
+                    comprehensive repository designed to serve the diverse needs
+                    of everyone connected to the school.
                   </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
+                  <p class="text-muted mb-2">
+                    Here you will find essential documents and forms for
+                    prospective students, current pupils, parents, faculty,
+                    staff, and partners.
                   </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
+                  <p class="text-muted mb-2">
+                    The section includes applications, enrollment guidelines,
+                    internal policies, consent forms, and resources to support
+                    smooth day-to-day operations.
                   </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
+                  <p class="text-muted mb-0">
+                    We encourage all users to regularly visit this area to stay
+                    informed and access materials they may need.
                   </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
                 </div>
-              </article>
+              </aside>
             </div>
           </div>
         </div>

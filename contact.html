@@ -390,415 +390,170 @@
       </section>
       <section class="py-4 py-xxl-5">
         <div class="container">
-          <!-- Title -->
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <img
-              src="./assets/images/icons/icon_event.svg"
-              alt="event icon"
-              width="30"
-              height="30"
-              class="blue-icon"
-            />
-            <h2 class="mb-0 fw-bold fs-2">Events</h2>
+          <div class="row g-4 align-items-stretch">
+            <!-- LEFT: Contact blocks -->
+            <div class="col-12 col-lg-4">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <i class="bi bi-telephone text-primary"></i>
+                <h2 class="mb-0 fw-bold fs-3">Contact us</h2>
+              </div>
+
+              <!-- Block 1 -->
+              <div class="contact-card mb-3">
+                <h3 class="contact-card__title">Administration</h3>
+                <p class="contact-card__desc">
+                  For general inquiries and administrative matters
+                </p>
+
+                <div class="contact-line">
+                  <i class="bi bi-telephone"></i>
+                  <a href="tel:+12155551234">(1) (215) 555-1234</a>
+                </div>
+
+                <div class="contact-line">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:administration@progressiveschool.edu"
+                    >administration@progressiveschool.edu</a
+                  >
+                </div>
+
+                <div class="contact-line">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>1234 Liberty Lane, Philadelphia, PA 19103, USA</span>
+                </div>
+              </div>
+
+              <!-- Block 2 -->
+              <div class="contact-card mb-3">
+                <h3 class="contact-card__title">Admissions Office</h3>
+                <p class="contact-card__desc">
+                  For questions about enrollment and application process
+                </p>
+
+                <div class="contact-line">
+                  <i class="bi bi-telephone"></i>
+                  <a href="tel:+12155555678">(1) (215) 555-5678</a>
+                </div>
+
+                <div class="contact-line">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:enrollment@progressiveschool.edu"
+                    >enrollment@progressiveschool.edu</a
+                  >
+                </div>
+              </div>
+
+              <!-- Block 3 -->
+              <div class="contact-card">
+                <h3 class="contact-card__title">Support Services</h3>
+                <p class="contact-card__desc">
+                  For technical assistance and parent inquiries
+                </p>
+
+                <div class="contact-line">
+                  <i class="bi bi-telephone"></i>
+                  <a href="tel:+12155559012">(1) (215) 555-9012</a>
+                </div>
+
+                <div class="contact-line">
+                  <i class="bi bi-envelope"></i>
+                  <a href="mailto:support@progressiveschool.edu"
+                    >support@progressiveschool.edu</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: Map -->
+            <div class="col-12 col-lg-8">
+              <div class="map-wrap">
+                <!-- Replace src with your real map link -->
+                <iframe
+                  class="map-iframe"
+                  src="https://www.google.com/maps?q=Philadelphia&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="School location map"
+                ></iframe>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+      <section class="contact-hero">
+        <div class="contact-hero__overlay"></div>
 
-          <div class="row g-3 mt-2" id="eventsGrid">
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
+        <div class="container position-relative">
+          <div class="contact-hero__card">
+            <div class="contact-hero__head">
+              <h2 class="contact-hero__title">Do you have any questions?</h2>
+              <p class="contact-hero__subtitle">
+                Write to us, we'll be sure to answer
+              </p>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
+            <form class="contact-hero__form" action="#" method="post">
+              <div class="contact-hero__grid">
+                <!-- LEFT -->
+                <div class="contact-hero__col">
+                  <label class="contact-hero__field">
+                    <span class="contact-hero__label">Your name</span>
+                    <input
+                      class="contact-hero__input"
+                      type="text"
+                      name="name"
+                      placeholder="Jane"
                     />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
+                  </label>
 
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
+                  <label class="contact-hero__field">
+                    <span class="contact-hero__label">Your email</span>
+                    <input
+                      class="contact-hero__input"
+                      type="email"
+                      name="email"
+                      placeholder="Henderson@domain.com"
                     />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
+                  </label>
 
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
+                  <label class="contact-hero__field">
+                    <span class="contact-hero__label">Your phone number</span>
+                    <input
+                      class="contact-hero__input"
+                      type="tel"
+                      name="phone"
+                      placeholder="+1 (234) 567-8900"
                     />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
+                  </label>
                 </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
-              >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
 
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
+                <!-- RIGHT -->
+                <div class="contact-hero__col">
+                  <label class="contact-hero__field h-100">
+                    <span class="contact-hero__label"> </span>
+                    <textarea
+                      class="contact-hero__textarea"
+                      name="message"
+                      placeholder="Your message"
+                    ></textarea>
+                  </label>
                 </div>
-              </article>
-            </div>
+              </div>
+
+              <label class="contact-hero__check">
+                <input type="checkbox" name="agree" required />
+                <span>
+                  I agree with
+                  <a href="#" class="contact-hero__link">Terms of Service</a>
+                  and
+                  <a href="#" class="contact-hero__link">Privacy Policy</a>
+                </span>
+              </label>
+
+              <button type="submit" class="btn btn-primary contact-hero__btn">
+                Send message
+              </button>
+            </form>
           </div>
         </div>
       </section>

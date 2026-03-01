@@ -382,424 +382,198 @@
                 >
               </li>
               <li class="breadcrumb-item active text-dark" aria-current="page">
-                Events
+                Gallery
               </li>
             </ol>
           </nav>
         </div>
       </section>
-      <section class="py-4 py-xxl-5">
-        <div class="container">
-          <!-- Title -->
-          <div class="d-flex align-items-center gap-3 mb-3">
+      <section
+        class="py-4 py-xxl-5 container d-flex flex-column gap-4"
+        id="gallery"
+      >
+        <div
+          class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4"
+        >
+          <div class="d-flex align-items-center gap-3">
             <img
-              src="./assets/images/icons/icon_event.svg"
-              alt="event icon"
-              width="30"
-              height="30"
+              src="./assets/images/icons/icon_media.svg"
+              alt="media icon"
+              width="28"
+              height="28"
               class="blue-icon"
             />
-            <h2 class="mb-0 fw-bold fs-2">Events</h2>
+            <h3 class="fw-bold mb-0">Gallery</h3>
           </div>
 
-          <div class="row g-3 mt-2" id="eventsGrid">
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
+          <ul
+            class="nav justify-content-center gap-3 m-0 p-0 d-none d-xl-flex"
+            id="galleryTabs"
+          >
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab active"
+                type="button"
+                data-category="all"
               >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
+                All
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
+                type="button"
+                data-category="outdoor"
               >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
+                Outdoor
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
+                type="button"
+                data-category="indoor"
               >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
+                Indoor
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
+                type="button"
+                data-category="school-life"
               >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
-
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
-
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article
-                class="bg-white rounded-4 shadow-sm border overflow-hidden h-100"
+                School life
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
+                type="button"
+                data-category="lessons"
               >
-                <a href="#" class="d-block">
-                  <img
-                    src="./assets/images/events/events-first-img.png"
-                    alt="events image"
-                    class="w-100"
-                    loading="lazy"
-                  />
-                </a>
+                Lessons
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
+                type="button"
+                data-category="sport"
+              >
+                Sport
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
+                type="button"
+                data-category="events"
+              >
+                Events
+              </button>
+            </li>
+          </ul>
 
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">
-                    Weekend School Trip to the Zoo: Exploring Nature Together
-                  </h3>
+          <!-- Mobile Select -->
+          <select
+            class="form-select fw-semibold d-xl-none"
+            id="galleryCategorySelect"
+            style="max-width: 220px"
+          >
+            <option value="all" selected>All</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="indoor">Indoor</option>
+            <option value="school-life">School life</option>
+            <option value="lessons">Lessons</option>
+            <option value="sport">Sport</option>
+            <option value="events">Events</option>
+          </select>
+        </div>
 
-                  <div
-                    class="d-flex gap-2 align-items-center text-secondary mb-2"
-                  >
-                    <img
-                      src="./assets/images/icons/icon_location.svg"
-                      alt=""
-                      width="16"
-                      height="16"
-                    />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
+        <!-- Gallery Grid -->
+        <div class="row g-3" id="galleryGrid">
+          <!-- Outdoor -->
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item"
+            data-category="outdoor"
+          >
+            <img
+              src="./assets/images/gallery/gallery-first-img.png"
+              alt="Outdoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
+            />
+          </div>
 
-                  <div
-                    class="d-flex justify-content-between align-items-center gap-2 mb-2"
-                  >
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="./assets/images/icons/icon_calendar-gray.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item"
+            data-category="outdoor"
+          >
+            <img
+              src="./assets/images/gallery/gallery-fourth-img.png"
+              alt="Outdoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
+            />
+          </div>
 
-                    <div class="d-flex align-items-center gap-1">
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >11</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >13</span
-                      >
-                      <span class="fw-bold text-secondary">:</span>
-                      <span
-                        class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark"
-                        >56</span
-                      >
-                    </div>
-                  </div>
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item"
+            data-category="outdoor"
+          >
+            <img
+              src="./assets/images/gallery/gallery-fifth-img.png"
+              alt="Outdoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
+            />
+          </div>
 
-                  <p class="text-secondary mb-3">
-                    During the visit to the archaeological museum, students will
-                    explore fascinating artifacts and uncover stories from
-                    ancient times.
-                  </p>
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item"
+            data-category="indoor"
+          >
+            <img
+              src="./assets/images/gallery/gallery-third-img.png"
+              alt="Indoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
+            />
+          </div>
 
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                  >
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
-                  </div>
-                </div>
-              </article>
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item"
+            data-category="indoor"
+          >
+            <img
+              src="./assets/images/gallery/gallery-second-img.png"
+              alt="Indoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
+            />
+          </div>
+
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item"
+            data-category="indoor"
+          >
+            <img
+              src="./assets/images/gallery/gallery-sixth-img.png"
+              alt="Indoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
+            />
+          </div>
+
+          <div class="col-12 d-none" id="galleryEmpty">
+            <div class="text-center py-5">
+              <p class="fs-5 fw-bold text-muted mb-0">
+                No images in this category.
+              </p>
             </div>
           </div>
+        </div>
+
+        <!-- Button -->
+        <div class="d-flex justify-content-center mt-3">
+          <button class="btn btn-outline-primary px-4 rounded">
+            Show more
+          </button>
         </div>
       </section>
     </main>
