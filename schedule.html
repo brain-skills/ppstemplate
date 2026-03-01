@@ -370,155 +370,415 @@
           </nav>
         </div>
       </section>
-      <section
-        class="py-4 py-xxl-5 container d-flex flex-column gap-4 gap-xxl-5 position-relative"
-        id="enrollment"
-      >
-        <div>
-          <div class="d-flex align-items-center mb-4 justify-content-between">
-            <div class="d-flex flex-row gap-3 align-items-center">
-              <img
-                src="./assets/images/icons/icon_education.svg"
-                alt="education icon"
-                width="30"
-                height="30"
-              />
-              <p class="fw-bold fs-2">Enrollment</p>
+      <section class="py-4" id="schedule">
+        <div class="container">
+          <div class="d-flex flex-row gap-3 align-items-center mb-4">
+            <img
+              src="./assets/images/icons/icon_calendar.svg"
+              alt="Schedule"
+              width="30"
+              height="30"
+              class="blue-icon"
+            />
+            <h2 class="fw-bold fs-2">Shedule</h2>
+          </div>
+
+          <div class="schedule-filters" id="filtersForm">
+            <div class="row g-3 align-items-end">
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="grade">Grade</label>
+                <select id="grade" class="form-select schedule-select">
+                  <option value="3" selected>3 grade</option>
+                  <option value="4">4 grade</option>
+                  <option value="5">5 grade</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="curator">Curator</label>
+                <select id="curator" class="form-select schedule-select">
+                  <option value="" selected>Not selected</option>
+                  <option value="john">John</option>
+                  <option value="anna">Anna</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="subject">Subject</label>
+                <select id="subject" class="form-select schedule-select">
+                  <option value="" selected>Not selected</option>
+                  <option value="english">English language</option>
+                  <option value="math">Math</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="teacher">Teacher</label>
+                <select id="teacher" class="form-select schedule-select">
+                  <option value="" selected>Not selected</option>
+                  <option value="smith">John Smith</option>
+                  <option value="jefferson">Sarah Jefferson</option>
+                </select>
+              </div>
             </div>
-            <button class="btn btn-primary d-flex gap-2">
-              <span>More About It</span>
-              <img
-                src="./assets/images/icons/icon_arrow-next.svg"
-                alt="icon arrow next"
-              />
+
+            <button type="button" id="resetFiltersBtn" class="schedule-reset">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10H7" />
+                <path d="M21 6H3" />
+                <path d="M21 14H3" />
+                <path d="M21 18H7" />
+              </svg>
+              Reset filters
             </button>
           </div>
-          <p class="fw-semibold mb-3 fs-4">
-            Choosing Philadelphia Progressive School opens the door for your
-            child to a world of quality education, talent development, and
-            comprehensive preparation for a successful future.
-          </p>
-          <p class="fw-normal fs-4">
-            Our school is dedicated to creating an environment where every
-            student can unlock their strengths, gain deep knowledge, and acquire
-            the skills needed to enter the best colleges and universities. We
-            believe that the right education is the key to success and broad
-            opportunities for your child.
-          </p>
-        </div>
-        <div class="d-flex flex-row justify-content-between">
-          <div class="enrollment-section">
-            <div
-              class="mb-4 bg-blue-10 border-start border-5 border-blue p-3 rounded"
-            >
-              <h4 class="fw-semibold mb-3">Dear parents!</h4>
-              <p class="fs-4 fw-normal mb-3">
-                If you wish to enroll your child in our school, we recommend
-                preparing the complete set of documents well in advance.
-              </p>
-              <p class="fs-4 fw-bold mb-3">
-                To apply for admission to a school, you will need to provide:
-              </p>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">your child’s birth certificate</p>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">proof of residency</p>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">
-                  medical records with up-to-date immunizations
-                </p>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">previous academic records (if available)</p>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-4">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">
-                  completed application form submitted to the School District
-                </p>
-              </div>
-              <div class="d-flex gap-4">
-                <button class="btn btn-primary fs-4">Details</button>
-                <button
-                  class="btn bg-transparent btn-outline-blue d-flex align-items-center gap-3"
-                >
-                  <img
-                    src="./assets/images/icons/icon_dwld.svg"
-                    alt="download icon"
-                    width="24"
-                    height="24"
-                  />
-                  <p class="fs-4">Download documents list</p>
-                </button>
-              </div>
+
+          <!-- Calendar header (month + week/day) -->
+          <div class="schedule-head">
+            <div class="d-flex align-items-center gap-2">
+              <button
+                type="button"
+                class="schedule-arrow"
+                aria-label="Prev month"
+              >
+                ‹
+              </button>
+              <div class="fw-bold fs-5">December <span>2025</span></div>
+              <button
+                type="button"
+                class="schedule-arrow"
+                aria-label="Next month"
+              >
+                ›
+              </button>
             </div>
-            <div>
-              <p class="fs-4 fw-bold mb-3">
-                It is important to submit all documents on time to ensure a
-                smooth registration process.
-              </p>
-              <p class="fs-4 fw-normal mb-3">
-                Enrollment begins 2-3 months before the start of the new school
-                year, and the number of seats in each class is limited. Student
-                lists are formed in advance to ensure the smooth organization of
-                the learning process. For your convenience, we provide access to
-                an online platform where you can monitor your child’s academic
-                progress, attendance, and communication with teachers at any
-                time.
-              </p>
-              <p class="fs-4 fw-bold">
-                This way, you will always stay informed and be able to support
-                your child at every stage of their education.
-              </p>
+
+            <div class="schedule-view">
+              <button
+                id="weekBtn"
+                class="schedule-view-btn active fs-6"
+                type="button"
+              >
+                Week
+              </button>
+              <button id="dayBtn" class="schedule-view-btn fs-6" type="button">
+                Day
+              </button>
             </div>
           </div>
-          <div class="d-none d-xl-flex">
-            <img
-              src="./assets/images/enrollment/enrollment1.png"
-              alt="enrollment image"
-              class="position-absolute enrollment-first-img"
-            />
-            <img
-              src="./assets/images/enrollment/enrollment2.png"
-              alt="enrollment image"
-              class="position-absolute enrollment-second-img"
-            />
-            <img
-              src="./assets/images/enrollment/enrollment3.png"
-              alt="enrollment image"
-              class="position-absolute enrollment-third-img"
-            />
+
+          <!-- Table -->
+          <div class="table-responsive schedule-table-wrap">
+            <table class="table mb-0 schedule-table">
+              <thead>
+                <tr>
+                  <th class="time-header-col">
+                    <div
+                      class="d-flex align-items-center gap-2 justify-content-center"
+                    >
+                      <img
+                        src="./assets/images/icons/icon_clock.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                      />
+                      <span class="">Time</span>
+                    </div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Sunday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Monday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Tuesday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Wednesday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Thursday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Friday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Saturday</div>
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- 08:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">08:00 am</div>
+                    <div class="time-sub">1 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English <span class="grade">1 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    Math <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    History <span class="grade">2 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    Biology <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <!-- 09:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">09:00 am</div>
+                    <div class="time-sub">2 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    Physics <span class="grade">4 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English <span class="grade">3 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    Chemistry <span class="grade">5 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="individual-cell">
+                    Sarah Jefferson
+                    <span class="tag tag-green">individual</span>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <!-- 10:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">10:00 am</div>
+                    <div class="time-sub">3 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Art <span class="grade">2 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Geography <span class="grade">3 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English <span class="grade">1 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Music <span class="grade">2 grade</span>
+                  </td>
+                </tr>
+
+                <!-- 11:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">11:00 am</div>
+                    <div class="time-sub">4 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    Math <span class="grade">4 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Biology <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Reading <span class="grade">1 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    Sport <span class="grade">2 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <!-- 12:00 Lunch -->
+                <tr class="lunch-row">
+                  <td colspan="8">
+                    <div
+                      class="d-flex justify-content-between align-items-center px-3"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <img
+                          src="./assets/images/icons/icon_food.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                        <strong>Lunch</strong>
+                      </div>
+                      <a class="lunch-link" href="#">Show today's menu →</a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 01:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">01:00 pm</div>
+                    <div class="time-sub">5 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="meeting-cell">
+                    Weekly meeting
+                    <span class="tag tag-pink">teachers’ council</span>
+                  </td>
+                  <td class="class-cell">
+                    English <span class="grade">3 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    Math <span class="grade">2 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Science <span class="grade">1 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <!-- 02:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">02:00 pm</div>
+                    <div class="time-sub">6 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    Sport <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="individual-cell">
+                    John Smith
+                    <span class="tag tag-green">individual</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    IT <span class="grade">4 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English <span class="grade">2 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <!-- 03:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">03:00 pm</div>
+                    <div class="time-sub">7 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    History <span class="grade">5 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Music <span class="grade">2 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    Geography <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Art <span class="grade">1 grade</span>
+                  </td>
+                </tr>
+
+                <!-- 04:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">04:00 pm</div>
+                    <div class="time-sub">8 lesson</div>
+                  </td>
+                  <td class="meeting-cell">
+                    Parents meeting
+                    <span class="tag tag-pink">conference</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Chemistry <span class="grade">5 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="individual-cell">
+                    Anna Brown
+                    <span class="tag tag-green">individual</span>
+                  </td>
+                  <td class="class-cell">
+                    Sport <span class="grade">2 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <!-- 05:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">05:00 pm</div>
+                    <div class="time-sub">9 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Drama <span class="grade">3 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    Reading <span class="grade">1 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    IT <span class="grade">4 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="meeting-cell">
+                    Club meeting
+                    <span class="tag tag-pink">after school</span>
+                  </td>
+                </tr>
+
+                <!-- 06:00 -->
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">06:00 pm</div>
+                    <div class="time-sub">10 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    Library <span class="grade">All</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td class="class-cell">
+                    Extra Math <span class="grade">5 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Extra English <span class="grade">4 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

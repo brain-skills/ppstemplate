@@ -222,7 +222,7 @@
       <nav
         class="nav-container d-flex align-items-center justify-content-center justify-content-xl-between z-1"
       >
-        <a href="/">
+        <a href="/" class="nav-logo">
           <img src="./assets/logo/school-logo.svg" alt="School logo" />
         </a>
 
@@ -238,8 +238,9 @@
               alt="Home icon"
               width="24"
               height="24"
+              class="nav-item"
             />
-            <span class="fs-6">Home</span>
+            <span class="fs-6 nav-item">Home</span>
           </a>
 
           <a
@@ -251,6 +252,7 @@
               alt="About icon"
               width="24"
               height="24"
+              class="nav-item"
             />
             <span class="fs-6">About</span>
           </a>
@@ -264,6 +266,7 @@
               alt="Enrollment icon"
               width="24"
               height="24"
+              class="nav-item"
             />
             <span class="fs-6">Enrollment</span>
           </a>
@@ -277,6 +280,7 @@
               alt="Schedule icon"
               width="24"
               height="24"
+              class="nav-item"
             />
             <span class="fs-6">Schedule</span>
           </a>
@@ -290,6 +294,7 @@
               alt="News icon"
               width="24"
               height="24"
+              class="nav-item"
             />
             <span class="fs-6">News</span>
           </a>
@@ -303,6 +308,7 @@
               alt="Events icon"
               width="24"
               height="24"
+              class="nav-item"
             />
             <span class="fs-6">Events</span>
           </a>
@@ -316,6 +322,7 @@
               alt="Gallery icon"
               width="24"
               height="24"
+              class="nav-item"
             />
             <span class="fs-6">Gallery</span>
           </a>
@@ -329,8 +336,9 @@
               alt="Files icon"
               width="24"
               height="24"
+              class="nav-item"
             />
-            <span class="fs-6">Files</span>
+            <span class="">Files</span>
           </a>
 
           <a
@@ -342,6 +350,7 @@
               alt="Contact icon"
               width="24"
               height="24"
+              class="nav-item"
             />
             <span class="fs-6">Contact</span>
           </a>
@@ -362,18 +371,27 @@
         />
 
         <div
-          class="main-content position-absolute bottom-0 start-0 w-100 h-100 d-flex flex-column p-3 p-md-5 justify-content-end"
+          class="main-content position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end"
         >
-          <h1 class="fs-1 text-white fw-bold">
-            Philadelphia Progressive School
-          </h1>
-          <p class="text-white mb-0 opacity-90 fs-4">
-            Educating today, inspiring tomorrow
-          </p>
+          <div class="container pb-5">
+            <h1 class="fs-1 text-white fw-bold">
+              Philadelphia Progressive School
+            </h1>
+            <p class="text-white mb-0 opacity-90 fs-4">
+              Educating today, inspiring tomorrow
+            </p>
+          </div>
         </div>
+        <!-- controls -->
+        <div
+          class="swiper-button-prev d-none d-xxl-flex main-section-btn-prev"
+        ></div>
+        <div
+          class="swiper-button-next d-none d-xxl-flex main-section-btn-next"
+        ></div>
       </section>
       <section
-        class="py-4 py-xxl-5 container d-flex flex-column gap-4 gap-xxl-5"
+        class="py-4 py-xxl-5 container d-flex flex-column"
         id="about-school"
       >
         <div>
@@ -383,10 +401,11 @@
               alt="school icon"
               width="30"
               height="30"
+              class="blue-icon"
             />
             <p class="fw-bold fs-2">About School</p>
           </div>
-          <p class="fs-4 fw-semibold">
+          <p class="fs-5 fw-medium mb-3">
             Philadelphia Progressive School is a vibrant learning community
             dedicated to nurturing the academic, creative, and personal growth
             of every student. Established with the mission to provide
@@ -406,10 +425,10 @@
                     alt="school image"
                     class="about-img mb-3 w-100"
                   />
-                  <p class="fs-4 fw-bold mb-3">
+                  <p class="fs-5 fw-bold mb-3">
                     Our Mission: Inspiring Lifelong Learning and Growth
                   </p>
-                  <p class="fs-4 fw-normal">
+                  <p class="fs-5 fw-normal">
                     Philadelphia Progressive School is a vibrant learning
                     community dedicated to nurturing the academic, creative, and
                     personal growth of every student...
@@ -424,10 +443,10 @@
                     alt="school image"
                     class="about-img mb-3 w-100"
                   />
-                  <p class="fs-4 fw-bold mb-3">
+                  <p class="fs-5 fw-bold mb-3">
                     Our Mission: Inspiring Lifelong Learning and Growth
                   </p>
-                  <p class="fs-4 fw-normal">
+                  <p class="fs-5 fw-normal">
                     Philadelphia Progressive School is a vibrant learning
                     community dedicated to nurturing the academic, creative, and
                     personal growth of every student...
@@ -442,10 +461,10 @@
                     alt="school image"
                     class="about-img mb-3 w-100"
                   />
-                  <p class="fs-4 fw-bold mb-3">
+                  <p class="fs-5 fw-bold mb-3">
                     Our Mission: Inspiring Lifelong Learning and Growth
                   </p>
-                  <p class="fs-4 fw-normal">
+                  <p class="fs-5 fw-normal">
                     Philadelphia Progressive School is a vibrant learning
                     community dedicated to nurturing the academic, creative, and
                     personal growth of every student...
@@ -460,10 +479,10 @@
                     alt="school image"
                     class="about-img mb-3 w-100"
                   />
-                  <p class="fs-4 fw-bold mb-3">
+                  <p class="fs-5 fw-bold mb-3">
                     Our Mission: Inspiring Lifelong Learning and Growth
                   </p>
-                  <p class="fs-4 fw-normal">
+                  <p class="fs-5 fw-normal">
                     Philadelphia Progressive School is a vibrant learning
                     community dedicated to nurturing the academic, creative, and
                     personal growth of every student...
@@ -473,9 +492,9 @@
             </div>
 
             <!-- controls -->
-            <div class="swiper-button-prev d-none d-lg-flex"></div>
-            <div class="swiper-button-next d-none d-lg-flex"></div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev d-none d-xxl-flex"></div>
+            <div class="swiper-button-next d-none d-xxl-flex"></div>
+            <div class="swiper-pagination mb-4"></div>
           </div>
         </div>
 
@@ -500,6 +519,7 @@
                 alt="education icon"
                 width="30"
                 height="30"
+                class="blue-icon"
               />
               <p class="fw-bold fs-2">Enrollment</p>
             </div>
@@ -516,7 +536,7 @@
             child to a world of quality education, talent development, and
             comprehensive preparation for a successful future.
           </p>
-          <p class="fw-normal fs-4">
+          <p class="fw-normal fs-5">
             Our school is dedicated to creating an environment where every
             student can unlock their strengths, gain deep knowledge, and acquire
             the skills needed to enter the best colleges and universities. We
@@ -530,11 +550,11 @@
               class="mb-4 bg-blue-10 border-start border-5 border-blue p-3 rounded"
             >
               <h4 class="fw-semibold mb-3">Dear parents!</h4>
-              <p class="fs-4 fw-normal mb-3">
+              <p class="fs-5 fw-normal mb-3">
                 If you wish to enroll your child in our school, we recommend
                 preparing the complete set of documents well in advance.
               </p>
-              <p class="fs-4 fw-bold mb-3">
+              <p class="fs-5 fw-bold mb-3">
                 To apply for admission to a school, you will need to provide:
               </p>
               <div class="d-flex gap-3 align-items-center mb-3">
@@ -589,24 +609,24 @@
               <div class="d-flex gap-4">
                 <button class="btn btn-primary fs-4">Details</button>
                 <button
-                  class="btn bg-transparent btn-outline-blue d-flex align-items-center gap-3"
+                  class="btn btn-outline-blue d-flex align-items-center gap-2 fs-5"
                 >
                   <img
                     src="./assets/images/icons/icon_dwld.svg"
                     alt="download icon"
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
                   />
-                  <p class="fs-4">Download documents list</p>
+                  <span>Download documents list</span>
                 </button>
               </div>
             </div>
             <div>
-              <p class="fs-4 fw-bold mb-3">
+              <p class="fs-5 fw-bold mb-3">
                 It is important to submit all documents on time to ensure a
                 smooth registration process.
               </p>
-              <p class="fs-4 fw-normal mb-3">
+              <p class="fs-5 fw-normal mb-3">
                 Enrollment begins 2-3 months before the start of the new school
                 year, and the number of seats in each class is limited. Student
                 lists are formed in advance to ensure the smooth organization of
@@ -615,7 +635,7 @@
                 progress, attendance, and communication with teachers at any
                 time.
               </p>
-              <p class="fs-4 fw-bold">
+              <p class="fs-5 fw-bold">
                 This way, you will always stay informed and be able to support
                 your child at every stage of their education.
               </p>
@@ -640,296 +660,256 @@
           </div>
         </div>
       </section>
-      <section class="py-5 bg-light" id="schedule">
+      <section class="py-4" id="schedule">
         <div class="container">
-          <div
-            class="d-flex flex-wrap align-items-center justify-content-between gap-4 mb-5"
-          >
-            <div class="d-flex align-items-center gap-3">
-              <div
-                class="bg-primary-subtle p-3 rounded-4 d-flex align-items-center justify-content-center shadow-sm"
-                style="width: 64px; height: 64px"
+          <div class="d-flex flex-row gap-3 align-items-center mb-4">
+            <img
+              src="./assets/images/icons/icon_calendar.svg"
+              alt="Schedule"
+              width="30"
+              height="30"
+              class="blue-icon"
+            />
+            <h2 class="fw-bold fs-2">Shedule</h2>
+          </div>
+
+          <div class="schedule-filters" id="filtersForm">
+            <div class="row g-3 align-items-end">
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="grade">Grade</label>
+                <select id="grade" class="form-select schedule-select">
+                  <option value="3" selected>3 grade</option>
+                  <option value="4">4 grade</option>
+                  <option value="5">5 grade</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="curator">Curator</label>
+                <select id="curator" class="form-select schedule-select">
+                  <option value="" selected>Not selected</option>
+                  <option value="john">John</option>
+                  <option value="anna">Anna</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="subject">Subject</label>
+                <select id="subject" class="form-select schedule-select">
+                  <option value="" selected>Not selected</option>
+                  <option value="english">English language</option>
+                  <option value="math">Math</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label class="schedule-label" for="teacher">Teacher</label>
+                <select id="teacher" class="form-select schedule-select">
+                  <option value="" selected>Not selected</option>
+                  <option value="smith">John Smith</option>
+                  <option value="jefferson">Sarah Jefferson</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="button" id="resetFiltersBtn" class="schedule-reset">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <img
-                  src="./assets/images/icons/icon_calendar.svg"
-                  alt="Schedule"
-                  width="40"
-                  height="40"
-                />
-              </div>
-              <div>
-                <h1
-                  class="fw-bold text-dark mb-1"
-                  style="font-size: 2.5rem; letter-spacing: -0.5px"
-                >
-                  Schedule
-                </h1>
-                <p class="text-muted mb-0 fs-5">
-                  Manage classes, meetings & individual lessons
-                </p>
-              </div>
+                <path d="M21 10H7" />
+                <path d="M21 6H3" />
+                <path d="M21 14H3" />
+                <path d="M21 18H7" />
+              </svg>
+              Reset filters
+            </button>
+          </div>
+
+          <!-- Calendar header (month + week/day) -->
+          <div class="schedule-head">
+            <div class="d-flex align-items-center gap-2">
+              <button
+                type="button"
+                class="schedule-arrow"
+                aria-label="Prev month"
+              >
+                ‹
+              </button>
+              <div class="fw-bold fs-5">December <span>2025</span></div>
+              <button
+                type="button"
+                class="schedule-arrow"
+                aria-label="Next month"
+              >
+                ›
+              </button>
             </div>
-            <div class="d-none d-md-flex align-items-center gap-3">
-              <span class="badge bg-primary-subtle text-primary px-3 py-2 fs-6">
-                <i class="bi bi-calendar-event me-2"></i>December 2025
-              </span>
+
+            <div class="schedule-view">
+              <button
+                id="weekBtn"
+                class="schedule-view-btn active fs-6"
+                type="button"
+              >
+                Week
+              </button>
+              <button id="dayBtn" class="schedule-view-btn fs-6" type="button">
+                Day
+              </button>
             </div>
           </div>
 
-          <!-- Updated Filters – cleaner layout, better mobile stacking, modern look -->
-          <div class="card border-0 shadow-sm rounded-4 mb-5 overflow-hidden">
-            <div class="card-body pb-4">
-              <div class="row g-3 align-items-end">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                  <label
-                    class="form-label fw-semibold text-dark small mb-1"
-                    for="grade"
-                    >Grade</label
-                  >
-                  <select
-                    id="grade"
-                    class="form-select form-select-lg shadow-sm border-secondary-subtle"
-                  >
-                    <option value="3" selected>3rd Grade</option>
-                    <option value="4">4th Grade</option>
-                    <option value="5">5th Grade</option>
-                    <option value="6">6th Grade</option>
-                    <option value="all">All Grades</option>
-                  </select>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                  <label
-                    class="form-label fw-semibold text-dark small mb-1"
-                    for="curator"
-                    >Curator</label
-                  >
-                  <select
-                    id="curator"
-                    class="form-select form-select-lg shadow-sm border-secondary-subtle"
-                  >
-                    <option value="" selected>All curators</option>
-                    <option value="john">John</option>
-                    <option value="anna">Anna Smith</option>
-                    <option value="michael">Michael Lee</option>
-                  </select>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                  <label
-                    class="form-label fw-semibold text-dark small mb-1"
-                    for="subject"
-                    >Subject</label
-                  >
-                  <select
-                    id="subject"
-                    class="form-select form-select-lg shadow-sm border-secondary-subtle"
-                  >
-                    <option value="" selected>All subjects</option>
-                    <option value="math">Mathematics</option>
-                    <option value="english">English Language</option>
-                    <option value="science">Science</option>
-                    <option value="art">Art</option>
-                  </select>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                  <label
-                    class="form-label fw-semibold text-dark small mb-1"
-                    for="teacher"
-                    >Teacher</label
-                  >
-                  <select
-                    id="teacher"
-                    class="form-select form-select-lg shadow-sm border-secondary-subtle"
-                  >
-                    <option value="" selected>All teachers</option>
-                    <option value="brown">Mr. Brown</option>
-                    <option value="davis">Ms. Davis</option>
-                    <option value="wilson">Mr. Wilson</option>
-                  </select>
-                </div>
-
-                <div
-                  class="col-12 col-sm-auto mt-3 mt-sm-0 d-flex align-items-center gap-3"
-                >
-                  <button
-                    type="button"
-                    class="btn btn-primary btn-lg px-4 d-flex align-items-center gap-2 shadow mb-3"
-                  >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.2"
+          <!-- Table -->
+          <div class="table-responsive schedule-table-wrap">
+            <table class="table mb-0 schedule-table">
+              <thead>
+                <tr>
+                  <th class="time-header-col">
+                    <div
+                      class="d-flex align-items-center gap-2 justify-content-center"
                     >
-                      <path
-                        d="M3 5h18l-7 8v5l-4 2v-7L3 5z"
-                        stroke-linejoin="round"
+                      <img
+                        src="./assets/images/icons/icon_clock.svg"
+                        alt=""
+                        width="16"
+                        height="16"
                       />
-                    </svg>
-                    Apply Filters
-                  </button>
+                      <span class="">Time</span>
+                    </div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Sunday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Monday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Tuesday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Wednesday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Thursday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Friday</div>
+                  </th>
+                  <th>
+                    <small>01.12</small>
+                    <div>Saturday</div>
+                  </th>
+                </tr>
+              </thead>
 
-                  <button
-                    type="button"
-                    id="resetFiltersBtn"
-                    class="btn btn-outline-secondary btn-lg px-4 mb-3"
-                  >
-                    Reset
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+              <tbody>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">08:00 am</div>
+                    <div class="time-sub">2 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">1 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
 
-          <div class="card border-0 shadow rounded overflow-hidden">
-            <div
-              class="d-flex justify-content-between align-items-center p-3 px-4 bg-white"
-            >
-              <div class="d-flex align-items-center">
-                <i
-                  class="bi bi-chevron-left text-primary me-4"
-                  style="cursor: pointer"
-                ></i>
-                <h5 class="mb-0 fw-bold" style="color: #334155">
-                  December <span class="text-muted fw-normal">2025</span>
-                </h5>
-                <i
-                  class="bi bi-chevron-right text-primary ms-4"
-                  style="cursor: pointer"
-                ></i>
-              </div>
-              <div class="pill-track rounded">
-                <button id="weekBtn" class="toggle-pill rounded active">
-                  Week
-                </button>
-                <button id="dayBtn" class="toggle-pill rounded">Day</button>
-              </div>
-            </div>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">09:00 am</div>
+                    <div class="time-sub">3 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">2 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">1 grade</span>
+                  </td>
+                  <td class="individual-cell">
+                    Sarah Jefferson
+                    <span class="tag tag-green">individual</span>
+                  </td>
+                  <td></td>
+                </tr>
 
-            <div class="table-responsive">
-              <table class="table table-bordered mb-0 custom-timetable">
-                <thead>
-                  <tr>
-                    <th class="time-header-col">
-                      <i class="bi bi-clock me-2 text-primary-emphasis"></i>Time
-                    </th>
-                    <th><small>01.12</small><br />Sunday</th>
-                    <th><small>01.12</small><br />Monday</th>
-                    <th><small>01.12</small><br />Tuesday</th>
-                    <th><small>01.12</small><br />Wednesday</th>
-                    <th><small>01.12</small><br />Thursday</th>
-                    <th><small>01.12</small><br />Friday</th>
-                    <th><small>01.12</small><br />Saturday</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="time-cell">
-                      <p class="fw-medium">08:00 am</p>
-                      <div class="lesson-count">2 lesson</div>
-                    </td>
-                    <td></td>
-                    <td class="class-cell">
-                      English language <span class="grade">1 grade</span>
-                    </td>
-                    <td class="class-cell">
-                      English language <span class="grade">3 grade</span>
-                    </td>
-                    <td></td>
-                    <td class="class-cell">
-                      English language <span class="grade">3 grade</span>
-                    </td>
-                    <td class="class-cell">
-                      English language <span class="grade">3 grade</span>
-                    </td>
-                    <td></td>
-                  </tr>
-
-                  <tr>
-                    <td class="time-cell">
-                      <p class="fw-medium">09:00 am</p>
-                      <div class="lesson-count">3 lesson</div>
-                    </td>
-                    <td class="class-cell">
-                      English language <span class="grade">2 grade</span>
-                    </td>
-                    <td></td>
-                    <td class="class-cell">
-                      English language <span class="grade">3 grade</span>
-                    </td>
-                    <td></td>
-                    <td class="class-cell">
-                      English language <span class="grade">1 grade</span>
-                    </td>
-                    <td class="individual-cell">
-                      Sarah Jefferson
-                      <span class="grade-green">individual</span>
-                    </td>
-                    <td></td>
-                  </tr>
-
-                  <tr class="lunch-row">
-                    <td colspan="8" class="py-2 px-3 lunch-row">
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="d-flex align-items-center gap-2">
-                          <img
-                            src="./assets/images/icons/icon_food.svg"
-                            alt="food icon"
-                            style="width: 18px; height: 18px"
-                          />
-                          <span
-                            class="fw-bold"
-                            style="color: #334155; font-size: 14px"
-                            >Lunch</span
-                          >
-                        </div>
-
-                        <a
-                          href="#"
-                          class="text-primary text-decoration-none fs-6 d-flex align-items-center"
-                        >
-                          Show today's menu
-                          <i class="bi bi-arrow-right ms-2"></i>
-                        </a>
+                <!-- Lunch row -->
+                <tr class="lunch-row">
+                  <td colspan="8">
+                    <div
+                      class="d-flex justify-content-between align-items-center px-3"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <img
+                          src="./assets/images/icons/icon_food.svg"
+                          alt=""
+                          width="16"
+                          height="16"
+                        />
+                        <strong>Lunch</strong>
                       </div>
-                    </td>
-                  </tr>
+                      <a class="lunch-link" href="#">Show today's menu →</a>
+                    </div>
+                  </td>
+                </tr>
 
-                  <tr>
-                    <td class="time-cell">
-                      <p class="fw-medium">01:00 pm</p>
-                      <div class="lesson-count">7 lesson</div>
-                    </td>
-                    <td></td>
-                    <td class="meeting-cell">
-                      Weekly meeting
-                      <span class="grade-pink">teachers' council</span>
-                    </td>
-                    <td class="class-cell">
-                      English language <span class="grade">3 grade</span>
-                    </td>
-                    <td class="class-cell">
-                      English language <span class="grade">2 grade</span>
-                    </td>
-                    <td></td>
-                    <td class="class-cell">
-                      English language <span class="grade">1 grade</span>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">01:00 pm</div>
+                    <div class="time-sub">7 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="meeting-cell">
+                    Weekly meeting
+                    <span class="tag tag-pink">teachers’ council</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">2 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">1 grade</span>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
-      <section class="py-5 container d-flex flex-column gap-5" id="news">
+      <section
+        class="py-4 py-xxl-5 container d-flex flex-column gap-5"
+        id="news"
+      >
         <div>
           <div class="d-flex align-items-center mb-4 justify-content-between">
             <div class="d-flex flex-row gap-3 align-items-center">
@@ -938,6 +918,7 @@
                 alt="news icon"
                 width="30"
                 height="30"
+                class="blue-icon"
               />
               <p class="fw-bold fs-2">Latest news</p>
             </div>
@@ -951,7 +932,7 @@
             </button>
           </div>
 
-          <p class="fs-4 fw-normal">
+          <p class="fs-5 fw-normal">
             Welcome to our news section, where you’ll find the latest and most
             relevant updates from our school. To stay informed and never miss
             important announcements, be sure to
@@ -971,7 +952,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     This year our School Upgrades with Modern Equipment!
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -983,7 +964,7 @@
                       height="24"
                     />
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     Philadelphia Progressive School has received new laboratory
                     and computer equipment to provide students with access to
                     advanced technologies...
@@ -1009,7 +990,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     This year our School Upgrades with Modern Equipment!
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1021,7 +1002,7 @@
                       height="24"
                     />
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     Philadelphia Progressive School has received new laboratory
                     and computer equipment to provide students with access to
                     advanced technologies...
@@ -1047,7 +1028,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     This year our School Upgrades with Modern Equipment!
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1057,7 +1038,7 @@
                       alt="share icon"
                     />
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     Philadelphia Progressive School has received new laboratory
                     and computer equipment to provide students with access to
                     advanced technologies...
@@ -1083,7 +1064,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     This year our School Upgrades with Modern Equipment!
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1095,7 +1076,7 @@
                       height="24"
                     />
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     Philadelphia Progressive School has received new laboratory
                     and computer equipment to provide students with access to
                     advanced technologies...
@@ -1121,7 +1102,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     This year our School Upgrades with Modern Equipment!
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1133,7 +1114,7 @@
                       height="24"
                     />
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     Philadelphia Progressive School has received new laboratory
                     and computer equipment to provide students with access to
                     advanced technologies...
@@ -1159,7 +1140,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     This year our School Upgrades with Modern Equipment!
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1171,7 +1152,7 @@
                       height="24"
                     />
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     Philadelphia Progressive School has received new laboratory
                     and computer equipment to provide students with access to
                     advanced technologies...
@@ -1190,22 +1171,25 @@
                 </div>
               </div>
             </div>
-
-            <div class="swiper-button-prev d-none d-lg-flex"></div>
-            <div class="swiper-button-next d-none d-lg-flex"></div>
+            <div class="swiper-button-prev d-none d-xl-flex"></div>
+            <div class="swiper-button-next d-none d-xl-flex"></div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
-      <section class="py-5 container d-flex flex-column gap-5" id="events">
+      <section
+        class="py-4 py-xxl-5 container d-flex flex-column gap-5"
+        id="events"
+      >
         <div>
           <div class="d-flex align-items-center mb-4 justify-content-between">
-            <div class="d-flex flex-row gap-3">
+            <div class="d-flex flex-row gap-3 align-items-center">
               <img
                 src="./assets/images/icons/icon_event.svg"
                 alt="event icon"
                 width="30"
                 height="30"
+                class="blue-icon"
               />
               <p class="fw-bold fs-2">Events</p>
             </div>
@@ -1219,7 +1203,7 @@
             </button>
           </div>
 
-          <p class="fs-4 fw-normal">
+          <p class="fs-5 fw-normal">
             Philadelphia Progressive School regularly organizes exciting field
             trips, hikes, and educational tours that bring lessons to life.
             These immersive experiences allow students to dive deeper into their
@@ -1232,7 +1216,7 @@
 
         <div class="position-relative">
           <div class="swiper">
-            <div class="swiper-wrapper pb-3">
+            <div class="swiper-wrapper pb-2">
               <div class="swiper-slide px-2">
                 <img
                   src="./assets/images/events/events-first-img.png"
@@ -1240,7 +1224,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     Weekend School Trip to the Zoo: Exploring Nature Together
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1264,15 +1248,15 @@
                       />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
-                    <div class="d-flex align-items-center gap-3" id="countdown">
+                    <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="m">13</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     During the visit to the archaeological museum, students will
                     explore fascinating artifacts and uncover stories from
                     ancient times.
@@ -1296,7 +1280,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     Archaeological Museum: Journey into the Past. Discovering
                     ancient civilizations.
                   </p>
@@ -1321,15 +1305,15 @@
                       />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
-                    <div class="d-flex align-items-center gap-3" id="countdown">
+                    <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="m">13</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     During the visit to the archaeological museum, students will
                     explore fascinating artifacts and uncover stories from
                     ancient times.
@@ -1353,7 +1337,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     School Harvest Festival: Celebrating Nature’s Bounty
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1377,15 +1361,15 @@
                       />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
-                    <div class="d-flex align-items-center gap-3" id="countdown">
+                    <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="m">13</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     During the visit to the archaeological museum, students will
                     explore fascinating artifacts and uncover stories from
                     ancient times.
@@ -1409,7 +1393,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     Weekend School Trip to the Zoo: Exploring Nature Together
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1433,15 +1417,15 @@
                       />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
-                    <div class="d-flex align-items-center gap-3" id="countdown">
+                    <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="m">13</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     During the visit to the archaeological museum, students will
                     explore fascinating artifacts and uncover stories from
                     ancient times.
@@ -1465,7 +1449,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     Archaeological Museum: Journey into the Past. Discovering
                     ancient civilizations.
                   </p>
@@ -1490,15 +1474,15 @@
                       />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
-                    <div class="d-flex align-items-center gap-3" id="countdown">
+                    <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="m">13</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     During the visit to the archaeological museum, students will
                     explore fascinating artifacts and uncover stories from
                     ancient times.
@@ -1522,7 +1506,7 @@
                   class="img-fluid w-100"
                 />
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-4 mb-3">
+                  <p class="fw-semibold fs-5 mb-3">
                     School Harvest Festival: Celebrating Nature’s Bounty
                   </p>
                   <div class="d-flex gap-3 align-items-center mb-3">
@@ -1546,15 +1530,15 @@
                       />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
-                    <div class="d-flex align-items-center gap-3" id="countdown">
+                    <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="m">13</span>
-                      <span class="fs-4 fw-semibold">:</span>
+                      <span class="fs-5 fw-medium">:</span>
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-4 mb-3">
+                  <p class="fw-normal fs-5 mb-3">
                     During the visit to the archaeological museum, students will
                     explore fascinating artifacts and uncover stories from
                     ancient times.
@@ -1572,22 +1556,26 @@
               </div>
             </div>
 
-            <div class="swiper-button-prev d-none d-lg-flex"></div>
-            <div class="swiper-button-next d-none d-lg-flex"></div>
+            <div class="swiper-button-prev d-none d-xxl-flex"></div>
+            <div class="swiper-button-next d-none d-xxl-flex"></div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
-      <section class="py-5 container d-flex flex-column gap-4" id="gallery">
+      <section
+        class="py-4 py-xxl-5 container d-flex flex-column gap-4"
+        id="gallery"
+      >
         <div
-          class="d-flex align-items-center justify-content-between flex-wrap gap-3"
+          class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4"
         >
           <div class="d-flex align-items-center gap-3">
             <img
               src="./assets/images/icons/icon_media.svg"
               alt="media icon"
-              width="30"
-              height="30"
+              width="28"
+              height="28"
+              class="blue-icon"
             />
             <h3 class="fw-bold mb-0">Gallery</h3>
           </div>
@@ -1598,7 +1586,16 @@
           >
             <li class="nav-item">
               <button
-                class="nav-link p-0 fw-bold fs-4 text-dark gallery-tab active"
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab active"
+                type="button"
+                data-category="all"
+              >
+                All
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
                 type="button"
                 data-category="outdoor"
               >
@@ -1607,7 +1604,7 @@
             </li>
             <li class="nav-item">
               <button
-                class="nav-link p-0 fw-bold fs-4 text-dark gallery-tab"
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
                 type="button"
                 data-category="indoor"
               >
@@ -1616,7 +1613,7 @@
             </li>
             <li class="nav-item">
               <button
-                class="nav-link p-0 fw-bold fs-4 text-dark gallery-tab"
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
                 type="button"
                 data-category="school-life"
               >
@@ -1625,7 +1622,7 @@
             </li>
             <li class="nav-item">
               <button
-                class="nav-link p-0 fw-bold fs-4 text-dark gallery-tab"
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
                 type="button"
                 data-category="lessons"
               >
@@ -1634,7 +1631,7 @@
             </li>
             <li class="nav-item">
               <button
-                class="nav-link p-0 fw-bold fs-4 text-dark gallery-tab"
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
                 type="button"
                 data-category="sport"
               >
@@ -1643,7 +1640,7 @@
             </li>
             <li class="nav-item">
               <button
-                class="nav-link p-0 fw-bold fs-4 text-dark gallery-tab"
+                class="nav-link p-0 fw-bold fs-5 text-dark gallery-tab"
                 type="button"
                 data-category="events"
               >
@@ -1652,12 +1649,14 @@
             </li>
           </ul>
 
+          <!-- Mobile Select -->
           <select
-            class="form-select fw-bold d-xl-none"
+            class="form-select fw-semibold d-xl-none"
             id="galleryCategorySelect"
-            style="max-width: 240px"
+            style="max-width: 220px"
           >
-            <option value="outdoor" selected>Outdoor</option>
+            <option value="all" selected>All</option>
+            <option value="outdoor">Outdoor</option>
             <option value="indoor">Indoor</option>
             <option value="school-life">School life</option>
             <option value="lessons">Lessons</option>
@@ -1666,179 +1665,94 @@
           </select>
         </div>
 
-        <div class="row g-4" id="galleryGrid">
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="outdoor">
+        <!-- Gallery Grid -->
+        <div class="row g-3" id="galleryGrid">
+          <!-- Outdoor -->
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item mt-0"
+            data-category="outdoor"
+          >
             <img
               src="./assets/images/gallery/gallery-first-img.png"
-              alt="Outdoor 1"
-              class="img-fluid w-100 rounded shadow-sm"
+              alt="Outdoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
             />
           </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="outdoor">
+
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item mt-0"
+            data-category="outdoor"
+          >
             <img
               src="./assets/images/gallery/gallery-fourth-img.png"
-              alt="Outdoor 2"
-              class="img-fluid w-100 rounded shadow-sm"
+              alt="Outdoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
             />
           </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="outdoor">
+
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item mt-0"
+            data-category="outdoor"
+          >
             <img
               src="./assets/images/gallery/gallery-fifth-img.png"
-              alt="Outdoor 3"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="indoor">
-            <img
-              src="./assets/images/gallery/gallery-third-img.png"
-              alt="Indoor 3"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="indoor">
-            <img
-              src="./assets/images/gallery/gallery-third-img.png"
-              alt="Indoor 3"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="indoor">
-            <img
-              src="./assets/images/gallery/gallery-second-img.png"
-              alt="Indoor 1"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="indoor">
-            <img
-              src="./assets/images/gallery/gallery-sixth-img.png"
-              alt="Indoor 2"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="indoor">
-            <img
-              src="./assets/images/gallery/gallery-third-img.png"
-              alt="Indoor 3"
-              class="img-fluid w-100 rounded shadow-sm"
+              alt="Outdoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
             />
           </div>
 
           <div
-            class="col-lg-4 col-md-6 gallery-item"
-            data-category="school-life"
+            class="col-6 col-md-6 col-lg-4 gallery-item mt-0"
+            data-category="indoor"
           >
             <img
               src="./assets/images/gallery/gallery-third-img.png"
-              alt="School life 1"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div
-            class="col-lg-4 col-md-6 gallery-item"
-            data-category="school-life"
-          >
-            <img
-              src="./assets/images/gallery/gallery-first-img.png"
-              alt="School life 2"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div
-            class="col-lg-4 col-md-6 gallery-item"
-            data-category="school-life"
-          >
-            <img
-              src="./assets/images/gallery/gallery-second-img.png"
-              alt="School life 3"
-              class="img-fluid w-100 rounded shadow-sm"
+              alt="Indoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
             />
           </div>
 
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="lessons">
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item mt-0"
+            data-category="indoor"
+          >
             <img
-              src="./assets/images/gallery/gallery-fifth-img.png"
-              alt="Lessons 1"
-              class="img-fluid w-100 rounded shadow-sm"
+              src="./assets/images/gallery/gallery-second-img.png"
+              alt="Indoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
             />
           </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="lessons">
+
+          <div
+            class="col-6 col-md-6 col-lg-4 gallery-item mt-0"
+            data-category="indoor"
+          >
             <img
               src="./assets/images/gallery/gallery-sixth-img.png"
-              alt="Lessons 2"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="lessons">
-            <img
-              src="./assets/images/gallery/gallery-fourth-img.png"
-              alt="Lessons 3"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="indoor">
-            <img
-              src="./assets/images/gallery/gallery-third-img.png"
-              alt="Indoor 3"
-              class="img-fluid w-100 rounded shadow-sm"
+              alt="Indoor"
+              class="img-fluid w-100 rounded shadow-sm gallery-img"
             />
           </div>
 
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="sport">
-            <img
-              src="./assets/images/gallery/gallery-fourth-img.png"
-              alt="Sport 1"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="sport">
-            <img
-              src="./assets/images/gallery/gallery-first-img.png"
-              alt="Sport 2"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="sport">
-            <img
-              src="./assets/images/gallery/gallery-second-img.png"
-              alt="Sport 3"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="events">
-            <img
-              src="./assets/images/gallery/gallery-second-img.png"
-              alt="Events 1"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="events">
-            <img
-              src="./assets/images/gallery/gallery-third-img.png"
-              alt="Events 2"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
-          </div>
-          <div class="col-lg-4 col-md-6 gallery-item" data-category="events">
-            <img
-              src="./assets/images/gallery/gallery-sixth-img.png"
-              alt="Events 3"
-              class="img-fluid w-100 rounded shadow-sm"
-            />
+          <div class="col-12 d-none" id="galleryEmpty">
+            <div class="text-center py-5">
+              <p class="fs-5 fw-bold text-muted mb-0">
+                No images in this category.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div>
-          <button class="btn btn-outline-primary rounded w-25" type="button">
-            Show more from category
+        <!-- Button -->
+        <div class="d-flex justify-content-center mt-3">
+          <button class="btn btn-outline-primary px-4 rounded">
+            Show more
           </button>
         </div>
       </section>
     </main>
 
-    <footer class="bg-dark-opacity pt-5 d-flex flex-column gap-5">
+    <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-5">
       <div
         class="container d-flex flex-column flex-xl-row justify-content-between gap-4 gap-xl-5 align-items-center align-items-xl-start"
       >
@@ -2070,50 +1984,52 @@
               contact us if you have any questions about the platform
             </p>
           </address>
-          <div class="d-flex align-items-center gap-3 scale-control">
-            <img
-              src="./assets/images/icons/icon_glasses-grey.svg"
-              alt="glasses icon"
-              width="30"
-              height="30"
-            />
-            <span class="scale-label fs-4 fw-bold">scale</span>
-
-            <button
-              id="decrease"
-              type="button"
-              class="scale-btn btn rounded border-primary text-primary lh-1"
-              aria-label="Decrease"
-            >
-              −
-            </button>
-
-            <input
-              type="range"
-              id="fontSlider"
-              class="scale-range"
-              min="-5"
-              max="5"
-              step="1"
-              value="0"
-            />
-
-            <button
-              id="increase"
-              type="button"
-              class="scale-btn btn rounded border-primary text-primary lh-1"
-              aria-label="Increase"
-            >
-              +
-            </button>
-          </div>
         </div>
       </div>
       <div
-        class="footer-border-top d-flex align-items-center gap-5 justify-content-center py-3 py-xl-5"
+        class="footer-border-top d-flex flex-column flex-md-row align-items-center gap-3 gap-md-5 justify-content-between py-3 py-xl-4 container"
       >
-        <p class="fs-4">Powered by</p>
-        <img src="./assets/logo/mds-logo.svg" alt="" />
+        <div class="d-flex flex-row align-items-center gap-4">
+          <p class="fs-4">Powered by</p>
+          <img src="./assets/logo/mds-logo.svg" alt="" />
+        </div>
+        <div class="d-flex align-items-center gap-3 scale-control">
+          <img
+            src="./assets/images/icons/icon_glasses-grey.svg"
+            alt="glasses icon"
+            width="30"
+            height="30"
+          />
+          <span class="scale-label fs-5 fw-bold">scale</span>
+
+          <button
+            id="decrease"
+            type="button"
+            class="scale-btn btn rounded border-primary text-primary lh-1"
+            aria-label="Decrease"
+          >
+            −
+          </button>
+
+          <input
+            type="range"
+            id="fontSlider"
+            class="scale-range"
+            min="-5"
+            max="5"
+            step="1"
+            value="0"
+          />
+
+          <button
+            id="increase"
+            type="button"
+            class="scale-btn btn rounded border-primary text-primary lh-1"
+            aria-label="Increase"
+          >
+            +
+          </button>
+        </div>
       </div>
     </footer>
 

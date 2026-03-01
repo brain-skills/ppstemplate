@@ -1,10 +1,21 @@
+/* =========================================================
+   1) Theme variables
+   ========================================================= */
 :root {
   --blue: #2696db;
   --text-grey: #777;
+
+  /* Bootstrap theme bridge */
   --bs-primary: var(--blue);
   --bs-primary-rgb: 38, 150, 219;
 }
 
+/* =========================================================
+   2) Base / reset
+   - Global box model
+   - Body defaults
+   - Remove default heading/paragraph margins
+   ========================================================= */
 * {
   box-sizing: border-box;
 }
@@ -23,51 +34,65 @@ p {
   margin: 0;
 }
 
+/* =========================================================
+   3) Small utilities (custom helpers)
+   - Use carefully because they may conflict with Bootstrap utils
+   ========================================================= */
 .mb-3 {
-  margin-bottom: 12px !important;
+  margin-bottom: 12px !important; /* ⚠ conflicts with Bootstrap .mb-3 (Bootstrap expects 1rem) */
+}
+.border-blue {
+  border-color: #2696db !important;
+}
+.text-dark-opacity {
+  color: #31313180;
 }
 
+/* =========================================================
+   4) Buttons
+   ========================================================= */
 .btn-outline-blue {
   border: 2px solid var(--bs-primary);
   color: var(--bs-primary);
 }
-
 .btn-outline-blue:hover {
   background: var(--bs-primary);
   color: #fff;
 }
 
+/* =========================================================
+   5) Background helper classes
+   ========================================================= */
 .bg-blue-10 {
   background-color: #2696db0d;
 }
-
 .bg-green {
   background-color: #4fca2d;
 }
-
 .bg-white-20 {
   background-color: #ffffff33;
 }
-
 .bg-blurred {
   background: hsla(0, 0%, 100%, 0.08);
   backdrop-filter: blur(2px);
 }
-
 .bg-green-opacity {
   background-color: #4fca2d0d;
 }
-
 .bg-dark-opacity {
   background-color: #3131310d;
 }
 
+/* =========================================================
+   6) Layout container tweaks
+   ========================================================= */
 .container {
-  max-width: 1872px !important;
-  padding-left: 40px !important;
-  padding-right: 40px !important;
+  max-width: 1472px !important; /* ⚠ overrides Bootstrap container widths on all breakpoints */
 }
 
+/* =========================================================
+   7) Header: spacing helper
+   ========================================================= */
 .white-gap {
   height: 49px;
   background-color: #fff;
@@ -75,6 +100,9 @@ p {
   z-index: 1;
 }
 
+/* =========================================================
+   8) Top bar (blue strip)
+   ========================================================= */
 .top-bar {
   width: 100%;
   background: #2f8ed9;
@@ -82,6 +110,7 @@ p {
   font-size: 18px;
 }
 
+/* Top bar links */
 .top-bar__menu a {
   color: rgba(255, 255, 255, 0.95);
   text-decoration: none;
@@ -89,34 +118,42 @@ p {
   transition: 0.2s;
   font-size: 14px;
 }
-
 .top-bar__menu a:hover {
   opacity: 0.7;
 }
 
+/* Top bar search placeholder */
 .top-bar__search input::placeholder {
   color: rgba(255, 255, 255, 0.7);
   opacity: 1;
   max-width: 600px;
-  font-size: 18px;
+  font-size: 18px; /* ⚠ placeholder only; input font-size remains from Bootstrap/default */
 }
 
+/* =========================================================
+   9) Main nav pill (white floating navigation)
+   - With decorative pseudo corners
+   ========================================================= */
 .nav-container {
   position: absolute;
   top: 75px;
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 15px 100px;
   border-bottom-left-radius: 90px;
   border-bottom-right-radius: 90px;
-  width: 90% !important;
+
+  width: min(1200px, calc(100% - 40px));
   height: 100px;
 }
 
+/* Decorative corner “cuts” */
 .nav-container::before,
 .nav-container::after {
   content: "";
@@ -125,7 +162,6 @@ p {
   height: 39px;
   background-color: transparent;
 }
-
 .nav-container::before {
   left: -24px;
   border-top-right-radius: 60px;
@@ -133,7 +169,6 @@ p {
   rotate: -12deg;
   top: 46px;
 }
-
 .nav-container::after {
   right: -24px;
   border-top-left-radius: 60px;
@@ -142,21 +177,35 @@ p {
   top: 46px;
 }
 
-.main-content {
-  bottom: 48px;
-  left: 26px;
+/* Nav icon recolor on hover / active */
+.nav-container a:not(.nav-logo):hover {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
+    hue-rotate(183deg) brightness(92%) contrast(92%);
+}
+.nav-container a:not(.nav-logo).active {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
+    hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
-.text-dark-opacity {
-  color: #31313180;
+/* Keep logo untouched */
+.nav-logo,
+.nav-logo:hover,
+.nav-logo.active {
+  filter: none !important;
 }
 
+/* =========================================================
+   10) Responsive tweaks
+   ========================================================= */
+
+/* Only on huge screens: make .vh-100 apply */
 @media (min-width: 1440px) {
   .vh-100 {
-    height: 100vh !important;
+    height: 100vh !important; /* ⚠ overrides Bootstrap behavior only at 1440+ */
   }
 }
 
+/* Reduce nav padding and placeholder font on smaller widths */
 @media (max-width: 1400px) {
   .nav-container {
     padding: 15px 55px !important;
@@ -167,9 +216,10 @@ p {
   }
 }
 
+/* Mobile hero adjustments */
 @media (max-width: 575px) {
   .main-section {
-    margin-top: -90px;
+    margin-top: -90px; /* ⚠ can cause overlap; depends on header positioning */
   }
 
   .main-content p {
@@ -177,40 +227,43 @@ p {
   }
 }
 
-.border-blue {
-  border-color: #2696db !important;
-}
-
+/* =========================================================
+   11) Cards / hover effects
+   ========================================================= */
 .info-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
   background-color: rgba(38, 150, 219, 0.1);
 }
 
+/* =========================================================
+   12) Enrollment floating images positioning
+   ========================================================= */
 .enrollment-first-img {
   right: 1% !important;
 }
-
 .enrollment-second-img {
   right: 22%;
   top: 44%;
 }
-
 .enrollment-third-img {
   right: 1%;
   top: 60%;
 }
 
+/* Enrollment text width control */
 .enrollment-section {
   width: 50%;
 }
-
 @media (max-width: 1200px) {
   .enrollment-section {
     width: 100%;
   }
 }
 
+/* =========================================================
+   13) Schedule table (cells + toggle pill)
+   ========================================================= */
 .class-cell,
 .individual-cell,
 .meeting-cell {
@@ -220,13 +273,13 @@ p {
   vertical-align: middle;
 }
 
+/* Toggle pill track */
 .pill-track {
   background-color: #f1f5f9;
   padding: 4px;
   display: inline-flex;
   align-items: center;
 }
-
 .toggle-pill {
   border: none !important;
   padding: 6px 24px;
@@ -237,17 +290,20 @@ p {
   background: transparent;
   color: #334155;
 }
-
 .toggle-pill.active {
   background-color: #0d6efd !important;
   color: white !important;
   box-shadow: 0 2px 6px rgba(13, 110, 253, 0.3);
 }
 
+/* Lunch row highlight */
 .lunch-row {
   background-color: #eeb8230d !important;
 }
 
+/* =========================================================
+   14) Swiper controls + pagination styling
+   ========================================================= */
 .swiper-button-prev,
 .swiper-button-next {
   width: 50px !important;
@@ -255,23 +311,57 @@ p {
   background-color: #4fca2d !important;
   border-radius: 50% !important;
 }
-
 .swiper-button-prev::after,
 .swiper-button-next::after {
   color: #fff;
   font-size: 22px !important;
 }
-
 .swiper-button-next {
-  top: 20% !important;
+  top: 10% !important; /* ⚠ positioning can look odd on different slider heights */
   right: 2% !important;
 }
-
 .swiper-button-prev {
-  top: 20% !important;
+  top: 10% !important; /* ⚠ positioning can look odd on different slider heights */
   left: 2% !important;
 }
 
+.main-section-btn-prev {
+  top: 50% !important;
+  left: 6% !important;
+}
+
+.main-section-btn-next {
+  top: 50% !important;
+  right: 6% !important;
+}
+
+/* Pagination bullets */
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 40px !important;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+}
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 8px !important;
+  border-radius: 100% !important;
+  opacity: 1 !important;
+  background-color: #4fca2d33 !important;
+  border: none !important;
+}
+.swiper-pagination-bullet-active {
+  width: 140px !important;
+  height: 8px !important;
+  background: #4fca2d !important;
+  border-radius: 12px !important;
+}
+
+/* =========================================================
+   15) Countdown time boxes
+   ========================================================= */
 .time-box {
   padding: 10px 14px;
   border-radius: 6px;
@@ -284,48 +374,65 @@ p {
   transition: background-color 0.2s ease;
 }
 
+/* =========================================================
+   16) Gallery
+   ========================================================= */
 .gallery-tab.active {
   color: #0d6efd !important;
   font-weight: 700 !important;
 }
+.gallery-img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
 
+/* =========================================================
+   17) Footer
+   ========================================================= */
 .footer-logo {
   max-width: 300px;
 }
+.footer-border-top {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 
+/* Footer links */
+footer a {
+  transition:
+    color 0.3s ease,
+    transform 0.25s ease;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #2696db !important;
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+/* Footer address icon hover effect */
+footer address img {
+  transition:
+    transform 0.25s ease,
+    filter 0.3s ease;
+}
+footer address:hover img {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
+    hue-rotate(183deg) brightness(92%) contrast(92%);
+}
+
+/* Slider accent */
 #fontSlider {
   accent-color: #0d6efd;
 }
 
-.swiper-pagination {
-  position: relative !important;
-  margin-top: 40px !important;
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: center;
-}
-
-.swiper-pagination-bullet {
-  width: 12px !important;
-  height: 8px !important;
-  border-radius: 100% !important;
-  opacity: 1 !important;
-  background-color: #4fca2d33 !important;
-  border: none !important;
-}
-
-.swiper-pagination-bullet-active {
-  width: 140px !important;
-  height: 8px !important;
-  background: #4fca2d !important;
-  border-radius: 12px !important;
-}
-
+/* =========================================================
+   18) Mobile offcanvas menu
+   ========================================================= */
 .mobile-menu.offcanvas {
   border-right: 1px solid rgba(0, 0, 0, 0.06);
 }
-
 .mobile-menu__link {
   display: flex;
   align-items: center;
@@ -336,61 +443,316 @@ p {
   color: #111;
   font-size: 14px;
 }
-
 .mobile-menu__link:hover {
   background: rgba(0, 0, 0, 0.04);
 }
-
 .mobile-menu__link.active {
   background: rgba(38, 150, 219, 0.1);
   color: #0b4f7d;
 }
 
-.footer-border-top {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.nav-container a:hover img {
-  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
-    hue-rotate(183deg) brightness(92%) contrast(92%);
-}
-
-footer a {
-  transition:
-    color 0.3s ease,
-    transform 0.25s ease;
-}
-
-footer a:hover {
-  color: #2696db !important;
-  transform: translateY(-2px);
-}
-
-footer a {
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer address img {
-  transition:
-    transform 0.25s ease,
-    filter 0.3s ease;
-}
-
-footer address:hover img {
-  transform: scale(1.1);
-  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
-    hue-rotate(183deg) brightness(92%) contrast(92%);
-}
-
+/* =========================================================
+   19) Bootstrap tweaks / overrides
+   ========================================================= */
 .dropdown-toggle::after {
   display: none !important;
 }
 
-.nav-container a.active {
+/* =========================================================
+   20) Events slider: make slides equal height (card layout)
+   ========================================================= */
+#events .swiper-wrapper {
+  align-items: stretch !important;
+}
+#events .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column;
+  align-self: stretch !important;
+}
+#events .swiper-slide > img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+}
+#events .swiper-slide > .p-3.shadow.rounded {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+#events .swiper-slide > .p-3.shadow.rounded > div:last-child {
+  margin-top: auto;
+}
+
+/* =========================================================
+   21) Schedule component (filters + header + table)
+   ========================================================= */
+.schedule-filters {
+  position: relative;
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.schedule-label {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.schedule-select {
+  height: 42px;
+  font-size: 13px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: none !important;
+}
+.schedule-select:focus {
+  border-color: rgba(38, 150, 219, 0.35);
+  box-shadow: 0 0 0 0.2rem rgba(38, 150, 219, 0.1) !important;
+}
+
+.schedule-reset {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: #111827;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 8px 0;
+  opacity: 0.85;
+}
+.schedule-reset:hover {
+  opacity: 1;
+}
+
+.schedule-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 12px;
+}
+
+.schedule-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(38, 150, 219, 0.25);
+  background: #fff;
+  color: #2696db;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.schedule-month span {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.schedule-view {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.schedule-view-btn {
+  border: 0;
+  background: transparent;
+  color: #111827;
+  font-weight: 700;
+  padding: 4px 0;
+  opacity: 0.7;
+}
+
+.schedule-view-btn.active {
+  opacity: 1;
+  color: #2696db;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Table look */
+.schedule-table-wrap {
+  border: 1px solid rgba(38, 150, 219, 0.18);
+  border-radius: 8px;
+  overflow: auto;
+}
+.schedule-table {
+  font-size: 12px;
+  border-collapse: collapse;
+}
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid rgba(38, 150, 219, 0.16);
+  vertical-align: middle;
+  padding: 10px 10px;
+  background: #fff;
+  min-width: 140px;
+}
+.schedule-table thead th {
+  background: #f8fbff;
+  text-align: center;
+  font-weight: 700;
+  color: #111827;
+}
+.schedule-table thead th small {
+  display: block;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 10px;
+}
+.schedule-table thead th div {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.time-header-col {
+  min-width: 120px !important;
+  background: #f0f8ff !important;
+}
+.time-cell {
+  background: #f0f8ff;
+  min-width: 120px !important;
+}
+.time-main {
+  font-weight: 700;
+  color: #111827;
+}
+.time-sub {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.grade {
+  display: block;
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+.class-cell {
+  color: #111827;
+}
+.meeting-cell {
+  color: #111827;
+}
+.individual-cell {
+  background: #eefaf2;
+}
+
+.tag {
+  display: block;
+  font-size: 10px;
+  margin-top: 2px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+.tag-green {
+  color: #22c55e;
+}
+.tag-pink {
+  color: #ec4899;
+}
+
+.lunch-row td {
+  background: #fff7e6 !important;
+  padding: 8px 0 !important;
+}
+.lunch-link {
+  font-size: 12px;
+  color: #2696db;
+  text-decoration: none;
+}
+.lunch-link:hover {
+  text-decoration: underline;
+}
+
+/* Make reset button drop below on smaller screens */
+@media (max-width: 991px) {
+  .schedule-reset {
+    position: static;
+    margin-top: 10px;
+    padding: 0;
+  }
+}
+
+/* =========================================================
+   22) Icon coloring helper (turns SVG/IMG icons blue)
+   ========================================================= */
+.blue-icon {
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
     hue-rotate(183deg) brightness(92%) contrast(92%);
+}
+
+/* =========================
+   ENROLLMENT (Responsive)
+========================= */
+.enrollment-card {
+  background: rgba(38, 150, 219, 0.06);
+  border-left: 5px solid #2696db;
+  border-radius: 14px;
+}
+
+.enrollment-list {
+  display: grid;
+  gap: 10px;
+}
+
+.enrollment-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 14px;
+  position: sticky;
+  top: 120px;
+}
+
+.enrollment-shot {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.enrollment-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.enrollment-shot.s1 {
+  grid-column: 1 / 3;
+  aspect-ratio: 16 / 10;
+}
+
+.enrollment-shot.s2 {
+  aspect-ratio: 16 / 11;
+}
+
+.enrollment-shot.s3 {
+  aspect-ratio: 16 / 11;
+}
+
+@media (max-width: 1200px) {
+  .enrollment-collage {
+    position: relative;
+    top: 0;
+  }
+}
+.btn[class*="btn-outline"] img {
+  transition: 0.2s ease;
+}
+
+.btn[class*="btn-outline"]:hover img {
+  filter: brightness(0) invert(1);
 }
