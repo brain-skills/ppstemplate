@@ -410,7 +410,6 @@
             </p>
           </div>
         </div>
-        <!-- controls -->
         <div
           class="swiper-button-prev d-none d-xxl-flex main-section-btn-prev"
         ></div>
@@ -419,7 +418,7 @@
         ></div>
       </section>
       <section
-        class="py-4 py-xxl-5 container d-flex flex-column"
+        class="py-4 py-xxl-5 container d-flex flex-column section-hover"
         id="about-school"
       >
         <div>
@@ -540,11 +539,14 @@
         </div>
       </section>
       <section
-        class="py-4 py-xxl-5 container d-flex flex-column gap-4 gap-xxl-5 position-relative"
+        class="enrollment position-relative py-4 py-xxl-5 section-hover"
         id="enrollment"
       >
-        <div>
-          <div class="d-flex align-items-center mb-4 justify-content-between">
+        <div class="container d-flex flex-column gap-4 gap-xxl-5">
+          <!-- Header row -->
+          <div
+            class="d-flex align-items-center justify-content-between gap-3 flex-wrap"
+          >
             <div class="d-flex flex-row gap-3 align-items-center">
               <img
                 src="./assets/images/icons/icon_education.svg"
@@ -553,150 +555,182 @@
                 height="30"
                 class="blue-icon"
               />
-              <p class="fw-bold fs-2">Enrollment</p>
+              <p class="fw-bold fs-2 mb-0">Enrollment</p>
             </div>
-            <button class="btn btn-primary d-flex gap-2">
-              <a
-                href="./enrollment.html"
-                class="text-decoration-none text-white"
-                >More About It</a
-              >
+
+            <a
+              href="./enrollment.html"
+              class="btn btn-primary d-inline-flex align-items-center gap-2"
+            >
+              <span>More About It</span>
               <img
                 src="./assets/images/icons/icon_arrow-next.svg"
                 alt="icon arrow next"
               />
-            </button>
+            </a>
           </div>
-          <p class="fw-semibold mb-3 fs-4">
-            Choosing Philadelphia Progressive School opens the door for your
-            child to a world of quality education, talent development, and
-            comprehensive preparation for a successful future.
-          </p>
-          <p class="fw-normal fs-5">
-            Our school is dedicated to creating an environment where every
-            student can unlock their strengths, gain deep knowledge, and acquire
-            the skills needed to enter the best colleges and universities. We
-            believe that the right education is the key to success and broad
-            opportunities for your child.
-          </p>
-        </div>
-        <div class="d-flex flex-row justify-content-between">
-          <div class="enrollment-section">
-            <div
-              class="mb-4 bg-blue-10 border-start border-5 border-blue p-3 rounded"
-            >
-              <h4 class="fw-semibold mb-3">Dear parents!</h4>
-              <p class="fs-5 fw-normal mb-3">
-                If you wish to enroll your child in our school, we recommend
-                preparing the complete set of documents well in advance.
-              </p>
-              <p class="fs-5 fw-bold mb-3">
-                To apply for admission to a school, you will need to provide:
-              </p>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">your child’s birth certificate</p>
+
+          <!-- Intro text -->
+          <div>
+            <p class="fw-semibold mb-3 fs-4">
+              Choosing Philadelphia Progressive School opens the door for your
+              child to a world of quality education, talent development, and
+              comprehensive preparation for a successful future.
+            </p>
+            <p class="fw-normal fs-5 mb-0">
+              Our school is dedicated to creating an environment where every
+              student can unlock their strengths, gain deep knowledge, and
+              acquire the skills needed to enter the best colleges and
+              universities. We believe that the right education is the key to
+              success and broad opportunities for your child.
+            </p>
+          </div>
+
+          <div class="row g-4 g-xxl-5 align-items-start">
+            <div class="col-12 col-xl-7">
+              <div class="enrollment-section d-flex flex-column gap-4">
+                <div class="enrollment-card p-3 p-md-4">
+                  <h4 class="fw-semibold mb-3">Dear parents!</h4>
+
+                  <p class="fs-5 fw-normal mb-3">
+                    If you wish to enroll your child in our school, we recommend
+                    preparing the complete set of documents well in advance.
+                  </p>
+
+                  <p class="fs-5 fw-bold mb-3">
+                    To apply for admission to a school, you will need to
+                    provide:
+                  </p>
+
+                  <div class="enrollment-list">
+                    <div class="d-flex flex-row aling-items-center gap-3">
+                      <img
+                        src="./assets/images/icons/icon_flag.svg"
+                        alt="flag icon"
+                        width="30"
+                        height="30"
+                      />
+                      <p class="fs-5 mb-0">your child’s birth certificate</p>
+                    </div>
+
+                    <div class="d-flex flex-row aling-items-center gap-3">
+                      <img
+                        src="./assets/images/icons/icon_flag.svg"
+                        alt="flag icon"
+                        width="30"
+                        height="30"
+                      />
+                      <p class="fs-5 mb-0">proof of residency</p>
+                    </div>
+
+                    <div class="d-flex flex-row aling-items-center gap-3">
+                      <img
+                        src="./assets/images/icons/icon_flag.svg"
+                        alt="flag icon"
+                        width="30"
+                        height="30"
+                      />
+                      <p class="fs-5 mb-0">
+                        medical records with up-to-date immunizations
+                      </p>
+                    </div>
+
+                    <div class="d-flex flex-row aling-items-center gap-3">
+                      <img
+                        src="./assets/images/icons/icon_flag.svg"
+                        alt="flag icon"
+                        width="30"
+                        height="30"
+                      />
+                      <p class="fs-5 mb-0">
+                        previous academic records (if available)
+                      </p>
+                    </div>
+
+                    <div class="d-flex flex-row aling-items-center gap-3">
+                      <img
+                        src="./assets/images/icons/icon_flag.svg"
+                        alt="flag icon"
+                        width="30"
+                        height="30"
+                      />
+                      <p class="fs-5 mb-0">
+                        completed application form submitted to the School
+                        District
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-sm-row gap-3 gap-md-4 mt-4"
+                  >
+                    <button class="btn btn-primary fs-5 px-4">Details</button>
+
+                    <button
+                      class="btn btn-outline-blue d-inline-flex align-items-center gap-2 fs-6 px-4"
+                    >
+                      <img
+                        src="./assets/images/icons/icon_dwld.svg"
+                        alt="download icon"
+                        width="20"
+                        height="20"
+                      />
+                      <span>Download documents list</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Paragraphs -->
+                <div>
+                  <p class="fs-5 fw-bold mb-3">
+                    It is important to submit all documents on time to ensure a
+                    smooth registration process.
+                  </p>
+                  <p class="fs-5 fw-normal mb-3">
+                    Enrollment begins 2-3 months before the start of the new
+                    school year, and the number of seats in each class is
+                    limited. Student lists are formed in advance to ensure the
+                    smooth organization of the learning process. For your
+                    convenience, we provide access to an online platform where
+                    you can monitor your child’s academic progress, attendance,
+                    and communication with teachers at any time.
+                  </p>
+                  <p class="fs-5 fw-bold mb-0">
+                    This way, you will always stay informed and be able to
+                    support your child at every stage of their education.
+                  </p>
+                </div>
               </div>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">proof of residency</p>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">
-                  medical records with up-to-date immunizations
-                </p>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-3">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">previous academic records (if available)</p>
-              </div>
-              <div class="d-flex gap-3 align-items-center mb-4">
-                <img
-                  src="./assets/images/icons/icon_flag.svg"
-                  alt="glag icon"
-                  width="30"
-                  height="30"
-                />
-                <p class="fs-4">
-                  completed application form submitted to the School District
-                </p>
-              </div>
-              <div class="d-flex gap-4">
-                <button class="btn btn-primary fs-4">Details</button>
-                <button
-                  class="btn btn-outline-blue d-flex align-items-center gap-2 fs-5"
-                >
+            </div>
+
+            <div class="col-12 col-xl-5">
+              <div class="enrollment-collage">
+                <figure class="enrollment-shot s1">
                   <img
-                    src="./assets/images/icons/icon_dwld.svg"
-                    alt="download icon"
-                    width="20"
-                    height="20"
+                    src="./assets/images/enrollment/enrollment1.png"
+                    alt="Enrollment image 1"
                   />
-                  <span>Download documents list</span>
-                </button>
+                </figure>
+
+                <figure class="enrollment-shot s2">
+                  <img
+                    src="./assets/images/enrollment/enrollment2.png"
+                    alt="Enrollment image 2"
+                  />
+                </figure>
+
+                <figure class="enrollment-shot s3">
+                  <img
+                    src="./assets/images/enrollment/enrollment3.png"
+                    alt="Enrollment image 3"
+                  />
+                </figure>
               </div>
             </div>
-            <div>
-              <p class="fs-5 fw-bold mb-3">
-                It is important to submit all documents on time to ensure a
-                smooth registration process.
-              </p>
-              <p class="fs-5 fw-normal mb-3">
-                Enrollment begins 2-3 months before the start of the new school
-                year, and the number of seats in each class is limited. Student
-                lists are formed in advance to ensure the smooth organization of
-                the learning process. For your convenience, we provide access to
-                an online platform where you can monitor your child’s academic
-                progress, attendance, and communication with teachers at any
-                time.
-              </p>
-              <p class="fs-5 fw-bold">
-                This way, you will always stay informed and be able to support
-                your child at every stage of their education.
-              </p>
-            </div>
-          </div>
-          <div class="d-none d-xl-flex">
-            <img
-              src="./assets/images/enrollment/enrollment1.png"
-              alt="enrollment image"
-              class="position-absolute enrollment-first-img"
-            />
-            <img
-              src="./assets/images/enrollment/enrollment2.png"
-              alt="enrollment image"
-              class="position-absolute enrollment-second-img"
-            />
-            <img
-              src="./assets/images/enrollment/enrollment3.png"
-              alt="enrollment image"
-              class="position-absolute enrollment-third-img"
-            />
           </div>
         </div>
       </section>
-      <section class="py-4" id="schedule">
+      <section class="py-4 section-hover" id="schedule">
         <div class="container">
           <div class="d-flex flex-row gap-3 align-items-center mb-4">
             <img
@@ -766,7 +800,6 @@
             </button>
           </div>
 
-          <!-- Calendar header (month + week/day) -->
           <div class="schedule-head">
             <div class="d-flex align-items-center gap-2">
               <button
@@ -800,7 +833,6 @@
             </div>
           </div>
 
-          <!-- Table -->
           <div class="table-responsive schedule-table-wrap">
             <table class="table mb-0 schedule-table">
               <thead>
@@ -809,12 +841,12 @@
                     <div
                       class="d-flex align-items-center gap-2 justify-content-center"
                     >
-                      <img
+                      <!-- <img
                         src="./assets/images/icons/icon_clock.svg"
                         alt=""
                         width="16"
                         height="16"
-                      />
+                      /> -->
                       <span class="">Time</span>
                     </div>
                   </th>
@@ -895,7 +927,6 @@
                   <td></td>
                 </tr>
 
-                <!-- Lunch row -->
                 <tr class="lunch-row">
                   <td colspan="8">
                     <div
@@ -943,7 +974,7 @@
         </div>
       </section>
       <section
-        class="py-4 py-xxl-5 container d-flex flex-column gap-5"
+        class="py-4 py-xxl-5 container d-flex flex-column gap-5 section-hover"
         id="news"
       >
         <div>
@@ -1218,7 +1249,7 @@
         </div>
       </section>
       <section
-        class="py-4 py-xxl-5 container d-flex flex-column gap-5"
+        class="py-4 py-xxl-5 container d-flex flex-column gap-5 section-hover"
         id="events"
       >
         <div>
@@ -1607,7 +1638,7 @@
         </div>
       </section>
       <section
-        class="py-4 py-xxl-5 container d-flex flex-column gap-4"
+        class="py-4 py-xxl-5 container d-flex flex-column gap-4 section-hover"
         id="gallery"
       >
         <div
@@ -1707,9 +1738,7 @@
           </select>
         </div>
 
-        <!-- Gallery Grid -->
         <div class="row g-3" id="galleryGrid">
-          <!-- Outdoor -->
           <div
             class="col-6 col-md-6 col-lg-4 gallery-item"
             data-category="outdoor"
@@ -1785,7 +1814,6 @@
           </div>
         </div>
 
-        <!-- Button -->
         <div class="d-flex justify-content-center mt-3">
           <button class="btn btn-outline-primary px-4 rounded">
             Show more
@@ -1807,33 +1835,33 @@
             class="footer-logo"
           />
 
-          <p
+          <span
             class="fs-6 text-dark-opacity fw-light w-50 text-center text-xl-start"
           >
             Official and legal information required for display: copyrights,
             organization details, etc
-          </p>
+          </span>
 
           <nav aria-label="Legal links" class="d-none d-xl-flex">
             <ul class="list-unstyled">
               <li>
                 <a
                   href="./index.html"
-                  class="text-decoration-none text-dark-opacity fw-bold fs-5 mb-2"
+                  class="text-decoration-none text-dark-opacity fw-bold fs-6 mb-2"
                   >Home</a
                 >
               </li>
               <li>
                 <a
                   href="./about.html"
-                  class="text-decoration-none text-dark-opacity fw-bold fs-5 mb-2"
+                  class="text-decoration-none text-dark-opacity fw-bold fs-6 mb-2"
                   >About School</a
                 >
               </li>
               <li>
                 <a
                   href="./gallery.html"
-                  class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                  class="text-decoration-none text-dark-opacity fw-bold fs-6"
                   >Gallery</a
                 >
               </li>
@@ -1846,56 +1874,56 @@
             <li>
               <a
                 href="./index.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Home</a
               >
             </li>
             <li>
               <a
                 href="./about.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >About School</a
               >
             </li>
             <li>
               <a
                 href="./enrollment.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Enrollment</a
               >
             </li>
             <li>
               <a
                 href="./schedule.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Schedule</a
               >
             </li>
             <li>
               <a
                 href="./news.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >News</a
               >
             </li>
             <li>
               <a
                 href="./events.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Events</a
               >
             </li>
             <li>
               <a
                 href="./gallery.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Gallery</a
               >
             </li>
             <li>
               <a
                 href="./contact.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Contact us</a
               >
             </li>
@@ -1907,56 +1935,56 @@
             <li>
               <a
                 href="./classes.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Classes and Courses</a
               >
             </li>
             <li>
               <a
                 href="./staff.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Staff</a
               >
             </li>
             <li>
               <a
                 href="./announcements.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Announcements</a
               >
             </li>
             <li>
               <a
                 href="./school-bus.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >School Bus</a
               >
             </li>
             <li>
               <a
                 href="./menu.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Menu</a
               >
             </li>
             <li>
               <a
                 href="./sport.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Sport</a
               >
             </li>
             <li>
               <a
                 href="./policy.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Policy</a
               >
             </li>
             <li>
               <a
                 href="./store.html"
-                class="text-decoration-none text-dark-opacity fw-bold fs-5"
+                class="text-decoration-none text-dark-opacity fw-bold fs-6"
                 >Store</a
               >
             </li>
@@ -2085,7 +2113,7 @@
         <div class="d-flex align-items-center gap-2">
           <img
             class="mobile-menu__avatar"
-            src="./assets/images/svg/avatar.svg"
+            src="./assets/images/icons/avatar.svg"
             alt="User avatar"
           />
           <div class="lh-sm">

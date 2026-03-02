@@ -191,6 +191,7 @@ p {
   height: 39px;
   background-color: transparent;
 }
+
 .nav-container::before {
   left: -24px;
   border-top-right-radius: 60px;
@@ -198,6 +199,7 @@ p {
   rotate: -12deg;
   top: 46px;
 }
+
 .nav-container::after {
   right: -24px;
   border-top-left-radius: 60px;
@@ -210,6 +212,7 @@ p {
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
     hue-rotate(183deg) brightness(92%) contrast(92%);
 }
+
 .nav-container a:not(.nav-logo).active {
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
     hue-rotate(183deg) brightness(92%) contrast(92%);
@@ -219,6 +222,19 @@ p {
 .nav-logo:hover,
 .nav-logo.active {
   filter: none !important;
+}
+
+.section-hover {
+  position: relative;
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+  border-radius: 20px;
+}
+
+.section-hover:hover {
+  transform: translateY(-4px);
 }
 
 @media (min-width: 1440px) {
@@ -253,25 +269,72 @@ p {
   background-color: rgba(38, 150, 219, 0.1);
 }
 
-.enrollment-first-img {
-  right: 1% !important;
-}
-.enrollment-second-img {
-  right: 22%;
-  top: 44%;
-}
-.enrollment-third-img {
-  right: 1%;
-  top: 60%;
+.enrollment-card {
+  background: rgba(38, 150, 219, 0.06);
+  border-left: 5px solid #2696db;
+  border-radius: 4px;
 }
 
-.enrollment-section {
-  width: 50%;
+.enrollment-list {
+  display: grid;
+  gap: 12px;
 }
 
-@media (max-width: 1200px) {
-  .enrollment-section {
-    width: 100%;
+.enrollment-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.enrollment-shot {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+.enrollment-shot img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.enrollment-shot:hover img {
+  transform: scale(1.06);
+}
+
+.enrollment-shot.s1 {
+  grid-column: 1 / 3;
+  aspect-ratio: 16 / 10;
+}
+
+.enrollment-shot.s2 {
+  aspect-ratio: 16 / 11;
+}
+
+.enrollment-shot.s3 {
+  aspect-ratio: 16 / 11;
+}
+
+@media (min-width: 1200px) {
+  .enrollment-collage {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .enrollment-collage {
+    gap: 10px;
+  }
+  .enrollment-shot {
+    border-radius: 14px;
+  }
+  .enrollment-item p {
+    font-size: 16px !important;
   }
 }
 
@@ -322,6 +385,12 @@ p {
   color: #fff;
   font-size: 22px !important;
 }
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+}
+
 .swiper-button-next {
   top: 10% !important;
   right: 2% !important;
@@ -697,58 +766,6 @@ footer address:hover img {
 .blue-icon {
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
     hue-rotate(183deg) brightness(92%) contrast(92%);
-}
-
-.enrollment-card {
-  background: rgba(38, 150, 219, 0.06);
-  border-left: 5px solid #2696db;
-  border-radius: 14px;
-}
-
-.enrollment-list {
-  display: grid;
-  gap: 10px;
-}
-
-.enrollment-collage {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 14px;
-  position: sticky;
-  top: 120px;
-}
-
-.enrollment-shot {
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.enrollment-shot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.enrollment-shot.s1 {
-  grid-column: 1 / 3;
-  aspect-ratio: 16 / 10;
-}
-
-.enrollment-shot.s2 {
-  aspect-ratio: 16 / 11;
-}
-
-.enrollment-shot.s3 {
-  aspect-ratio: 16 / 11;
-}
-
-@media (max-width: 1200px) {
-  .enrollment-collage {
-    position: relative;
-    top: 0;
-  }
 }
 
 .btn[class*="btn-outline"] img {

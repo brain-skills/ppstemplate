@@ -290,16 +290,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
 
-  /* =========================
-     7) Section hash observer (safe)
-     - prevents fighting gallery hash categories
-     ========================= */
   (function sectionHashObserver() {
     const sections = document.querySelectorAll("main section[id]");
     if (!sections.length) return;
 
-    // If current hash looks like a gallery category, we don't override it
-    // (because your gallery uses hashValue like #outdoor)
     const galleryTabs = document.querySelectorAll("#galleryTabs .gallery-tab");
     const galleryCats = new Set(["all"]);
     galleryTabs.forEach(
@@ -316,7 +310,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!visible) return;
 
-        // If hash is a gallery category, don't replace it while user is filtering
         const currentHash = (location.hash || "").slice(1);
         if (galleryCats.has(currentHash)) return;
 
@@ -336,23 +329,17 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((sec) => observer.observe(sec));
   })();
 
-  /* =========================
-     8) Active link highlighting (desktop + mobile)
-     ========================= */
   (function activeNavLinks() {
     const currentPath = window.location.pathname;
 
-    // Desktop nav items
     const navLinks = document.querySelectorAll(".nav-container a");
     navLinks.forEach((link) => {
       link.classList.remove("active");
       const href = link.getAttribute("href");
       if (!href) return;
 
-      // Normalize ./page.html -> /page.html
       const normalized = href.startsWith("./") ? href.slice(1) : href;
 
-      // Exact match is safer than includes()
       if (
         normalized === "/" &&
         (currentPath === "/" || currentPath.endsWith("/index.html"))
@@ -366,7 +353,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Mobile menu links
     const mobileLinks = document.querySelectorAll(".mobile-menu__link");
     mobileLinks.forEach((link) => {
       link.classList.remove("active");
@@ -391,9 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
 
-  /* =========================
-     9) Mobile search overlay (safe)
-     ========================= */
   (function mobileSearchOverlay() {
     const openBtn = document.getElementById("openSearch");
     const closeBtn = document.getElementById("closeSearch");
@@ -411,7 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.style.display = "none";
     });
 
-    // Optional: close on Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         overlay.style.display = "none";
@@ -437,13 +419,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!grid || !paginationWrap) return;
 
-  // Must match your columns:
   const items = Array.from(
     grid.querySelectorAll(":scope > .col-12.col-md-6.col-lg-4"),
   );
   if (!items.length) return;
 
-  const perPage = 6; // ✅ 3 + 3 per page
+  const perPage = 6;
   const totalPages = Math.ceil(items.length / perPage);
 
   if (totalPages <= 1) {
@@ -501,15 +482,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ul.appendChild(li);
     };
 
-    // Prev
     addBtn("‹", currentPage - 1, currentPage === 1, false, "Previous page");
 
-    // Pages
     for (let p = 1; p <= totalPages; p++) {
       addBtn(String(p), p, false, p === currentPage, `Page ${p}`);
     }
 
-    // Next
     addBtn(
       "›",
       currentPage + 1,
@@ -541,14 +519,11 @@ document.addEventListener("DOMContentLoaded", () => {
     renderPagination(safePage);
     setPageToUrl(safePage);
 
-    // Optional: smooth scroll to cards
     grid.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  // Initial
   goToPage(getPageFromUrl());
 
-  // Back/Forward support
   window.addEventListener("popstate", () => {
     goToPage(getPageFromUrl());
   });
