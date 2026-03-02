@@ -1,18 +1,4 @@
-/* ==========================================================================
-   custom.js — fixed version (safe + works with your current HTML)
-   - No crashes if some elements are missing on other pages
-   - Fixes multiple Swipers (scoped controls)
-   - Fixes countdown (works for each .countdown)
-   - Fixes duplicate IDs for font scaler by supporting BOTH footer + offcanvas
-   - Keeps your schedule reset + week/day toggle
-   - Keeps gallery tabs logic
-   - Prevents gallery hash from being overwritten by section hash observer
-   ========================================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================
-     1) Schedule filters reset
-     ========================= */
   const resetBtn = document.getElementById("resetFiltersBtn");
   const filtersForm = document.getElementById("filtersForm");
 
@@ -26,9 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================
-     2) Week / Day toggle (schedule)
-     ========================= */
   const weekBtn = document.getElementById("weekBtn");
   const dayBtn = document.getElementById("dayBtn");
 
@@ -44,10 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================
-     3) Swiper init (MULTIPLE swipers)
-     - scopes buttons/pagination inside each swiper block
-     ========================= */
   function initSwipers() {
     if (typeof Swiper === "undefined") return;
 
@@ -55,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!swipers.length) return;
 
     swipers.forEach((root) => {
-      // Avoid double-init if something calls it again
       if (root.dataset.swiperInited === "1") return;
       root.dataset.swiperInited = "1";
 
@@ -63,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const prevEl = root.querySelector(".swiper-button-prev");
       const pagEl = root.querySelector(".swiper-pagination");
 
-      // If controls are missing on some swiper block, Swiper still works
       new Swiper(root, {
         loop: true,
         spaceBetween: 24,
@@ -76,7 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
         breakpoints: {
           0: { slidesPerView: 1, spaceBetween: 14 },
           768: { slidesPerView: 1, spaceBetween: 18 },
-          1200: { slidesPerView: 3, spaceBetween: 24 },
+          1200: { slidesPerView: 2, spaceBetween: 24 },
+          1400: { slidesPerView: 3, spaceBetween: 24 },
         },
       });
     });
@@ -84,10 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initSwipers();
 
-  /* =========================
-     4) Countdown (Events cards)
-     - Works for each ".countdown" block
-     ========================= */
   function startCountdown(el, hours, minutes, seconds) {
     if (!el) return;
 
@@ -128,21 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
       render();
     }, 1000);
 
-    // Save timer reference if you ever want to stop it later
     el.dataset.timer = "1";
   }
 
-  // Your HTML uses class="countdown" (not id="countdown")
   document.querySelectorAll(".countdown").forEach((el) => {
-    // Example: 5 hours countdown (same as your old logic)
-    // You can change per card later if you want
     startCountdown(el, 5, 0, 0);
   });
 
-  /* =========================
-     5) Gallery tabs + mobile select
-     - Keeps your logic
-     ========================= */
   (function galleryTabs() {
     const tabs = Array.from(
       document.querySelectorAll("#galleryTabs .gallery-tab"),

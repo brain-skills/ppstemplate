@@ -64,35 +64,25 @@
         >
           <div
             id="mobileSearchOverlay"
-            class="position-absolute top-0 start-0 w-100 h-100 align-items-center px-3"
-            style="display: none; z-index: 1060; background-color: inherit"
+            class="position-absolute top-0 start-0 w-100 h-100 align-items-center px-3 mobile-search-overlay"
           >
-            <div
-              class="d-flex w-100 bg-white rounded overflow-hidden"
-              style="height: 40px"
-            >
+            <div class="d-flex w-100 bg-white rounded overflow-hidden h-40">
               <input
                 type="text"
                 placeholder="Search..."
                 id="mobileSearchInput"
                 class="border-0 px-3 flex-grow-1"
-                style="outline: none"
               />
-              <div
-                class="d-flex align-items-center px-3 gap-3"
-                style="background-color: #3498db"
-              >
+              <div class="d-flex align-items-center px-3 gap-3 bg-primary">
                 <img
                   src="./assets/images/icons/icon_search.svg"
                   alt="Search"
                   width="18"
-                  style="filter: brightness(0) invert(1)"
                 />
                 <button
                   type="button"
                   id="closeSearch"
                   class="border-0 bg-transparent text-white fs-4 p-0"
-                  style="line-height: 1"
                 >
                   &times;
                 </button>
@@ -131,7 +121,6 @@
             <div class="top-bar__search d-flex align-items-center">
               <div
                 class="d-none d-xxl-flex bg-white-20 px-2 px-xxl-3 py-1 rounded align-items-center"
-                style="background: rgba(255, 255, 255, 0.2)"
               >
                 <input
                   type="text"
@@ -201,26 +190,56 @@
                 <span class="fs-6 mb-0">Sign up</span>
               </button>
 
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <button
-                    class="dropdown-item"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginModal"
-                  >
-                    Login
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="dropdown-item"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#registerModal"
-                  >
-                    Register
-                  </button>
+              <ul class="dropdown-menu dropdown-menu-end p-0 login-dropdown">
+                <li class="login-card p-3 border-0 rounded shadow">
+                  <div class="d-flex align-items-center gap-2 mb-3">
+                    <img src="./assets/images/icons/icon_secure.svg" alt="" />
+                    <h6 class="mb-0 fw-semibold fs-4">Login</h6>
+                  </div>
+
+                  <form class="d-grid gap-3">
+                    <div class="position-relative">
+                      <label class="fs-6 fw-medium mb-1">Login</label>
+                      <input
+                        type="text"
+                        class="form-control login-input"
+                        placeholder="Login..."
+                      />
+                    </div>
+
+                    <div class="position-relative">
+                      <label class="fs-6 fw-medium mb-1">Password</label>
+                      <div class="position-relative">
+                        <input
+                          type="password"
+                          class="form-control login-input pe-5"
+                          placeholder="Password..."
+                        />
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-2">
+                      <input
+                        class="form-check-input login-check mt-1"
+                        type="checkbox"
+                        id="agreeLogin"
+                        checked
+                      />
+                      <label class="small text-muted" for="agreeLogin">
+                        I agree with
+                        <a href="#" class="text-primary text-decoration-none"
+                          >Terms of Serevice</a
+                        >
+                        and
+                        <a href="#" class="text-primary text-decoration-none"
+                          >Privacy Policy</a
+                        >
+                      </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary login-btn">
+                      Send message
+                    </button>
+                  </form>
                 </li>
               </ul>
             </div>
@@ -1658,11 +1677,9 @@
             </li>
           </ul>
 
-          <!-- Mobile Select -->
           <select
             class="form-select fw-semibold d-xl-none"
             id="galleryCategorySelect"
-            style="max-width: 220px"
           >
             <option value="all" selected>All</option>
             <option value="outdoor">Outdoor</option>

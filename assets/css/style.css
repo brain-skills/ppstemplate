@@ -1088,3 +1088,23 @@ footer address:hover img {
   );
   opacity: 0.9;
 }
+
+.mobile-search-overlay {
+  display: none;
+  z-index: 1060;
+  background-color: inherit;
+}
+
+.h-40 {
+  height: 40px !important;
+}
+
+/* dropdown width */
+.login-dropdown {
+  width: 360px;
+}
+@media (max-width: 420px) {
+  .login-dropdown {
+    width: min(360px, 92vw);
+  }
+}
