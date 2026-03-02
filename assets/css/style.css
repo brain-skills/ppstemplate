@@ -1125,3 +1125,7 @@ footer address:hover img {
     width: min(360px, 92vw);
   }
 }
+
+.pt-80 {
+  padding-top: 80px !important;
+}
