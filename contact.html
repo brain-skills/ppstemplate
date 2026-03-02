@@ -486,8 +486,8 @@
         <div class="container position-relative">
           <div class="contact-hero__card">
             <div class="contact-hero__head">
-              <h2 class="contact-hero__title">Do you have any questions?</h2>
-              <p class="contact-hero__subtitle">
+              <h2 class="fs-5 fw-semibold mb-2">Do you have any questions?</h2>
+              <p class="fs-6 fw-normal mb-2">
                 Write to us, we'll be sure to answer
               </p>
             </div>
@@ -496,41 +496,41 @@
               <div class="contact-hero__grid">
                 <!-- LEFT -->
                 <div class="contact-hero__col">
-                  <label class="contact-hero__field">
-                    <span class="contact-hero__label">Your name</span>
+                  <label class="mb-3 d-flex flex-column align-items-start">
+                    <small class="mb-2">Your name</small>
                     <input
                       class="contact-hero__input"
                       type="text"
                       name="name"
-                      placeholder="Jane"
+                      placeholder="Your name"
                     />
                   </label>
 
-                  <label class="contact-hero__field">
-                    <span class="contact-hero__label">Your email</span>
+                  <label class="mb-3 d-flex flex-column align-items-start">
+                    <small class="mb-2">Your email</small>
                     <input
                       class="contact-hero__input"
                       type="email"
                       name="email"
-                      placeholder="Henderson@domain.com"
+                      placeholder="Your email"
                     />
                   </label>
 
-                  <label class="contact-hero__field">
-                    <span class="contact-hero__label">Your phone number</span>
+                  <label class="mb-3 d-flex flex-column align-items-start">
+                    <small class="mb-2">Your phone number</small>
                     <input
                       class="contact-hero__input"
                       type="tel"
                       name="phone"
-                      placeholder="+1 (234) 567-8900"
+                      placeholder="Your phone number"
                     />
                   </label>
                 </div>
 
                 <!-- RIGHT -->
                 <div class="contact-hero__col">
-                  <label class="contact-hero__field h-100">
-                    <span class="contact-hero__label"> </span>
+                  <label class="mb-3 d-flex flex-column align-items-starth-100">
+                    <small class="mb-2">Your message</small>
                     <textarea
                       class="contact-hero__textarea"
                       name="message"
@@ -539,20 +539,21 @@
                   </label>
                 </div>
               </div>
+              <div class="d-flex flex-column align-items-start gap-2">
+                <label class="text-small mb-2">
+                  <input type="checkbox" name="agree" required />
+                  <small>
+                    I agree with
+                    <a href="#" class="contact-hero__link">Terms of Service</a>
+                    and
+                    <a href="#" class="contact-hero__link">Privacy Policy</a>
+                  </small>
+                </label>
 
-              <label class="contact-hero__check">
-                <input type="checkbox" name="agree" required />
-                <span>
-                  I agree with
-                  <a href="#" class="contact-hero__link">Terms of Service</a>
-                  and
-                  <a href="#" class="contact-hero__link">Privacy Policy</a>
-                </span>
-              </label>
-
-              <button type="submit" class="btn btn-primary contact-hero__btn">
-                Send message
-              </button>
+                <button type="submit" class="btn btn-primary contact-hero__btn">
+                  Send message
+                </button>
+              </div>
             </form>
           </div>
         </div>
