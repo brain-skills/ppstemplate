@@ -24,6 +24,12 @@ p {
   margin: 0;
 }
 
+@media (min-width: 1400px) {
+  .nav-container {
+    width: 1200px !important; /* fixed width on big screens */
+  }
+}
+
 .btn-primary {
   --bs-btn-color: #fff;
   --bs-btn-bg: var(--bs-primary);
@@ -125,18 +131,32 @@ p {
   }
 }
 
-@media (min-width: 1400px) {
-  .container {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-
 .white-gap {
   height: 49px;
   background-color: #fff;
   position: relative;
   z-index: 1;
+}
+
+header {
+  position: relative;
+}
+
+.left-gap,
+.right-gap {
+  position: absolute !important;
+  top: 80px;
+  width: 40px;
+  height: 40px;
+  z-index: 6;
+}
+
+.left-gap {
+  left: calc(50% + 600px - 20px);
+}
+
+.right-gap {
+  left: calc(50% - 600px - 20px);
 }
 
 .top-bar {
@@ -1128,4 +1148,90 @@ footer address:hover img {
 
 .pt-80 {
   padding-top: 80px !important;
+}
+header {
+  --navW: clamp(0px, calc(100% - 40px), 1200px);
+}
+.nav-container {
+  width: var(--navW); /* <-- instead of min(1200px, calc(100% - 40px)) */
+}
+.left-gap {
+  left: calc(50% + (var(--navW) * 0.5) - 20px);
+}
+
+.right-gap {
+  left: calc(50% - (var(--navW) * 0.5) - 20px);
+}
+
+@media (max-width: 1200px) {
+  .nav-container {
+    width: 60% !important;
+  }
+
+  .left-gap,
+  .right-gap {
+    position: absolute !important;
+    top: 80px;
+    width: 125px;
+    height: 40px;
+    z-index: 6;
+  }
+}
+@media (max-width: 1200px) {
+  .left-gap {
+    left: calc(33% + (var(--navW) * 0.5) - 20px);
+  }
+
+  .right-gap {
+    left: calc(68% - (var(--navW) * 0.5) - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .right-gap {
+    left: calc(47% - (var(--navW) * 0.5) - 20px);
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-container {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-logo img {
+    width: 200px;
+  }
+
+  .nav-container {
+    height: 70px;
+  }
+
+  .white-gap {
+    height: 45px;
+  }
+
+  .nav-container::after {
+    right: -15px;
+    rotate: 21deg;
+    top: 40px;
+  }
+
+  .nav-container::before {
+    left: -14px;
+    border-top-right-radius: 60px;
+    box-shadow: 15px -15px 0 0 white;
+    rotate: -20deg;
+    top: 41px;
+  }
+
+  .left-gap,
+  .right-gap {
+    position: absolute !important;
+    top: 80px;
+    width: 100px;
+    height: 40px;
+    z-index: 6;
+  }
 }
