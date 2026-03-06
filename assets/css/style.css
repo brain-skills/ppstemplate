@@ -26,7 +26,7 @@ p {
 
 @media (min-width: 1400px) {
   .nav-container {
-    width: 1200px !important; /* fixed width on big screens */
+    width: 1200px !important;
   }
 }
 
@@ -1085,7 +1085,6 @@ footer address:hover img {
   margin-left: 44px;
 }
 
-/* Tags like pills */
 .tag-pill {
   display: inline-flex;
   align-items: center;
@@ -1136,10 +1135,10 @@ footer address:hover img {
   height: 40px !important;
 }
 
-/* dropdown width */
 .login-dropdown {
   width: 360px;
 }
+
 @media (max-width: 420px) {
   .login-dropdown {
     width: min(360px, 92vw);
@@ -1153,7 +1152,7 @@ header {
   --navW: clamp(0px, calc(100% - 40px), 1200px);
 }
 .nav-container {
-  width: var(--navW); /* <-- instead of min(1200px, calc(100% - 40px)) */
+  width: var(--navW);
 }
 .left-gap {
   left: calc(50% + (var(--navW) * 0.5) - 20px);
@@ -1234,4 +1233,205 @@ header {
     height: 40px;
     z-index: 6;
   }
+}
+
+.top-bar__menu a.active {
+  font-weight: 700;
+  opacity: 1;
+  box-shadow: inset 0 -3px 0 rgba(255, 255, 255, 0.95);
+  padding-bottom: 6px;
+}
+
+.staff-filter {
+  min-width: 160px;
+}
+
+.staff-cal {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.staff-cal__grid {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+}
+
+.staff-cal__time {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.staff-cal__days {
+  overflow-x: auto;
+}
+
+.staff-cal__th {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.staff-cal__t {
+  font-size: 12px;
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.55);
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.staff-cal__row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+}
+@media (min-width: 1200px) {
+  .staff-cal__row {
+    grid-template-columns: repeat(6, minmax(160px, 1fr));
+  }
+}
+
+.staff-cal__row--head .staff-cal__th {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+.staff-cal__cell {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  height: 48px;
+  padding: 6px;
+}
+
+.staff-cal__event {
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(38, 150, 219, 0.1);
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.staff-cal__event--accent {
+  background: rgba(79, 202, 45, 0.14);
+}
+
+.announce-card {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.announce-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+#menu .menu-card {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+#menu .menu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+#menu .nav-underline .nav-link {
+  color: #6c757d;
+  font-weight: 500;
+}
+#menu .nav-underline .nav-link.active {
+  color: #0d6efd;
+}
+
+#menu .badge {
+  font-weight: 500;
+}
+
+#sport .sport-card,
+#sport .sport-hero {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+#sport .sport-card:hover,
+#sport .sport-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+#sport .sport-cal-grid {
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+#sport .sport-cal-dow {
+  font-size: 12px;
+  text-align: center;
+  padding: 4px 0;
+}
+
+#sport .sport-day {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+  border-radius: 10px;
+  height: 34px;
+  font-size: 13px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+#sport .sport-day:hover {
+  transform: translateY(-1px);
+  border-color: rgba(13, 110, 253, 0.35);
+  background: rgba(13, 110, 253, 0.06);
+}
+
+#sport .sport-day.is-muted {
+  color: #9aa3af;
+  background: #fafafa;
+}
+
+#sport .sport-day.is-active {
+  border-color: rgba(13, 110, 253, 0.55);
+  background: rgba(13, 110, 253, 0.12);
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+#sport .sport-cal-btn:hover {
+  border-color: rgba(13, 110, 253, 0.35) !important;
+  background: rgba(13, 110, 253, 0.06) !important;
+}
+
+#sport .sport-hero {
+  position: relative;
+}
+
+#sport .sport-hero__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
 }

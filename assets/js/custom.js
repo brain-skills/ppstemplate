@@ -579,3 +579,124 @@ document.addEventListener("DOMContentLoaded", () => {
     if (instance) instance.hide();
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const current = (
+    location.pathname.split("/").pop() || "index.html"
+  ).toLowerCase();
+
+  document.querySelectorAll(".top-bar__menu a[href]").forEach((a) => {
+    const href = (a.getAttribute("href") || "").split("/").pop().toLowerCase();
+    if (href && href === current) a.classList.add("active");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tabsWrap = document.getElementById("staffTabs");
+  if (!tabsWrap) return;
+
+  const tabs = Array.from(tabsWrap.querySelectorAll(".nav-link[data-filter]"));
+  const items = Array.from(document.querySelectorAll(".staff-item"));
+  const empty = document.getElementById("staffEmpty");
+  const searchInput = document.getElementById("staffSearch");
+
+  const DEFAULT_FILTER = (
+    tabs[0]?.dataset.filter || "administration"
+  ).toLowerCase();
+  const validFilters = new Set(
+    tabs.map((t) => (t.dataset.filter || "").toLowerCase()),
+  );
+
+  function setActiveTab(filter) {
+    tabs.forEach((btn) => {
+      const f = (btn.dataset.filter || "").toLowerCase();
+      btn.classList.toggle("active", f === filter);
+    });
+  }
+
+  function applyFilter(filter) {
+    const q = (searchInput?.value || "").trim().toLowerCase();
+    let visibleCount = 0;
+
+    items.forEach((item) => {
+      const category = (item.dataset.category || "").toLowerCase();
+      const text = (item.dataset.name || item.innerText || "").toLowerCase();
+
+      const okCategory = category === filter;
+      const okSearch = q === "" || text.includes(q);
+
+      const show = okCategory && okSearch;
+      item.classList.toggle("d-none", !show);
+      if (show) visibleCount++;
+    });
+
+    if (empty) empty.classList.toggle("d-none", visibleCount !== 0);
+  }
+
+  function getFilterFromHash() {
+    const raw = (window.location.hash || "")
+      .replace("#", "")
+      .trim()
+      .toLowerCase();
+    return validFilters.has(raw) ? raw : DEFAULT_FILTER;
+  }
+
+  function goToFilter(filter, updateHash) {
+    if (!validFilters.has(filter)) filter = DEFAULT_FILTER;
+
+    setActiveTab(filter);
+    applyFilter(filter);
+
+    if (updateHash) {
+      history.replaceState(null, "", `#${filter}`);
+    }
+  }
+
+  tabs.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = (btn.dataset.filter || "").toLowerCase();
+      goToFilter(filter, true);
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      goToFilter(getFilterFromHash(), false);
+    });
+  }
+
+  window.addEventListener("hashchange", () => {
+    goToFilter(getFilterFromHash(), false);
+  });
+
+  goToFilter(getFilterFromHash(), false);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const resetBtn = document.getElementById("resetSchedule");
+  const grade = document.getElementById("schGrade");
+  const curator = document.getElementById("schCurator");
+  const subject = document.getElementById("schSubject");
+
+  const weekBtn = document.getElementById("viewWeekBtn");
+  const dayBtn = document.getElementById("viewDayBtn");
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (grade) grade.selectedIndex = 0;
+      if (curator) curator.selectedIndex = 0;
+      if (subject) subject.selectedIndex = 0;
+    });
+  }
+
+  function setActive(btnOn, btnOff) {
+    btnOn.classList.add("active");
+    btnOff.classList.remove("active");
+  }
+
+  if (weekBtn && dayBtn) {
+    weekBtn.addEventListener("click", () => setActive(weekBtn, dayBtn));
+    dayBtn.addEventListener("click", () => setActive(dayBtn, weekBtn));
+  }
+});
