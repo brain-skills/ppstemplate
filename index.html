@@ -57,370 +57,385 @@
     />
   </head>
   <body>
-    <header class="bg-white">
-      <div class="top-bar position-relative">
-        <div
-          class="container d-flex py-3 justify-content-between align-items-center"
-        >
-          <div
-            id="mobileSearchOverlay"
-            class="position-absolute top-0 start-0 w-100 h-100 align-items-center px-3 mobile-search-overlay"
-          >
-            <div class="d-flex w-100 bg-white rounded overflow-hidden h-40">
-              <input
-                type="text"
-                placeholder="Search..."
-                id="mobileSearchInput"
-                class="border-0 px-3 flex-grow-1"
-              />
-              <div class="d-flex align-items-center px-3 gap-3 bg-primary">
-                <img
-                  src="./assets/images/icons/icon_search.svg"
-                  alt="Search"
-                  width="18"
-                />
-                <button
-                  type="button"
-                  id="closeSearch"
-                  class="border-0 bg-transparent text-white fs-4 p-0"
-                >
-                  &times;
-                </button>
-              </div>
-            </div>
-          </div>
-          <button
-            class="btn p-0 border-0 bg-transparent d-flex d-xl-none"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileMenu"
-            aria-controls="mobileMenu"
-            aria-label="Open menu"
-          >
-            <img
-              src="./assets/images/icons/icon_menu.svg"
-              alt=""
-              width="30"
-              height="30"
-            />
-          </button>
-          <nav
-            class="top-bar__menu d-none d-xl-flex align-items-center gap-3 gap-xxl-4 fs-6"
-          >
-            <a href="./classes.html">Classes and Courses</a>
-            <a href="./staff.html">Staff</a>
-            <a href="./announcements.html">Announcements</a>
-            <a href="./school-bus.html">School Bus</a>
-            <a href="./menu.html">Menu</a>
-            <a href="./sport.html">Sport</a>
-            <a href="./policy.html">Policy</a>
-            <a href="./store.html">Store</a>
-          </nav>
-
-          <div class="d-flex align-items-center gap-2 gap-xxl-4">
-            <div class="top-bar__search d-flex align-items-center">
+    <main>
+      <div class="page-hero">
+        <header class="bg-white">
+          <div class="top-bar position-relative">
+            <div
+              class="container d-flex py-3 justify-content-between align-items-center"
+            >
               <div
-                class="d-none d-xxl-flex bg-white-20 px-2 px-xxl-3 py-1 rounded align-items-center"
+                id="mobileSearchOverlay"
+                class="position-absolute top-0 start-0 w-100 h-100 align-items-center px-3 mobile-search-overlay"
               >
-                <input
-                  type="text"
-                  placeholder="Search"
-                  class="border-0 bg-transparent text-white"
-                />
-                <button
-                  type="button"
-                  class="btn p-0 border-0 bg-transparent"
-                  id="desktopSearchBtn"
-                  aria-label="Search"
-                >
-                  <img
-                    src="./assets/images/icons/icon_search.svg"
-                    alt=""
-                    width="18"
-                    height="18"
+                <div class="d-flex w-100 bg-white rounded overflow-hidden h-40">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    id="mobileSearchInput"
+                    class="border-0 px-3 flex-grow-1"
                   />
-                </button>
+                  <div class="d-flex align-items-center px-3 gap-3 bg-primary">
+                    <img
+                      src="./assets/images/icons/icon_search.svg"
+                      alt="Search"
+                      width="18"
+                    />
+                    <button
+                      type="button"
+                      id="closeSearch"
+                      class="border-0 bg-transparent text-white fs-4 p-0"
+                    >
+                      &times;
+                    </button>
+                  </div>
+                </div>
               </div>
-
               <button
-                id="openSearch"
-                class="d-xxl-none bg-transparent border-0 p-1"
-              >
-                <img
-                  src="./assets/images/icons/icon_search.svg"
-                  alt="Search icon"
-                  width="24"
-                  height="24"
-                />
-              </button>
-            </div>
-            <button
-              type="button"
-              class="tool rounded p-2 bg-dark-opacity border-0"
-              aria-label="Accessibility settings"
-            >
-              <img
-                src="./assets/images/icons/icon_glasses.svg"
-                alt="Accessibility"
-                width="24"
-                height="24"
-              />
-            </button>
-            <a
-              href="./cart.html"
-              class="tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none"
-            >
-              <img src="./assets/images/icons/icon_cart.svg" alt="Cart" />
-              <span class="fs-6 mb-0 text-white">2 / $178.45</span>
-            </a>
-            <div class="dropdown">
-              <button
+                class="btn p-0 border-0 bg-transparent d-flex d-xl-none"
                 type="button"
-                class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                aria-label="Open sign up menu"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu"
+                aria-controls="mobileMenu"
+                aria-label="Open menu"
               >
                 <img
-                  src="./assets/images/icons/icon_key.svg"
-                  alt="Sign up"
-                  width="24"
-                  height="24"
+                  src="./assets/images/icons/icon_menu.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                  class="z-1"
                 />
-                <span class="fs-6 mb-0">Sign up</span>
               </button>
+              <nav
+                class="top-bar__menu d-none d-xl-flex align-items-center gap-3 gap-xxl-4 fs-6"
+              >
+                <a href="./classes.html">Classes and Courses</a>
+                <a href="./staff.html">Staff</a>
+                <a href="./announcements.html">Announcements</a>
+                <a href="./school-bus.html">School Bus</a>
+                <a href="./menu.html">Menu</a>
+                <a href="./sport.html">Sport</a>
+                <a href="./policy.html">Policy</a>
+                <a href="./store.html">Store</a>
+              </nav>
 
-              <ul class="dropdown-menu dropdown-menu-end p-0 login-dropdown">
-                <li class="login-card p-3 border-0 rounded shadow">
-                  <div class="d-flex align-items-center gap-2 mb-3">
-                    <img src="./assets/images/icons/icon_secure.svg" alt="" />
-                    <h6 class="mb-0 fw-semibold fs-4">Login</h6>
+              <div class="d-flex align-items-center gap-2 gap-xxl-4">
+                <div class="top-bar__search d-flex align-items-center">
+                  <div
+                    class="d-none d-xxl-flex bg-white-20 px-2 px-xxl-3 py-1 rounded align-items-center"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      class="border-0 bg-transparent text-white"
+                    />
+                    <button
+                      type="button"
+                      class="btn p-0 border-0 bg-transparent"
+                      id="desktopSearchBtn"
+                      aria-label="Search"
+                    >
+                      <img
+                        src="./assets/images/icons/icon_search.svg"
+                        alt=""
+                        width="18"
+                        height="18"
+                      />
+                    </button>
                   </div>
 
-                  <form class="d-grid gap-3">
-                    <div class="position-relative">
-                      <label class="fs-6 fw-medium mb-1">Login</label>
-                      <input
-                        type="text"
-                        class="form-control login-input"
-                        placeholder="Login..."
-                      />
-                    </div>
+                  <button
+                    id="openSearch"
+                    class="d-xxl-none bg-transparent border-0 p-1"
+                  >
+                    <img
+                      src="./assets/images/icons/icon_search.svg"
+                      alt="Search icon"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  class="tool rounded p-2 bg-dark-opacity border-0"
+                  aria-label="Accessibility settings"
+                >
+                  <img
+                    src="./assets/images/icons/icon_glasses.svg"
+                    alt="Accessibility"
+                    width="24"
+                    height="24"
+                  />
+                </button>
+                <a
+                  href="./cart.html"
+                  class="tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none"
+                >
+                  <img src="./assets/images/icons/icon_cart.svg" alt="Cart" />
+                  <span class="fs-6 mb-0 text-white">2 / $178.45</span>
+                </a>
+                <div class="dropdown">
+                  <button
+                    type="button"
+                    class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-label="Open sign up menu"
+                  >
+                    <img
+                      src="./assets/images/icons/icon_key.svg"
+                      alt="Sign up"
+                      width="24"
+                      height="24"
+                    />
+                    <span class="fs-6 mb-0">Sign up</span>
+                  </button>
 
-                    <div class="position-relative">
-                      <label class="fs-6 fw-medium mb-1">Password</label>
-                      <div class="position-relative">
-                        <input
-                          type="password"
-                          class="form-control login-input pe-5"
-                          placeholder="Password..."
+                  <ul
+                    class="dropdown-menu dropdown-menu-end p-0 login-dropdown"
+                  >
+                    <li class="login-card p-3 border-0 rounded shadow">
+                      <div class="d-flex align-items-center gap-2 mb-3">
+                        <img
+                          src="./assets/images/icons/icon_secure.svg"
+                          alt=""
                         />
+                        <h6 class="mb-0 fw-semibold fs-4">Login</h6>
                       </div>
-                    </div>
-                    <div class="d-flex align-items-start gap-2">
-                      <input
-                        class="form-check-input login-check mt-1"
-                        type="checkbox"
-                        id="agreeLogin"
-                        checked
-                      />
-                      <label class="small text-muted" for="agreeLogin">
-                        I agree with
-                        <a href="#" class="text-primary text-decoration-none"
-                          >Terms of Serevice</a
-                        >
-                        and
-                        <a href="#" class="text-primary text-decoration-none"
-                          >Privacy Policy</a
-                        >
-                      </label>
-                    </div>
 
-                    <button type="submit" class="btn btn-primary login-btn">
-                      Send message
-                    </button>
-                  </form>
-                </li>
-              </ul>
+                      <form class="d-grid gap-3">
+                        <div class="position-relative">
+                          <label class="fs-6 fw-medium mb-1">Login</label>
+                          <input
+                            type="text"
+                            class="form-control login-input"
+                            placeholder="Login..."
+                          />
+                        </div>
+
+                        <div class="position-relative">
+                          <label class="fs-6 fw-medium mb-1">Password</label>
+                          <div class="position-relative">
+                            <input
+                              type="password"
+                              class="form-control login-input pe-5"
+                              placeholder="Password..."
+                            />
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-2">
+                          <input
+                            class="form-check-input login-check mt-1"
+                            type="checkbox"
+                            id="agreeLogin"
+                            checked
+                          />
+                          <label class="small text-muted" for="agreeLogin">
+                            I agree with
+                            <a
+                              href="#"
+                              class="text-primary text-decoration-none"
+                              >Terms of Serevice</a
+                            >
+                            and
+                            <a
+                              href="#"
+                              class="text-primary text-decoration-none"
+                              >Privacy Policy</a
+                            >
+                          </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary login-btn">
+                          Send message
+                        </button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="white-gap shadow"></div>
-      <div class="bg-white left-gap"></div>
-      <div class="bg-white right-gap"></div>
-      <nav
-        class="nav-container d-flex align-items-center justify-content-center justify-content-xl-between z-1 shadow"
-      >
-        <a href="/" class="nav-logo">
-          <img src="./assets/logo/school-logo.svg" alt="School logo" />
-        </a>
+          <div class="white-gap shadow"></div>
+          <div class="bg-white left-gap"></div>
+          <div class="bg-white right-gap"></div>
+          <nav
+            class="nav-container d-flex align-items-center justify-content-center justify-content-xl-between z-1 shadow"
+          >
+            <a href="/" class="nav-logo">
+              <img src="./assets/logo/school-logo.svg" alt="School logo" />
+            </a>
 
-        <div
-          class="d-none d-xl-flex flex-row align-items-center gap-3 gap-xxl-4"
+            <div
+              class="d-none d-xl-flex flex-row align-items-center gap-3 gap-xxl-4"
+            >
+              <a
+                href="./index.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_dashboard.svg"
+                  alt="Home icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6 nav-item">Home</span>
+              </a>
+
+              <a
+                href="./about.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_school.svg"
+                  alt="About icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6">About</span>
+              </a>
+
+              <a
+                href="./enrollment.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_education.svg"
+                  alt="Enrollment icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6">Enrollment</span>
+              </a>
+
+              <a
+                href="./schedule.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_calendar.svg"
+                  alt="Schedule icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6">Schedule</span>
+              </a>
+
+              <a
+                href="./news.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_news.svg"
+                  alt="News icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6">News</span>
+              </a>
+
+              <a
+                href="./events.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_event.svg"
+                  alt="Events icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6">Events</span>
+              </a>
+
+              <a
+                href="./gallery.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_media.svg"
+                  alt="Gallery icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6">Gallery</span>
+              </a>
+
+              <a
+                href="./files.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_folder.svg"
+                  alt="Files icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="">Files</span>
+              </a>
+
+              <a
+                href="./contact.html"
+                class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+              >
+                <img
+                  src="./assets/images/icons/icon_phone.svg"
+                  alt="Contact icon"
+                  width="24"
+                  height="24"
+                  class="nav-item"
+                />
+                <span class="fs-6">Contact</span>
+              </a>
+            </div>
+          </nav>
+        </header>
+        <section
+          class="main-section position-relative overflow-hidden w-100 z-0"
         >
-          <a
-            href="./index.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_dashboard.svg"
-              alt="Home icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6 nav-item">Home</span>
-          </a>
+          <img
+            src="./assets/images/main.png"
+            alt="School"
+            class="hero-image d-none d-sm-block"
+          />
+          <img
+            src="./assets/images/main-mobile.png"
+            alt="School"
+            class="hero-image w-100 d-block d-sm-none"
+          />
 
-          <a
-            href="./about.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
+          <div
+            class="main-content position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end"
           >
-            <img
-              src="./assets/images/icons/icon_school.svg"
-              alt="About icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6">About</span>
-          </a>
-
-          <a
-            href="./enrollment.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_education.svg"
-              alt="Enrollment icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6">Enrollment</span>
-          </a>
-
-          <a
-            href="./schedule.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_calendar.svg"
-              alt="Schedule icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6">Schedule</span>
-          </a>
-
-          <a
-            href="./news.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_news.svg"
-              alt="News icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6">News</span>
-          </a>
-
-          <a
-            href="./events.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_event.svg"
-              alt="Events icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6">Events</span>
-          </a>
-
-          <a
-            href="./gallery.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_media.svg"
-              alt="Gallery icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6">Gallery</span>
-          </a>
-
-          <a
-            href="./files.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_folder.svg"
-              alt="Files icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="">Files</span>
-          </a>
-
-          <a
-            href="./contact.html"
-            class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark"
-          >
-            <img
-              src="./assets/images/icons/icon_phone.svg"
-              alt="Contact icon"
-              width="24"
-              height="24"
-              class="nav-item"
-            />
-            <span class="fs-6">Contact</span>
-          </a>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="main-section position-relative overflow-hidden w-100 z-0">
-        <img
-          src="./assets/images/main.png"
-          alt="School"
-          class="img-fluid w-100 d-none d-sm-block"
-        />
-        <img
-          src="./assets/images/main-mobile.png"
-          alt=""
-          class="d-flex d-sm-none w-100 img-fluid"
-        />
-
-        <div
-          class="main-content position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end"
-        >
-          <div class="container pb-5">
-            <h1 class="fs-1 text-white fw-bold">
-              Philadelphia Progressive School
-            </h1>
-            <p class="text-white mb-0 opacity-90 fs-4">
-              Educating today, inspiring tomorrow
-            </p>
+            <div class="container pb-5">
+              <h1 class="fs-1 text-white fw-bold">
+                Philadelphia Progressive School
+              </h1>
+              <p class="text-white mb-0 opacity-90 fs-4">
+                Educating today, inspiring tomorrow
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="swiper-button-prev d-none d-xxl-flex main-section-btn-prev"
-        ></div>
-        <div
-          class="swiper-button-next d-none d-xxl-flex main-section-btn-next"
-        ></div>
-      </section>
+
+          <div
+            class="swiper-button-prev d-none d-xxl-flex main-section-btn-prev"
+          ></div>
+          <div
+            class="swiper-button-next d-none d-xxl-flex main-section-btn-next"
+          ></div>
+        </section>
+      </div>
       <section
-        class="py-4 py-xxl-5 container d-flex flex-column section-hover"
+        class="py-4 py-xxl-5 container d-flex flex-column section-hover vh-100 justify-content-center"
         id="about-school"
       >
         <div>
@@ -545,7 +560,6 @@
         id="enrollment"
       >
         <div class="container d-flex flex-column gap-4 gap-xxl-5">
-          <!-- Header row -->
           <div
             class="d-flex align-items-center justify-content-between gap-3 flex-wrap"
           >
@@ -681,20 +695,10 @@
                   </div>
                 </div>
 
-                <!-- Paragraphs -->
                 <div>
                   <p class="fs-5 fw-bold mb-3">
                     It is important to submit all documents on time to ensure a
                     smooth registration process.
-                  </p>
-                  <p class="fs-5 fw-normal mb-3">
-                    Enrollment begins 2-3 months before the start of the new
-                    school year, and the number of seats in each class is
-                    limited. Student lists are formed in advance to ensure the
-                    smooth organization of the learning process. For your
-                    convenience, we provide access to an online platform where
-                    you can monitor your child’s academic progress, attendance,
-                    and communication with teachers at any time.
                   </p>
                   <p class="fs-5 fw-bold mb-0">
                     This way, you will always stay informed and be able to
