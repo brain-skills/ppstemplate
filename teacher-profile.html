@@ -1452,6 +1452,8 @@
                     </section>
                   </div>
 
+                  <!-- CURRCILLUM  -->
+
                   <div
                     class="tab-pane fade"
                     id="curriculum-pane"
@@ -1459,8 +1461,306 @@
                     aria-labelledby="curriculum-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Curriculum content
+                    <!-- FLEX CONTAINER -->
+                    <div
+                      class="d-flex justify-content-between align-items-start flex-wrap gap-3"
+                    >
+                      <ul class="nav gap-4" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            class="nav-link grade-tab active fw-semibold"
+                            data-bs-toggle="tab"
+                            data-bs-target="#grade1"
+                            type="button"
+                          >
+                            1 grade
+                          </button>
+                        </li>
+
+                        <li class="nav-item">
+                          <button
+                            class="nav-link grade-tab fw-semibold"
+                            data-bs-toggle="tab"
+                            data-bs-target="#grade2"
+                            type="button"
+                          >
+                            2 grade
+                          </button>
+                        </li>
+
+                        <li class="nav-item">
+                          <button
+                            class="nav-link grade-tab fw-semibold"
+                            data-bs-toggle="tab"
+                            data-bs-target="#grade3"
+                            type="button"
+                          >
+                            3 grade
+                          </button>
+                        </li>
+                      </ul>
+
+                      <ul class="nav nav-pills gap-3">
+                        <li class="nav-item">
+                          <button
+                            class="nav-link lesson-tab active d-flex flex-column align-items-center gap-2"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lessons"
+                            type="button"
+                          >
+                            <img
+                              src="./assets/images/icons/icon_book.svg"
+                              class="blue-icon"
+                            />
+                            <small>Lessons</small>
+                          </button>
+                        </li>
+
+                        <li class="nav-item">
+                          <button
+                            class="nav-link lesson-tab d-flex flex-column align-items-center gap-2"
+                            data-bs-toggle="tab"
+                            data-bs-target="#homeworks"
+                            type="button"
+                          >
+                            <img
+                              src="./assets/images/icons/icon_lounge.svg"
+                              class="blue-icon"
+                            />
+                            <small>Homeworks</small>
+                          </button>
+                        </li>
+
+                        <li class="nav-item">
+                          <button
+                            class="nav-link lesson-tab d-flex flex-column align-items-center gap-2"
+                            data-bs-toggle="tab"
+                            data-bs-target="#tests"
+                            type="button"
+                          >
+                            <img
+                              src="./assets/images/icons/icon_test.svg"
+                              class="blue-icon"
+                            />
+                            <small>Tests</small>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="tab-content pt-4">
+                      <div class="tab-pane fade show active" id="lessons">
+                        <div class="d-flex flex-column gap-3">
+                          <!-- Create new lesson -->
+                          <div class="accordion" id="lessonAccordion">
+                            <div
+                              class="accordion-item lesson-accordion-item border-0"
+                            >
+                              <h2 class="accordion-header">
+                                <button
+                                  class="accordion-button collapsed lesson-accordion-btn fw-semibold"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#createLesson"
+                                  aria-expanded="false"
+                                  aria-controls="createLesson"
+                                >
+                                  Create new lesson
+                                </button>
+                              </h2>
+
+                              <div
+                                id="createLesson"
+                                class="accordion-collapse collapse"
+                                data-bs-parent="#lessonAccordion"
+                              >
+                                <div class="accordion-body bg-white">
+                                  Lesson creation form or content here
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Top controls -->
+                          <div
+                            class="d-flex flex-wrap justify-content-between align-items-center gap-3 px-1"
+                          >
+                            <div
+                              class="d-flex flex-wrap align-items-center gap-4"
+                            >
+                              <div class="d-flex align-items-center gap-2">
+                                <img
+                                  src="./assets/images/icons/icon_sort.svg"
+                                  alt="Sort"
+                                  width="14"
+                                  height="14"
+                                />
+                                <small class="fw-medium text-dark">
+                                  Sort by:
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >creation date</a
+                                  >
+                                </small>
+                              </div>
+
+                              <div
+                                class="form-check form-switch m-0 d-flex align-items-center gap-2 ps-0"
+                              >
+                                <input
+                                  class="form-check-input m-0"
+                                  type="checkbox"
+                                  role="switch"
+                                  id="onlyUnassigned"
+                                />
+                                <label
+                                  class="form-check-label small text-secondary"
+                                  for="onlyUnassigned"
+                                >
+                                  Only unassigned
+                                </label>
+                              </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3">
+                              <small class="fw-semibold text-dark mb-0"
+                                >View mode:</small
+                              >
+
+                              <button
+                                type="button"
+                                class="btn p-0 border-0 bg-transparent"
+                              >
+                                <img
+                                  src="./assets/images/icons/icon_grid-active.svg"
+                                  alt="Grid view"
+                                  width="18"
+                                  height="18"
+                                />
+                              </button>
+
+                              <button
+                                type="button"
+                                class="btn p-0 border-0 bg-transparent"
+                              >
+                                <img
+                                  src="./assets/images/icons/icon_list.svg"
+                                  alt="List view"
+                                  width="18"
+                                  height="18"
+                                />
+                              </button>
+
+                              <button
+                                type="button"
+                                class="btn p-0 border-0 bg-transparent"
+                              >
+                                <img
+                                  src="./assets/images/icons/icon_calendar.svg"
+                                  alt="Calendar view"
+                                  width="18"
+                                  height="18"
+                                />
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- Lesson items -->
+                          <div class="d-flex flex-column gap-2">
+                            <div
+                              class="lesson-row d-flex justify-content-between align-items-center"
+                            >
+                              <p class="mb-0 fw-semibold">Lesson 1 - My pets</p>
+
+                              <div class="d-flex align-items-center gap-3">
+                                <a
+                                  href="#"
+                                  class="text-primary text-decoration-none small fw-semibold"
+                                  >Edit</a
+                                >
+                                <button
+                                  type="button"
+                                  class="btn p-0 border-0 bg-transparent"
+                                >
+                                  <img
+                                    src="./assets/images/icons/icon_arrow-down.svg"
+                                    alt="Open lesson"
+                                    width="12"
+                                    height="12"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+
+                            <div
+                              class="lesson-row d-flex justify-content-between align-items-center"
+                            >
+                              <p class="mb-0 fw-semibold">
+                                Lesson 2 - My family
+                              </p>
+
+                              <div class="d-flex align-items-center gap-3">
+                                <a
+                                  href="#"
+                                  class="text-primary text-decoration-none small fw-semibold"
+                                  >Edit</a
+                                >
+                                <button
+                                  type="button"
+                                  class="btn p-0 border-0 bg-transparent"
+                                >
+                                  <img
+                                    src="./assets/images/icons/icon_arrow-down.svg"
+                                    alt="Open lesson"
+                                    width="12"
+                                    height="12"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+
+                            <div
+                              class="lesson-row d-flex justify-content-between align-items-center"
+                            >
+                              <p class="mb-0 fw-semibold">
+                                Lesson 3 - My friends
+                              </p>
+
+                              <div class="d-flex align-items-center gap-3">
+                                <a
+                                  href="#"
+                                  class="text-primary text-decoration-none small fw-semibold"
+                                  >Edit</a
+                                >
+                                <button
+                                  type="button"
+                                  class="btn p-0 border-0 bg-transparent"
+                                >
+                                  <img
+                                    src="./assets/images/icons/icon_arrow-down.svg"
+                                    alt="Open lesson"
+                                    width="12"
+                                    height="12"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="homeworks">
+                        <div class="p-4 bg-white rounded shadow">
+                          <p class="fs-5 fw-bold">Create New Homework</p>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="tests">
+                        <div class="p-4 bg-white rounded shadow">
+                          <p class="fs-5 fw-bold">Create New Test</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 

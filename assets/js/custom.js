@@ -770,3 +770,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   filterStudentsTable();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tabButtons = document.querySelectorAll('[data-bs-toggle="tab"]');
+  const storageKey = "activeProfileTab";
+
+  const savedTab = localStorage.getItem(storageKey);
+  if (savedTab) {
+    const trigger = document.querySelector(
+      `[data-bs-toggle="tab"][data-bs-target="${savedTab}"]`,
+    );
+
+    if (trigger) {
+      const tab = new bootstrap.Tab(trigger);
+      tab.show();
+    }
+  }
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("shown.bs.tab", (event) => {
+      const target = event.target.getAttribute("data-bs-target");
+      if (target) {
+        localStorage.setItem(storageKey, target);
+      }
+    });
+  });
+});
