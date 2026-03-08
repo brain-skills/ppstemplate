@@ -1592,8 +1592,7 @@
                                 <img
                                   src="./assets/images/icons/icon_sort.svg"
                                   alt="Sort"
-                                  width="14"
-                                  height="14"
+                                  class="blue-icon"
                                 />
                                 <small class="fw-medium text-dark">
                                   Sort by:
@@ -1630,120 +1629,154 @@
 
                               <button
                                 type="button"
-                                class="btn p-0 border-0 bg-transparent"
+                                class="btn p-0 border-0 bg-transparent view-mode-btn active"
                               >
                                 <img
-                                  src="./assets/images/icons/icon_grid-active.svg"
+                                  src="./assets/images/icons/icon_dashboard.svg"
                                   alt="Grid view"
-                                  width="18"
-                                  height="18"
                                 />
                               </button>
 
                               <button
                                 type="button"
-                                class="btn p-0 border-0 bg-transparent"
+                                class="btn p-0 border-0 bg-transparent view-mode-btn"
                               >
                                 <img
                                   src="./assets/images/icons/icon_list.svg"
                                   alt="List view"
-                                  width="18"
-                                  height="18"
                                 />
                               </button>
 
                               <button
                                 type="button"
-                                class="btn p-0 border-0 bg-transparent"
+                                class="btn p-0 border-0 bg-transparent view-mode-btn"
                               >
                                 <img
                                   src="./assets/images/icons/icon_calendar.svg"
                                   alt="Calendar view"
-                                  width="18"
-                                  height="18"
                                 />
                               </button>
                             </div>
                           </div>
 
-                          <!-- Lesson items -->
                           <div class="d-flex flex-column gap-2">
-                            <div
-                              class="lesson-row d-flex justify-content-between align-items-center"
-                            >
-                              <p class="mb-0 fw-semibold">Lesson 1 - My pets</p>
+                            <div class="d-flex flex-column gap-2">
+                              <div class="lesson-item">
+                                <div
+                                  class="lesson-row d-flex justify-content-between align-items-center"
+                                >
+                                  <p class="mb-0 fw-semibold">
+                                    Lesson 1 - My pets
+                                  </p>
 
-                              <div class="d-flex align-items-center gap-3">
-                                <a
-                                  href="#"
-                                  class="text-primary text-decoration-none small fw-semibold"
-                                  >Edit</a
-                                >
-                                <button
-                                  type="button"
-                                  class="btn p-0 border-0 bg-transparent"
-                                >
-                                  <img
-                                    src="./assets/images/icons/icon_arrow-down.svg"
-                                    alt="Open lesson"
-                                    width="12"
-                                    height="12"
-                                  />
-                                </button>
+                                  <div class="d-flex align-items-center gap-3">
+                                    <a
+                                      href="#"
+                                      class="text-primary text-decoration-none small fw-semibold"
+                                      >Edit</a
+                                    >
+
+                                    <button
+                                      class="btn p-0 border-0 bg-transparent lesson-toggle"
+                                      type="button"
+                                      data-bs-toggle="collapse"
+                                      data-bs-target="#lesson1Details"
+                                      aria-expanded="false"
+                                      aria-controls="lesson1Details"
+                                    >
+                                      <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <div class="collapse" id="lesson1Details">
+                                  <div class="lesson-details mt-2">
+                                    <p class="mb-2 fw-medium">Lesson details</p>
+                                    <p class="mb-0 text-secondary small">
+                                      Topic: Pets vocabulary, reading practice,
+                                      speaking activity.
+                                    </p>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
 
-                            <div
-                              class="lesson-row d-flex justify-content-between align-items-center"
-                            >
-                              <p class="mb-0 fw-semibold">
-                                Lesson 2 - My family
-                              </p>
+                              <!-- Lesson 2 -->
+                              <div class="lesson-item">
+                                <div
+                                  class="lesson-row d-flex justify-content-between align-items-center"
+                                >
+                                  <p class="mb-0 fw-semibold">
+                                    Lesson 2 - My family
+                                  </p>
 
-                              <div class="d-flex align-items-center gap-3">
-                                <a
-                                  href="#"
-                                  class="text-primary text-decoration-none small fw-semibold"
-                                  >Edit</a
-                                >
-                                <button
-                                  type="button"
-                                  class="btn p-0 border-0 bg-transparent"
-                                >
-                                  <img
-                                    src="./assets/images/icons/icon_arrow-down.svg"
-                                    alt="Open lesson"
-                                    width="12"
-                                    height="12"
-                                  />
-                                </button>
+                                  <div class="d-flex align-items-center gap-3">
+                                    <a
+                                      href="#"
+                                      class="text-primary text-decoration-none small fw-semibold"
+                                      >Edit</a
+                                    >
+
+                                    <button
+                                      class="btn p-0 border-0 bg-transparent lesson-toggle"
+                                      type="button"
+                                      data-bs-toggle="collapse"
+                                      data-bs-target="#lesson2Details"
+                                      aria-expanded="false"
+                                      aria-controls="lesson2Details"
+                                    >
+                                      <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <div class="collapse" id="lesson2Details">
+                                  <div class="lesson-details mt-2">
+                                    <p class="mb-2 fw-medium">Lesson details</p>
+                                    <p class="mb-0 text-secondary small">
+                                      Topic: Family members, simple grammar,
+                                      pair exercises.
+                                    </p>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
 
-                            <div
-                              class="lesson-row d-flex justify-content-between align-items-center"
-                            >
-                              <p class="mb-0 fw-semibold">
-                                Lesson 3 - My friends
-                              </p>
+                              <div class="lesson-item">
+                                <div
+                                  class="lesson-row d-flex justify-content-between align-items-center"
+                                >
+                                  <p class="mb-0 fw-semibold">
+                                    Lesson 3 - My friends
+                                  </p>
 
-                              <div class="d-flex align-items-center gap-3">
-                                <a
-                                  href="#"
-                                  class="text-primary text-decoration-none small fw-semibold"
-                                  >Edit</a
-                                >
-                                <button
-                                  type="button"
-                                  class="btn p-0 border-0 bg-transparent"
-                                >
-                                  <img
-                                    src="./assets/images/icons/icon_arrow-down.svg"
-                                    alt="Open lesson"
-                                    width="12"
-                                    height="12"
-                                  />
-                                </button>
+                                  <div class="d-flex align-items-center gap-3">
+                                    <a
+                                      href="#"
+                                      class="text-primary text-decoration-none small fw-semibold"
+                                      >Edit</a
+                                    >
+
+                                    <button
+                                      class="btn p-0 border-0 bg-transparent lesson-toggle"
+                                      type="button"
+                                      data-bs-toggle="collapse"
+                                      data-bs-target="#lesson3Details"
+                                      aria-expanded="false"
+                                      aria-controls="lesson3Details"
+                                    >
+                                      <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <div class="collapse" id="lesson3Details">
+                                  <div class="lesson-details mt-2">
+                                    <p class="mb-2 fw-medium">Lesson details</p>
+                                    <p class="mb-0 text-secondary small">
+                                      Topic: Friendship words, listening,
+                                      classroom discussion.
+                                    </p>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>

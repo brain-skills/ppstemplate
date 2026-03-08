@@ -796,3 +796,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+const viewButtons = document.querySelectorAll(".view-mode-btn");
+
+viewButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    viewButtons.forEach((b) => b.classList.remove("active"));
+
+    btn.classList.add("active");
+  });
+});

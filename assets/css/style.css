@@ -1784,3 +1784,36 @@ header {
     font-size: 0.95rem;
   }
 }
+.lesson-row {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.15rem 1rem;
+  box-shadow: 0 0 0 1px #edf0f2;
+}
+
+.lesson-details {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 0 0 1px #edf0f2;
+}
+
+.lesson-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.lesson-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.view-mode-btn img {
+  width: 20px;
+  transition: 0.2s;
+  opacity: 0.6;
+}
+
+.view-mode-btn.active img {
+  filter: invert(43%) sepia(92%) saturate(1853%) hue-rotate(181deg)
+    brightness(92%) contrast(91%);
+  opacity: 1;
+}
