@@ -1812,6 +1812,7 @@ header {
   opacity: 0.6;
 }
 
+/* active icon */
 .view-mode-btn.active img {
   filter: invert(43%) sepia(92%) saturate(1853%) hue-rotate(181deg)
     brightness(92%) contrast(91%);

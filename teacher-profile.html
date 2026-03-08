@@ -1461,86 +1461,102 @@
                     aria-labelledby="curriculum-tab"
                     tabindex="0"
                   >
-                    <!-- FLEX CONTAINER -->
                     <div
                       class="d-flex justify-content-between align-items-start flex-wrap gap-3"
                     >
+                      <!-- Grades -->
                       <ul class="nav gap-4" role="tablist">
-                        <li class="nav-item">
+                        <li class="nav-item" role="presentation">
                           <button
                             class="nav-link grade-tab active fw-semibold"
                             data-bs-toggle="tab"
                             data-bs-target="#grade1"
                             type="button"
+                            role="tab"
+                            aria-selected="true"
                           >
                             1 grade
                           </button>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item" role="presentation">
                           <button
                             class="nav-link grade-tab fw-semibold"
                             data-bs-toggle="tab"
                             data-bs-target="#grade2"
                             type="button"
+                            role="tab"
+                            aria-selected="false"
                           >
                             2 grade
                           </button>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item" role="presentation">
                           <button
                             class="nav-link grade-tab fw-semibold"
                             data-bs-toggle="tab"
                             data-bs-target="#grade3"
                             type="button"
+                            role="tab"
+                            aria-selected="false"
                           >
                             3 grade
                           </button>
                         </li>
                       </ul>
 
-                      <ul class="nav nav-pills gap-3">
-                        <li class="nav-item">
+                      <!-- Lesson/Homework/Test tabs -->
+                      <ul class="nav nav-pills gap-3" role="tablist">
+                        <li class="nav-item" role="presentation">
                           <button
                             class="nav-link lesson-tab active d-flex flex-column align-items-center gap-2"
                             data-bs-toggle="tab"
                             data-bs-target="#lessons"
                             type="button"
+                            role="tab"
+                            aria-selected="true"
                           >
                             <img
                               src="./assets/images/icons/icon_book.svg"
                               class="blue-icon"
+                              alt="Lessons"
                             />
                             <small>Lessons</small>
                           </button>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item" role="presentation">
                           <button
                             class="nav-link lesson-tab d-flex flex-column align-items-center gap-2"
                             data-bs-toggle="tab"
                             data-bs-target="#homeworks"
                             type="button"
+                            role="tab"
+                            aria-selected="false"
                           >
                             <img
                               src="./assets/images/icons/icon_lounge.svg"
                               class="blue-icon"
+                              alt="Homeworks"
                             />
                             <small>Homeworks</small>
                           </button>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item" role="presentation">
                           <button
                             class="nav-link lesson-tab d-flex flex-column align-items-center gap-2"
                             data-bs-toggle="tab"
                             data-bs-target="#tests"
                             type="button"
+                            role="tab"
+                            aria-selected="false"
                           >
                             <img
                               src="./assets/images/icons/icon_test.svg"
                               class="blue-icon"
+                              alt="Tests"
                             />
                             <small>Tests</small>
                           </button>
@@ -1549,9 +1565,14 @@
                     </div>
 
                     <div class="tab-content pt-4">
-                      <div class="tab-pane fade show active" id="lessons">
+                      <!-- LESSONS -->
+                      <div
+                        class="tab-pane fade show active"
+                        id="lessons"
+                        role="tabpanel"
+                      >
                         <div class="d-flex flex-column gap-3">
-                          <!-- Create new lesson -->
+                          <!-- Create lesson -->
                           <div class="accordion" id="lessonAccordion">
                             <div
                               class="accordion-item lesson-accordion-item border-0"
@@ -1575,7 +1596,563 @@
                                 data-bs-parent="#lessonAccordion"
                               >
                                 <div class="accordion-body bg-white">
-                                  Lesson creation form or content here
+                                  <div class="d-flex flex-column gap-4">
+                                    <!-- Top fields -->
+                                    <div class="row g-3">
+                                      <div class="col-md-6">
+                                        <label
+                                          for="lessonTitle"
+                                          class="form-label small text-secondary mb-1"
+                                        >
+                                          Lesson title
+                                        </label>
+                                        <input
+                                          type="text"
+                                          class="form-control lesson-form-control"
+                                          id="lessonTitle"
+                                          value="My Pets"
+                                          placeholder="Enter lesson title"
+                                        />
+                                      </div>
+
+                                      <div class="col-md-6">
+                                        <label
+                                          for="lessonTopic"
+                                          class="form-label small text-secondary mb-1"
+                                        >
+                                          Topic
+                                        </label>
+                                        <input
+                                          type="text"
+                                          class="form-control lesson-form-control"
+                                          id="lessonTopic"
+                                          value="Vocabulary and Simple Sentences about Pets"
+                                          placeholder="Enter topic"
+                                        />
+                                      </div>
+
+                                      <div class="col-12">
+                                        <label
+                                          for="lessonDescription"
+                                          class="form-label small text-secondary mb-1"
+                                        >
+                                          Description
+                                        </label>
+                                        <textarea
+                                          class="form-control lesson-form-control lesson-textarea"
+                                          id="lessonDescription"
+                                          rows="5"
+                                          placeholder="Write lesson description"
+                                        >
+In this lesson, third-grade students will learn vocabulary related to common pets such as cats, dogs, parrots, fish, and more. Students will not only be able to name the animals but also construct simple sentences about the pets they have or like. The lesson focuses on developing speaking and listening skills through answering questions and talking about their own pets. The lesson is designed to engage children through dialogues and games, keeping their motivation high while learning English in a playful way. There are also pair activities and creative tasks where students can draw their favorite pet and present it in English.</textarea
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <!-- Additional materials -->
+                                    <div class="lesson-section-box">
+                                      <p class="fw-semibold mb-3">
+                                        Additional materials
+                                      </p>
+
+                                      <div class="row g-3 align-items-end">
+                                        <div class="col-md-3">
+                                          <label
+                                            for="materialAuthor"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Author
+                                          </label>
+                                          <input
+                                            type="text"
+                                            class="form-control lesson-form-control"
+                                            id="materialAuthor"
+                                            value="Emily Johnson"
+                                          />
+                                        </div>
+
+                                        <div class="col-md-5">
+                                          <label
+                                            for="bookTitle"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Book title
+                                          </label>
+                                          <input
+                                            type="text"
+                                            class="form-control lesson-form-control"
+                                            id="bookTitle"
+                                            value='Textbook: "English for Elementary Kids"'
+                                          />
+                                        </div>
+
+                                        <div class="col-md-2">
+                                          <label
+                                            for="bookParagraph"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Paragraph
+                                          </label>
+                                          <input
+                                            type="text"
+                                            class="form-control lesson-form-control"
+                                            id="bookParagraph"
+                                            value='4 — "My Pets"'
+                                          />
+                                        </div>
+
+                                        <div class="col-md-2">
+                                          <button
+                                            type="button"
+                                            class="btn btn-primary lesson-add-btn w-100"
+                                          >
+                                            Add +
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <!-- Attached files -->
+                                    <div class="d-flex flex-column gap-3">
+                                      <p class="fw-semibold mb-0">
+                                        Attached files
+                                      </p>
+
+                                      <label
+                                        for="lessonFiles"
+                                        class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center"
+                                      >
+                                        <strong class="mb-1">
+                                          Drag &amp; drop files here or
+                                          <span class="text-primary"
+                                            >upload</span
+                                          >
+                                        </strong>
+                                        <small class="text-secondary">
+                                          Acceptable file formats: pdf, jpg,
+                                          jpeg, png. Maximum size: 100 MB.
+                                        </small>
+                                      </label>
+                                      <input
+                                        type="file"
+                                        id="lessonFiles"
+                                        class="d-none"
+                                        multiple
+                                      />
+
+                                      <div class="d-flex flex-wrap gap-2">
+                                        <div class="lesson-file-chip">
+                                          <span>Document Title</span>
+                                          <button
+                                            type="button"
+                                            class="btn p-0 border-0 bg-transparent"
+                                          >
+                                            ×
+                                          </button>
+                                        </div>
+
+                                        <div class="lesson-file-chip">
+                                          <span>Textbook_3grade</span>
+                                          <button
+                                            type="button"
+                                            class="btn p-0 border-0 bg-transparent"
+                                          >
+                                            ×
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <!-- Add to schedule -->
+                                    <div class="lesson-section-box">
+                                      <div class="row g-3 align-items-end">
+                                        <div class="col-12 col-lg-2">
+                                          <p class="fw-semibold mb-0">
+                                            Add to shedule
+                                          </p>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <label
+                                            for="assignmentType"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Assignment type
+                                          </label>
+                                          <select
+                                            id="assignmentType"
+                                            class="form-select lesson-form-control"
+                                          >
+                                            <option selected>Grade</option>
+                                            <option>Student</option>
+                                            <option>Group</option>
+                                          </select>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                          <label
+                                            for="chooseGrade"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Choose grade
+                                          </label>
+                                          <select
+                                            id="chooseGrade"
+                                            class="form-select lesson-form-control"
+                                          >
+                                            <option selected>
+                                              3 grade - Jane Henderson
+                                            </option>
+                                            <option>
+                                              2 grade - Michael Brown
+                                            </option>
+                                            <option>
+                                              1 grade - Anna Smith
+                                            </option>
+                                          </select>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <label
+                                            for="lessonDate"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Date
+                                          </label>
+                                          <input
+                                            type="date"
+                                            class="form-control lesson-form-control"
+                                            id="lessonDate"
+                                            value="2026-04-12"
+                                          />
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                          <button
+                                            type="button"
+                                            class="btn btn-primary lesson-add-btn"
+                                          >
+                                            Add grade / student +
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <!-- Add homework -->
+                                    <div class="lesson-section-box">
+                                      <div class="row g-3 align-items-end mb-3">
+                                        <div class="col-12 col-lg-2">
+                                          <p class="fw-semibold mb-0">
+                                            Add Homework
+                                          </p>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                          <label
+                                            for="selectHomework"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Select homework
+                                          </label>
+                                          <select
+                                            id="selectHomework"
+                                            class="form-select lesson-form-control"
+                                          >
+                                            <option selected>
+                                              Homework 4 — "My Pets"
+                                            </option>
+                                            <option>
+                                              Homework 5 — "My School"
+                                            </option>
+                                          </select>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <label
+                                            for="homeworkDueDate"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Due date
+                                          </label>
+                                          <input
+                                            type="date"
+                                            class="form-control lesson-form-control"
+                                            id="homeworkDueDate"
+                                            value="2026-04-12"
+                                          />
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <button
+                                            type="button"
+                                            class="btn btn-primary lesson-add-btn w-100"
+                                          >
+                                            Create +
+                                          </button>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-end mb-3">
+                                        <div class="col-sm-6 col-lg-3">
+                                          <label
+                                            for="relatedLesson"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Related lesson
+                                          </label>
+                                          <select
+                                            id="relatedLesson"
+                                            class="form-select lesson-form-control"
+                                          >
+                                            <option selected>
+                                              Lesson 1 - "MY Pets"
+                                            </option>
+                                          </select>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <label
+                                            for="relatedHomeworkDate"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Due date
+                                          </label>
+                                          <input
+                                            type="date"
+                                            class="form-control lesson-form-control"
+                                            id="relatedHomeworkDate"
+                                            value="2026-04-12"
+                                          />
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <label
+                                            for="assessmentType"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Assessment type
+                                          </label>
+                                          <select
+                                            id="assessmentType"
+                                            class="form-select lesson-form-control"
+                                          >
+                                            <option selected>
+                                              five-point scale
+                                            </option>
+                                            <option>pass / fail</option>
+                                          </select>
+                                        </div>
+                                      </div>
+
+                                      <div class="mb-3">
+                                        <p class="fw-semibold mb-2">
+                                          Create related homework
+                                        </p>
+                                        <textarea
+                                          class="form-control lesson-form-control lesson-textarea"
+                                          rows="4"
+                                        >
+Write an essay about your pet. We covered speech patterns related to pets in class; try to use them in your essay.</textarea
+                                        >
+                                      </div>
+
+                                      <div class="lesson-section-box">
+                                        <p class="fw-semibold mb-3">
+                                          Additional materials
+                                        </p>
+
+                                        <div class="row g-3 align-items-end">
+                                          <div class="col-md-3">
+                                            <label
+                                              class="form-label small text-secondary mb-1"
+                                            >
+                                              Author
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control lesson-form-control"
+                                              value="Emily Johnson"
+                                            />
+                                          </div>
+
+                                          <div class="col-md-5">
+                                            <label
+                                              class="form-label small text-secondary mb-1"
+                                            >
+                                              Book title
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control lesson-form-control"
+                                              value='Textbook: "English for Elementary Kids"'
+                                            />
+                                          </div>
+
+                                          <div class="col-md-2">
+                                            <label
+                                              class="form-label small text-secondary mb-1"
+                                            >
+                                              Paragraph
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control lesson-form-control"
+                                              value='4 — "My Pets"'
+                                            />
+                                          </div>
+
+                                          <div class="col-md-2">
+                                            <button
+                                              type="button"
+                                              class="btn btn-primary lesson-add-btn w-100"
+                                            >
+                                              Add +
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="d-flex flex-column gap-3 mt-3"
+                                      >
+                                        <p class="fw-semibold mb-0">
+                                          Attached files
+                                        </p>
+
+                                        <label
+                                          for="homeworkFiles"
+                                          class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center"
+                                        >
+                                          <strong class="mb-1">
+                                            Drag &amp; drop files here or
+                                            <span class="text-primary"
+                                              >upload</span
+                                            >
+                                          </strong>
+                                          <small class="text-secondary">
+                                            Acceptable file formats: pdf, jpg,
+                                            jpeg, png. Maximum size: 100 MB.
+                                          </small>
+                                        </label>
+                                        <input
+                                          type="file"
+                                          id="homeworkFiles"
+                                          class="d-none"
+                                          multiple
+                                        />
+
+                                        <div class="d-flex flex-wrap gap-2">
+                                          <div class="lesson-file-chip">
+                                            <span>Essay template</span>
+                                            <button
+                                              type="button"
+                                              class="btn p-0 border-0 bg-transparent"
+                                            >
+                                              ×
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="d-flex gap-2 pt-2">
+                                        <button
+                                          type="button"
+                                          class="btn btn-outline-primary px-4"
+                                        >
+                                          Cancel
+                                        </button>
+                                        <button
+                                          type="button"
+                                          class="btn btn-primary px-4"
+                                        >
+                                          Save
+                                        </button>
+                                      </div>
+                                    </div>
+
+                                    <!-- Add test -->
+                                    <div class="lesson-section-box">
+                                      <div class="row g-3 align-items-end">
+                                        <div class="col-12 col-lg-2">
+                                          <p class="fw-semibold mb-0">
+                                            Add Test
+                                          </p>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                          <label
+                                            for="selectTest"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Select test
+                                          </label>
+                                          <select
+                                            id="selectTest"
+                                            class="form-select lesson-form-control"
+                                          >
+                                            <option selected>
+                                              Test 4 — "My Pets"
+                                            </option>
+                                            <option>
+                                              Test 5 — "My School"
+                                            </option>
+                                          </select>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <label
+                                            for="testDueDate"
+                                            class="form-label small text-secondary mb-1"
+                                          >
+                                            Due date
+                                          </label>
+                                          <input
+                                            type="date"
+                                            class="form-control lesson-form-control"
+                                            id="testDueDate"
+                                            value="2026-04-12"
+                                          />
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-2">
+                                          <button
+                                            type="button"
+                                            class="btn btn-primary lesson-add-btn w-100"
+                                          >
+                                            Create +
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <!-- Bottom actions -->
+                                    <div
+                                      class="d-flex justify-content-between align-items-center flex-wrap gap-3 pt-2 border-top"
+                                    >
+                                      <div class="d-flex gap-2">
+                                        <button
+                                          type="button"
+                                          class="btn btn-outline-primary px-4"
+                                        >
+                                          Cancel
+                                        </button>
+                                        <button
+                                          type="button"
+                                          class="btn btn-primary px-4"
+                                        >
+                                          Save
+                                        </button>
+                                      </div>
+
+                                      <button
+                                        type="button"
+                                        class="btn p-0 border-0 bg-transparent text-danger fw-semibold d-flex align-items-center gap-2"
+                                      >
+                                        <i class="bi bi-trash3"></i>
+                                        Remove
+                                      </button>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1599,8 +2176,9 @@
                                   <a
                                     href="#"
                                     class="text-primary text-decoration-none"
-                                    >creation date</a
                                   >
+                                    creation date
+                                  </a>
                                 </small>
                               </div>
 
@@ -1630,6 +2208,7 @@
                               <button
                                 type="button"
                                 class="btn p-0 border-0 bg-transparent view-mode-btn active"
+                                aria-label="Grid view"
                               >
                                 <img
                                   src="./assets/images/icons/icon_dashboard.svg"
@@ -1640,6 +2219,7 @@
                               <button
                                 type="button"
                                 class="btn p-0 border-0 bg-transparent view-mode-btn"
+                                aria-label="List view"
                               >
                                 <img
                                   src="./assets/images/icons/icon_list.svg"
@@ -1650,6 +2230,7 @@
                               <button
                                 type="button"
                                 class="btn p-0 border-0 bg-transparent view-mode-btn"
+                                aria-label="Calendar view"
                               >
                                 <img
                                   src="./assets/images/icons/icon_calendar.svg"
@@ -1659,123 +2240,322 @@
                             </div>
                           </div>
 
+                          <!-- Lessons list -->
                           <div class="d-flex flex-column gap-2">
-                            <div class="d-flex flex-column gap-2">
-                              <div class="lesson-item">
-                                <div
-                                  class="lesson-row d-flex justify-content-between align-items-center"
-                                >
-                                  <p class="mb-0 fw-semibold">
-                                    Lesson 1 - My pets
-                                  </p>
+                            <!-- Lesson 1 -->
+                            <div class="lesson-item">
+                              <div
+                                class="lesson-row d-flex justify-content-between align-items-center"
+                              >
+                                <p class="mb-0 fw-semibold lesson-title-text">
+                                  Lesson 1 - My pets
+                                </p>
 
-                                  <div class="d-flex align-items-center gap-3">
-                                    <a
-                                      href="#"
-                                      class="text-primary text-decoration-none small fw-semibold"
-                                      >Edit</a
-                                    >
+                                <div class="d-flex align-items-center gap-3">
+                                  <button
+                                    type="button"
+                                    class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn"
+                                  >
+                                    Edit
+                                  </button>
 
-                                    <button
-                                      class="btn p-0 border-0 bg-transparent lesson-toggle"
-                                      type="button"
-                                      data-bs-toggle="collapse"
-                                      data-bs-target="#lesson1Details"
-                                      aria-expanded="false"
-                                      aria-controls="lesson1Details"
-                                    >
-                                      <i class="bi bi-chevron-down"></i>
-                                    </button>
-                                  </div>
-                                </div>
-
-                                <div class="collapse" id="lesson1Details">
-                                  <div class="lesson-details mt-2">
-                                    <p class="mb-2 fw-medium">Lesson details</p>
-                                    <p class="mb-0 text-secondary small">
-                                      Topic: Pets vocabulary, reading practice,
-                                      speaking activity.
-                                    </p>
-                                  </div>
+                                  <button
+                                    class="btn p-0 border-0 bg-transparent lesson-toggle"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#lesson1Details"
+                                    aria-expanded="false"
+                                    aria-controls="lesson1Details"
+                                  >
+                                    <i class="bi bi-chevron-down"></i>
+                                  </button>
                                 </div>
                               </div>
 
-                              <!-- Lesson 2 -->
-                              <div class="lesson-item">
+                              <div class="collapse mt-2" id="lesson1Details">
                                 <div
-                                  class="lesson-row d-flex justify-content-between align-items-center"
+                                  class="lesson-details bg-white rounded-4 p-3 shadow-sm"
                                 >
-                                  <p class="mb-0 fw-semibold">
-                                    Lesson 2 - My family
-                                  </p>
-
-                                  <div class="d-flex align-items-center gap-3">
-                                    <a
-                                      href="#"
-                                      class="text-primary text-decoration-none small fw-semibold"
-                                      >Edit</a
-                                    >
-
-                                    <button
-                                      class="btn p-0 border-0 bg-transparent lesson-toggle"
-                                      type="button"
-                                      data-bs-toggle="collapse"
-                                      data-bs-target="#lesson2Details"
-                                      aria-expanded="false"
-                                      aria-controls="lesson2Details"
-                                    >
-                                      <i class="bi bi-chevron-down"></i>
-                                    </button>
-                                  </div>
-                                </div>
-
-                                <div class="collapse" id="lesson2Details">
-                                  <div class="lesson-details mt-2">
-                                    <p class="mb-2 fw-medium">Lesson details</p>
-                                    <p class="mb-0 text-secondary small">
-                                      Topic: Family members, simple grammar,
-                                      pair exercises.
+                                  <div class="lesson-view-mode">
+                                    <p class="mb-2">
+                                      <strong>Title:</strong>
+                                      <span class="lesson-view-title"
+                                        >Lesson 1 - My pets</span
+                                      >
+                                    </p>
+                                    <p class="mb-2">
+                                      <strong>Description:</strong>
+                                      <span class="lesson-view-description">
+                                        Pets vocabulary, reading practice,
+                                        speaking activity.
+                                      </span>
+                                    </p>
+                                    <p class="mb-0">
+                                      <strong>Date:</strong>
+                                      <span class="lesson-view-date"
+                                        >2026-03-08</span
+                                      >
                                     </p>
                                   </div>
+
+                                  <form class="lesson-edit-form d-none">
+                                    <div class="mb-3">
+                                      <label class="form-label">Title</label>
+                                      <input
+                                        type="text"
+                                        class="form-control lesson-input-title"
+                                        value="Lesson 1 - My pets"
+                                      />
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label class="form-label"
+                                        >Description</label
+                                      >
+                                      <textarea
+                                        class="form-control lesson-input-description"
+                                        rows="4"
+                                      >
+Pets vocabulary, reading practice, speaking activity.</textarea
+                                      >
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label class="form-label">Date</label>
+                                      <input
+                                        type="date"
+                                        class="form-control lesson-input-date"
+                                        value="2026-03-08"
+                                      />
+                                    </div>
+
+                                    <div class="d-flex gap-2">
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary lesson-save-btn"
+                                      >
+                                        Save
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-outline-secondary lesson-cancel-btn"
+                                      >
+                                        Cancel
+                                      </button>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Lesson 2 -->
+                            <div class="lesson-item">
+                              <div
+                                class="lesson-row d-flex justify-content-between align-items-center"
+                              >
+                                <p class="mb-0 fw-semibold lesson-title-text">
+                                  Lesson 2 - My family
+                                </p>
+
+                                <div class="d-flex align-items-center gap-3">
+                                  <button
+                                    type="button"
+                                    class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn"
+                                  >
+                                    Edit
+                                  </button>
+
+                                  <button
+                                    class="btn p-0 border-0 bg-transparent lesson-toggle"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#lesson2Details"
+                                    aria-expanded="false"
+                                    aria-controls="lesson2Details"
+                                  >
+                                    <i class="bi bi-chevron-down"></i>
+                                  </button>
                                 </div>
                               </div>
 
-                              <div class="lesson-item">
+                              <div class="collapse mt-2" id="lesson2Details">
                                 <div
-                                  class="lesson-row d-flex justify-content-between align-items-center"
+                                  class="lesson-details bg-white rounded-4 p-3 shadow-sm"
                                 >
-                                  <p class="mb-0 fw-semibold">
-                                    Lesson 3 - My friends
-                                  </p>
-
-                                  <div class="d-flex align-items-center gap-3">
-                                    <a
-                                      href="#"
-                                      class="text-primary text-decoration-none small fw-semibold"
-                                      >Edit</a
-                                    >
-
-                                    <button
-                                      class="btn p-0 border-0 bg-transparent lesson-toggle"
-                                      type="button"
-                                      data-bs-toggle="collapse"
-                                      data-bs-target="#lesson3Details"
-                                      aria-expanded="false"
-                                      aria-controls="lesson3Details"
-                                    >
-                                      <i class="bi bi-chevron-down"></i>
-                                    </button>
-                                  </div>
-                                </div>
-
-                                <div class="collapse" id="lesson3Details">
-                                  <div class="lesson-details mt-2">
-                                    <p class="mb-2 fw-medium">Lesson details</p>
-                                    <p class="mb-0 text-secondary small">
-                                      Topic: Friendship words, listening,
-                                      classroom discussion.
+                                  <div class="lesson-view-mode">
+                                    <p class="mb-2">
+                                      <strong>Title:</strong>
+                                      <span class="lesson-view-title"
+                                        >Lesson 2 - My family</span
+                                      >
+                                    </p>
+                                    <p class="mb-2">
+                                      <strong>Description:</strong>
+                                      <span class="lesson-view-description">
+                                        Family members, simple grammar, pair
+                                        exercises.
+                                      </span>
+                                    </p>
+                                    <p class="mb-0">
+                                      <strong>Date:</strong>
+                                      <span class="lesson-view-date"
+                                        >2026-03-09</span
+                                      >
                                     </p>
                                   </div>
+
+                                  <form class="lesson-edit-form d-none">
+                                    <div class="mb-3">
+                                      <label class="form-label">Title</label>
+                                      <input
+                                        type="text"
+                                        class="form-control lesson-input-title"
+                                        value="Lesson 2 - My family"
+                                      />
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label class="form-label"
+                                        >Description</label
+                                      >
+                                      <textarea
+                                        class="form-control lesson-input-description"
+                                        rows="4"
+                                      >
+Family members, simple grammar, pair exercises.</textarea
+                                      >
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label class="form-label">Date</label>
+                                      <input
+                                        type="date"
+                                        class="form-control lesson-input-date"
+                                        value="2026-03-09"
+                                      />
+                                    </div>
+
+                                    <div class="d-flex gap-2">
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary lesson-save-btn"
+                                      >
+                                        Save
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-outline-secondary lesson-cancel-btn"
+                                      >
+                                        Cancel
+                                      </button>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Lesson 3 -->
+                            <div class="lesson-item">
+                              <div
+                                class="lesson-row d-flex justify-content-between align-items-center"
+                              >
+                                <p class="mb-0 fw-semibold lesson-title-text">
+                                  Lesson 3 - My friends
+                                </p>
+
+                                <div class="d-flex align-items-center gap-3">
+                                  <button
+                                    type="button"
+                                    class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn"
+                                  >
+                                    Edit
+                                  </button>
+
+                                  <button
+                                    class="btn p-0 border-0 bg-transparent lesson-toggle"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#lesson3Details"
+                                    aria-expanded="false"
+                                    aria-controls="lesson3Details"
+                                  >
+                                    <i class="bi bi-chevron-down"></i>
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div class="collapse mt-2" id="lesson3Details">
+                                <div
+                                  class="lesson-details bg-white rounded-4 p-3 shadow-sm"
+                                >
+                                  <div class="lesson-view-mode">
+                                    <p class="mb-2">
+                                      <strong>Title:</strong>
+                                      <span class="lesson-view-title"
+                                        >Lesson 3 - My friends</span
+                                      >
+                                    </p>
+                                    <p class="mb-2">
+                                      <strong>Description:</strong>
+                                      <span class="lesson-view-description">
+                                        Friendship words, listening, classroom
+                                        discussion.
+                                      </span>
+                                    </p>
+                                    <p class="mb-0">
+                                      <strong>Date:</strong>
+                                      <span class="lesson-view-date"
+                                        >2026-03-10</span
+                                      >
+                                    </p>
+                                  </div>
+
+                                  <form class="lesson-edit-form d-none">
+                                    <div class="mb-3">
+                                      <label class="form-label">Title</label>
+                                      <input
+                                        type="text"
+                                        class="form-control lesson-input-title"
+                                        value="Lesson 3 - My friends"
+                                      />
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label class="form-label"
+                                        >Description</label
+                                      >
+                                      <textarea
+                                        class="form-control lesson-input-description"
+                                        rows="4"
+                                      >
+Friendship words, listening, classroom discussion.</textarea
+                                      >
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label class="form-label">Date</label>
+                                      <input
+                                        type="date"
+                                        class="form-control lesson-input-date"
+                                        value="2026-03-10"
+                                      />
+                                    </div>
+
+                                    <div class="d-flex gap-2">
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary lesson-save-btn"
+                                      >
+                                        Save
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-outline-secondary lesson-cancel-btn"
+                                      >
+                                        Cancel
+                                      </button>
+                                    </div>
+                                  </form>
                                 </div>
                               </div>
                             </div>
@@ -1783,19 +2563,22 @@
                         </div>
                       </div>
 
-                      <div class="tab-pane fade" id="homeworks">
+                      <!-- HOMEWORKS -->
+                      <div class="tab-pane fade" id="homeworks" role="tabpanel">
                         <div class="p-4 bg-white rounded shadow">
-                          <p class="fs-5 fw-bold">Create New Homework</p>
+                          <p class="fs-5 fw-bold mb-0">Create New Homework</p>
                         </div>
                       </div>
 
-                      <div class="tab-pane fade" id="tests">
+                      <!-- TESTS -->
+                      <div class="tab-pane fade" id="tests" role="tabpanel">
                         <div class="p-4 bg-white rounded shadow">
-                          <p class="fs-5 fw-bold">Create New Test</p>
+                          <p class="fs-5 fw-bold mb-0">Create New Test</p>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- Schedule  -->
 
                   <div
                     class="tab-pane fade"
