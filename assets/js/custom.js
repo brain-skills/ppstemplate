@@ -700,3 +700,73 @@ document.addEventListener("DOMContentLoaded", () => {
     dayBtn.addEventListener("click", () => setActive(dayBtn, weekBtn));
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const gradeFilter = document.getElementById("gradeFilter");
+  const curatorFilter = document.getElementById("curatorFilter");
+  const resetFiltersBtn = document.getElementById("resetFiltersBtn");
+  const tableBody = document.getElementById("studentsTableBody");
+  const rows = tableBody ? tableBody.querySelectorAll("tr") : [];
+  const currentGradeTitle = document.getElementById("currentGradeTitle");
+  const currentCuratorName = document.getElementById("currentCuratorName");
+  const emptyState = document.getElementById("studentsEmptyState");
+
+  if (!gradeFilter || !curatorFilter || !tableBody || !rows.length) return;
+
+  function formatGradeTitle(value) {
+    return value === "all" ? "All Grades" : `${value} Grade`;
+  }
+
+  function formatCuratorName(value) {
+    if (value === "jane-henderson") return "Jane Henderson";
+    if (value === "michael-brown") return "Michael Brown";
+    return "All curators";
+  }
+
+  function filterStudentsTable() {
+    const selectedGrade = gradeFilter.value;
+    const selectedCurator = curatorFilter.value;
+    let visibleCount = 0;
+
+    rows.forEach((row) => {
+      const rowGrade = row.dataset.grade;
+      const rowCurator = row.dataset.curator;
+
+      const gradeMatch = selectedGrade === "all" || rowGrade === selectedGrade;
+      const curatorMatch =
+        selectedCurator === "all" || rowCurator === selectedCurator;
+
+      if (gradeMatch && curatorMatch) {
+        row.style.display = "";
+        visibleCount++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    if (currentGradeTitle) {
+      currentGradeTitle.textContent = formatGradeTitle(selectedGrade);
+    }
+
+    if (currentCuratorName) {
+      currentCuratorName.textContent = formatCuratorName(selectedCurator);
+    }
+
+    if (emptyState) {
+      emptyState.classList.toggle("d-none", visibleCount !== 0);
+    }
+  }
+
+  gradeFilter.addEventListener("change", filterStudentsTable);
+  curatorFilter.addEventListener("change", filterStudentsTable);
+
+  if (resetFiltersBtn) {
+    resetFiltersBtn.addEventListener("click", () => {
+      gradeFilter.value = "all";
+      curatorFilter.value = "all";
+      filterStudentsTable();
+    });
+  }
+
+  filterStudentsTable();
+});
