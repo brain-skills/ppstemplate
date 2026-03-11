@@ -871,7 +871,7 @@
                         </div>
 
                         <div
-                          class="students-table-card rounded-4 border overflow-hidden"
+                          class="students-table-card rounded border overflow-hidden"
                         >
                           <div
                             class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 px-3 px-xl-4 py-3"
@@ -1464,7 +1464,6 @@
                     <div
                       class="d-flex justify-content-between align-items-start flex-wrap gap-3"
                     >
-                      <!-- Grades -->
                       <ul class="nav gap-4" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button
@@ -1506,7 +1505,6 @@
                         </li>
                       </ul>
 
-                      <!-- Lesson/Homework/Test tabs -->
                       <ul class="nav nav-pills gap-3" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button
@@ -1627,7 +1625,7 @@
                                     </div>
 
                                     <div
-                                      class="lesson-section-box bg-blue-opacity p-3"
+                                      class="lesson-section-box bg-blue-opacity p-3 rounded"
                                     >
                                       <p class="fw-semibold mb-3">
                                         Additional materials
@@ -1672,8 +1670,9 @@
                                       </div>
                                     </div>
 
-                                    <!-- Attached files -->
-                                    <div class="d-flex flex-column gap-3">
+                                    <div
+                                      class="d-flex flex-column gap-3 bg-blue-opacity p-3 rounded"
+                                    >
                                       <p class="fw-semibold mb-0">
                                         Attached files
                                       </p>
@@ -1699,34 +1698,15 @@
                                         class="d-none"
                                         multiple
                                       />
-
-                                      <div class="d-flex flex-wrap gap-2">
-                                        <div class="lesson-file-chip">
-                                          <span>Document Title</span>
-                                          <button
-                                            type="button"
-                                            class="btn p-0 border-0 bg-transparent"
-                                          >
-                                            ×
-                                          </button>
-                                        </div>
-
-                                        <div class="lesson-file-chip">
-                                          <span>Textbook_3grade</span>
-                                          <button
-                                            type="button"
-                                            class="btn p-0 border-0 bg-transparent"
-                                          >
-                                            ×
-                                          </button>
-                                        </div>
-                                      </div>
                                     </div>
 
-                                    <!-- Add to schedule -->
-                                    <div class="lesson-section-box">
-                                      <div class="row g-3 align-items-end">
-                                        <div class="col-12 col-lg-2">
+                                    <div
+                                      class="lesson-section-box bg-blue-opacity p-3 rounded"
+                                    >
+                                      <div
+                                        class="row g-3 align-items-center mt-0"
+                                      >
+                                        <div class="col-12 col-lg-2 mt-0">
                                           <p class="fw-semibold mb-0">
                                             Add to shedule
                                           </p>
@@ -1798,8 +1778,9 @@
                                       </div>
                                     </div>
 
-                                    <!-- Add homework -->
-                                    <div class="lesson-section-box">
+                                    <div
+                                      class="lesson-section-box bg-blue-opacity p-3 rounded"
+                                    >
                                       <div class="row g-3 align-items-end mb-3">
                                         <div class="col-12 col-lg-2">
                                           <p class="fw-semibold mb-0">
@@ -2000,18 +1981,6 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                                           class="d-none"
                                           multiple
                                         />
-
-                                        <div class="d-flex flex-wrap gap-2">
-                                          <div class="lesson-file-chip">
-                                            <span>Essay template</span>
-                                            <button
-                                              type="button"
-                                              class="btn p-0 border-0 bg-transparent"
-                                            >
-                                              ×
-                                            </button>
-                                          </div>
-                                        </div>
                                       </div>
 
                                       <div class="d-flex gap-2 pt-2">
@@ -2030,8 +1999,9 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                                       </div>
                                     </div>
 
-                                    <!-- Add test -->
-                                    <div class="lesson-section-box">
+                                    <div
+                                      class="lesson-section-box bg-blue-opacity p-3 rounded"
+                                    >
                                       <div class="row g-3 align-items-end">
                                         <div class="col-12 col-lg-2">
                                           <p class="fw-semibold mb-0">
@@ -2085,7 +2055,6 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                                       </div>
                                     </div>
 
-                                    <!-- Bottom actions -->
                                     <div
                                       class="d-flex justify-content-between align-items-center flex-wrap gap-3 pt-2 border-top"
                                     >
@@ -2118,7 +2087,6 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                             </div>
                           </div>
 
-                          <!-- Top controls -->
                           <div
                             class="d-flex flex-wrap justify-content-between align-items-center gap-3 px-1"
                           >
@@ -2200,221 +2168,7 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                             </div>
                           </div>
 
-                          <!-- Lessons list -->
                           <div class="d-flex flex-column gap-2">
-                            <!-- Lesson 1 -->
-                            <div class="lesson-item">
-                              <div
-                                class="lesson-row d-flex justify-content-between align-items-center"
-                              >
-                                <p class="mb-0 fw-semibold lesson-title-text">
-                                  Lesson 1 - My pets
-                                </p>
-
-                                <div class="d-flex align-items-center gap-3">
-                                  <button
-                                    type="button"
-                                    class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn"
-                                  >
-                                    Edit
-                                  </button>
-
-                                  <button
-                                    class="btn p-0 border-0 bg-transparent lesson-toggle"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#lesson1Details"
-                                    aria-expanded="false"
-                                    aria-controls="lesson1Details"
-                                  >
-                                    <i class="bi bi-chevron-down"></i>
-                                  </button>
-                                </div>
-                              </div>
-
-                              <div class="collapse mt-2" id="lesson1Details">
-                                <div
-                                  class="lesson-details bg-white rounded-4 p-3 shadow-sm"
-                                >
-                                  <div class="lesson-view-mode">
-                                    <p class="mb-2">
-                                      <strong>Title:</strong>
-                                      <span class="lesson-view-title"
-                                        >Lesson 1 - My pets</span
-                                      >
-                                    </p>
-                                    <p class="mb-2">
-                                      <strong>Description:</strong>
-                                      <span class="lesson-view-description">
-                                        Pets vocabulary, reading practice,
-                                        speaking activity.
-                                      </span>
-                                    </p>
-                                    <p class="mb-0">
-                                      <strong>Date:</strong>
-                                      <span class="lesson-view-date"
-                                        >2026-03-08</span
-                                      >
-                                    </p>
-                                  </div>
-
-                                  <form class="lesson-edit-form d-none">
-                                    <div class="mb-3">
-                                      <label class="form-label">Title</label>
-                                      <input
-                                        type="text"
-                                        class="form-control lesson-input-title"
-                                        value="Lesson 1 - My pets"
-                                      />
-                                    </div>
-
-                                    <div class="mb-3">
-                                      <label class="form-label"
-                                        >Description</label
-                                      >
-                                      <textarea
-                                        class="form-control lesson-input-description"
-                                        rows="4"
-                                      >
-Pets vocabulary, reading practice, speaking activity.</textarea
-                                      >
-                                    </div>
-
-                                    <div class="mb-3">
-                                      <label class="form-label">Date</label>
-                                      <input
-                                        type="date"
-                                        class="form-control lesson-input-date"
-                                        value="2026-03-08"
-                                      />
-                                    </div>
-
-                                    <div class="d-flex gap-2">
-                                      <button
-                                        type="button"
-                                        class="btn btn-primary lesson-save-btn"
-                                      >
-                                        Save
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn btn-outline-secondary lesson-cancel-btn"
-                                      >
-                                        Cancel
-                                      </button>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Lesson 2 -->
-                            <div class="lesson-item">
-                              <div
-                                class="lesson-row d-flex justify-content-between align-items-center"
-                              >
-                                <p class="mb-0 fw-semibold lesson-title-text">
-                                  Lesson 2 - My family
-                                </p>
-
-                                <div class="d-flex align-items-center gap-3">
-                                  <button
-                                    type="button"
-                                    class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn"
-                                  >
-                                    Edit
-                                  </button>
-
-                                  <button
-                                    class="btn p-0 border-0 bg-transparent lesson-toggle"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#lesson2Details"
-                                    aria-expanded="false"
-                                    aria-controls="lesson2Details"
-                                  >
-                                    <i class="bi bi-chevron-down"></i>
-                                  </button>
-                                </div>
-                              </div>
-
-                              <div class="collapse mt-2" id="lesson2Details">
-                                <div
-                                  class="lesson-details bg-white rounded-4 p-3 shadow-sm"
-                                >
-                                  <div class="lesson-view-mode">
-                                    <p class="mb-2">
-                                      <strong>Title:</strong>
-                                      <span class="lesson-view-title"
-                                        >Lesson 2 - My family</span
-                                      >
-                                    </p>
-                                    <p class="mb-2">
-                                      <strong>Description:</strong>
-                                      <span class="lesson-view-description">
-                                        Family members, simple grammar, pair
-                                        exercises.
-                                      </span>
-                                    </p>
-                                    <p class="mb-0">
-                                      <strong>Date:</strong>
-                                      <span class="lesson-view-date"
-                                        >2026-03-09</span
-                                      >
-                                    </p>
-                                  </div>
-
-                                  <form class="lesson-edit-form d-none">
-                                    <div class="mb-3">
-                                      <label class="form-label">Title</label>
-                                      <input
-                                        type="text"
-                                        class="form-control lesson-input-title"
-                                        value="Lesson 2 - My family"
-                                      />
-                                    </div>
-
-                                    <div class="mb-3">
-                                      <label class="form-label"
-                                        >Description</label
-                                      >
-                                      <textarea
-                                        class="form-control lesson-input-description"
-                                        rows="4"
-                                      >
-Family members, simple grammar, pair exercises.</textarea
-                                      >
-                                    </div>
-
-                                    <div class="mb-3">
-                                      <label class="form-label">Date</label>
-                                      <input
-                                        type="date"
-                                        class="form-control lesson-input-date"
-                                        value="2026-03-09"
-                                      />
-                                    </div>
-
-                                    <div class="d-flex gap-2">
-                                      <button
-                                        type="button"
-                                        class="btn btn-primary lesson-save-btn"
-                                      >
-                                        Save
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn btn-outline-secondary lesson-cancel-btn"
-                                      >
-                                        Cancel
-                                      </button>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Lesson 3 -->
                             <div class="lesson-item">
                               <div
                                 class="lesson-row d-flex justify-content-between align-items-center"
@@ -2446,7 +2200,7 @@ Family members, simple grammar, pair exercises.</textarea
 
                               <div class="collapse mt-2" id="lesson3Details">
                                 <div
-                                  class="lesson-details bg-white rounded-4 p-3 shadow-sm"
+                                  class="lesson-details bg-white rounded p-3 shadow-sm"
                                 >
                                   <div class="lesson-view-mode">
                                     <p class="mb-2">
@@ -2538,7 +2292,606 @@ Friendship words, listening, classroom discussion.</textarea
                       </div>
                     </div>
                   </div>
+
                   <!-- Schedule  -->
+                  <div
+                    class="tab-pane fade"
+                    id="schedule-pane"
+                    role="tabpanel"
+                    aria-labelledby="schedule-tab"
+                    tabindex="0"
+                  >
+                    <div class="d-flex flex-column gap-4">
+                      <!-- Header -->
+                      <div
+                        class="bg-white rounded shadow-sm p-3 p-lg-4 d-flex flex-column flex-xl-row align-items-xl-center justify-content-between gap-3"
+                      >
+                        <div class="d-flex align-items-center gap-3">
+                          <div
+                            class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center"
+                            style="width: 52px; height: 52px"
+                          >
+                            <img
+                              src="./assets/images/icons/icon_calendar.svg"
+                              alt="Schedule"
+                              width="26"
+                              height="26"
+                              class="blue-icon"
+                            />
+                          </div>
+
+                          <div>
+                            <h4 class="fw-bold mb-1">Class Schedule</h4>
+                            <p class="text-secondary mb-0 small">
+                              Manage lessons, meetings, and individual sessions
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary rounded px-3"
+                          >
+                            Today
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-primary rounded px-3"
+                          >
+                            + Add Event
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="bg-white rounded shadow-sm p-3 p-lg-4">
+                        <div class="row g-3 align-items-end">
+                          <div class="col-12 col-md-6 col-xl-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Grade</label
+                            >
+                            <select class="form-select lesson-form-control">
+                              <option selected>All grades</option>
+                              <option>1 grade</option>
+                              <option>2 grade</option>
+                              <option>3 grade</option>
+                              <option>4 grade</option>
+                              <option>5 grade</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-xl-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Teacher</label
+                            >
+                            <select class="form-select lesson-form-control">
+                              <option selected>All teachers</option>
+                              <option>Jane Henderson</option>
+                              <option>Michael Brown</option>
+                              <option>Anna Smith</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-xl-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Subject</label
+                            >
+                            <select class="form-select lesson-form-control">
+                              <option selected>All subjects</option>
+                              <option>English</option>
+                              <option>Math</option>
+                              <option>Biology</option>
+                              <option>History</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-xl-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >View mode</label
+                            >
+                            <div class="d-flex gap-2">
+                              <button
+                                type="button"
+                                class="btn btn-primary flex-fill lesson-add-btn"
+                              >
+                                Week
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-outline-primary flex-fill lesson-add-btn"
+                              >
+                                Day
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="bg-white rounded shadow-sm p-3 p-lg-4 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3"
+                      >
+                        <div class="d-flex align-items-center gap-3">
+                          <button
+                            type="button"
+                            class="btn btn-light border rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 42px; height: 42px"
+                          >
+                            <i class="bi bi-chevron-left"></i>
+                          </button>
+
+                          <div>
+                            <h5 class="fw-bold mb-0">April 2026</h5>
+                            <small class="text-secondary"
+                              >Weekly academic schedule</small
+                            >
+                          </div>
+
+                          <button
+                            type="button"
+                            class="btn btn-light border rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 42px; height: 42px"
+                          >
+                            <i class="bi bi-chevron-right"></i>
+                          </button>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary rounded px-3"
+                          >
+                            Export
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary rounded px-3"
+                          >
+                            Print
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="bg-white rounded shadow-sm overflow-hidden">
+                        <div class="table-responsive">
+                          <table class="table align-middle mb-0">
+                            <thead class="bg-light">
+                              <tr>
+                                <th
+                                  class="fw-semibold text-secondary ps-4 py-3"
+                                >
+                                  Time
+                                </th>
+                                <th class="fw-semibold text-center py-3">
+                                  <div class="small text-secondary">13 Apr</div>
+                                  <div>Monday</div>
+                                </th>
+                                <th class="fw-semibold text-center py-3">
+                                  <div class="small text-secondary">14 Apr</div>
+                                  <div>Tuesday</div>
+                                </th>
+                                <th class="fw-semibold text-center py-3">
+                                  <div class="small text-secondary">15 Apr</div>
+                                  <div>Wednesday</div>
+                                </th>
+                                <th class="fw-semibold text-center py-3">
+                                  <div class="small text-secondary">16 Apr</div>
+                                  <div>Thursday</div>
+                                </th>
+                                <th class="fw-semibold text-center py-3">
+                                  <div class="small text-secondary">17 Apr</div>
+                                  <div>Friday</div>
+                                </th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr>
+                                <td class="ps-4 py-3">
+                                  <div class="fw-semibold">08:00</div>
+                                  <small class="text-secondary">1 lesson</small>
+                                </td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-primary bg-opacity-10 border border-primary border-opacity-25"
+                                  >
+                                    <div class="fw-semibold text-primary">
+                                      English
+                                    </div>
+                                    <small class="text-secondary d-block"
+                                      >1 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Jane Henderson</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3"></td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-success bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">Math</div>
+                                    <small class="text-secondary d-block"
+                                      >3 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Michael Brown</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3"></td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-warning bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">History</div>
+                                    <small class="text-secondary d-block"
+                                      >2 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Anna Smith</small
+                                    >
+                                  </div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="ps-4 py-3">
+                                  <div class="fw-semibold">09:00</div>
+                                  <small class="text-secondary">2 lesson</small>
+                                </td>
+
+                                <td class="py-3"></td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-info bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">Biology</div>
+                                    <small class="text-secondary d-block"
+                                      >4 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Jane Henderson</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3"></td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-danger bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">
+                                      Individual Session
+                                    </div>
+                                    <small class="text-secondary d-block"
+                                      >Sarah Jefferson</small
+                                    >
+                                    <small class="text-success fw-medium"
+                                      >individual</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3"></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ps-4 py-3">
+                                  <div class="fw-semibold">10:00</div>
+                                  <small class="text-secondary">3 lesson</small>
+                                </td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-secondary bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">Art</div>
+                                    <small class="text-secondary d-block"
+                                      >2 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Anna Smith</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3"></td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-primary bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold text-primary">
+                                      English
+                                    </div>
+                                    <small class="text-secondary d-block"
+                                      >1 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Jane Henderson</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-success bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">Geography</div>
+                                    <small class="text-secondary d-block"
+                                      >3 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Michael Brown</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3"></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ps-4 py-3">
+                                  <div class="fw-semibold">12:00</div>
+                                  <small class="text-secondary">Lunch</small>
+                                </td>
+
+                                <td colspan="5" class="py-3">
+                                  <div
+                                    class="rounded px-4 py-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 bg-light"
+                                  >
+                                    <div
+                                      class="d-flex align-items-center gap-2"
+                                    >
+                                      <img
+                                        src="./assets/images/icons/icon_food.svg"
+                                        alt="Lunch"
+                                        width="18"
+                                        height="18"
+                                      />
+                                      <span class="fw-semibold"
+                                        >Lunch break</span
+                                      >
+                                    </div>
+
+                                    <a
+                                      href="#"
+                                      class="text-primary text-decoration-none fw-medium"
+                                    >
+                                      Show today's menu
+                                    </a>
+                                  </div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="ps-4 py-3">
+                                  <div class="fw-semibold">13:00</div>
+                                  <small class="text-secondary">5 lesson</small>
+                                </td>
+
+                                <td class="py-3"></td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-danger bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">
+                                      Weekly Meeting
+                                    </div>
+                                    <small class="text-secondary d-block"
+                                      >Teachers’ council</small
+                                    >
+                                    <small class="text-danger fw-medium"
+                                      >meeting</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-primary bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold text-primary">
+                                      English
+                                    </div>
+                                    <small class="text-secondary d-block"
+                                      >3 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Jane Henderson</small
+                                    >
+                                  </div>
+                                </td>
+
+                                <td class="py-3"></td>
+
+                                <td class="py-3">
+                                  <div
+                                    class="rounded p-3 bg-warning bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold">Science</div>
+                                    <small class="text-secondary d-block"
+                                      >1 grade</small
+                                    >
+                                    <small class="text-secondary"
+                                      >Anna Smith</small
+                                    >
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="row g-4">
+                        <div class="col-12 col-xl-4">
+                          <div class="bg-white rounded shadow-sm p-4 h-100">
+                            <div
+                              class="d-flex align-items-center justify-content-between mb-3"
+                            >
+                              <h5 class="fw-bold mb-0">Today’s Summary</h5>
+                              <span
+                                class="badge bg-primary-subtle text-primary rounded"
+                              >
+                                8 events
+                              </span>
+                            </div>
+
+                            <div class="d-flex flex-column gap-3">
+                              <div
+                                class="d-flex align-items-center justify-content-between rounded bg-light p-3"
+                              >
+                                <div>
+                                  <div class="fw-semibold">Lessons</div>
+                                  <small class="text-secondary"
+                                    >Main class activity</small
+                                  >
+                                </div>
+                                <span class="fw-bold text-primary">5</span>
+                              </div>
+
+                              <div
+                                class="d-flex align-items-center justify-content-between rounded bg-light p-3"
+                              >
+                                <div>
+                                  <div class="fw-semibold">Meetings</div>
+                                  <small class="text-secondary"
+                                    >Internal school events</small
+                                  >
+                                </div>
+                                <span class="fw-bold text-danger">2</span>
+                              </div>
+
+                              <div
+                                class="d-flex align-items-center justify-content-between rounded bg-light p-3"
+                              >
+                                <div>
+                                  <div class="fw-semibold">Individuals</div>
+                                  <small class="text-secondary"
+                                    >Student sessions</small
+                                  >
+                                </div>
+                                <span class="fw-bold text-success">1</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-xl-8">
+                          <div class="bg-white rounded shadow-sm p-4 h-100">
+                            <div
+                              class="d-flex align-items-center justify-content-between mb-3"
+                            >
+                              <h5 class="fw-bold mb-0">Upcoming Notes</h5>
+                              <a
+                                href="#"
+                                class="text-primary text-decoration-none small fw-medium"
+                              >
+                                View all
+                              </a>
+                            </div>
+
+                            <div class="row g-3">
+                              <div class="col-md-6">
+                                <div class="rounded border p-3 h-100">
+                                  <div class="fw-semibold mb-1">
+                                    Parents Meeting
+                                  </div>
+                                  <small class="text-secondary d-block mb-2">
+                                    Thursday, 04:00 pm
+                                  </small>
+                                  <p class="mb-0 small text-secondary">
+                                    Conference with parents of 2nd and 3rd
+                                    grades.
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="rounded border p-3 h-100">
+                                  <div class="fw-semibold mb-1">
+                                    English Open Lesson
+                                  </div>
+                                  <small class="text-secondary d-block mb-2">
+                                    Friday, 10:00 am
+                                  </small>
+                                  <p class="mb-0 small text-secondary">
+                                    Demonstration lesson for school
+                                    administration.
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="rounded border p-3 h-100">
+                                  <div class="fw-semibold mb-1">
+                                    Weekly Teacher Council
+                                  </div>
+                                  <small class="text-secondary d-block mb-2">
+                                    Tuesday, 01:00 pm
+                                  </small>
+                                  <p class="mb-0 small text-secondary">
+                                    Discussion of academic plans and new tasks.
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="rounded border p-3 h-100">
+                                  <div class="fw-semibold mb-1">
+                                    Student Support Session
+                                  </div>
+                                  <small class="text-secondary d-block mb-2">
+                                    Thursday, 09:00 am
+                                  </small>
+                                  <p class="mb-0 small text-secondary">
+                                    Individual meeting with student and parents.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="d-flex flex-wrap justify-content-between align-items-center gap-3"
+                      >
+                        <div class="d-flex flex-wrap gap-2">
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary px-4 rounded"
+                          >
+                            Cancel
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-primary px-4 rounded"
+                          >
+                            Save Changes
+                          </button>
+                        </div>
+
+                        <button
+                          type="button"
+                          class="btn p-0 border-0 bg-transparent text-danger fw-semibold d-flex align-items-center gap-2"
+                        >
+                          <i class="bi bi-trash3"></i>
+                          Clear Schedule
+                        </button>
+                      </div>
+                    </div>
+                  </div>
 
                   <div
                     class="tab-pane fade"
@@ -2547,10 +2900,237 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="schedule-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Schedule content
+                    <div class="d-flex flex-column gap-3">
+                      <div
+                        class="bg-white rounded-3 shadow-sm p-3 d-flex justify-content-between align-items-center flex-wrap gap-2"
+                      >
+                        <div class="d-flex align-items-center gap-2">
+                          <img
+                            src="./assets/images/icons/icon_calendar.svg"
+                            width="22"
+                            height="22"
+                            class="blue-icon"
+                            alt=""
+                          />
+                          <span class="fw-semibold">Class Schedule</span>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                          <button class="btn btn-sm btn-outline-primary">
+                            Today
+                          </button>
+                          <button class="btn btn-sm btn-primary">
+                            + Event
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="bg-white rounded-3 shadow-sm p-3">
+                        <div class="row g-2">
+                          <div class="col-6 col-md-3">
+                            <label class="small text-secondary">Grade</label>
+                            <select class="form-select form-select-sm">
+                              <option>All grades</option>
+                              <option>1 grade</option>
+                              <option>2 grade</option>
+                              <option>3 grade</option>
+                            </select>
+                          </div>
+
+                          <div class="col-6 col-md-3">
+                            <label class="small text-secondary">Teacher</label>
+                            <select class="form-select form-select-sm">
+                              <option>All teachers</option>
+                              <option>Jane Henderson</option>
+                              <option>Michael Brown</option>
+                            </select>
+                          </div>
+
+                          <div class="col-6 col-md-3">
+                            <label class="small text-secondary">Subject</label>
+                            <select class="form-select form-select-sm">
+                              <option>All subjects</option>
+                              <option>English</option>
+                              <option>Math</option>
+                            </select>
+                          </div>
+
+                          <div class="col-6 col-md-3 d-flex align-items-end">
+                            <div class="d-flex w-100 gap-2">
+                              <button class="btn btn-sm btn-primary flex-fill">
+                                Week
+                              </button>
+                              <button
+                                class="btn btn-sm btn-outline-primary flex-fill"
+                              >
+                                Day
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="bg-white rounded-3 shadow-sm p-2 d-flex justify-content-between align-items-center"
+                      >
+                        <div class="d-flex align-items-center gap-2">
+                          <button class="btn btn-sm btn-light border">
+                            <i class="bi bi-chevron-left"></i>
+                          </button>
+
+                          <span class="fw-semibold small">April 2026</span>
+
+                          <button class="btn btn-sm btn-light border">
+                            <i class="bi bi-chevron-right"></i>
+                          </button>
+                        </div>
+
+                        <button class="btn btn-sm btn-outline-primary">
+                          Export
+                        </button>
+                      </div>
+
+                      <div class="bg-white rounded-3 shadow-sm overflow-hidden">
+                        <div class="table-responsive">
+                          <table class="table table-sm align-middle mb-0">
+                            <thead class="bg-light small">
+                              <tr>
+                                <th class="ps-3">Time</th>
+                                <th class="text-center">Mon</th>
+                                <th class="text-center">Tue</th>
+                                <th class="text-center">Wed</th>
+                                <th class="text-center">Thu</th>
+                                <th class="text-center">Fri</th>
+                              </tr>
+                            </thead>
+
+                            <tbody class="small">
+                              <tr>
+                                <td class="ps-3 fw-semibold">
+                                  08:00
+                                  <div class="text-secondary small">
+                                    1 lesson
+                                  </div>
+                                </td>
+
+                                <td>
+                                  <div
+                                    class="p-2 rounded bg-primary bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold small">English</div>
+                                    <div class="text-secondary small">
+                                      1 grade
+                                    </div>
+                                  </div>
+                                </td>
+
+                                <td></td>
+
+                                <td>
+                                  <div
+                                    class="p-2 rounded bg-success bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold small">Math</div>
+                                    <div class="text-secondary small">
+                                      3 grade
+                                    </div>
+                                  </div>
+                                </td>
+
+                                <td></td>
+
+                                <td>
+                                  <div
+                                    class="p-2 rounded bg-warning bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold small">History</div>
+                                    <div class="text-secondary small">
+                                      2 grade
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="ps-3 fw-semibold">
+                                  09:00
+                                  <div class="text-secondary small">
+                                    2 lesson
+                                  </div>
+                                </td>
+
+                                <td></td>
+
+                                <td>
+                                  <div
+                                    class="p-2 rounded bg-info bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold small">Biology</div>
+                                    <div class="text-secondary small">
+                                      4 grade
+                                    </div>
+                                  </div>
+                                </td>
+
+                                <td></td>
+
+                                <td>
+                                  <div
+                                    class="p-2 rounded bg-danger bg-opacity-10"
+                                  >
+                                    <div class="fw-semibold small">
+                                      Individual
+                                    </div>
+                                    <div class="text-secondary small">
+                                      Sarah Jefferson
+                                    </div>
+                                  </div>
+                                </td>
+
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ps-3 fw-semibold">
+                                  12:00
+                                  <div class="text-secondary small">Lunch</div>
+                                </td>
+
+                                <td colspan="5">
+                                  <div
+                                    class="bg-light rounded p-2 d-flex justify-content-between align-items-center"
+                                  >
+                                    <div
+                                      class="d-flex align-items-center gap-2"
+                                    >
+                                      <img
+                                        src="./assets/images/icons/icon_food.svg"
+                                        width="16"
+                                        height="16"
+                                        alt=""
+                                      />
+                                      <span class="small fw-semibold"
+                                        >Lunch break</span
+                                      >
+                                    </div>
+
+                                    <a
+                                      href="#"
+                                      class="small text-primary text-decoration-none"
+                                    >
+                                      Menu
+                                    </a>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- Attendance  -->
 
                   <div
                     class="tab-pane fade"
@@ -2559,10 +3139,527 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="attendance-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Attendance content
+                    <div class="d-flex flex-column gap-3">
+                      <!-- Filters -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Grade</label
+                            >
+                            <select
+                              class="form-select form-select-sm attendance-select"
+                            >
+                              <option selected>All grades</option>
+                              <option>1 grade</option>
+                              <option>2 grade</option>
+                              <option>3 grade</option>
+                              <option>4 grade</option>
+                              <option>5 grade</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Student</label
+                            >
+                            <select
+                              class="form-select form-select-sm attendance-select"
+                            >
+                              <option selected>All students</option>
+                              <option>Michael Brown</option>
+                              <option>Ella Williams</option>
+                              <option>Logan Martinez</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Status</label
+                            >
+                            <select
+                              class="form-select form-select-sm attendance-select"
+                            >
+                              <option selected>Not selected</option>
+                              <option>Absent</option>
+                              <option>Sick</option>
+                              <option>Valid reason</option>
+                              <option>Critical mark</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3">
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-secondary w-100"
+                            >
+                              <i class="bi bi-funnel me-2"></i>Reset filters
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Summary -->
+                      <div class="row g-3">
+                        <div class="col-12 col-xl-4">
+                          <div
+                            class="bg-white rounded-4 shadow-sm p-3 attendance-card h-100"
+                          >
+                            <div class="d-flex flex-column gap-1">
+                              <h6 class="fw-semibold mb-0">Monitoring</h6>
+                              <small class="text-secondary"
+                                >12.01.2025 - 12.07.2025</small
+                              >
+                              <a
+                                href="#"
+                                class="small text-primary text-decoration-none mt-2"
+                              >
+                                <i class="bi bi-download me-1"></i>Download
+                                summary report
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-xl-2">
+                          <div
+                            class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center attendance-card h-100"
+                          >
+                            <div class="small fw-semibold">Missed lessons</div>
+                            <div class="fs-5 fw-bold lh-1 mt-2">
+                              11
+                              <span class="fs-6 fw-normal text-secondary"
+                                >(7%)</span
+                              >
+                            </div>
+                            <small class="text-secondary d-block mt-1"
+                              >3 absent students</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-xl-3">
+                          <div
+                            class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center attendance-card h-100"
+                          >
+                            <div class="small fw-semibold">Valid reason</div>
+                            <div class="fs-5 fw-bold lh-1 mt-2">
+                              2
+                              <span class="fs-6 fw-normal text-secondary"
+                                >(28%)</span
+                              >
+                            </div>
+                            <small class="text-secondary d-block mt-1"
+                              >60% of absences are for a valid reason</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-xl-3">
+                          <div
+                            class="bg-danger bg-opacity-10 rounded-4 shadow-sm p-3 text-center attendance-card h-100"
+                          >
+                            <div class="small fw-semibold">Critical marks</div>
+                            <div class="fs-5 fw-bold lh-1 mt-2">
+                              1
+                              <span class="fs-6 fw-normal text-secondary"
+                                >(2%)</span
+                              >
+                            </div>
+                            <small class="text-secondary d-block mt-1"
+                              >Systematic absenteeism</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Attendance table -->
+                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
+                        <div
+                          class="p-3 border-bottom d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3"
+                        >
+                          <div
+                            class="d-flex align-items-center gap-4 flex-wrap"
+                          >
+                            <h5 class="fw-bold mb-0">3 Grade</h5>
+
+                            <div class="d-flex align-items-center gap-2">
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-light border rounded-circle attendance-nav-btn"
+                              >
+                                <i class="bi bi-chevron-left"></i>
+                              </button>
+
+                              <div class="small fw-semibold">
+                                December
+                                <span class="text-secondary">2025</span>
+                              </div>
+
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-light border rounded-circle attendance-nav-btn"
+                              >
+                                <i class="bi bi-chevron-right"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-3 flex-wrap"
+                          >
+                            <div class="d-flex align-items-center gap-2">
+                              <img
+                                src="https://i.pravatar.cc/32?img=12"
+                                class="rounded-circle"
+                                alt="Jane Henderson"
+                                width="32"
+                                height="32"
+                              />
+                              <div class="small">
+                                <div class="fw-semibold text-dark">
+                                  Jane Henderson
+                                </div>
+                                <div class="text-secondary">curator</div>
+                              </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 small">
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-link text-primary text-decoration-none p-0 fw-semibold"
+                              >
+                                Week
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-link text-secondary text-decoration-none p-0"
+                              >
+                                Day
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="table-responsive">
+                          <table
+                            class="table table-sm align-middle mb-0 attendance-table"
+                          >
+                            <thead>
+                              <tr>
+                                <th class="attendance-student-col bg-light">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-people text-primary"></i>
+                                    <span>Students</span>
+                                  </div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="attendance-day">Sunday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="attendance-day">Monday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="attendance-day">Tuesday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="attendance-day">Wednesday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="attendance-day">Thursday</div>
+                                </th>
+                                <th class="text-center attendance-active-day">
+                                  <div class="small fw-semibold text-primary">
+                                    01.12
+                                  </div>
+                                  <div class="attendance-day text-primary">
+                                    Friday
+                                  </div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="attendance-day">Saturday</div>
+                                </th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=1"
+                                      class="rounded-circle"
+                                      alt="Michael Brown"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Michael Brown</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-absent text-center">
+                                  Absent
+                                </td>
+                                <td class="attendance-absent text-center">
+                                  Absent
+                                </td>
+                                <td class="attendance-absent text-center">
+                                  Absent
+                                  <div
+                                    class="small text-danger fw-semibold mt-1"
+                                  >
+                                    3 <span class="text-secondary">()</span>
+                                  </div>
+                                </td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=2"
+                                      class="rounded-circle"
+                                      alt="Ella Williams"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Ella Williams</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=3"
+                                      class="rounded-circle"
+                                      alt="Logan Martinez"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Logan Martinez</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=4"
+                                      class="rounded-circle"
+                                      alt="Natalie Wilson"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Natalie Wilson</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=5"
+                                      class="rounded-circle"
+                                      alt="Grace Walker"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Grace Walker</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-sick text-center">
+                                  Sick
+                                  <div
+                                    class="small text-success fw-semibold mt-1"
+                                  >
+                                    ※
+                                  </div>
+                                </td>
+                                <td class="attendance-sick text-center">
+                                  Sick
+                                  <div
+                                    class="small text-success fw-semibold mt-1"
+                                  >
+                                    ※
+                                  </div>
+                                </td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=6"
+                                      class="rounded-circle"
+                                      alt="Chloe Moore"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Chloe Moore</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td class="attendance-absent text-center">
+                                  Absent
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=7"
+                                      class="rounded-circle"
+                                      alt="Ethan Miller"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Ethan Miller</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-absent text-center">
+                                  Absent
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=8"
+                                      class="rounded-circle"
+                                      alt="Elisabeth King"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Elisabeth King</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=9"
+                                      class="rounded-circle"
+                                      alt="Mary-Ann Davis"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Mary-Ann Davis</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td class="attendance-student-cell">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img
+                                      src="https://i.pravatar.cc/28?img=10"
+                                      class="rounded-circle"
+                                      alt="Caleb Thomas"
+                                      width="28"
+                                      height="28"
+                                    />
+                                    <span>Caleb Thomas</span>
+                                  </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="attendance-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr class="attendance-total-row">
+                                <td class="fw-semibold">Total</td>
+                                <td class="text-center fw-semibold">10 / 10</td>
+                                <td class="text-center fw-semibold">9 / 10</td>
+                                <td class="text-center fw-semibold">8 / 10</td>
+                                <td class="text-center fw-semibold">8 / 10</td>
+                                <td class="text-center fw-semibold">8 / 10</td>
+                                <td
+                                  class="text-center fw-semibold attendance-active-col"
+                                >
+                                  10 / 10
+                                </td>
+                                <td class="text-center fw-semibold"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- GRADES  -->
 
                   <div
                     class="tab-pane fade"
@@ -2571,10 +3668,469 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="grades-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Grades content
+                    <div class="d-flex flex-column gap-3">
+                      <!-- Filters -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Grade</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>All grades</option>
+                              <option>1 grade</option>
+                              <option>2 grade</option>
+                              <option>3 grade</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Student</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>All students</option>
+                              <option>Michael Brown</option>
+                              <option>Ella Williams</option>
+                              <option>Logan Martinez</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Status</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>Not selected</option>
+                              <option>High mark</option>
+                              <option>Low mark</option>
+                            </select>
+                          </div>
+
+                          <div
+                            class="col-12 col-md-3 d-flex justify-content-md-end"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-secondary px-3"
+                            >
+                              <i class="bi bi-funnel me-2"></i>Reset filters
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Summary cards -->
+                      <div class="row g-3">
+                        <div class="col-12 col-xl-4">
+                          <div
+                            class="bg-white rounded-4 shadow-sm p-3 h-100 dashboard-card"
+                          >
+                            <h6 class="fw-semibold mb-1">Monitoring</h6>
+                            <small class="text-secondary d-block mb-2"
+                              >12.01.2025 – 12.07.2025</small
+                            >
+                            <a
+                              href="#"
+                              class="small text-primary text-decoration-none"
+                            >
+                              <i class="bi bi-download me-1"></i>Download
+                              summary report
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-xl-2">
+                          <div
+                            class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card"
+                          >
+                            <div class="small fw-semibold">Average point</div>
+                            <div class="fs-5 fw-bold mt-1">
+                              4.3 <span class="text-success">↑</span>
+                            </div>
+                            <small class="text-secondary"
+                              >8% better than last week</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-xl-3">
+                          <div
+                            class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card"
+                          >
+                            <div class="small fw-semibold">High marks</div>
+                            <div class="fs-5 fw-bold mt-1">
+                              27 <span class="text-success">(94%) ↑</span>
+                            </div>
+                            <small class="text-secondary"
+                              >24% more than last week</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-xl-3">
+                          <div
+                            class="bg-danger bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card"
+                          >
+                            <div class="small fw-semibold">Low marks</div>
+                            <div class="fs-5 fw-bold mt-1">
+                              5 <span class="text-danger">(6%) ↑</span>
+                            </div>
+                            <small class="text-secondary"
+                              >12% more than last week</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Table -->
+                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
+                        <div
+                          class="p-3 border-bottom d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3"
+                        >
+                          <div
+                            class="d-flex align-items-center gap-4 flex-wrap"
+                          >
+                            <h5 class="fw-bold mb-0">3 Grade</h5>
+
+                            <div class="d-flex align-items-center gap-2">
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-light border rounded-circle dashboard-nav-btn"
+                              >
+                                <i class="bi bi-chevron-left"></i>
+                              </button>
+
+                              <div class="small fw-semibold">
+                                December
+                                <span class="text-secondary">2025</span>
+                              </div>
+
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-light border rounded-circle dashboard-nav-btn"
+                              >
+                                <i class="bi bi-chevron-right"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-3 flex-wrap"
+                          >
+                            <div class="d-flex align-items-center gap-2">
+                              <img
+                                src="https://i.pravatar.cc/32?img=12"
+                                class="rounded-circle"
+                                alt="Jane Henderson"
+                                width="32"
+                                height="32"
+                              />
+                              <div class="small">
+                                <div class="fw-semibold text-dark">
+                                  Jane Henderson
+                                </div>
+                                <div class="text-secondary">curator</div>
+                              </div>
+                            </div>
+
+                            <div class="small d-flex align-items-center gap-2">
+                              <a
+                                href="#"
+                                class="text-primary text-decoration-none fw-semibold"
+                                >Week</a
+                              >
+                              <a
+                                href="#"
+                                class="text-secondary text-decoration-none"
+                                >Day</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="table-responsive">
+                          <table
+                            class="table table-sm align-middle mb-0 dashboard-table"
+                          >
+                            <thead>
+                              <tr>
+                                <th class="dashboard-student-col bg-light">
+                                  Students
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="dashboard-day">Sunday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="dashboard-day">Monday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="dashboard-day">Tuesday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="dashboard-day">Wednesday</div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="dashboard-day">Thursday</div>
+                                </th>
+                                <th class="text-center dashboard-active-col">
+                                  <div class="small fw-semibold text-primary">
+                                    01.12
+                                  </div>
+                                  <div class="dashboard-day text-primary">
+                                    Friday
+                                  </div>
+                                </th>
+                                <th class="text-center">
+                                  <div class="small fw-semibold">01.12</div>
+                                  <div class="dashboard-day">Saturday</div>
+                                </th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=1"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Michael Brown
+                                </td>
+                                <td class="text-center fw-semibold">5</td>
+                                <td></td>
+                                <td class="text-center fw-semibold">5 / 5</td>
+                                <td class="text-center fw-semibold">5</td>
+                                <td class="text-center fw-semibold">5</td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=2"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Ella Williams
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=3"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Logan Martinez
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center fw-semibold">4 / 5</td>
+                                <td></td>
+                                <td></td>
+                                <td
+                                  class="text-center fw-semibold dashboard-active-col"
+                                >
+                                  5
+                                </td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=4"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Natalie Wilson
+                                </td>
+                                <td class="text-center">3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=5"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Grace Walker
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center">4</td>
+                                <td class="text-center">5</td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=6"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Chloe Moore
+                                </td>
+                                <td></td>
+                                <td class="text-center">5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=7"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Ethan Miller
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center fw-semibold">4 / 4</td>
+                                <td></td>
+                                <td></td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=8"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Elisabeth King
+                                </td>
+                                <td class="text-center fw-semibold">5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=9"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Mary-Ann Davis
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center">5</td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  class="dashboard-student-cell d-flex align-items-center gap-2"
+                                >
+                                  <img
+                                    src="https://i.pravatar.cc/28?img=10"
+                                    class="rounded-circle"
+                                    alt=""
+                                    width="28"
+                                    height="28"
+                                  />
+                                  Caleb Thomas
+                                </td>
+                                <td></td>
+                                <td class="text-center">4</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="dashboard-active-col"></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- HOMEWORKS  -->
 
                   <div
                     class="tab-pane fade"
@@ -2583,11 +4139,261 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="homework-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Homework content
+                    <div class="d-flex flex-column gap-3">
+                      <div class="bg-white rounded shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <div class="col-md-2">
+                            <label class="form-label small text-secondary"
+                              >Subject</label
+                            >
+                            <select class="form-select form-select-sm">
+                              <option>All subjects</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="form-label small text-secondary"
+                              >Grade</label
+                            >
+                            <select class="form-select form-select-sm">
+                              <option>All grades</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="form-label small text-secondary"
+                              >Student</label
+                            >
+                            <select class="form-select form-select-sm">
+                              <option>All students</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="form-label small text-secondary"
+                              >Status</label
+                            >
+                            <select class="form-select form-select-sm">
+                              <option>Not selected</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="form-label small text-secondary"
+                              >Due date</label
+                            >
+                            <input
+                              type="date"
+                              class="form-control form-control-sm"
+                            />
+                          </div>
+
+                          <div class="col-md-2">
+                            <button
+                              class="btn btn-outline-secondary btn-sm w-100"
+                            >
+                              Reset filters
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="homework-card bg-white rounded shadow-sm">
+                        <div
+                          class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3"
+                        >
+                          <div>
+                            <h6 class="fw-semibold mb-1">
+                              Homework 1 — My pets
+                            </h6>
+                            <small class="text-primary"
+                              >Lesson 1 — “My pets”</small
+                            >
+                          </div>
+
+                          <div
+                            class="d-flex gap-4 small text-secondary text-center"
+                          >
+                            <div>
+                              <strong>8 / 10</strong><br />
+                              submitted
+                            </div>
+
+                            <div>
+                              <strong>7</strong><br />
+                              completed
+                            </div>
+
+                            <div>
+                              <strong>1</strong><br />
+                              need to check
+                            </div>
+
+                            <div class="text-danger">
+                              <strong>12.10.2025</strong><br />
+                              due date
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="table-responsive">
+                          <table class="table table-sm align-middle mb-0">
+                            <thead class="table-light small">
+                              <tr>
+                                <th>Student</th>
+                                <th>Student's work</th>
+                                <th>Status</th>
+                                <th>Graduation</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr class="student-row">
+                                <td class="d-flex align-items-center gap-2">
+                                  <img
+                                    src="https://i.pravatar.cc/32?img=1"
+                                    class="rounded-circle"
+                                  />
+                                  Michael Brown
+                                </td>
+
+                                <td>
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                  >
+                                    📘 student's work
+                                  </a>
+                                </td>
+
+                                <td>
+                                  <span class="badge bg-success">Verified</span>
+                                </td>
+
+                                <td>Pass</td>
+
+                                <td class="text-end">
+                                  <i class="bi bi-three-dots-vertical"></i>
+                                </td>
+                              </tr>
+
+                              <tr class="student-row">
+                                <td class="d-flex align-items-center gap-2">
+                                  <img
+                                    src="https://i.pravatar.cc/32?img=2"
+                                    class="rounded-circle"
+                                  />
+                                  Ella Williams
+                                </td>
+
+                                <td>
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                  >
+                                    📘 student's work
+                                  </a>
+                                </td>
+
+                                <td>
+                                  <span class="badge bg-warning text-dark"
+                                    >Pending</span
+                                  >
+                                </td>
+
+                                <td></td>
+
+                                <td class="text-end">
+                                  <i class="bi bi-three-dots-vertical"></i>
+                                </td>
+                              </tr>
+
+                              <tr class="student-row">
+                                <td class="d-flex align-items-center gap-2">
+                                  <img
+                                    src="https://i.pravatar.cc/32?img=3"
+                                    class="rounded-circle"
+                                  />
+                                  Logan Martinez
+                                </td>
+
+                                <td>
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                  >
+                                    📘 student's work
+                                  </a>
+                                </td>
+
+                                <td>
+                                  <span class="badge bg-success">Verified</span>
+                                </td>
+
+                                <td>4</td>
+
+                                <td class="text-end">
+                                  <i class="bi bi-three-dots-vertical"></i>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <div class="p-3 border-top small">
+                          <div class="mb-3">
+                            <strong>Homework 1 — My Pets</strong><br />
+
+                            <span class="text-secondary">Assessment type:</span>
+                            five-point scale
+
+                            <p class="mb-0 text-secondary">
+                              Write an essay about your family. We covered
+                              speech patterns related to family in class; try to
+                              use them in your essay.
+                            </p>
+                          </div>
+
+                          <div class="bg-light rounded p-3 mb-3">
+                            <strong>Additional materials</strong>
+
+                            <div class="mt-2">
+                              <div>
+                                <strong>Emily Johnson:</strong>
+                                “English for Elementary Kids”
+                              </div>
+
+                              <small class="text-secondary">
+                                Paragraph 4 — My Pets
+                              </small>
+
+                              <div class="mt-2">
+                                <strong>Michael Brown:</strong>
+                                “Oxford Discover 3”
+                              </div>
+
+                              <small class="text-secondary">
+                                Paragraph 2 — Animals Around Us
+                              </small>
+                            </div>
+                          </div>
+
+                          <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge bg-light text-dark border p-2">
+                              📄 Document Title
+                            </span>
+
+                            <span class="badge bg-light text-dark border p-2">
+                              📄 Textbook_3grade
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
+                  <!-- TEST  -->
                   <div
                     class="tab-pane fade"
                     id="test-pane"
@@ -2595,10 +4401,188 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="test-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Test content
+                    <div class="d-flex flex-column gap-3">
+                      <div class="bg-white rounded shadow-sm p-3">
+                        <div class="row g-3">
+                          <div class="col-md-2">
+                            <label class="small text-secondary">Grade</label>
+                            <select class="form-select form-select-sm">
+                              <option>All grades</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="small text-secondary">Student</label>
+                            <select class="form-select form-select-sm">
+                              <option>All students</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="small text-secondary"
+                              >Activity type</label
+                            >
+                            <select class="form-select form-select-sm">
+                              <option>All types</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="small text-secondary">Status</label>
+                            <select class="form-select form-select-sm">
+                              <option>Not selected</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-2">
+                            <label class="small text-secondary">Due date</label>
+                            <input
+                              type="date"
+                              class="form-control form-control-sm"
+                            />
+                          </div>
+
+                          <div class="col-md-2 d-flex align-items-end">
+                            <button
+                              class="btn btn-outline-secondary btn-sm w-100"
+                            >
+                              Reset filters
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="mt-3 small text-secondary d-flex gap-3">
+                          <span
+                            >Sort by:
+                            <strong class="text-primary"
+                              >creation date</strong
+                            ></span
+                          >
+                          <span>Only unassigned</span>
+                        </div>
+                      </div>
+
+                      <div class="activity-card bg-white rounded shadow-sm">
+                        <div
+                          class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3"
+                        >
+                          <div>
+                            <h6 class="fw-semibold mb-0">Pronunciation</h6>
+                            <small class="text-secondary">Audio activity</small>
+                          </div>
+
+                          <div
+                            class="d-flex gap-4 small text-secondary text-center"
+                          >
+                            <div>
+                              <strong>1–3</strong><br />
+                              grades
+                            </div>
+
+                            <div>
+                              <strong>4</strong><br />
+                              assignment
+                            </div>
+
+                            <div>
+                              <strong>1</strong><br />
+                              awaiting review
+                            </div>
+
+                            <div>
+                              <strong>09.01.2025 / 05.25.2026</strong><br />
+                              control points
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="p-3">
+                          <p class="text-secondary small">
+                            Read this text aloud and record the audio so we can
+                            track your pronunciation progress.
+                          </p>
+
+                          <div class="student-card p-3 rounded border mb-3">
+                            <div
+                              class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"
+                            >
+                              <div class="d-flex align-items-center gap-2">
+                                <img
+                                  src="https://i.pravatar.cc/36?img=12"
+                                  class="rounded-circle"
+                                />
+                                <div>
+                                  <div class="fw-semibold">Michael Brown</div>
+                                  <small class="text-secondary"
+                                    >Student / 3 grade</small
+                                  >
+                                </div>
+                              </div>
+
+                              <span class="badge bg-warning text-dark"
+                                >Awaiting review</span
+                              >
+                            </div>
+
+                            <div
+                              class="audio-player d-flex align-items-center gap-3 mb-3"
+                            >
+                              <button class="btn btn-light border btn-sm">
+                                ▶
+                              </button>
+
+                              <div class="audio-wave flex-grow-1"></div>
+
+                              <small class="text-secondary">02:12</small>
+                            </div>
+
+                            <small class="text-secondary d-block mb-3">
+                              submitted 09.01.2025 12:05 am
+                            </small>
+
+                            <textarea
+                              class="form-control form-control-sm mb-3"
+                              rows="2"
+                              placeholder="You can leave a comment here"
+                            ></textarea>
+
+                            <div class="d-flex gap-2">
+                              <button class="btn btn-outline-primary btn-sm">
+                                Reassign
+                              </button>
+
+                              <button class="btn btn-primary btn-sm">
+                                Verify
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="student-card p-3 rounded border">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                              <img
+                                src="https://i.pravatar.cc/36?img=22"
+                                class="rounded-circle"
+                              />
+                              <div>
+                                <div class="fw-semibold">Logan Martinez</div>
+                              </div>
+                            </div>
+
+                            <p class="text-danger small mb-2">
+                              The student did not complete the assignment on
+                              time
+                            </p>
+
+                            <button class="btn btn-outline-primary btn-sm">
+                              Reassign
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- Activities  -->
 
                   <div
                     class="tab-pane fade"
@@ -2607,10 +4591,390 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="activities-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Activities content
+                    <div class="d-flex flex-column gap-3">
+                      <!-- Filters -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <div class="col-12 col-md-3 col-xl">
+                            <label class="form-label small text-secondary mb-1"
+                              >Grade</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>All grades</option>
+                              <option>1 grade</option>
+                              <option>2 grade</option>
+                              <option>3 grade</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-xl">
+                            <label class="form-label small text-secondary mb-1"
+                              >Student</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>All students</option>
+                              <option>Michael Brown</option>
+                              <option>Ella Williams</option>
+                              <option>Logan Martinez</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-xl">
+                            <label class="form-label small text-secondary mb-1"
+                              >Activity type</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>All types</option>
+                              <option>Audio activity</option>
+                              <option>Reading</option>
+                              <option>Speaking</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-xl">
+                            <label class="form-label small text-secondary mb-1"
+                              >Status</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>Not selected</option>
+                              <option>Awaiting review</option>
+                              <option>Verified</option>
+                              <option>Expired</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3 col-xl">
+                            <label class="form-label small text-secondary mb-1"
+                              >Due date</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control form-control-sm"
+                              value="Not selected"
+                            />
+                          </div>
+
+                          <div class="col-12 col-md-auto ms-md-auto">
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-secondary px-3"
+                            >
+                              <i class="bi bi-funnel me-2"></i>Reset filters
+                            </button>
+                          </div>
+                        </div>
+
+                        <div
+                          class="d-flex flex-wrap gap-4 small text-secondary mt-3"
+                        >
+                          <div>
+                            <i class="bi bi-arrow-down-up me-1"></i>
+                            Sort by:
+                            <span class="text-primary fw-semibold"
+                              >creation date</span
+                            >
+                          </div>
+
+                          <div class="form-check m-0">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="onlyUnassignedActivities"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="onlyUnassignedActivities"
+                            >
+                              Only unassigned
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Activity card collapsed -->
+                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                        <div
+                          class="p-3 d-flex justify-content-between align-items-center flex-wrap gap-3"
+                        >
+                          <div>
+                            <h6 class="fw-semibold mb-0">Pronunciation</h6>
+                            <small class="text-secondary">Audio activity</small>
+                          </div>
+
+                          <div
+                            class="d-flex gap-4 small text-secondary text-center flex-wrap"
+                          >
+                            <div>
+                              <strong>1–3</strong><br />
+                              grades
+                            </div>
+
+                            <div>
+                              <strong>3</strong><br />
+                              assignment
+                            </div>
+
+                            <div>
+                              <strong>1</strong><br />
+                              awaiting review
+                            </div>
+
+                            <div>
+                              <strong>09.01.2025 / 05.25.2026</strong><br />
+                              control points
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-secondary p-0"
+                            >
+                              <i class="bi bi-chevron-down"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Activity card collapsed -->
+                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                        <div
+                          class="p-3 d-flex justify-content-between align-items-center flex-wrap gap-3"
+                        >
+                          <div>
+                            <h6 class="fw-semibold mb-0">Pronunciation</h6>
+                            <small class="text-secondary">Audio activity</small>
+                          </div>
+
+                          <div
+                            class="d-flex gap-4 small text-secondary text-center flex-wrap"
+                          >
+                            <div>
+                              <strong>1–3</strong><br />
+                              grades
+                            </div>
+
+                            <div>
+                              <strong>3</strong><br />
+                              assignment
+                            </div>
+
+                            <div>
+                              <strong>1</strong><br />
+                              awaiting review
+                            </div>
+
+                            <div>
+                              <strong>09.01.2025 / 05.25.2026</strong><br />
+                              control points
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-secondary p-0"
+                            >
+                              <i class="bi bi-chevron-down"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Expanded activity -->
+                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                        <div
+                          class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3"
+                        >
+                          <div>
+                            <h6 class="fw-semibold mb-0">Pronunciation</h6>
+                            <small class="text-secondary">Audio activity</small>
+                          </div>
+
+                          <div
+                            class="d-flex gap-4 small text-secondary text-center flex-wrap"
+                          >
+                            <div>
+                              <strong>1–3</strong><br />
+                              grades
+                            </div>
+
+                            <div>
+                              <strong>4</strong><br />
+                              assignment
+                            </div>
+
+                            <div>
+                              <strong>1</strong><br />
+                              awaiting review
+                            </div>
+
+                            <div>
+                              <strong>09.01.2025 / 05.25.2026</strong><br />
+                              control points
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-secondary p-0"
+                            >
+                              <i class="bi bi-chevron-up"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="p-3">
+                          <p class="fw-semibold small mb-2">
+                            Read this text aloud and record the audio so we can
+                            track your pronunciation progress at the beginning
+                            and end of the year:
+                          </p>
+
+                          <p class="small text-secondary mb-4">
+                            Sed efficitur orci non consectetur blandit.
+                            Pellentesque convallis, nulla auctor molestie
+                            malesuada, odio augue porttitor neque, et euismod
+                            nibh sapien et quam. Nam luctus vitae diam at
+                            eleifend. Suspendisse non urna in libero suscipit
+                            posuere. Duis scelerisque pulvinar diam, eu sodales
+                            tortor lacinia ut. Phasellus sit amet nunc in lorem
+                            pulvinar facilisis vestibulum in ligula.
+                          </p>
+
+                          <!-- Student item -->
+                          <div class="student-audio-row border-top pt-3">
+                            <div class="row g-3 align-items-start">
+                              <div class="col-12 col-xl-2">
+                                <div class="d-flex align-items-start gap-2">
+                                  <img
+                                    src="https://i.pravatar.cc/34?img=1"
+                                    class="rounded-circle"
+                                    alt="Michael Brown"
+                                    width="34"
+                                    height="34"
+                                  />
+                                  <div>
+                                    <div class="fw-semibold small">
+                                      Michael Brown
+                                    </div>
+                                    <div class="text-secondary small">
+                                      Student / 3 grade
+                                    </div>
+
+                                    <span
+                                      class="badge bg-warning text-dark mt-2"
+                                      >Awaiting review</span
+                                    >
+
+                                    <div class="mt-2">
+                                      <a
+                                        href="#"
+                                        class="text-primary text-decoration-none small fw-semibold"
+                                        >Unassign</a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-12 col-xl-10">
+                                <!-- First audio -->
+                                <div
+                                  class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 mb-2"
+                                >
+                                  <div
+                                    class="audio-fake-player d-flex align-items-center gap-2 px-2 py-2 rounded border"
+                                  >
+                                    <button
+                                      type="button"
+                                      class="btn btn-sm btn-light border-0 p-0 audio-play-btn"
+                                    >
+                                      <i
+                                        class="bi bi-play-fill text-primary"
+                                      ></i>
+                                    </button>
+
+                                    <div class="audio-waveform"></div>
+
+                                    <small class="text-secondary">02:12</small>
+                                  </div>
+
+                                  <small class="text-secondary"
+                                    >submitted: 09.01.2025 &nbsp; 12:05
+                                    am</small
+                                  >
+                                </div>
+
+                                <!-- Second audio -->
+                                <div
+                                  class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 mb-3"
+                                >
+                                  <div
+                                    class="audio-fake-player active d-flex align-items-center gap-2 px-2 py-2 rounded border"
+                                  >
+                                    <button
+                                      type="button"
+                                      class="btn btn-sm btn-light border-0 p-0 audio-play-btn"
+                                    >
+                                      <i
+                                        class="bi bi-pause-fill text-primary"
+                                      ></i>
+                                    </button>
+
+                                    <div class="audio-waveform active"></div>
+
+                                    <small class="text-secondary">02:12</small>
+                                  </div>
+
+                                  <small class="text-secondary"
+                                    >submitted: 05.25.2026 &nbsp; 08:30
+                                    pm</small
+                                  >
+                                </div>
+
+                                <!-- Toolbar -->
+                                <div
+                                  class="activity-editor-toolbar border rounded-top px-2 py-1 small text-secondary d-flex flex-wrap gap-2"
+                                >
+                                  <i class="bi bi-type-bold"></i>
+                                  <i class="bi bi-type-italic"></i>
+                                  <i class="bi bi-type-underline"></i>
+                                  <i class="bi bi-list-ul"></i>
+                                  <i class="bi bi-list-ol"></i>
+                                  <i class="bi bi-link-45deg"></i>
+                                  <i class="bi bi-paperclip"></i>
+                                </div>
+
+                                <textarea
+                                  class="form-control form-control-sm rounded-top-0 mb-3"
+                                  rows="2"
+                                  placeholder="You can leave a comment here"
+                                ></textarea>
+
+                                <div class="d-flex gap-2 flex-wrap">
+                                  <button
+                                    type="button"
+                                    class="btn btn-sm btn-outline-primary px-3"
+                                  >
+                                    Reassign
+                                  </button>
+                                  <button
+                                    type="button"
+                                    class="btn btn-sm btn-primary px-4"
+                                  >
+                                    Verify
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- Announcements  -->
 
                   <div
                     class="tab-pane fade"
@@ -2619,10 +4983,276 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="announcements-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Announcements content
+                    <div class="d-flex flex-column gap-3">
+                      <!-- Create announcement -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                          <h6 class="fw-semibold mb-0">Crete announcement</h6>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-link text-secondary p-0"
+                          >
+                            <i class="bi bi-chevron-down"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Filters -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Date</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control form-control-sm dashboard-select"
+                              value="01.01.2025 - 01.01.2026"
+                            />
+                          </div>
+
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Author</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>Created by me</option>
+                            </select>
+                          </div>
+
+                          <div
+                            class="col-12 col-md-6 d-flex justify-content-md-end align-items-end"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-secondary px-3"
+                            >
+                              <i class="bi bi-funnel me-2"></i>Reset filters
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="small text-secondary mt-3">
+                          <i class="bi bi-arrow-down-up me-1"></i>
+                          Sort by:
+                          <span class="text-primary fw-semibold"
+                            >creation date</span
+                          >
+                        </div>
+                      </div>
+
+                      <!-- Announcement list -->
+                      <div class="d-flex flex-column gap-3">
+                        <div
+                          class="announcement-card bg-white rounded-4 shadow-sm p-4"
+                        >
+                          <div
+                            class="d-flex justify-content-between align-items-start gap-3"
+                          >
+                            <div class="w-100">
+                              <h6 class="fw-semibold mb-3">
+                                Open House Day at Philadelphia Progressive
+                                School
+                              </h6>
+
+                              <small class="text-secondary d-block mb-3"
+                                >December 25, 2025</small
+                              >
+
+                              <p class="text-secondary mb-0 small">
+                                We are excited to invite parents and prospective
+                                students to our Open House Day on September 15,
+                                2024! This is a wonderful opportunity to tour
+                                our campus, meet teachers, and learn more about
+                                our innovative curriculum and extracurricular
+                                activities. We look forward to welcoming you and
+                                answering all your questions to help you get to
+                                know our school community.
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-primary p-0"
+                            >
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div
+                          class="announcement-card bg-white rounded-4 shadow-sm p-4"
+                        >
+                          <div
+                            class="d-flex justify-content-between align-items-start gap-3"
+                          >
+                            <div class="w-100">
+                              <h6 class="fw-semibold mb-3">
+                                Enrollment for the 2025–2026 School Year is Now
+                                Open!
+                              </h6>
+
+                              <small class="text-secondary d-block mb-3"
+                                >December 25, 2025</small
+                              >
+
+                              <p class="text-secondary mb-3 small">
+                                Philadelphia Progressive School is now accepting
+                                applications for new students for the upcoming
+                                academic year. Don’t miss the chance to join our
+                                vibrant learning community dedicated to academic
+                                excellence and personal growth. Apply early to
+                                secure your child’s place and start an exciting
+                                educational journey with us!
+                              </p>
+
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-primary px-3"
+                              >
+                                More about Enrollment
+                                <i class="bi bi-chevron-right ms-1"></i>
+                              </button>
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-primary p-0"
+                            >
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div
+                          class="announcement-card bg-white rounded-4 shadow-sm p-4"
+                        >
+                          <div
+                            class="d-flex justify-content-between align-items-start gap-3"
+                          >
+                            <div class="w-100">
+                              <h6 class="fw-semibold mb-3">
+                                Update Your School Passes Starting January 1,
+                                2026
+                              </h6>
+
+                              <small class="text-secondary d-block mb-3"
+                                >November 7, 2025</small
+                              >
+
+                              <p class="text-secondary mb-0 small">
+                                Attention students and parents! Please be
+                                reminded that starting January 1, 2025, all
+                                school passes must be updated to ensure
+                                continued access to school facilities and
+                                transport services. Visit the school office
+                                starting December 15 to renew or replace your
+                                pass without any hassle. Thank you for your
+                                cooperation!
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-primary p-0"
+                            >
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div
+                          class="announcement-card bg-white rounded-4 shadow-sm p-4"
+                        >
+                          <div
+                            class="d-flex justify-content-between align-items-start gap-3"
+                          >
+                            <div class="w-100">
+                              <h6 class="fw-semibold mb-3">
+                                Important: School Bus Route #12 Changes
+                              </h6>
+
+                              <small class="text-secondary d-block mb-3"
+                                >October 22, 2025</small
+                              >
+
+                              <p class="text-secondary mb-3 small">
+                                Please note that effective October 1, 2024, the
+                                route of school bus number 12 will be modified
+                                to improve service and reduce travel time.
+                                Updated route maps and schedules are available
+                                at the school office and on our website. We
+                                encourage all affected families to review the
+                                changes and plan accordingly.
+                              </p>
+
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-primary px-3"
+                              >
+                                More about Enrollment
+                                <i class="bi bi-chevron-right ms-1"></i>
+                              </button>
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-primary p-0"
+                            >
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div
+                          class="announcement-card bg-white rounded-4 shadow-sm p-4"
+                        >
+                          <div
+                            class="d-flex justify-content-between align-items-start gap-3"
+                          >
+                            <div class="w-100">
+                              <h6 class="fw-semibold mb-3">
+                                School Stadium Under Renovation During Holidays
+                              </h6>
+
+                              <small class="text-secondary d-block mb-3"
+                                >October 10, 2025</small
+                              >
+
+                              <p class="text-secondary mb-3 small">
+                                We inform students and parents that the school
+                                stadium will be closed for renovation throughout
+                                the upcoming holiday period from December 20,
+                                2024, to January 5, 2025. All sports practices
+                                scheduled during this time will be held at the
+                                city stadium. Please ensure students are aware
+                                of the temporary change in venue.
+                              </p>
+
+                              <div class="d-flex flex-wrap gap-2">
+                                <a
+                                  href="#"
+                                  class="btn btn-sm btn-light border d-inline-flex align-items-center gap-2 px-3"
+                                >
+                                  <span>📄</span>
+                                  <span>Document Title</span>
+                                  <i class="bi bi-download text-primary"></i>
+                                </a>
+                              </div>
+                            </div>
+
+                            <button
+                              class="btn btn-sm btn-link text-primary p-0"
+                            >
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- events  -->
 
                   <div
                     class="tab-pane fade"
@@ -2631,10 +5261,263 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="events-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      My Events content
+                    <div class="bg-white rounded-4 shadow-sm p-4">
+                      <!-- Header -->
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                      >
+                        <h5 class="fw-bold mb-0">Crete event</h5>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-link text-secondary p-0"
+                        >
+                          <i class="bi bi-chevron-down"></i>
+                        </button>
+                      </div>
+
+                      <!-- Form -->
+                      <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-3">
+                          <label class="form-label small text-secondary mb-1"
+                            >Roles</label
+                          >
+                          <select
+                            class="form-select form-select-sm dashboard-select"
+                          >
+                            <option selected>All roles</option>
+                          </select>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                          <label class="form-label small text-secondary mb-1"
+                            >Grade</label
+                          >
+                          <select
+                            class="form-select form-select-sm dashboard-select"
+                          >
+                            <option selected>1–3 grades</option>
+                          </select>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                          <label class="form-label small text-secondary mb-1"
+                            >Event date</label
+                          >
+                          <div class="position-relative">
+                            <input
+                              type="text"
+                              class="form-control form-control-sm pe-5"
+                              value="01.12.2026"
+                            />
+                            <i
+                              class="bi bi-calendar3 position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"
+                            ></i>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                          <label class="form-label small text-secondary mb-1"
+                            >Event time</label
+                          >
+                          <div class="position-relative">
+                            <input
+                              type="text"
+                              class="form-control form-control-sm pe-5"
+                              value="12:00 am"
+                            />
+                            <i
+                              class="bi bi-clock position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"
+                            ></i>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-lg-7">
+                          <label class="form-label small text-secondary mb-1"
+                            >Select location</label
+                          >
+                          <div class="position-relative">
+                            <input
+                              type="text"
+                              class="form-control form-control-sm pe-5"
+                              value="Central Park, main entrance"
+                            />
+                            <i
+                              class="bi bi-geo-alt position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"
+                            ></i>
+                          </div>
+                        </div>
+
+                        <div class="col-6 col-lg-1">
+                          <label class="form-label small text-secondary mb-1"
+                            >Price, $</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            value="280"
+                          />
+                        </div>
+
+                        <div class="col-6 col-lg-2">
+                          <label class="form-label small text-secondary mb-1"
+                            >Price type</label
+                          >
+                          <select
+                            class="form-select form-select-sm dashboard-select"
+                          >
+                            <option selected>Per person</option>
+                          </select>
+                        </div>
+
+                        <div class="col-12">
+                          <label class="form-label small text-secondary mb-1"
+                            >Event title</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            value="Weekend School Trip to the Zoo: Exploring Nature Together"
+                          />
+                        </div>
+
+                        <div class="col-12">
+                          <div
+                            class="event-editor-toolbar border rounded-top px-2 py-1 small text-secondary d-flex flex-wrap gap-2"
+                          >
+                            <i class="bi bi-type-bold"></i>
+                            <i class="bi bi-type-italic"></i>
+                            <i class="bi bi-type-underline"></i>
+                            <i class="bi bi-list-ul"></i>
+                            <i class="bi bi-list-ol"></i>
+                            <i class="bi bi-link-45deg"></i>
+                            <i class="bi bi-paperclip"></i>
+                            <i class="bi bi-image"></i>
+                          </div>
+
+                          <textarea
+                            class="form-control form-control-sm rounded-top-0"
+                            rows="4"
+                            placeholder="Event description"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <!-- Upload -->
+                      <div class="mb-4">
+                        <label class="form-label fw-semibold mb-2"
+                          >Upload images</label
+                        >
+
+                        <label
+                          class="dashboard-upload-box w-100 text-center rounded-4 p-4"
+                        >
+                          <strong
+                            >Drag &amp; drop files here or
+                            <span class="text-primary">upload</span></strong
+                          >
+                          <div class="small text-secondary mt-1">
+                            Acceptable file formats: pdf, jpg, jpeg, png.
+                            Maximum size: 100 MB.
+                          </div>
+                        </label>
+                      </div>
+
+                      <!-- Thumbnails -->
+                      <div
+                        class="d-flex flex-wrap gap-3 align-items-start mb-4"
+                      >
+                        <div class="position-relative dashboard-thumb">
+                          <img
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&h=220&fit=crop"
+                            alt="Event image"
+                            class="img-fluid rounded-3"
+                          />
+                          <button
+                            class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm"
+                          >
+                            <i class="bi bi-three-dots-vertical"></i>
+                          </button>
+                        </div>
+
+                        <div class="position-relative dashboard-thumb">
+                          <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=220&fit=crop"
+                            alt="Event image"
+                            class="img-fluid rounded-3"
+                          />
+                          <button
+                            class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm"
+                          >
+                            <i class="bi bi-three-dots-vertical"></i>
+                          </button>
+                        </div>
+
+                        <div class="position-relative dashboard-thumb">
+                          <img
+                            src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=300&h=220&fit=crop"
+                            alt="Event image"
+                            class="img-fluid rounded-3"
+                          />
+                          <button
+                            class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm"
+                          >
+                            <i class="bi bi-three-dots-vertical"></i>
+                          </button>
+
+                          <!-- Open menu example -->
+                          <div
+                            class="dashboard-thumb-menu shadow-sm rounded-3 p-2 bg-white"
+                          >
+                            <button
+                              class="btn btn-sm btn-light w-100 text-start"
+                            >
+                              Set as cover
+                            </button>
+                            <button
+                              class="btn btn-sm btn-light w-100 text-start"
+                            >
+                              Remove image
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Footer actions -->
+                      <div
+                        class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+                      >
+                        <div class="d-flex gap-2">
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary px-4"
+                          >
+                            Cancel
+                          </button>
+                          <button type="button" class="btn btn-primary px-4">
+                            Publish
+                          </button>
+                        </div>
+
+                        <div
+                          class="form-check m-0 d-flex align-items-center gap-2"
+                        >
+                          <input
+                            class="form-check-input m-0"
+                            type="checkbox"
+                            id="saveDraftEvent"
+                          />
+                          <label
+                            class="form-check-label small text-secondary"
+                            for="saveDraftEvent"
+                          >
+                            Save as draft
+                          </label>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- Notifications  -->
 
                   <div
                     class="tab-pane fade"
@@ -2643,8 +5526,329 @@ Friendship words, listening, classroom discussion.</textarea
                     aria-labelledby="notifications-tab"
                     tabindex="0"
                   >
-                    <div class="p-4 bg-white rounded shadow-sm">
-                      Notifications content
+                    <div class="d-flex flex-column gap-3">
+                      <!-- Filters -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Announcement type</label
+                            >
+                            <select
+                              class="form-select form-select-sm dashboard-select"
+                            >
+                              <option selected>Not selected</option>
+                              <option>Schedule changes</option>
+                              <option>System notification</option>
+                              <option>Homework</option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-3">
+                            <label class="form-label small text-secondary mb-1"
+                              >Date</label
+                            >
+                            <div class="position-relative">
+                              <input
+                                type="text"
+                                class="form-control form-control-sm pe-5"
+                                value="10.10.2025 - 10.11.2026"
+                              />
+                              <i
+                                class="bi bi-calendar3 position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"
+                              ></i>
+                            </div>
+                          </div>
+
+                          <div
+                            class="col-12 col-md-6 d-flex justify-content-md-end align-items-end"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-secondary px-3"
+                            >
+                              <i class="bi bi-funnel me-2"></i>Reset filters
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Notifications list -->
+                      <div class="d-flex flex-column gap-2">
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-calendar-event"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  Schedule Changes
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  On December 12, the
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >English class</a
+                                  >
+                                  for third-grade students will be moved from
+                                  8:00 AM to 11:00 AM.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-credit-card"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  System notification
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  Your password was changed by the Administrator
+                                  12 minutes ago. Please
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >contact the Administrator</a
+                                  >
+                                  to access your personal account.
+                                </p>
+                              </div>
+                            </div>
+
+                            <span class="badge bg-danger align-self-start"
+                              >Important!</span
+                            >
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-folder-check"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  New homework to check
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  12 students have submitted their homework.
+                                  Please
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >check it</a
+                                  >
+                                  before the next lesson (January 15, 9:00 AM).
+                                </p>
+                              </div>
+                            </div>
+
+                            <span
+                              class="badge bg-warning text-dark align-self-start"
+                              >Assignments check</span
+                            >
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-calendar-event"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  Schedule Changes
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  On December 12, the
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >English class</a
+                                  >
+                                  for third-grade students will be moved from
+                                  8:00 AM to 11:00 AM.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-folder-check"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  New homework to check
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  12 students have submitted their homework.
+                                  Please
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >check it</a
+                                  >
+                                  before the next lesson (January 15, 9:00 AM).
+                                </p>
+                              </div>
+                            </div>
+
+                            <span
+                              class="badge bg-warning text-dark align-self-start"
+                              >Assignments check</span
+                            >
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-calendar-event"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  Schedule Changes
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  On December 12, the
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >English class</a
+                                  >
+                                  for third-grade students will be moved from
+                                  8:00 AM to 11:00 AM.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-calendar-event"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  Schedule Changes
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  On December 12, the
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >English class</a
+                                  >
+                                  for third-grade students will be moved from
+                                  8:00 AM to 11:00 AM.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-credit-card"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  System notification
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  Your password was changed by the Administrator
+                                  12 minutes ago. Please
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >contact the Administrator</a
+                                  >
+                                  to access your personal account.
+                                </p>
+                              </div>
+                            </div>
+
+                            <span class="badge bg-danger align-self-start"
+                              >Important!</span
+                            >
+                          </div>
+                        </div>
+
+                        <div
+                          class="notification-card bg-white rounded-4 shadow-sm p-3"
+                        >
+                          <div class="d-flex justify-content-between gap-3">
+                            <div class="d-flex gap-3">
+                              <div class="dashboard-icon-box">
+                                <i class="bi bi-credit-card"></i>
+                              </div>
+
+                              <div>
+                                <div class="fw-semibold mb-1">
+                                  System notification
+                                </div>
+                                <p class="mb-0 text-secondary small">
+                                  Your password was changed by the Administrator
+                                  12 minutes ago. Please
+                                  <a
+                                    href="#"
+                                    class="text-primary text-decoration-none"
+                                    >contact the Administrator</a
+                                  >
+                                  to access your personal account.
+                                </p>
+                              </div>
+                            </div>
+
+                            <span class="badge bg-danger align-self-start"
+                              >Important!</span
+                            >
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

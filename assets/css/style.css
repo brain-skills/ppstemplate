@@ -1812,9 +1812,60 @@ header {
   opacity: 0.6;
 }
 
-/* active icon */
 .view-mode-btn.active img {
   filter: invert(43%) sepia(92%) saturate(1853%) hue-rotate(181deg)
     brightness(92%) contrast(91%);
   opacity: 1;
+}
+
+.homework-card {
+  transition: all 0.25s ease;
+}
+
+.homework-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.student-row {
+  transition: background 0.2s ease;
+}
+
+.student-row:hover {
+  background: #f7fbff;
+}
+
+.student-row a:hover {
+  text-decoration: underline;
+}
+
+.homework-card {
+  transition: all 0.25s ease;
+}
+
+.homework-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.student-row {
+  transition: background 0.2s ease;
+}
+
+.student-row:hover {
+  background: #f7fbff;
+}
+
+.student-work-link:hover {
+  text-decoration: underline !important;
+}
+
+#homeworkDetailView .btn.btn-light.border:hover {
+  background-color: #f0f7ff;
+  border-color: #b9d8ff;
+}
+
+textarea.form-control:focus,
+select.form-select:focus {
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
 }
