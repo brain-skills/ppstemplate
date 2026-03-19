@@ -151,11 +151,17 @@ header {
 .right-gap {
   position: absolute !important;
   top: 75px;
-  width: 40px;
+  width: 36px;
   height: 40px;
   z-index: 6;
 }
 
+@media (max-width: 1210px) {
+  .left-gap,
+  .right-gap {
+    width: 30px;
+  }
+}
 .left-gap {
   left: calc(50% + 730px - 20px);
 }
@@ -184,15 +190,15 @@ header {
   }
 
   .nav-container::after {
-    right: -15px !important;
+    right: -10px !important;
     border-top-left-radius: 60px;
     box-shadow: -15px -15px 0 0 white;
-    rotate: 33deg !important;
+    rotate: 40deg !important;
     top: 42px !important;
   }
 
   .nav-container::after {
-    width: 30px !important;
+    width: 24px !important;
   }
 }
 
@@ -1309,10 +1315,6 @@ header {
   opacity: 1;
   box-shadow: inset 0 -3px 0 rgba(255, 255, 255, 0.95);
   padding-bottom: 6px;
-}
-
-.staff-filter {
-  min-width: 160px;
 }
 
 .staff-cal {
