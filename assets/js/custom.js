@@ -883,3 +883,166 @@ document.querySelectorAll(".lesson-item").forEach((lesson) => {
     editForm.classList.remove("d-none");
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let currentDate = new Date();
+
+  const monthDisplay = document.getElementById("monthDisplay");
+  const dateInput = document.getElementById("dateInput");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function updateMonthDisplay() {
+    const month = months[currentDate.getMonth()];
+    const year = currentDate.getFullYear();
+    monthDisplay.innerHTML = `${month} <span>${year}</span>`;
+  }
+
+  updateMonthDisplay();
+
+  monthDisplay.addEventListener("click", () => {
+    dateInput.classList.toggle("d-none");
+  });
+
+  dateInput.addEventListener("change", () => {
+    currentDate = new Date(dateInput.value);
+    updateMonthDisplay();
+    dateInput.classList.add("d-none");
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    updateMonthDisplay();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    updateMonthDisplay();
+  });
+
+  const gradeSelect = document.getElementById("grade");
+  const subjectSelect = document.getElementById("subject");
+  const teacherSelect = document.getElementById("teacher");
+  const curatorSelect = document.getElementById("curator");
+  const resetBtn = document.getElementById("resetFiltersBtn");
+
+  const rows = document.querySelectorAll(".schedule-table tbody tr");
+
+  function applyFilters() {
+    const gradeVal = gradeSelect.value.trim().toLowerCase();
+    const subjectVal = subjectSelect.value.trim().toLowerCase();
+    const teacherVal = teacherSelect.value.trim().toLowerCase();
+
+    const hasGrade = gradeVal !== "";
+    const hasSubject = subjectVal !== "";
+    const hasTeacher = teacherVal !== "";
+
+    if (!hasGrade && !hasSubject && !hasTeacher) {
+      rows.forEach((row) => {
+        if (!row.classList.contains("lunch-row")) {
+          row.style.display = "";
+        }
+      });
+      return;
+    }
+
+    rows.forEach((row) => {
+      if (row.classList.contains("lunch-row")) return;
+
+      const cells = row.querySelectorAll("td:not(.time-cell)");
+      let shouldShow = false;
+
+      for (const cell of cells) {
+        const text = cell.innerText.toLowerCase().trim();
+        let matches = true;
+
+        if (hasGrade) {
+          const gradeSpan = cell.querySelector(".grade");
+          if (gradeSpan) {
+            if (!gradeSpan.innerText.toLowerCase().includes(gradeVal)) {
+              matches = false;
+            }
+          } else if (!text.includes(gradeVal)) {
+            matches = false;
+          }
+        }
+
+        if (hasSubject && !text.includes(subjectVal)) matches = false;
+        if (hasTeacher && !text.includes(teacherVal)) matches = false;
+
+        if (matches) {
+          shouldShow = true;
+          break;
+        }
+      }
+
+      row.style.display = shouldShow ? "" : "none";
+    });
+  }
+
+  gradeSelect.addEventListener("change", applyFilters);
+  subjectSelect.addEventListener("change", applyFilters);
+  teacherSelect.addEventListener("change", applyFilters);
+  curatorSelect.addEventListener("change", applyFilters);
+
+  resetBtn.addEventListener("click", () => {
+    gradeSelect.value = "";
+    subjectSelect.value = "";
+    teacherSelect.value = "";
+    curatorSelect.value = "";
+    applyFilters();
+  });
+
+  const weekBtn = document.getElementById("weekBtn");
+  const dayBtn = document.getElementById("dayBtn");
+
+  weekBtn.addEventListener("click", () => {
+    weekBtn.classList.add("active");
+    dayBtn.classList.remove("active");
+
+    document
+      .querySelectorAll(".schedule-table th:not(.time-header-col)")
+      .forEach((th) => {
+        th.style.display = "";
+      });
+
+    document
+      .querySelectorAll(".schedule-table td:not(.time-cell)")
+      .forEach((td) => {
+        td.style.display = "";
+      });
+  });
+
+  dayBtn.addEventListener("click", () => {
+    dayBtn.classList.add("active");
+    weekBtn.classList.remove("active");
+
+    const todayIndex = new Date().getDay() + 1;
+
+    document.querySelectorAll(".schedule-table th").forEach((th, i) => {
+      th.style.display = i === 0 || i === todayIndex ? "" : "none";
+    });
+
+    document.querySelectorAll(".schedule-table tbody tr").forEach((row) => {
+      const cells = row.querySelectorAll("td");
+      cells.forEach((cell, i) => {
+        cell.style.display = i === 0 || i === todayIndex ? "" : "none";
+      });
+    });
+  });
+});

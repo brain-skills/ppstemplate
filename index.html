@@ -55,6 +55,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
   </head>
   <body>
     <main>
@@ -745,7 +751,7 @@
               height="30"
               class="blue-icon"
             />
-            <h2 class="fw-bold fs-3">Shedule</h2>
+            <h2 class="fw-bold fs-3">Schedule</h2>
           </div>
 
           <div class="schedule-filters" id="filtersForm">
@@ -753,7 +759,10 @@
               <div class="col-12 col-sm-6 col-lg-3">
                 <label class="schedule-label" for="grade">Grade</label>
                 <select id="grade" class="form-select schedule-select">
-                  <option value="3" selected>3 grade</option>
+                  <option value="" selected>All grades</option>
+                  <option value="1">1 grade</option>
+                  <option value="2">2 grade</option>
+                  <option value="3">3 grade</option>
                   <option value="4">4 grade</option>
                   <option value="5">5 grade</option>
                 </select>
@@ -771,7 +780,7 @@
               <div class="col-12 col-sm-6 col-lg-3">
                 <label class="schedule-label" for="subject">Subject</label>
                 <select id="subject" class="form-select schedule-select">
-                  <option value="" selected>Not selected</option>
+                  <option value="" selected>All subjects</option>
                   <option value="english">English language</option>
                   <option value="math">Math</option>
                 </select>
@@ -780,7 +789,7 @@
               <div class="col-12 col-sm-6 col-lg-3">
                 <label class="schedule-label" for="teacher">Teacher</label>
                 <select id="teacher" class="form-select schedule-select">
-                  <option value="" selected>Not selected</option>
+                  <option value="" selected>All teachers</option>
                   <option value="smith">John Smith</option>
                   <option value="jefferson">Sarah Jefferson</option>
                 </select>
@@ -805,36 +814,38 @@
             </button>
           </div>
 
-          <div class="schedule-head">
-            <div class="d-flex align-items-center gap-2">
-              <button
-                type="button"
-                class="schedule-arrow"
-                aria-label="Prev month"
-              >
+          <div class="schedule-head mt-4">
+            <div class="d-flex align-items-center gap-2 position-relative">
+              <button type="button" id="prevBtn" class="schedule-arrow">
                 ‹
               </button>
-              <div class="fw-bold fs-5">December <span>2025</span></div>
-              <button
-                type="button"
-                class="schedule-arrow"
-                aria-label="Next month"
-              >
+
+              <div class="position-relative">
+                <div
+                  id="monthDisplay"
+                  class="fw-bold fs-5"
+                  style="cursor: pointer"
+                >
+                  December <span>2025</span>
+                </div>
+                <input
+                  id="dateInput"
+                  type="date"
+                  class="form-control position-absolute mt-2 d-none"
+                  style="width: 180px"
+                />
+              </div>
+
+              <button type="button" id="nextBtn" class="schedule-arrow">
                 ›
               </button>
             </div>
 
             <div class="schedule-view">
-              <button
-                id="weekBtn"
-                class="schedule-view-btn active fs-6"
-                type="button"
-              >
+              <button id="weekBtn" class="schedule-view-btn active fs-6">
                 Week
               </button>
-              <button id="dayBtn" class="schedule-view-btn fs-6" type="button">
-                Day
-              </button>
+              <button id="dayBtn" class="schedule-view-btn fs-6">Day</button>
             </div>
           </div>
 
@@ -846,13 +857,7 @@
                     <div
                       class="d-flex align-items-center gap-2 justify-content-center"
                     >
-                      <!-- <img
-                        src="./assets/images/icons/icon_clock.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                      /> -->
-                      <span class="">Time</span>
+                      <span>Time</span>
                     </div>
                   </th>
                   <th>
@@ -860,39 +865,52 @@
                     <div>Sunday</div>
                   </th>
                   <th>
-                    <small>01.12</small>
+                    <small>02.12</small>
                     <div>Monday</div>
                   </th>
                   <th>
-                    <small>01.12</small>
+                    <small>03.12</small>
                     <div>Tuesday</div>
                   </th>
                   <th>
-                    <small>01.12</small>
+                    <small>04.12</small>
                     <div>Wednesday</div>
                   </th>
                   <th>
-                    <small>01.12</small>
+                    <small>05.12</small>
                     <div>Thursday</div>
                   </th>
                   <th>
-                    <small>01.12</small>
+                    <small>06.12</small>
                     <div>Friday</div>
                   </th>
                   <th>
-                    <small>01.12</small>
+                    <small>07.12</small>
                     <div>Saturday</div>
                   </th>
                 </tr>
               </thead>
 
               <tbody>
+                <!-- More rows added so table looks substantial even after filtering -->
                 <tr>
                   <td class="time-cell">
-                    <div class="time-main">08:00 am</div>
-                    <div class="time-sub">2 lesson</div>
+                    <div class="time-main">07:30 am</div>
+                    <div class="time-sub">1 lesson</div>
                   </td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">08:15 am</div>
+                    <div class="time-sub">2 lesson</div>
+                  </td>
                   <td class="class-cell">
                     English language <span class="grade">1 grade</span>
                   </td>
@@ -907,11 +925,11 @@
                     English language <span class="grade">3 grade</span>
                   </td>
                   <td></td>
+                  <td></td>
                 </tr>
-
                 <tr>
                   <td class="time-cell">
-                    <div class="time-main">09:00 am</div>
+                    <div class="time-main">09:10 am</div>
                     <div class="time-sub">3 lesson</div>
                   </td>
                   <td class="class-cell">
@@ -931,7 +949,44 @@
                   </td>
                   <td></td>
                 </tr>
-
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">10:05 am</div>
+                    <div class="time-sub">4 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    Math <span class="grade">3 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">4 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">5 grade</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">11:00 am</div>
+                    <div class="time-sub">5 lesson</div>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Math <span class="grade">2 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">1 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
                 <tr class="lunch-row">
                   <td colspan="8">
                     <div
@@ -950,7 +1005,6 @@
                     </div>
                   </td>
                 </tr>
-
                 <tr>
                   <td class="time-cell">
                     <div class="time-main">01:00 pm</div>
@@ -971,6 +1025,59 @@
                   <td class="class-cell">
                     English language <span class="grade">1 grade</span>
                   </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">02:00 pm</div>
+                    <div class="time-sub">8 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">5 grade</span>
+                  </td>
+                  <td></td>
+                  <td class="individual-cell">
+                    John Smith <span class="tag tag-green">individual</span>
+                  </td>
+                  <td></td>
+                  <td class="class-cell">
+                    Math <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">03:00 pm</div>
+                    <div class="time-sub">9 lesson</div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td class="class-cell">
+                    English language <span class="grade">4 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="time-cell">
+                    <div class="time-main">04:00 pm</div>
+                    <div class="time-sub">10 lesson</div>
+                  </td>
+                  <td class="class-cell">
+                    Math <span class="grade">1 grade</span>
+                  </td>
+                  <td class="class-cell">
+                    English language <span class="grade">3 grade</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                 </tr>
               </tbody>

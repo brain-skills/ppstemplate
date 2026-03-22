@@ -12,7 +12,6 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #eef2f5;
 }
 h1,
 h2,
@@ -392,7 +391,6 @@ header {
   margin: 0;
   border-radius: 18px;
   overflow: hidden;
-  background: #fff;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
 }
 
