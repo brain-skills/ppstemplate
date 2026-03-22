@@ -110,12 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   (function galleryTabs() {
-    const tabs = Array.from(
-      document.querySelectorAll("#galleryTabs .gallery-tab"),
-    );
-    const items = Array.from(
-      document.querySelectorAll("#galleryGrid .gallery-item"),
-    );
+    const tabs = Array.from(document.querySelectorAll("#galleryTabs .gallery-tab"));
+    const items = Array.from(document.querySelectorAll("#galleryGrid .gallery-item"));
     const select = document.getElementById("galleryCategorySelect");
     const emptyBlock = document.getElementById("galleryEmpty");
 
@@ -125,9 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allowed = new Set(["all"]);
     tabs.forEach((b) => b.dataset.category && allowed.add(b.dataset.category));
-    items.forEach(
-      (it) => it.dataset.category && allowed.add(it.dataset.category),
-    );
+    items.forEach((it) => it.dataset.category && allowed.add(it.dataset.category));
 
     function normalize(category) {
       const c = (category || "").trim();
@@ -296,17 +290,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const galleryTabs = document.querySelectorAll("#galleryTabs .gallery-tab");
     const galleryCats = new Set(["all"]);
-    galleryTabs.forEach(
-      (t) => t.dataset.category && galleryCats.add(t.dataset.category),
-    );
+    galleryTabs.forEach((t) => t.dataset.category && galleryCats.add(t.dataset.category));
 
     let activeId = null;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
         if (!visible) return;
 
@@ -340,10 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const normalized = href.startsWith("./") ? href.slice(1) : href;
 
-      if (
-        normalized === "/" &&
-        (currentPath === "/" || currentPath.endsWith("/index.html"))
-      ) {
+      if (normalized === "/" && (currentPath === "/" || currentPath.endsWith("/index.html"))) {
         link.classList.add("active");
         return;
       }
@@ -363,10 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (normalized === "#" || normalized === "") return;
 
-      if (
-        normalized === "/" &&
-        (currentPath === "/" || currentPath.endsWith("/index.html"))
-      ) {
+      if (normalized === "/" && (currentPath === "/" || currentPath.endsWith("/index.html"))) {
         link.classList.add("active");
         return;
       }
@@ -419,9 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!grid || !paginationWrap) return;
 
-  const items = Array.from(
-    grid.querySelectorAll(":scope > .col-12.col-md-6.col-lg-4"),
-  );
+  const items = Array.from(grid.querySelectorAll(":scope > .col-12.col-md-6.col-lg-4"));
   if (!items.length) return;
 
   const perPage = 6;
@@ -458,13 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ul = document.createElement("ul");
     ul.className = "pagination pagination-sm justify-content-start mb-0";
 
-    const addBtn = (
-      label,
-      page,
-      disabled = false,
-      active = false,
-      aria = "",
-    ) => {
+    const addBtn = (label, page, disabled = false, active = false, aria = "") => {
       const li = document.createElement("li");
       li.className = "page-item";
       if (disabled) li.classList.add("disabled");
@@ -488,13 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addBtn(String(p), p, false, p === currentPage, `Page ${p}`);
     }
 
-    addBtn(
-      "›",
-      currentPage + 1,
-      currentPage === totalPages,
-      false,
-      "Next page",
-    );
+    addBtn("›", currentPage + 1, currentPage === totalPages, false, "Next page");
 
     paginationWrap.innerHTML = "";
     paginationWrap.appendChild(ul);
@@ -581,9 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const current = (
-    location.pathname.split("/").pop() || "index.html"
-  ).toLowerCase();
+  const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   document.querySelectorAll(".top-bar__menu a[href]").forEach((a) => {
     const href = (a.getAttribute("href") || "").split("/").pop().toLowerCase();
@@ -600,12 +568,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const empty = document.getElementById("staffEmpty");
   const searchInput = document.getElementById("staffSearch");
 
-  const DEFAULT_FILTER = (
-    tabs[0]?.dataset.filter || "administration"
-  ).toLowerCase();
-  const validFilters = new Set(
-    tabs.map((t) => (t.dataset.filter || "").toLowerCase()),
-  );
+  const DEFAULT_FILTER = (tabs[0]?.dataset.filter || "administration").toLowerCase();
+  const validFilters = new Set(tabs.map((t) => (t.dataset.filter || "").toLowerCase()));
 
   function setActiveTab(filter) {
     tabs.forEach((btn) => {
@@ -634,10 +598,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getFilterFromHash() {
-    const raw = (window.location.hash || "")
-      .replace("#", "")
-      .trim()
-      .toLowerCase();
+    const raw = (window.location.hash || "").replace("#", "").trim().toLowerCase();
     return validFilters.has(raw) ? raw : DEFAULT_FILTER;
   }
 
@@ -733,8 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const rowCurator = row.dataset.curator;
 
       const gradeMatch = selectedGrade === "all" || rowGrade === selectedGrade;
-      const curatorMatch =
-        selectedCurator === "all" || rowCurator === selectedCurator;
+      const curatorMatch = selectedCurator === "all" || rowCurator === selectedCurator;
 
       if (gradeMatch && curatorMatch) {
         row.style.display = "";
@@ -777,9 +737,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const savedTab = localStorage.getItem(storageKey);
   if (savedTab) {
-    const trigger = document.querySelector(
-      `[data-bs-toggle="tab"][data-bs-target="${savedTab}"]`,
-    );
+    const trigger = document.querySelector(`[data-bs-toggle="tab"][data-bs-target="${savedTab}"]`);
 
     if (trigger) {
       const tab = new bootstrap.Tab(trigger);
@@ -885,20 +843,7 @@ document.querySelectorAll(".lesson-item").forEach((lesson) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   let currentDate = new Date();
 
@@ -1015,17 +960,13 @@ document.addEventListener("DOMContentLoaded", () => {
     weekBtn.classList.add("active");
     dayBtn.classList.remove("active");
 
-    document
-      .querySelectorAll(".schedule-table th:not(.time-header-col)")
-      .forEach((th) => {
-        th.style.display = "";
-      });
+    document.querySelectorAll(".schedule-table th:not(.time-header-col)").forEach((th) => {
+      th.style.display = "";
+    });
 
-    document
-      .querySelectorAll(".schedule-table td:not(.time-cell)")
-      .forEach((td) => {
-        td.style.display = "";
-      });
+    document.querySelectorAll(".schedule-table td:not(.time-cell)").forEach((td) => {
+      td.style.display = "";
+    });
   });
 
   dayBtn.addEventListener("click", () => {
@@ -1044,5 +985,61 @@ document.addEventListener("DOMContentLoaded", () => {
         cell.style.display = i === 0 || i === todayIndex ? "" : "none";
       });
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chatItems = document.querySelectorAll("#chatList a");
+  const headerName = document.getElementById("headerName");
+  const headerRole = document.getElementById("headerRole");
+  const headerAvatar = document.getElementById("headerAvatar");
+  const messagesContainer = document.getElementById("messagesContainer");
+
+  function loadChat(chatId) {
+    const template = document.getElementById("chat-" + chatId);
+    if (template) {
+      messagesContainer.innerHTML = template.innerHTML;
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    } else {
+      messagesContainer.innerHTML = '<div class="text-center text-muted my-5 py-5">No messages yet</div>';
+    }
+  }
+
+  chatItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      chatItems.forEach((i) => i.classList.remove("active"));
+      item.classList.add("active");
+
+      headerName.textContent = item.dataset.name;
+      headerRole.textContent = item.dataset.role + " • Online";
+      headerAvatar.src = item.dataset.avatar;
+
+      loadChat(item.dataset.chat);
+    });
+  });
+
+  const activeItem = document.querySelector("#chatList a.active");
+  if (activeItem) {
+    loadChat(activeItem.dataset.chat);
+  }
+});
+
+const EMOJIS = ["😄", "😂", "🔥", "🥳", "😎", "🤩", "😺", "✨", "💙", "🎉", "📎", "😮", "🙌", "👍", "🫶"];
+
+document.querySelectorAll(".emoji-hover").forEach((btn) => {
+  const content = btn.querySelector(".icon-content");
+  const original = content.innerHTML;
+
+  btn.addEventListener("mouseenter", () => {
+    const emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+    content.innerHTML = emoji;
+    content.classList.add("emoji");
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    content.innerHTML = original;
+    content.classList.remove("emoji");
   });
 });

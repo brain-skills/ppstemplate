@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="MD Studio offers high-quality web development services including websites, CRM, and ERP systems. Responsive, functional, and effective solutions." />
-    <title>Student Profile</title>
+    <title>Chat</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png" />
@@ -24,9 +24,30 @@
     <!-- Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
+    <style>
+      /* Your requested active color */
+      .list-group-item-action.active,
+      .list-group-item-action.active:hover,
+      .list-group-item-action.active:focus {
+        background-color: #2696db !important;
+        border-color: #1e7bc4 !important;
+        color: white !important;
+      }
+
+      .list-group-item-action.active .text-muted,
+      .list-group-item-action.active .badge {
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+
+      .list-group-item-action.active h6,
+      .list-group-item-action.active .badge {
+        color: white !important;
+      }
+    </style>
     <header class="bg-white">
       <div class="top-bar position-relative">
         <div class="container d-flex py-3 justify-content-between align-items-center">
@@ -88,12 +109,12 @@
 
                   <form class="d-grid gap-3">
                     <div class="position-relative">
-                      <label class="fs-6 fw-bold mb-1">Login</label>
+                      <label class="fs-6 fw-medium mb-1">Login</label>
                       <input type="text" class="form-control login-input" placeholder="Login..." />
                     </div>
 
                     <div class="position-relative">
-                      <label class="fs-6 fw-bold mb-1">Password</label>
+                      <label class="fs-6 fw-medium mb-1">Password</label>
                       <div class="position-relative">
                         <input type="password" class="form-control login-input pe-5" placeholder="Password..." />
                       </div>
@@ -172,63 +193,177 @@
         </div>
       </nav>
     </header>
-    <main>
-      <section class="pt-80 bg-white mb-4">
+    <main class="bg-white">
+      <section class="pt-80 bg-white">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
               <li class="breadcrumb-item">
                 <a href="./index.html" class="text-decoration-none text-secondary">Home</a>
               </li>
-              <li class="breadcrumb-item active text-dark" aria-current="page">Student Profile</li>
+              <li class="breadcrumb-item active text-dark" aria-current="page">Chat</li>
             </ol>
           </nav>
         </div>
       </section>
-      <section class="profile-page pb-4 pb-lg-5 bg-white">
-        <div class="container">
-          <div class="profile-wrapper">
-            <div class="row g-4">
-              <div class="col-12 col-lg-3 col-xxl-2">
-                <div class="list-group profile-sidebar overflow-hidden d-none d-md-flex flex-row flex-xl-column" id="profileTab" role="tablist">
-                  <button
-                    class="list-group-item list-group-item-action active d-flex flex-row align-items-center gap-3"
-                    id="promotions-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#promotions-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="promotions-pane"
-                    aria-selected="true"
-                  >
-                    <img src="./assets/images/icons/icon_user.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-bold">Promotions and discounts</span>
-                  </button>
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3"
-                    id="gadgets-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#gadgets-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="gadgets-pane"
-                    aria-selected="true"
-                  >
-                    <img src="./assets/images/icons/icon_user.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-bold">Gadgets</span>
-                  </button>
-                </div>
-              </div>
+      <div class="container pb-5">
+        <div class="d-flex align-items-center gap-3 py-4">
+          <img src="./assets/images/icons/icon_letter.svg" alt="" class="blue-icon" />
+          <h5 class="mb-0 text-black fw-bold">Messages</h5>
+        </div>
 
-              <div class="col-12 col-lg-9 col-xxl-10">
-                <div class="tab-content" id="profileTabContent">
-                  <div class="tab-pane fade show active" id="promotions-pane" role="tabpanel" aria-labelledby="promotions-tab" tabindex="0">asdaasdasdasdasdsdasd</div>
-                </div>
+        <div class="row g-3" style="height: 70vh; min-height: 500px">
+          <!-- Left – chat list -->
+          <div class="col-lg-4 col-xl-3 bg-white d-flex flex-column shadow rounded overflow-hidden">
+            <div class="p-3 border-bottom">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text bg-white border"><i class="fas fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search or start new chat" />
+              </div>
+            </div>
+
+            <div class="flex-grow-1 overflow-auto">
+              <div class="list-group list-group-flush" id="chatList">
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action px-3 py-3 active rounded"
+                  data-chat="michael"
+                  data-name="Michael Brown"
+                  data-role="Student / 3 grade"
+                  data-avatar="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96"
+                >
+                  <div class="d-flex align-items-start">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96" alt="" class="rounded-circle me-3" width="48" height="48" />
+                    <div class="flex-grow-1 overflow-hidden">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h6 class="mb-0">Michael Brown</h6>
+                        <small class="text-muted">09:27 pm</small>
+                      </div>
+                      <p class="mb-1 small text-truncate">I'm having trouble with problem number 7...</p>
+                      <small class="text-muted">Student / 3 grade</small>
+                    </div>
+                    <span class="badge bg-success rounded-pill ms-2">2</span>
+                  </div>
+                </a>
+
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action px-3 py-3 rounded"
+                  data-chat="jane"
+                  data-name="Jane Henderson"
+                  data-role="Teacher / English language"
+                  data-avatar="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96"
+                >
+                  <div class="d-flex align-items-start">
+                    <img src="./assets/images/icons/avatar.svg" alt="" class="rounded-circle me-3" width="48" height="48" />
+                    <div class="flex-grow-1 overflow-hidden">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h6 class="mb-0">Jane Henderson</h6>
+                        <small class="text-muted">08:17 am</small>
+                      </div>
+                      <p class="mb-1 small text-truncate">Good morning! Reminder: math homework due Friday...</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action px-3 py-3 rounded"
+                  data-chat="elisabeth"
+                  data-name="Elisabeth King"
+                  data-role="Student / 8 grade"
+                  data-avatar="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96"
+                >
+                  <div class="d-flex align-items-start">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96" alt="" class="rounded-circle me-3" width="48" height="48" />
+                    <div class="flex-grow-1 overflow-hidden">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h6 class="mb-0">Elisabeth King</h6>
+                        <small class="text-muted">Yesterday</small>
+                      </div>
+                      <p class="mb-1 small text-truncate">If anything is unclear, I'm always here :)</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right – conversation -->
+          <div class="col-lg-8 col-xl-9 d-flex flex-column bg-white shadow rounded overflow-hidden">
+            <div class="p-3 border-bottom d-flex align-items-center gap-3" id="chatHeader">
+              <img id="headerAvatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96" alt="" class="rounded-circle" width="48" height="48" />
+              <div>
+                <h6 class="mb-0" id="headerName">Michael Brown</h6>
+                <small class="text-muted" id="headerRole">Student / 3 grade • Online</small>
+              </div>
+            </div>
+
+            <div class="messages-container flex-grow-1 d-flex flex-column gap-3 p-4 overflow-auto" id="messagesContainer"></div>
+
+            <div class="align-items-center input-block gap-2 d-flex w-100 mb-3">
+              <input type="text" class="rounded form-control form-control-lg chat-input message-input" placeholder="Type ..." autocomplete="off" style="min-height: min-content" />
+              <div class="d-flex flex-row gap-2 align-items-center">
+                <button class="btn btn-outline-secondary">
+                  <img src="./assets/images/icons/icon_attach.svg" alt="" />
+                </button>
+
+                <button id="emoji-picker-button" type="button" class="btn btn-outline-secondary emoji-hover">
+                  <span class="icon-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-emoji-laughing" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                      <path
+                        d="M12.331 9.5a1 1 0 0 1 0 1A5 5 0 0 1 8 13a5 5 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5M7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <template id="chat-michael">
+        <div class="align-self-start">
+          <div class="bg-white msg-bubble rounded shadow-sm p-3">Good evening! Just a reminder that the math homework is due on Friday.</div>
+          <small class="text-muted d-block mt-1">05:17 pm</small>
+        </div>
+        <div class="align-self-end">
+          <div class="bg-success-subtle msg-bubble rounded shadow-sm p-3">Hello, I'm having trouble with problem number 7...</div>
+          <small class="text-muted d-block mt-1 text-end">05:23 pm</small>
+        </div>
+        <div class="align-self-start">
+          <div class="bg-white msg-bubble rounded shadow-sm p-3">Of course! Area = length × width. Try it again and let me know if still unclear.</div>
+          <small class="text-muted d-block mt-1">05:28 pm</small>
+        </div>
+      </template>
+
+      <template id="chat-jane">
+        <div class="align-self-start">
+          <div class="bg-white msg-bubble rounded shadow-sm p-3">Good morning Michael! Don't forget to bring your English textbook tomorrow.</div>
+          <small class="text-muted d-block mt-1">08:05 am</small>
+        </div>
+        <div class="align-self-end">
+          <div class="bg-success-subtle msg-bubble rounded shadow-sm p-3">Okay, thank you Mrs. Henderson!</div>
+          <small class="text-muted d-block mt-1 text-end">08:12 am</small>
+        </div>
+        <div class="align-self-start">
+          <div class="bg-white msg-bubble rounded shadow-sm p-3">Also prepare exercise 3 on page 45 for next lesson please.</div>
+          <small class="text-muted d-block mt-1">08:14 am</small>
+        </div>
+      </template>
+
+      <template id="chat-elisabeth">
+        <div class="align-self-start">
+          <div class="bg-white msg-bubble rounded shadow-sm p-3">Hi! Can we discuss the science project tomorrow after classes?</div>
+          <small class="text-muted d-block mt-1">Yesterday 15:40</small>
+        </div>
+        <div class="align-self-end">
+          <div class="bg-success-subtle msg-bubble rounded shadow-sm p-3">Sure, see you at 14:30 near the library. Bring your notes.</div>
+          <small class="text-muted d-block mt-1 text-end">Yesterday 15:45</small>
+        </div>
+      </template>
     </main>
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
       <div class="container d-flex flex-column flex-xl-row justify-content-between gap-4 gap-xl-5 align-items-center align-items-xl-start">
@@ -356,7 +491,7 @@
     <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
       <div class="offcanvas-header p-3">
         <div class="d-flex align-items-center gap-2">
-          <img class="mobile-menu__avatar" src="./assets/images/icons/avatar.svg" alt="User avatar" />
+          <img class="mobile-menu__avatar" src="./assets/images/svg/avatar.svg" alt="User avatar" />
           <div class="lh-sm">
             <h6 class="fw-semibold mb-0" id="mobileMenuLabel">Jane Henderson</h6>
             <small class="text-muted">Teacher / English language</small>
@@ -368,62 +503,61 @@
 
       <div class="offcanvas-body p-0 d-flex flex-column">
         <nav class="d-flex flex-column p-2 flex-grow-1" aria-label="Mobile navigation">
-          <a class="mobile-menu__link active" href="#">
+          <a class="mobile-menu__link" href="./index.html">
             <img src="./assets/images/icons/icon_dashboard.svg" alt="Home icon" class="mobile-menu__icon" />
             <span>Home</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./about.html">
             <img src="./assets/images/icons/icon_school.svg" alt="About School icon" class="mobile-menu__icon" />
             <span>About School</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./enrollment.html">
             <img src="./assets/images/icons/icon_education.svg" alt="Enrollment icon" class="mobile-menu__icon" />
             <span>Enrollment</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./schedule.html">
             <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule icon" class="mobile-menu__icon" />
             <span>Schedule</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./news.html">
             <img src="./assets/images/icons/icon_news.svg" alt="News icon" class="mobile-menu__icon" />
             <span>News</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./events.html">
             <img src="./assets/images/icons/icon_event.svg" alt="Events icon" class="mobile-menu__icon" />
             <span>Events</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./gallery.html">
             <img src="./assets/images/icons/icon_media.svg" alt="Gallery icon" class="mobile-menu__icon" />
             <span>Gallery</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./files.html">
             <img src="./assets/images/icons/icon_folder.svg" alt="Files icon" class="mobile-menu__icon" />
             <span>Files</span>
           </a>
 
-          <a class="mobile-menu__link" href="#">
+          <a class="mobile-menu__link" href="./contact.html">
             <img src="./assets/images/icons/icon_phone.svg" alt="Contact icon" class="mobile-menu__icon" />
             <span>Contact us</span>
           </a>
 
           <hr class="my-3" />
 
-          <a class="mobile-menu__link" href="#"><span>Classes and Courses</span></a>
-          <a class="mobile-menu__link" href="#"><span>Staff</span></a>
-          <a class="mobile-menu__link" href="#"><span>Announcements</span></a>
-          <a class="mobile-menu__link" href="#"><span>School Bus</span></a>
-          <a class="mobile-menu__link" href="#"><span>Menu</span></a>
-          <a class="mobile-menu__link" href="#"><span>Sport</span></a>
-          <a class="mobile-menu__link" href="#"><span>Nurse</span></a>
-          <a class="mobile-menu__link" href="#"><span>Policy</span></a>
-          <a class="mobile-menu__link" href="#"><span>Store</span></a>
+          <a class="mobile-menu__link" href="./classes.html"><span>Classes and Courses</span></a>
+          <a class="mobile-menu__link" href="./staff.html"><span>Staff</span></a>
+          <a class="mobile-menu__link" href="./announcements.html"><span>Announcements</span></a>
+          <a class="mobile-menu__link" href="./school-bus.html"><span>School Bus</span></a>
+          <a class="mobile-menu__link" href="./menu.html"><span>Menu</span></a>
+          <a class="mobile-menu__link" href="./sport.html"><span>Sport</span></a>
+          <a class="mobile-menu__link" href="./policy.html"><span>Policy</span></a>
+          <a class="mobile-menu__link" href="./store.html"><span>Store</span></a>
         </nav>
 
         <div class="d-flex align-items-center gap-3 scale-control p-3 border-top">
