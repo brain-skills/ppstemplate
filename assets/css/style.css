@@ -46,11 +46,7 @@ p {
 
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: color-mix(in srgb, var(--bs-primary) 75%, black);
-  --bs-btn-active-border-color: color-mix(
-    in srgb,
-    var(--bs-primary) 70%,
-    black
-  );
+  --bs-btn-active-border-color: color-mix(in srgb, var(--bs-primary) 70%, black);
 
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: var(--bs-primary);
@@ -271,13 +267,11 @@ header {
 }
 
 .nav-container a:not(.nav-logo):hover {
-  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
-    hue-rotate(183deg) brightness(92%) contrast(92%);
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%) hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
 .nav-container a:not(.nav-logo).active {
-  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
-    hue-rotate(183deg) brightness(92%) contrast(92%);
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%) hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
 .nav-logo,
@@ -327,8 +321,6 @@ header {
 
 @media (min-width: 576px) {
   .page-hero {
-    min-height: 100vh;
-    min-height: 100dvh;
     position: relative;
   }
 
@@ -341,15 +333,11 @@ header {
   }
 
   .main-section {
-    min-height: 100vh;
-    min-height: 100dvh;
     position: relative;
   }
 
   .hero-image {
     width: 100%;
-    height: 100vh;
-    height: 100dvh;
     object-fit: cover;
     display: block;
   }
@@ -586,8 +574,7 @@ footer address img {
 
 footer address:hover img {
   transform: scale(1.1);
-  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
-    hue-rotate(183deg) brightness(92%) contrast(92%);
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%) hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
 #fontSlider {
@@ -864,8 +851,7 @@ footer address:hover img {
 }
 
 .blue-icon {
-  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%)
-    hue-rotate(183deg) brightness(92%) contrast(92%);
+  filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%) hue-rotate(183deg) brightness(92%) contrast(92%);
 }
 
 .btn[class*="btn-outline"] img {
@@ -1195,13 +1181,7 @@ footer address:hover img {
 .voice .wave {
   height: 26px;
   border-radius: 10px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(13, 110, 253, 0.22),
-    rgba(13, 110, 253, 0.22) 3px,
-    rgba(13, 110, 253, 0.05) 3px,
-    rgba(13, 110, 253, 0.05) 7px
-  );
+  background: repeating-linear-gradient(90deg, rgba(13, 110, 253, 0.22), rgba(13, 110, 253, 0.22) 3px, rgba(13, 110, 253, 0.05) 3px, rgba(13, 110, 253, 0.05) 7px);
   opacity: 0.9;
 }
 
@@ -1285,17 +1265,17 @@ header {
   }
 
   .nav-container::after {
-    right: -15px;
-    rotate: 21deg;
-    top: 40px;
+    right: 0px !important;
+    rotate: 43deg !important;
+    top: 38px !important;
   }
 
   .nav-container::before {
-    left: -14px;
+    left: -15px;
     border-top-right-radius: 60px;
     box-shadow: 15px -15px 0 0 white;
-    rotate: -20deg;
-    top: 41px;
+    rotate: -22deg;
+    top: 40px;
   }
 
   .left-gap,
@@ -1498,11 +1478,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.72) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 100%);
 }
 
 .profile-sidebar .list-group-item .blue-icon {
@@ -1839,8 +1815,7 @@ header {
 }
 
 .view-mode-btn.active img {
-  filter: invert(43%) sepia(92%) saturate(1853%) hue-rotate(181deg)
-    brightness(92%) contrast(91%);
+  filter: invert(43%) sepia(92%) saturate(1853%) hue-rotate(181deg) brightness(92%) contrast(91%);
   opacity: 1;
 }
 
