@@ -1066,3 +1066,37 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("prevBtn").classList.toggle("disabled", currentPage === 1);
   document.getElementById("nextBtn").classList.toggle("disabled", currentPage === 4);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const gradeButtons = document.querySelectorAll(".grade-btn");
+  const gradeContents = document.querySelectorAll(".grade-content");
+
+  function switchGrade(grade) {
+    gradeContents.forEach((content) => {
+      content.style.display = "none";
+    });
+
+    const activeContent = document.getElementById(`grade-${grade}`);
+    if (activeContent) {
+      activeContent.style.display = "block";
+    }
+  }
+
+  gradeButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const selectedGrade = this.getAttribute("data-grade");
+
+      gradeButtons.forEach((btn) => {
+        btn.classList.remove("active", "btn-primary");
+        btn.classList.add("btn-outline-primary");
+      });
+
+      this.classList.add("active", "btn-primary");
+      this.classList.remove("btn-outline-primary");
+
+      switchGrade(selectedGrade);
+    });
+  });
+
+  switchGrade(5);
+});
