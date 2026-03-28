@@ -1043,3 +1043,26 @@ document.querySelectorAll(".emoji-hover").forEach((btn) => {
     content.classList.remove("emoji");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentPage = parseInt(urlParams.get("page")) || 1;
+
+  const allCards = document.querySelectorAll(".news-page");
+  allCards.forEach((card) => {
+    card.style.display = parseInt(card.dataset.page) === currentPage ? "block" : "none";
+  });
+
+  const pageLinks = document.querySelectorAll("#pagination .page-link");
+  pageLinks.forEach((link) => {
+    const parentLi = link.parentElement;
+    parentLi.classList.remove("active");
+
+    if (link.textContent === currentPage.toString()) {
+      parentLi.classList.add("active");
+    }
+  });
+
+  document.getElementById("prevBtn").classList.toggle("disabled", currentPage === 1);
+  document.getElementById("nextBtn").classList.toggle("disabled", currentPage === 4);
+});
