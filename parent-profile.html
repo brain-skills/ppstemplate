@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="MD Studio offers high-quality web development services including websites, CRM, and ERP systems. Responsive, functional, and effective solutions."
-    />
+    <meta name="description" content="MD Studio offers high-quality web development services including websites, CRM, and ERP systems. Responsive, functional, and effective solutions." />
     <title>Student Profile</title>
 
     <!-- Favicons -->
@@ -30,29 +27,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
-    <header class="bg-white">
-      <div class="top-bar position-relative">
+    <header>
+      <div class="top-bar">
         <div class="container d-flex py-3 justify-content-between align-items-center">
-          <div id="mobileSearchOverlay" class="position-absolute top-0 start-0 w-100 h-100 align-items-center px-3 mobile-search-overlay">
-            <div class="d-flex w-100 bg-white rounded overflow-hidden h-40">
-              <input type="text" placeholder="Search..." id="mobileSearchInput" class="border-0 px-3 flex-grow-1" />
-              <div class="d-flex align-items-center px-3 gap-3 bg-primary">
-                <img src="./assets/images/icons/icon_search.svg" alt="Search" width="18" />
-                <button type="button" id="closeSearch" class="border-0 bg-transparent text-white fs-4 p-0">&times;</button>
-              </div>
-            </div>
-          </div>
-          <button
-            class="btn p-0 border-0 bg-transparent d-flex d-xl-none"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileMenu"
-            aria-controls="mobileMenu"
-            aria-label="Open menu"
-          >
-            <img src="./assets/images/icons/icon_menu.svg" alt="" width="30" height="30" />
+          <button class="btn p-0 border-0 bg-transparent d-flex d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu">
+            <img src="./assets/images/icons/icon_menu.svg" alt="Menu" width="30" height="30" />
           </button>
-          <nav class="top-bar__menu d-none d-xl-flex align-items-center gap-3 gap-xxl-4 fs-6">
+
+          <nav class="top-bar__menu d-none d-xl-flex align-items-center">
             <a href="./classes.html">Classes and Courses</a>
             <a href="./staff.html">Staff</a>
             <a href="./announcements.html">Announcements</a>
@@ -65,10 +47,10 @@
 
           <div class="d-flex align-items-center gap-2 gap-xxl-4">
             <div class="top-bar__search d-flex align-items-center">
-              <div class="d-none d-xxl-flex bg-white-20 px-2 px-xxl-3 py-1 rounded align-items-center">
+              <div class="d-none d-xxl-flex bg-white-20 px-3 py-1 rounded align-items-center">
                 <input type="text" placeholder="Search" class="border-0 bg-transparent text-white" />
                 <button type="button" class="btn p-0 border-0 bg-transparent" id="desktopSearchBtn" aria-label="Search">
-                  <img src="./assets/images/icons/icon_search.svg" alt="" width="18" height="18" />
+                  <img src="./assets/images/icons/icon_search.svg" alt="Search" width="18" height="18" />
                 </button>
               </div>
 
@@ -76,55 +58,50 @@
                 <img src="./assets/images/icons/icon_search.svg" alt="Search icon" width="24" height="24" />
               </button>
             </div>
+
             <button type="button" class="tool rounded p-2 bg-dark-opacity border-0" aria-label="Accessibility settings">
               <img src="./assets/images/icons/icon_glasses.svg" alt="Accessibility" width="24" height="24" />
             </button>
             <a href="./cart.html" class="tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none">
               <img src="./assets/images/icons/icon_cart.svg" alt="Cart" />
-              <span class="fs-6 mb-0 text-white">2 / $178.45</span>
+              <span class="fs-6 mb-0 text-white">2 / 178.45</span>
             </a>
+
             <div class="dropdown">
-              <button
-                type="button"
-                class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                aria-label="Open sign up menu"
-              >
-                <img src="./assets/images/icons/icon_key.svg" alt="Sign up" width="24" height="24" />
-                <span class="fs-6 mb-0">Sign up</span>
+              <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="./assets/images/icons/icon_key.svg" alt="Account" width="24" height="24" />
+                <span class="fs-6 mb-0 text-truncate-signup" title="Sign up">Sign up</span>
               </button>
 
               <ul class="dropdown-menu dropdown-menu-end p-0 login-dropdown">
                 <li class="login-card p-3 border-0 rounded shadow">
-                  <div class="d-flex align-items-center gap-2 mb-3">
+                  <div class="d-flex align-items-center gap-3 mb-3">
                     <img src="./assets/images/icons/icon_secure.svg" alt="" />
                     <h6 class="mb-0 fw-semibold fs-4">Login</h6>
                   </div>
 
                   <form class="d-grid gap-3">
                     <div class="position-relative">
-                      <label class="fs-6 fw-bold mb-1">Login</label>
+                      <label class="fs-6 fw-medium mb-1">Login</label>
                       <input type="text" class="form-control login-input" placeholder="Login..." />
                     </div>
 
                     <div class="position-relative">
-                      <label class="fs-6 fw-bold mb-1">Password</label>
-                      <div class="position-relative">
-                        <input type="password" class="form-control login-input pe-5" placeholder="Password..." />
-                      </div>
+                      <label class="fs-6 fw-medium mb-1">Password</label>
+                      <input type="password" class="form-control login-input" placeholder="Password..." />
                     </div>
+
                     <div class="d-flex align-items-start gap-2">
                       <input class="form-check-input login-check mt-1" type="checkbox" id="agreeLogin" checked />
                       <label class="small text-muted" for="agreeLogin">
                         I agree with
-                        <a href="#" class="text-primary text-decoration-none">Terms of Serevice</a>
+                        <a href="#" class="text-primary text-decoration-none">Terms of Service</a>
                         and
                         <a href="#" class="text-primary text-decoration-none">Privacy Policy</a>
                       </label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary login-btn">Send message</button>
+                    <button type="submit" class="btn btn-primary login-btn">Login</button>
                   </form>
                 </li>
               </ul>
@@ -132,9 +109,12 @@
           </div>
         </div>
       </div>
+
       <div class="white-gap shadow"></div>
+
       <div class="bg-white left-gap"></div>
       <div class="bg-white right-gap"></div>
+
       <nav class="nav-container d-flex align-items-center justify-content-center justify-content-xl-between z-1 shadow">
         <a href="/" class="nav-logo">
           <img src="./assets/logo/school-logo.svg" alt="School logo" />
@@ -142,47 +122,47 @@
 
         <div class="d-none d-xl-flex flex-row align-items-center gap-3 gap-xxl-4">
           <a href="./index.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_dashboard.svg" alt="Home icon" width="24" height="24" class="nav-item" />
-            <span class="fs-6 nav-item">Home</span>
+            <img src="./assets/images/icons/icon_dashboard.svg" alt="Home icon" width="24" height="24" />
+            <span class="fs-6">Home</span>
           </a>
 
           <a href="./about.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_school.svg" alt="About icon" width="24" height="24" class="nav-item" />
+            <img src="./assets/images/icons/icon_school.svg" alt="About icon" width="24" height="24" />
             <span class="fs-6">About</span>
           </a>
 
           <a href="./enrollment.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_education.svg" alt="Enrollment icon" width="24" height="24" class="nav-item" />
+            <img src="./assets/images/icons/icon_education.svg" alt="Enrollment icon" width="24" height="24" />
             <span class="fs-6">Enrollment</span>
           </a>
 
           <a href="./schedule.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule icon" width="24" height="24" class="nav-item" />
+            <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule icon" width="24" height="24" />
             <span class="fs-6">Schedule</span>
           </a>
 
           <a href="./news.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_news.svg" alt="News icon" width="24" height="24" class="nav-item" />
+            <img src="./assets/images/icons/icon_news.svg" alt="News icon" width="24" height="24" />
             <span class="fs-6">News</span>
           </a>
 
           <a href="./events.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_event.svg" alt="Events icon" width="24" height="24" class="nav-item" />
+            <img src="./assets/images/icons/icon_event.svg" alt="Events icon" width="24" height="24" />
             <span class="fs-6">Events</span>
           </a>
 
           <a href="./gallery.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_media.svg" alt="Gallery icon" width="24" height="24" class="nav-item" />
+            <img src="./assets/images/icons/icon_media.svg" alt="Gallery icon" width="24" height="24" />
             <span class="fs-6">Gallery</span>
           </a>
 
           <a href="./files.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_folder.svg" alt="Files icon" width="24" height="24" class="nav-item" />
-            <span class="">Files</span>
+            <img src="./assets/images/icons/icon_folder.svg" alt="Files icon" width="24" height="24" />
+            <span class="fs-6">Files</span>
           </a>
 
           <a href="./contact.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-            <img src="./assets/images/icons/icon_phone.svg" alt="Contact icon" width="24" height="24" class="nav-item" />
+            <img src="./assets/images/icons/icon_phone.svg" alt="Contact icon" width="24" height="24" />
             <span class="fs-6">Contact</span>
           </a>
         </div>
@@ -446,9 +426,8 @@
                           <p class="text-muted mb-3 fw-semibold text-dark-opacity">Architector</p>
 
                           <p class="fw-semibold mb-4">
-                            Mary Brown is a talented architect known for her innovative and sustainable designs. She specializes in creating environmentally friendly buildings that
-                            blend modern aesthetics with functionality. Throughout her career, Mary has worked on various residential and commercial projects, earning praise for
-                            her attention to detail and creative solutions. Her passion for architecture drives her to constantly explore new materials and techniques.
+                            Mary Brown is a talented architect known for her innovative and sustainable designs. She specializes in creating environmentally friendly buildings that blend modern aesthetics with functionality. Throughout her career,
+                            Mary has worked on various residential and commercial projects, earning praise for her attention to detail and creative solutions. Her passion for architecture drives her to constantly explore new materials and techniques.
                           </p>
 
                           <ul class="list-unstyled profile-meta d-flex flex-column gap-3 mb-0">
@@ -485,10 +464,7 @@
                                 <h5 class="mb-1 fw-semibold">Jane Henderson</h5>
                                 <p class="text-muted mb-2">English language</p>
 
-                                <p class="mb-3 text-secondary fw-semibold">
-                                  Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple
-                                  University.
-                                </p>
+                                <p class="mb-3 text-secondary fw-semibold">Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple University.</p>
 
                                 <button class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2">Send message</button>
                               </div>
@@ -502,10 +478,7 @@
                                 <h5 class="mb-1 fw-semibold">Jane Henderson</h5>
                                 <p class="text-muted mb-2">English language</p>
 
-                                <p class="mb-3 text-secondary fw-semibold">
-                                  Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple
-                                  University.
-                                </p>
+                                <p class="mb-3 text-secondary fw-semibold">Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple University.</p>
 
                                 <button class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2">Send message</button>
                               </div>
@@ -583,62 +556,35 @@
                     <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
                       <ul class="nav gap-4" role="tablist">
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link grade-tab active fw-semibold" data-bs-toggle="tab" data-bs-target="#grade1" type="button" role="tab" aria-selected="true">
-                            1 grade
-                          </button>
+                          <button class="nav-link grade-tab active fw-semibold" data-bs-toggle="tab" data-bs-target="#grade1" type="button" role="tab" aria-selected="true">1 grade</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link grade-tab fw-semibold" data-bs-toggle="tab" data-bs-target="#grade2" type="button" role="tab" aria-selected="false">
-                            2 grade
-                          </button>
+                          <button class="nav-link grade-tab fw-semibold" data-bs-toggle="tab" data-bs-target="#grade2" type="button" role="tab" aria-selected="false">2 grade</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link grade-tab fw-semibold" data-bs-toggle="tab" data-bs-target="#grade3" type="button" role="tab" aria-selected="false">
-                            3 grade
-                          </button>
+                          <button class="nav-link grade-tab fw-semibold" data-bs-toggle="tab" data-bs-target="#grade3" type="button" role="tab" aria-selected="false">3 grade</button>
                         </li>
                       </ul>
 
                       <ul class="nav nav-pills gap-3" role="tablist">
                         <li class="nav-item" role="presentation">
-                          <button
-                            class="nav-link lesson-tab active d-flex flex-column align-items-center gap-2"
-                            data-bs-toggle="tab"
-                            data-bs-target="#lessons"
-                            type="button"
-                            role="tab"
-                            aria-selected="true"
-                          >
+                          <button class="nav-link lesson-tab active d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#lessons" type="button" role="tab" aria-selected="true">
                             <img src="./assets/images/icons/icon_book.svg" class="blue-icon" alt="Lessons" />
                             <small>Lessons</small>
                           </button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                          <button
-                            class="nav-link lesson-tab d-flex flex-column align-items-center gap-2"
-                            data-bs-toggle="tab"
-                            data-bs-target="#homeworks"
-                            type="button"
-                            role="tab"
-                            aria-selected="false"
-                          >
+                          <button class="nav-link lesson-tab d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#homeworks" type="button" role="tab" aria-selected="false">
                             <img src="./assets/images/icons/icon_lounge.svg" class="blue-icon" alt="Homeworks" />
                             <small>Homeworks</small>
                           </button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                          <button
-                            class="nav-link lesson-tab d-flex flex-column align-items-center gap-2"
-                            data-bs-toggle="tab"
-                            data-bs-target="#tests"
-                            type="button"
-                            role="tab"
-                            aria-selected="false"
-                          >
+                          <button class="nav-link lesson-tab d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#tests" type="button" role="tab" aria-selected="false">
                             <img src="./assets/images/icons/icon_test.svg" class="blue-icon" alt="Tests" />
                             <small>Tests</small>
                           </button>
@@ -654,14 +600,7 @@
                           <div class="accordion" id="lessonAccordion">
                             <div class="accordion-item lesson-accordion-item border-0">
                               <h2 class="accordion-header">
-                                <button
-                                  class="accordion-button collapsed lesson-accordion-btn fw-semibold"
-                                  type="button"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#createLesson"
-                                  aria-expanded="false"
-                                  aria-controls="createLesson"
-                                >
+                                <button class="accordion-button collapsed lesson-accordion-btn fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#createLesson" aria-expanded="false" aria-controls="createLesson">
                                   Create new lesson
                                 </button>
                               </h2>
@@ -679,12 +618,7 @@
                                       </div>
 
                                       <div class="col-12">
-                                        <textarea
-                                          class="form-control lesson-form-control lesson-textarea"
-                                          id="lessonDescription"
-                                          rows="5"
-                                          placeholder="Write lesson description"
-                                        ></textarea>
+                                        <textarea class="form-control lesson-form-control lesson-textarea" id="lessonDescription" rows="5" placeholder="Write lesson description"></textarea>
                                       </div>
                                     </div>
 
@@ -806,9 +740,7 @@
 
                                       <div class="mb-3">
                                         <p class="fw-semibold mb-2">Create related homework</p>
-                                        <textarea class="form-control lesson-form-control lesson-textarea" rows="4">
-Write an essay about your pet. We covered speech patterns related to pets in class; try to use them in your essay.</textarea
-                                        >
+                                        <textarea class="form-control lesson-form-control lesson-textarea" rows="4">Write an essay about your pet. We covered speech patterns related to pets in class; try to use them in your essay.</textarea>
                                       </div>
 
                                       <div class="lesson-section-box">
@@ -938,14 +870,7 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                                 <div class="d-flex align-items-center gap-3">
                                   <button type="button" class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn">Edit</button>
 
-                                  <button
-                                    class="btn p-0 border-0 bg-transparent lesson-toggle"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#lesson3Details"
-                                    aria-expanded="false"
-                                    aria-controls="lesson3Details"
-                                  >
+                                  <button class="btn p-0 border-0 bg-transparent lesson-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#lesson3Details" aria-expanded="false" aria-controls="lesson3Details">
                                     <i class="bi bi-chevron-down"></i>
                                   </button>
                                 </div>
@@ -1015,7 +940,6 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                   <!-- Schedule  -->
                   <div class="tab-pane fade" id="schedule-pane" role="tabpanel" aria-labelledby="schedule-tab" tabindex="0">
                     <div class="d-flex flex-column gap-4">
-                      <!-- Header -->
                       <div class="bg-white rounded shadow-sm p-3 p-lg-4 d-flex flex-column flex-xl-row align-items-xl-center justify-content-between gap-3">
                         <div class="d-flex align-items-center gap-3">
                           <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
@@ -2365,9 +2289,7 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                             <span class="text-secondary">Assessment type:</span>
                             five-point scale
 
-                            <p class="mb-0 text-secondary">
-                              Write an essay about your family. We covered speech patterns related to family in class; try to use them in your essay.
-                            </p>
+                            <p class="mb-0 text-secondary">Write an essay about your family. We covered speech patterns related to family in class; try to use them in your essay.</p>
                           </div>
 
                           <div class="bg-light rounded p-3 mb-3">
@@ -2710,14 +2632,11 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                         </div>
 
                         <div class="p-3">
-                          <p class="fw-semibold small mb-2">
-                            Read this text aloud and record the audio so we can track your pronunciation progress at the beginning and end of the year:
-                          </p>
+                          <p class="fw-semibold small mb-2">Read this text aloud and record the audio so we can track your pronunciation progress at the beginning and end of the year:</p>
 
                           <p class="small text-secondary mb-4">
-                            Sed efficitur orci non consectetur blandit. Pellentesque convallis, nulla auctor molestie malesuada, odio augue porttitor neque, et euismod nibh sapien
-                            et quam. Nam luctus vitae diam at eleifend. Suspendisse non urna in libero suscipit posuere. Duis scelerisque pulvinar diam, eu sodales tortor lacinia
-                            ut. Phasellus sit amet nunc in lorem pulvinar facilisis vestibulum in ligula.
+                            Sed efficitur orci non consectetur blandit. Pellentesque convallis, nulla auctor molestie malesuada, odio augue porttitor neque, et euismod nibh sapien et quam. Nam luctus vitae diam at eleifend. Suspendisse non urna in
+                            libero suscipit posuere. Duis scelerisque pulvinar diam, eu sodales tortor lacinia ut. Phasellus sit amet nunc in lorem pulvinar facilisis vestibulum in ligula.
                           </p>
 
                           <!-- Student item -->
@@ -2846,9 +2765,8 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                               <small class="text-secondary d-block mb-3">December 25, 2025</small>
 
                               <p class="text-secondary mb-0 small">
-                                We are excited to invite parents and prospective students to our Open House Day on September 15, 2024! This is a wonderful opportunity to tour our
-                                campus, meet teachers, and learn more about our innovative curriculum and extracurricular activities. We look forward to welcoming you and answering
-                                all your questions to help you get to know our school community.
+                                We are excited to invite parents and prospective students to our Open House Day on September 15, 2024! This is a wonderful opportunity to tour our campus, meet teachers, and learn more about our innovative curriculum
+                                and extracurricular activities. We look forward to welcoming you and answering all your questions to help you get to know our school community.
                               </p>
                             </div>
 
@@ -2866,9 +2784,8 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                               <small class="text-secondary d-block mb-3">December 25, 2025</small>
 
                               <p class="text-secondary mb-3 small">
-                                Philadelphia Progressive School is now accepting applications for new students for the upcoming academic year. Don’t miss the chance to join our
-                                vibrant learning community dedicated to academic excellence and personal growth. Apply early to secure your child’s place and start an exciting
-                                educational journey with us!
+                                Philadelphia Progressive School is now accepting applications for new students for the upcoming academic year. Don’t miss the chance to join our vibrant learning community dedicated to academic excellence and personal
+                                growth. Apply early to secure your child’s place and start an exciting educational journey with us!
                               </p>
 
                               <button type="button" class="btn btn-sm btn-primary px-3">
@@ -2891,9 +2808,8 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                               <small class="text-secondary d-block mb-3">November 7, 2025</small>
 
                               <p class="text-secondary mb-0 small">
-                                Attention students and parents! Please be reminded that starting January 1, 2025, all school passes must be updated to ensure continued access to
-                                school facilities and transport services. Visit the school office starting December 15 to renew or replace your pass without any hassle. Thank you
-                                for your cooperation!
+                                Attention students and parents! Please be reminded that starting January 1, 2025, all school passes must be updated to ensure continued access to school facilities and transport services. Visit the school office
+                                starting December 15 to renew or replace your pass without any hassle. Thank you for your cooperation!
                               </p>
                             </div>
 
@@ -2911,9 +2827,8 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                               <small class="text-secondary d-block mb-3">October 22, 2025</small>
 
                               <p class="text-secondary mb-3 small">
-                                Please note that effective October 1, 2024, the route of school bus number 12 will be modified to improve service and reduce travel time. Updated
-                                route maps and schedules are available at the school office and on our website. We encourage all affected families to review the changes and plan
-                                accordingly.
+                                Please note that effective October 1, 2024, the route of school bus number 12 will be modified to improve service and reduce travel time. Updated route maps and schedules are available at the school office and on our
+                                website. We encourage all affected families to review the changes and plan accordingly.
                               </p>
 
                               <button type="button" class="btn btn-sm btn-primary px-3">
@@ -2936,9 +2851,8 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                               <small class="text-secondary d-block mb-3">October 10, 2025</small>
 
                               <p class="text-secondary mb-3 small">
-                                We inform students and parents that the school stadium will be closed for renovation throughout the upcoming holiday period from December 20, 2024,
-                                to January 5, 2025. All sports practices scheduled during this time will be held at the city stadium. Please ensure students are aware of the
-                                temporary change in venue.
+                                We inform students and parents that the school stadium will be closed for renovation throughout the upcoming holiday period from December 20, 2024, to January 5, 2025. All sports practices scheduled during this time
+                                will be held at the city stadium. Please ensure students are aware of the temporary change in venue.
                               </p>
 
                               <div class="d-flex flex-wrap gap-2">
@@ -2959,11 +2873,8 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                     </div>
                   </div>
 
-                  <!-- events  -->
-
                   <div class="tab-pane fade" id="events-pane" role="tabpanel" aria-labelledby="events-tab" tabindex="0">
                     <div class="bg-white rounded-4 shadow-sm p-4">
-                      <!-- Header -->
                       <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="fw-bold mb-0">Crete event</h5>
                         <button type="button" class="btn btn-sm btn-link text-secondary p-0">
@@ -2971,7 +2882,6 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
                         </button>
                       </div>
 
-                      <!-- Form -->
                       <div class="row g-3 mb-3">
                         <div class="col-12 col-md-3">
                           <label class="form-label small text-secondary mb-1">Roles</label>
@@ -3327,9 +3237,7 @@ Write an essay about your pet. We covered speech patterns related to pets in cla
         <div class="d-flex flex-column gap-3 justify-content-between align-items-center align-items-xl-start">
           <img src="./assets/logo/school-logo.svg" alt="School logo" class="footer-logo" />
 
-          <span class="fs-6 text-dark-opacity fw-light w-50 text-center text-xl-start">
-            Official and legal information required for display: copyrights, organization details, etc
-          </span>
+          <span class="fs-6 text-dark-opacity fw-light w-50 text-center text-xl-start"> Official and legal information required for display: copyrights, organization details, etc </span>
 
           <nav aria-label="Legal links" class="d-none d-xl-flex">
             <ul class="list-unstyled">
