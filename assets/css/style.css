@@ -126,6 +126,13 @@ p {
 
 @media (min-width: 1200px) {
   .container {
+    padding-left: 125px;
+    padding-right: 125px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .container {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -197,6 +204,15 @@ header {
   }
 }
 
+.text-truncate-signup {
+  display: inline-block;
+  max-width: 85px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
 .top-bar {
   width: 100%;
   background: #2f8ed9;
@@ -233,14 +249,13 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 15px 100px;
+  padding: 15px 65px;
   border-bottom-left-radius: 90px;
   border-bottom-right-radius: 90px;
 
   width: min(1200px, calc(100% - 40px));
   height: 100px;
 }
-
 .nav-container::before,
 .nav-container::after {
   content: "";
@@ -311,7 +326,7 @@ header {
 
 @media (max-width: 575px) {
   .main-section {
-    margin-top: -90px;
+    margin-top: -80px;
   }
 
   .main-content p {
@@ -1185,6 +1200,11 @@ footer address:hover img {
   opacity: 0.9;
 }
 
+.search-input-mobile {
+  position: relative;
+  bottom: 22px;
+}
+
 .mobile-search-overlay {
   display: none;
   z-index: 1060;
@@ -1869,4 +1889,13 @@ header {
 textarea.form-control:focus,
 select.form-select:focus {
   box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+}
+
+.text-truncate-signup {
+  display: inline-block;
+  max-width: 85px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
 }
