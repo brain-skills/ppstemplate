@@ -319,48 +319,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((sec) => observer.observe(sec));
   })();
 
-  (function activeNavLinks() {
-    const currentPath = window.location.pathname;
-
-    const navLinks = document.querySelectorAll(".nav-container a");
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      const href = link.getAttribute("href");
-      if (!href) return;
-
-      const normalized = href.startsWith("./") ? href.slice(1) : href;
-
-      if (normalized === "/" && (currentPath === "/" || currentPath.endsWith("/index.html"))) {
-        link.classList.add("active");
-        return;
-      }
-
-      if (normalized !== "/" && currentPath.endsWith(normalized)) {
-        link.classList.add("active");
-      }
-    });
-
-    const mobileLinks = document.querySelectorAll(".mobile-menu__link");
-    mobileLinks.forEach((link) => {
-      link.classList.remove("active");
-      const href = link.getAttribute("href");
-      if (!href) return;
-
-      const normalized = href.startsWith("./") ? href.slice(1) : href;
-
-      if (normalized === "#" || normalized === "") return;
-
-      if (normalized === "/" && (currentPath === "/" || currentPath.endsWith("/index.html"))) {
-        link.classList.add("active");
-        return;
-      }
-
-      if (normalized !== "/" && currentPath.endsWith(normalized)) {
-        link.classList.add("active");
-      }
-    });
-  })();
-
   (function mobileSearchOverlay() {
     const openBtn = document.getElementById("openSearch");
     const closeBtn = document.getElementById("closeSearch");
@@ -517,36 +475,6 @@ document.addEventListener("DOMContentLoaded", () => {
     el.addEventListener("shown.bs.collapse", update);
     el.addEventListener("hidden.bs.collapse", update);
     update();
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const current = window.location.pathname.split("/").pop() || "index.html";
-
-  document.querySelectorAll(".mobile-menu__link").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (!href) return;
-
-    const file = href.split("/").pop();
-
-    link.classList.remove("active");
-
-    if (file === current) {
-      link.classList.add("active");
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const offcanvasEl = document.getElementById("mobileMenu");
-  if (!offcanvasEl) return;
-
-  offcanvasEl.addEventListener("click", (e) => {
-    const a = e.target.closest("a.mobile-menu__link[href]");
-    if (!a) return;
-
-    const instance = bootstrap.Offcanvas.getInstance(offcanvasEl);
-    if (instance) instance.hide();
   });
 });
 
@@ -1099,4 +1027,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   switchGrade(5);
+});
+
+const openBtn = document.getElementById("openSearch");
+const closeBtn = document.getElementById("closeSearch");
+const search = document.getElementById("mobileSearch");
+
+openBtn.addEventListener("click", () => {
+  search.classList.add("active");
+  search.querySelector("input").focus();
+});
+
+closeBtn.addEventListener("click", () => {
+  search.classList.remove("active");
+});
+
+search.addEventListener("click", (e) => {
+  if (e.target === search) {
+    search.classList.remove("active");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  function setActive(selector) {
+    document.querySelectorAll(selector).forEach((link) => {
+      const href = link.getAttribute("href")?.split("/").pop();
+
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  setActive(".top-bar__menu a");
+
+  setActive(".header_items a");
 });
