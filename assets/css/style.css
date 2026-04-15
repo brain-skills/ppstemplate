@@ -1,4 +1,5 @@
 :root {
+  --bg-white: #ffffff;
   --blue: #2696db;
   --text-grey: #777;
 
@@ -326,7 +327,7 @@ header {
 
 @media (max-width: 575px) {
   .main-section {
-    margin-top: -80px;
+    margin-top: -125px;
   }
 
   .main-content p {
@@ -1898,4 +1899,59 @@ select.form-select:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   vertical-align: middle;
+}
+
+.header {
+  width: 100%;
+  height: 105px;
+  position: relative;
+}
+
+.header__top {
+  width: 100%;
+  height: 50px;
+  background: var(--bg-blue);
+}
+
+.header__bottom {
+  width: 80%;
+  width: calc(80%);
+  height: 70px;
+  background: var(--bg-blue);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+}
+
+.header__bottom::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: calc(29px * -1);
+  width: 50px;
+  height: 40px;
+  transform: rotateZ(270deg);
+  background: radial-gradient(circle at 0% 0%, transparent 70%, var(--bg-white) 71%);
+}
+
+.header__bottom::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: calc(29px * -1);
+  width: 50px;
+  height: 40px;
+  transform: rotateZ(-270deg);
+  background: radial-gradient(circle at 100% 0%, transparent 70%, var(--bg-white) 71%);
+}
+
+.header_items {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
