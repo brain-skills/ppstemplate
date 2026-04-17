@@ -1065,3 +1065,140 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setActive(".header_items a");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const galleryImages = document.querySelectorAll(".gallery-img");
+
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", function () {
+      lightboxImage.src = this.src;
+      lightboxImage.alt = this.alt;
+
+      lightbox.classList.remove("d-none");
+      setTimeout(() => {
+        lightbox.classList.add("show");
+      }, 10);
+
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("show");
+    setTimeout(() => {
+      lightbox.classList.add("d-none");
+      document.body.style.overflow = "visible";
+    }, 400);
+  }
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && lightbox.classList.contains("show")) {
+      closeLightbox();
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const gradeFilter = document.getElementById("gradeFilter");
+  const curatorFilter = document.getElementById("curatorFilter");
+  const resetBtn = document.getElementById("resetFiltersBtn");
+
+  const rows = document.querySelectorAll("#studentsTableBody tr");
+  const emptyState = document.getElementById("studentsEmptyState");
+
+  const gradeTitle = document.getElementById("currentGradeTitle");
+  const curatorName = document.getElementById("currentCuratorName");
+
+  function filterStudents() {
+    const selectedGrade = gradeFilter.value;
+    const selectedCurator = curatorFilter.value;
+
+    let visibleCount = 0;
+
+    rows.forEach((row) => {
+      const grade = row.dataset.grade;
+      const curator = row.dataset.curator;
+
+      const matchGrade = selectedGrade === "all" || selectedGrade === grade;
+      const matchCurator = selectedCurator === "all" || selectedCurator === curator;
+
+      if (matchGrade && matchCurator) {
+        row.style.display = "";
+        visibleCount++;
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    emptyState.classList.toggle("d-none", visibleCount > 0);
+
+    gradeTitle.textContent = selectedGrade === "all" ? "All Grades" : selectedGrade + " Grade";
+
+    const curatorText = curatorFilter.options[curatorFilter.selectedIndex].text;
+    curatorName.textContent = selectedCurator === "all" ? "All Curators" : curatorText;
+  }
+
+  gradeFilter.addEventListener("change", filterStudents);
+  curatorFilter.addEventListener("change", filterStudents);
+
+  resetBtn.addEventListener("click", () => {
+    gradeFilter.value = "all";
+    curatorFilter.value = "all";
+    filterStudents();
+  });
+
+  document.getElementById("studentsTableBody").addEventListener("click", (e) => {
+    const row = e.target.closest("tr");
+    if (!row) return;
+
+    const name = row.dataset.name;
+
+    if (e.target.classList.contains("action-view")) {
+      alert("Viewing " + name);
+    }
+
+    if (e.target.classList.contains("action-edit")) {
+      alert("Editing " + name);
+    }
+
+    if (e.target.classList.contains("action-delete")) {
+      const confirmDelete = confirm("Delete " + name + "?");
+      if (confirmDelete) {
+        row.remove();
+        filterStudents();
+      }
+    }
+  });
+
+  filterStudents();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".dropdown-item[data-tab]");
+  const label = document.getElementById("mobileTabLabel");
+
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      const tabId = item.dataset.tab;
+
+      label.textContent = item.textContent.trim();
+
+      const tabBtn = document.getElementById(tabId);
+      if (tabBtn) {
+        const tab = new bootstrap.Tab(tabBtn);
+        tab.show();
+      }
+    });
+  });
+});

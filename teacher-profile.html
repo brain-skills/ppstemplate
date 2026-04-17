@@ -221,7 +221,7 @@
                     aria-selected="true"
                   >
                     <img src="./assets/images/icons/icon_user.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">My profile</span>
+                    <span class="fs-6 fw-semibold">My profile</span>
                   </button>
 
                   <button
@@ -235,7 +235,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_settings.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Class management</span>
+                    <span class="fs-6 fw-medium fw-semibold">Class management</span>
                   </button>
 
                   <button
@@ -249,7 +249,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_science.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Curriculum</span>
+                    <span class="fs-6 fw-medium fw-semibold">Curriculum</span>
                   </button>
 
                   <button
@@ -263,7 +263,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Schedule</span>
+                    <span class="fs-6 fw-medium fw-semibold">Schedule</span>
                   </button>
 
                   <button
@@ -277,7 +277,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_list.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Attendance</span>
+                    <span class="fs-6 fw-medium fw-semibold">Attendance</span>
                   </button>
 
                   <button
@@ -291,7 +291,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_award.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Grades</span>
+                    <span class="fs-6 fw-medium fw-semibold">Grades</span>
                   </button>
 
                   <button
@@ -305,7 +305,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_lounge.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Homework</span>
+                    <span class="fs-6 fw-medium fw-semibold">Homework</span>
                   </button>
 
                   <button
@@ -319,7 +319,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_test.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Test</span>
+                    <span class="fs-6 fw-medium fw-semibold">Test</span>
                   </button>
 
                   <button
@@ -333,7 +333,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_graph.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Activities</span>
+                    <span class="fs-6 fw-medium fw-semibold">Activities</span>
                   </button>
 
                   <button
@@ -347,7 +347,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_announcement.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">Announcements</span>
+                    <span class="fs-6 fw-medium fw-semibold">Announcements</span>
                   </button>
 
                   <button
@@ -361,7 +361,7 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_event.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium">My Events</span>
+                    <span class="fs-6 fw-medium fw-semibold">My Events</span>
                   </button>
 
                   <button
@@ -375,12 +375,28 @@
                     aria-selected="false"
                   >
                     <img src="./assets/images/icons/icon_notification.svg" alt="" class="blue-icon" />
-                    <span>Notifications</span>
+                    <span class="fs-6 fw-medium fw-semibold">Notifications</span>
                   </button>
+                </div>
+                <div class="d-md-none mb-3">
+                  <select id="mobileTabSelect" class="form-select">
+                    <option value="my-profile-tab">My profile</option>
+                    <option value="class-management-tab">Class management</option>
+                    <option value="curriculum-tab">Curriculum</option>
+                    <option value="schedule-tab">Schedule</option>
+                    <option value="attendance-tab">Attendance</option>
+                    <option value="grades-tab">Grades</option>
+                    <option value="homework-tab">Homework</option>
+                    <option value="test-tab">Test</option>
+                    <option value="activities-tab">Activities</option>
+                    <option value="announcements-tab">Announcements</option>
+                    <option value="events-tab">My Events</option>
+                    <option value="notifications-tab">Notifications</option>
+                  </select>
                 </div>
               </div>
 
-              <div class="col-12 col-lg-9 col-xxl-10">
+              <div class="col-12 col-lg-9 col-xxl-10 mt-0">
                 <div class="tab-content" id="profileTabContent">
                   <div class="tab-pane fade show active" id="my-profile-pane" role="tabpanel" aria-labelledby="my-profile-tab" tabindex="0">
                     <div class="justify-content-end mb-3 d-none d-md-flex">
@@ -493,12 +509,12 @@
                           </div>
 
                           <button type="button" id="resetFiltersBtn" class="btn btn-link students-reset-btn text-decoration-none p-0 d-flex align-items-center gap-2">
-                            <img src="./assets/images/icons/icon_filter.svg" alt="" width="16" height="16" />
-                            <span>Reset filters</span>
+                            <img src="./assets/images/icons/icon_filter.svg" alt="" width="24" height="24" />
+                            <span class="text-dark fw-semibold">Reset filters</span>
                           </button>
                         </div>
 
-                        <div class="students-table-card rounded border overflow-hidden">
+                        <div class="students-table-card rounded border overflow-hidden shadow">
                           <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 px-3 px-xl-4 py-3">
                             <h3 class="students-grade-title mb-0" id="currentGradeTitle">3 Grade</h3>
 
@@ -515,10 +531,10 @@
                             <table class="table students-table align-middle mb-0">
                               <thead>
                                 <tr>
-                                  <th>Student</th>
-                                  <th>Date of birth</th>
-                                  <th>Parents</th>
-                                  <th class="text-end"></th>
+                                  <th class="bg-blue-opacity rounded-0">Student</th>
+                                  <th class="bg-blue-opacity rounded-0">Date of birth</th>
+                                  <th class="bg-blue-opacity rounded-0">Parents</th>
+                                  <th class="text-end bg-blue-opacity rounded-0"></th>
                                 </tr>
                               </thead>
 
@@ -544,9 +560,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -571,9 +595,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -598,9 +630,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -621,9 +661,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -644,9 +692,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -671,9 +727,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -698,9 +762,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -726,9 +798,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -749,9 +829,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
 
@@ -776,9 +864,17 @@
                                     </div>
                                   </td>
                                   <td class="text-end">
-                                    <button class="btn students-dots-btn p-0 border-0 bg-transparent">
-                                      <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                    </button>
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
                                   </td>
                                 </tr>
                               </tbody>
