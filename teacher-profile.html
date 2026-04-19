@@ -1341,11 +1341,11 @@
                   <!-- Schedule  -->
                   <div class="tab-pane fade" id="schedule-pane" role="tabpanel" aria-labelledby="schedule-tab" tabindex="0">
                     <div class="d-flex flex-column gap-4">
-                      <!-- Header -->
-                      <div class="bg-white rounded shadow-sm p-3 p-lg-4 d-flex flex-column flex-xl-row align-items-xl-center justify-content-between gap-3">
+                      <!-- HEADER -->
+                      <div class="bg-white rounded shadow-sm p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
                         <div class="d-flex align-items-center gap-3">
                           <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
-                            <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule" width="26" height="26" class="blue-icon" />
+                            <img src="./assets/images/icons/icon_calendar.svg" width="26" height="26" class="blue-icon" />
                           </div>
 
                           <div>
@@ -1354,355 +1354,145 @@
                           </div>
                         </div>
 
-                        <div class="d-flex flex-wrap align-items-center gap-2">
-                          <button type="button" class="btn btn-outline-primary rounded px-3">Today</button>
-                          <button type="button" class="btn btn-primary rounded px-3">+ Add Event</button>
+                        <div class="d-flex gap-2">
+                          <button class="btn btn-outline-primary">Today</button>
+                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">+ Add Event</button>
                         </div>
                       </div>
 
-                      <div class="bg-white rounded shadow-sm p-3 p-lg-4">
-                        <div class="row g-3 align-items-end">
-                          <div class="col-12 col-md-6 col-xl-3">
-                            <label class="form-label small text-secondary mb-1">Grade</label>
-                            <select class="form-select lesson-form-control">
-                              <option selected>All grades</option>
-                              <option>1 grade</option>
-                              <option>2 grade</option>
-                              <option>3 grade</option>
-                              <option>4 grade</option>
-                              <option>5 grade</option>
+                      <!-- FILTERS -->
+                      <div class="bg-white rounded shadow-sm p-3">
+                        <div class="row g-3">
+                          <div class="col-md-3">
+                            <label class="small text-secondary">Grade</label>
+                            <select id="filterGrade" class="form-select">
+                              <option value="all">All grades</option>
+                              <option value="1 grade">1 grade</option>
+                              <option value="2 grade">2 grade</option>
+                              <option value="3 grade">3 grade</option>
+                              <option value="4 grade">4 grade</option>
                             </select>
                           </div>
 
-                          <div class="col-12 col-md-6 col-xl-3">
-                            <label class="form-label small text-secondary mb-1">Teacher</label>
-                            <select class="form-select lesson-form-control">
-                              <option selected>All teachers</option>
-                              <option>Jane Henderson</option>
-                              <option>Michael Brown</option>
-                              <option>Anna Smith</option>
+                          <div class="col-md-3">
+                            <label class="small text-secondary">Teacher</label>
+                            <select id="filterTeacher" class="form-select">
+                              <option value="all">All teachers</option>
+                              <option value="Jane Henderson">Jane Henderson</option>
+                              <option value="Michael Brown">Michael Brown</option>
+                              <option value="Anna Smith">Anna Smith</option>
                             </select>
                           </div>
 
-                          <div class="col-12 col-md-6 col-xl-3">
-                            <label class="form-label small text-secondary mb-1">Subject</label>
-                            <select class="form-select lesson-form-control">
-                              <option selected>All subjects</option>
-                              <option>English</option>
-                              <option>Math</option>
-                              <option>Biology</option>
-                              <option>History</option>
+                          <div class="col-md-3">
+                            <label class="small text-secondary">Subject</label>
+                            <select id="filterSubject" class="form-select">
+                              <option value="all">All subjects</option>
+                              <option value="English">English</option>
+                              <option value="Math">Math</option>
+                              <option value="Biology">Biology</option>
+                              <option value="History">History</option>
                             </select>
                           </div>
 
-                          <div class="col-12 col-md-6 col-xl-3">
-                            <label class="form-label small text-secondary mb-1">View mode</label>
-                            <div class="d-flex gap-2">
-                              <button type="button" class="btn btn-primary flex-fill lesson-add-btn">Week</button>
-                              <button type="button" class="btn btn-outline-primary flex-fill lesson-add-btn">Day</button>
+                          <div class="col-md-3 d-flex align-items-end">
+                            <div class="d-flex gap-2 w-100">
+                              <button class="btn btn-primary flex-fill">Week</button>
+                              <button class="btn btn-outline-primary flex-fill">Day</button>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div class="bg-white rounded shadow-sm p-3 p-lg-4 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
-                        <div class="d-flex align-items-center gap-3">
-                          <button type="button" class="btn btn-light border rounded-circle d-flex align-items-center justify-content-center" style="width: 42px; height: 42px">
-                            <i class="bi bi-chevron-left"></i>
-                          </button>
-
-                          <div>
-                            <h5 class="fw-bold mb-0">April 2026</h5>
-                            <small class="text-secondary">Weekly academic schedule</small>
-                          </div>
-
-                          <button type="button" class="btn btn-light border rounded-circle d-flex align-items-center justify-content-center" style="width: 42px; height: 42px">
-                            <i class="bi bi-chevron-right"></i>
-                          </button>
+                      <!-- NAV -->
+                      <div class="bg-white rounded shadow-sm p-3 d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-2">
+                          <button class="btn btn-light border">‹</button>
+                          <strong>April 2026</strong>
+                          <button class="btn btn-light border">›</button>
                         </div>
 
-                        <div class="d-flex flex-wrap gap-2">
-                          <button type="button" class="btn btn-outline-primary rounded px-3">Export</button>
-                          <button type="button" class="btn btn-outline-primary rounded px-3">Print</button>
-                        </div>
+                        <button class="btn btn-outline-primary">Export</button>
                       </div>
 
+                      <!-- TABLE -->
                       <div class="bg-white rounded shadow-sm overflow-hidden">
                         <div class="table-responsive">
                           <table class="table align-middle mb-0">
                             <thead class="bg-light">
                               <tr>
-                                <th class="fw-semibold text-secondary ps-4 py-3">Time</th>
-                                <th class="fw-semibold text-center py-3">
-                                  <div class="small text-secondary">13 Apr</div>
-                                  <div>Monday</div>
-                                </th>
-                                <th class="fw-semibold text-center py-3">
-                                  <div class="small text-secondary">14 Apr</div>
-                                  <div>Tuesday</div>
-                                </th>
-                                <th class="fw-semibold text-center py-3">
-                                  <div class="small text-secondary">15 Apr</div>
-                                  <div>Wednesday</div>
-                                </th>
-                                <th class="fw-semibold text-center py-3">
-                                  <div class="small text-secondary">16 Apr</div>
-                                  <div>Thursday</div>
-                                </th>
-                                <th class="fw-semibold text-center py-3">
-                                  <div class="small text-secondary">17 Apr</div>
-                                  <div>Friday</div>
-                                </th>
+                                <th class="ps-4">Time</th>
+                                <th class="text-center">Mon</th>
+                                <th class="text-center">Tue</th>
+                                <th class="text-center">Wed</th>
+                                <th class="text-center">Thu</th>
+                                <th class="text-center">Fri</th>
                               </tr>
                             </thead>
 
                             <tbody>
+                              <!-- 08:00 -->
                               <tr>
-                                <td class="ps-4 py-3">
-                                  <div class="fw-semibold">08:00</div>
-                                  <small class="text-secondary">1 lesson</small>
-                                </td>
+                                <td class="ps-4 fw-semibold">08:00</td>
 
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-primary bg-opacity-10 border border-primary border-opacity-25">
+                                <td>
+                                  <div class="lesson p-3 bg-primary bg-opacity-10" data-subject="English" data-grade="1 grade" data-teacher="Jane Henderson">
                                     <div class="fw-semibold text-primary">English</div>
-                                    <small class="text-secondary d-block">1 grade</small>
-                                    <small class="text-secondary">Jane Henderson</small>
+                                    <small>1 grade</small><br />
+                                    <small>Jane Henderson</small>
                                   </div>
                                 </td>
 
-                                <td class="py-3"></td>
+                                <td></td>
 
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-success bg-opacity-10">
+                                <td>
+                                  <div class="lesson p-3 bg-success bg-opacity-10" data-subject="Math" data-grade="3 grade" data-teacher="Michael Brown">
                                     <div class="fw-semibold">Math</div>
-                                    <small class="text-secondary d-block">3 grade</small>
-                                    <small class="text-secondary">Michael Brown</small>
+                                    <small>3 grade</small><br />
+                                    <small>Michael Brown</small>
                                   </div>
                                 </td>
 
-                                <td class="py-3"></td>
+                                <td></td>
 
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-warning bg-opacity-10">
+                                <td>
+                                  <div class="lesson p-3 bg-warning bg-opacity-10" data-subject="History" data-grade="2 grade" data-teacher="Anna Smith">
                                     <div class="fw-semibold">History</div>
-                                    <small class="text-secondary d-block">2 grade</small>
-                                    <small class="text-secondary">Anna Smith</small>
+                                    <small>2 grade</small><br />
+                                    <small>Anna Smith</small>
                                   </div>
                                 </td>
                               </tr>
 
+                              <!-- 09:00 -->
                               <tr>
-                                <td class="ps-4 py-3">
-                                  <div class="fw-semibold">09:00</div>
-                                  <small class="text-secondary">2 lesson</small>
-                                </td>
+                                <td class="ps-4 fw-semibold">09:00</td>
 
-                                <td class="py-3"></td>
+                                <td></td>
 
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-info bg-opacity-10">
+                                <td>
+                                  <div class="lesson p-3 bg-info bg-opacity-10" data-subject="Biology" data-grade="4 grade" data-teacher="Jane Henderson">
                                     <div class="fw-semibold">Biology</div>
-                                    <small class="text-secondary d-block">4 grade</small>
-                                    <small class="text-secondary">Jane Henderson</small>
+                                    <small>4 grade</small><br />
+                                    <small>Jane Henderson</small>
                                   </div>
                                 </td>
 
-                                <td class="py-3"></td>
+                                <td></td>
 
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-danger bg-opacity-10">
-                                    <div class="fw-semibold">Individual Session</div>
-                                    <small class="text-secondary d-block">Sarah Jefferson</small>
-                                    <small class="text-success fw-medium">individual</small>
+                                <td>
+                                  <div class="lesson p-3 bg-danger bg-opacity-10" data-subject="Individual" data-grade="individual" data-teacher="Sarah Jefferson">
+                                    <div class="fw-semibold">Individual</div>
+                                    <small>Session</small><br />
+                                    <small>Sarah Jefferson</small>
                                   </div>
                                 </td>
 
-                                <td class="py-3"></td>
-                              </tr>
-
-                              <tr>
-                                <td class="ps-4 py-3">
-                                  <div class="fw-semibold">10:00</div>
-                                  <small class="text-secondary">3 lesson</small>
-                                </td>
-
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-secondary bg-opacity-10">
-                                    <div class="fw-semibold">Art</div>
-                                    <small class="text-secondary d-block">2 grade</small>
-                                    <small class="text-secondary">Anna Smith</small>
-                                  </div>
-                                </td>
-
-                                <td class="py-3"></td>
-
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-primary bg-opacity-10">
-                                    <div class="fw-semibold text-primary">English</div>
-                                    <small class="text-secondary d-block">1 grade</small>
-                                    <small class="text-secondary">Jane Henderson</small>
-                                  </div>
-                                </td>
-
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-success bg-opacity-10">
-                                    <div class="fw-semibold">Geography</div>
-                                    <small class="text-secondary d-block">3 grade</small>
-                                    <small class="text-secondary">Michael Brown</small>
-                                  </div>
-                                </td>
-
-                                <td class="py-3"></td>
-                              </tr>
-
-                              <tr>
-                                <td class="ps-4 py-3">
-                                  <div class="fw-semibold">12:00</div>
-                                  <small class="text-secondary">Lunch</small>
-                                </td>
-
-                                <td colspan="5" class="py-3">
-                                  <div class="rounded px-4 py-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 bg-light">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/icon_food.svg" alt="Lunch" width="18" height="18" />
-                                      <span class="fw-semibold">Lunch break</span>
-                                    </div>
-
-                                    <a href="#" class="text-primary text-decoration-none fw-medium"> Show today's menu </a>
-                                  </div>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="ps-4 py-3">
-                                  <div class="fw-semibold">13:00</div>
-                                  <small class="text-secondary">5 lesson</small>
-                                </td>
-
-                                <td class="py-3"></td>
-
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-danger bg-opacity-10">
-                                    <div class="fw-semibold">Weekly Meeting</div>
-                                    <small class="text-secondary d-block">Teachers’ council</small>
-                                    <small class="text-danger fw-medium">meeting</small>
-                                  </div>
-                                </td>
-
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-primary bg-opacity-10">
-                                    <div class="fw-semibold text-primary">English</div>
-                                    <small class="text-secondary d-block">3 grade</small>
-                                    <small class="text-secondary">Jane Henderson</small>
-                                  </div>
-                                </td>
-
-                                <td class="py-3"></td>
-
-                                <td class="py-3">
-                                  <div class="rounded p-3 bg-warning bg-opacity-10">
-                                    <div class="fw-semibold">Science</div>
-                                    <small class="text-secondary d-block">1 grade</small>
-                                    <small class="text-secondary">Anna Smith</small>
-                                  </div>
-                                </td>
+                                <td></td>
                               </tr>
                             </tbody>
                           </table>
                         </div>
-                      </div>
-
-                      <div class="row g-4">
-                        <div class="col-12 col-xl-4">
-                          <div class="bg-white rounded shadow-sm p-4 h-100">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                              <h5 class="fw-bold mb-0">Today’s Summary</h5>
-                              <span class="badge bg-primary-subtle text-primary rounded"> 8 events </span>
-                            </div>
-
-                            <div class="d-flex flex-column gap-3">
-                              <div class="d-flex align-items-center justify-content-between rounded bg-light p-3">
-                                <div>
-                                  <div class="fw-semibold">Lessons</div>
-                                  <small class="text-secondary">Main class activity</small>
-                                </div>
-                                <span class="fw-bold text-primary">5</span>
-                              </div>
-
-                              <div class="d-flex align-items-center justify-content-between rounded bg-light p-3">
-                                <div>
-                                  <div class="fw-semibold">Meetings</div>
-                                  <small class="text-secondary">Internal school events</small>
-                                </div>
-                                <span class="fw-bold text-danger">2</span>
-                              </div>
-
-                              <div class="d-flex align-items-center justify-content-between rounded bg-light p-3">
-                                <div>
-                                  <div class="fw-semibold">Individuals</div>
-                                  <small class="text-secondary">Student sessions</small>
-                                </div>
-                                <span class="fw-bold text-success">1</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-xl-8">
-                          <div class="bg-white rounded shadow-sm p-4 h-100">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                              <h5 class="fw-bold mb-0">Upcoming Notes</h5>
-                              <a href="#" class="text-primary text-decoration-none small fw-medium"> View all </a>
-                            </div>
-
-                            <div class="row g-3">
-                              <div class="col-md-6">
-                                <div class="rounded border p-3 h-100">
-                                  <div class="fw-semibold mb-1">Parents Meeting</div>
-                                  <small class="text-secondary d-block mb-2"> Thursday, 04:00 pm </small>
-                                  <p class="mb-0 small text-secondary">Conference with parents of 2nd and 3rd grades.</p>
-                                </div>
-                              </div>
-
-                              <div class="col-md-6">
-                                <div class="rounded border p-3 h-100">
-                                  <div class="fw-semibold mb-1">English Open Lesson</div>
-                                  <small class="text-secondary d-block mb-2"> Friday, 10:00 am </small>
-                                  <p class="mb-0 small text-secondary">Demonstration lesson for school administration.</p>
-                                </div>
-                              </div>
-
-                              <div class="col-md-6">
-                                <div class="rounded border p-3 h-100">
-                                  <div class="fw-semibold mb-1">Weekly Teacher Council</div>
-                                  <small class="text-secondary d-block mb-2"> Tuesday, 01:00 pm </small>
-                                  <p class="mb-0 small text-secondary">Discussion of academic plans and new tasks.</p>
-                                </div>
-                              </div>
-
-                              <div class="col-md-6">
-                                <div class="rounded border p-3 h-100">
-                                  <div class="fw-semibold mb-1">Student Support Session</div>
-                                  <small class="text-secondary d-block mb-2"> Thursday, 09:00 am </small>
-                                  <p class="mb-0 small text-secondary">Individual meeting with student and parents.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-                        <div class="d-flex flex-wrap gap-2">
-                          <button type="button" class="btn btn-outline-primary px-4 rounded">Cancel</button>
-                          <button type="button" class="btn btn-primary px-4 rounded">Save Changes</button>
-                        </div>
-
-                        <button type="button" class="btn p-0 border-0 bg-transparent text-danger fw-semibold d-flex align-items-center gap-2">
-                          <i class="bi bi-trash3"></i>
-                          Clear Schedule
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -3842,6 +3632,44 @@
           <input type="range" id="fontSlider" class="scale-range" min="-5" max="5" step="1" value="0" />
 
           <button id="increase" type="button" class="scale-btn btn rounded border-primary text-primary lh-1" aria-label="Increase font size">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addEventModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content rounded-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Event</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body d-flex flex-column gap-3">
+            <input type="text" id="eventTitle" class="form-control" placeholder="Subject (e.g. Math)" />
+
+            <select id="eventDay" class="form-select">
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
+              <option value="5">Friday</option>
+            </select>
+
+            <select id="eventTime" class="form-select">
+              <option value="0">08:00</option>
+              <option value="1">09:00</option>
+              <option value="2">10:00</option>
+              <option value="4">13:00</option>
+            </select>
+
+            <input type="text" id="eventTeacher" class="form-control" placeholder="Teacher" />
+            <input type="text" id="eventGrade" class="form-control" placeholder="Grade" />
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" onclick="addEvent()">Add</button>
+          </div>
         </div>
       </div>
     </div>
