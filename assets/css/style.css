@@ -165,19 +165,6 @@ p {
   filter: none !important;
 }
 
-.section-hover {
-  position: relative;
-  transition:
-    background-color 0.35s ease,
-    box-shadow 0.35s ease,
-    transform 0.35s ease;
-  border-radius: 20px;
-}
-
-.section-hover:hover {
-  transform: translateY(-4px);
-}
-
 @media (max-width: 1400px) {
   .top-bar__search input::placeholder {
     font-size: 14px;
@@ -2071,4 +2058,12 @@ select.form-select:focus {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.fp-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 1px;
+  width: 1px;
 }

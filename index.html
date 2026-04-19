@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
     <main>
@@ -212,7 +213,7 @@
           <div class="swiper-button-next d-none d-xxl-flex main-section-btn-next"></div>
         </section>
       </div>
-      <section class="py-4 py-xxl-5 container section-hover justify-content-center" id="about-school">
+      <section class="py-4 py-xxl-5 container justify-content-center" id="about-school">
         <div>
           <div class="d-flex gap-3 align-items-center mb-3 mb-xxl-4">
             <img src="./assets/images/icons/icon_school.svg" alt="school icon" width="30" height="30" class="blue-icon" />
@@ -271,7 +272,7 @@
           <p class="fw-bold fs-5 mb-0">Studying at Philadelphia Progressive School opens up a world of opportunities and comprehensive growth for each student...</p>
         </div>
       </section>
-      <section class="enrollment position-relative py-4 py-xxl-5 section-hover" id="enrollment">
+      <section class="enrollment position-relative py-4 py-xxl-5" id="enrollment">
         <div class="container d-flex flex-column gap-4 gap-xxl-5">
           <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
             <div class="d-flex flex-row gap-3 align-items-center">
@@ -365,7 +366,7 @@
           </div>
         </div>
       </section>
-      <section class="py-4 section-hover" id="schedule">
+      <section class="py-4" id="schedule">
         <div class="container">
           <div class="d-flex flex-row gap-3 align-items-center mb-4">
             <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule" width="30" height="30" class="blue-icon" />
@@ -431,7 +432,8 @@
 
               <div class="position-relative">
                 <div id="monthDisplay" class="fw-bold fs-5" style="cursor: pointer">December <span>2025</span></div>
-                <input id="dateInput" type="date" class="form-control position-absolute mt-2 d-none" style="width: 180px" />
+
+                <input id="dateInput" type="text" class="fp-hidden" />
               </div>
 
               <button type="button" id="nextBtn" class="schedule-arrow">›</button>
@@ -623,7 +625,7 @@
           </div>
         </div>
       </section>
-      <section class="py-4 py-xxl-5 container d-flex flex-column gap-5 section-hover" id="news">
+      <section class="py-4 py-xxl-5 container d-flex flex-column gap-5" id="news">
         <div>
           <div class="d-flex align-items-center mb-4 justify-content-between">
             <div class="d-flex flex-row gap-3 align-items-center">
@@ -754,7 +756,7 @@
           </div>
         </div>
       </section>
-      <section class="py-4 py-xxl-5 container d-flex flex-column gap-5 section-hover" id="events">
+      <section class="py-4 py-xxl-5 container d-flex flex-column gap-5" id="events">
         <div>
           <div class="d-flex align-items-center mb-4 justify-content-between">
             <div class="d-flex flex-row gap-3 align-items-center">
@@ -976,7 +978,7 @@
           </div>
         </div>
       </section>
-      <section class="py-4 py-xxl-5 container d-flex flex-column gap-4 section-hover" id="gallery">
+      <section class="py-4 py-xxl-5 container d-flex flex-column gap-4" id="gallery">
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
           <div class="d-flex align-items-center gap-3">
             <img src="./assets/images/icons/icon_media.svg" alt="media icon" width="28" height="28" class="blue-icon" />
@@ -1275,5 +1277,7 @@
 
     <!-- Custom Scripts  -->
     <script src="./assets/js/custom.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </body>
 </html>
