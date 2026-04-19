@@ -7,13 +7,45 @@
   --bs-primary-rgb: 38, 150, 219;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PTSans";
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: OpenSans, sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -53,8 +85,9 @@ p {
 .border-blue {
   border-color: #2696db !important;
 }
+
 .text-dark-opacity {
-  color: #31313180;
+  color: #333;
 }
 
 .bg-blue-opacity {
