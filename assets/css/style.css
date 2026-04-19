@@ -2010,3 +2010,65 @@ select.form-select:focus {
 .gallery-img:hover {
   transform: scale(1.03);
 }
+
+/* ===== ACTION BUTTONS (TEXT STYLE) ===== */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Icon animation */
+.btn-action i {
+  transition: transform 0.2s ease;
+}
+
+/* ===== VARIANTS ===== */
+
+/* Danger (Remove/Delete) */
+.btn-action-danger {
+  color: #dc3545;
+}
+
+.btn-action-danger:hover {
+  background-color: rgba(220, 53, 69, 0.08);
+  color: #dc3545;
+  transform: translateY(-1px);
+}
+
+.btn-action-danger:hover i {
+  transform: scale(1.15);
+}
+
+.btn-action-danger:active {
+  transform: scale(0.96);
+}
+
+/* Optional: Primary (if you want similar style elsewhere) */
+.btn-action-primary {
+  color: #0d6efd;
+}
+
+.btn-action-primary:hover {
+  background-color: rgba(13, 110, 253, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn-action-primary:hover i {
+  transform: scale(1.15);
+}
+
+.btn-action-primary:active {
+  transform: scale(0.96);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

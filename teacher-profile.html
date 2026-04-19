@@ -456,7 +456,7 @@
                         <input type="file" id="certificateUpload" accept="image/*,.pdf" hidden />
 
                         <button class="btn btn-primary btn-sm profile-upload-btn d-flex gap-3 align-items-center justify-content-between" onclick="document.getElementById('certificateUpload').click()">
-                          <p class="fs-6 mb-0">Upload certificate</p>
+                          <p class="fs-6 mb-0 cursor-pointer">Upload certificate</p>
                           <span class="fw-bold fs-5">+</span>
                         </button>
                       </div>
@@ -909,31 +909,29 @@
                         <li class="nav-item" role="presentation">
                           <button class="nav-link lesson-tab active d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#lessons" type="button" role="tab" aria-selected="true">
                             <img src="./assets/images/icons/icon_book.svg" class="blue-icon" alt="Lessons" />
-                            <small>Lessons</small>
+                            <small class="fs-6 fw-semibold">Lessons</small>
                           </button>
                         </li>
 
                         <li class="nav-item" role="presentation">
                           <button class="nav-link lesson-tab d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#homeworks" type="button" role="tab" aria-selected="false">
                             <img src="./assets/images/icons/icon_lounge.svg" class="blue-icon" alt="Homeworks" />
-                            <small>Homeworks</small>
+                            <small class="fs-6 fw-semibold">Homeworks</small>
                           </button>
                         </li>
 
                         <li class="nav-item" role="presentation">
                           <button class="nav-link lesson-tab d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#tests" type="button" role="tab" aria-selected="false">
                             <img src="./assets/images/icons/icon_test.svg" class="blue-icon" alt="Tests" />
-                            <small>Tests</small>
+                            <small class="fs-6 fw-semibold">Tests</small>
                           </button>
                         </li>
                       </ul>
                     </div>
 
                     <div class="tab-content pt-4">
-                      <!-- LESSONS -->
                       <div class="tab-pane fade show active" id="lessons" role="tabpanel">
                         <div class="d-flex flex-column gap-3">
-                          <!-- Create lesson -->
                           <div class="accordion" id="lessonAccordion">
                             <div class="accordion-item lesson-accordion-item border-0 shadow reounded">
                               <h2 class="accordion-header">
@@ -987,21 +985,20 @@
                                       <label for="lessonFiles" class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center">
                                         <strong class="mb-1">
                                           Drag &amp; drop files here or
-                                          <span class="text-primary">upload</span>
+                                          <span class="text-primary cursor-pointer">upload</span>
                                         </strong>
                                         <small class="text-secondary"> Acceptable file formats: pdf, jpg, jpeg, png. Maximum size: 100 MB. </small>
                                       </label>
                                       <input type="file" id="lessonFiles" class="d-none" multiple />
                                     </div>
-
                                     <div class="lesson-section-box bg-blue-opacity p-3 rounded">
-                                      <div class="row g-3 align-items-center mt-0">
-                                        <div class="col-12 col-lg-2 mt-0">
-                                          <p class="fw-semibold mb-0">Add to shedule</p>
-                                        </div>
+                                      <div class="mb-3">
+                                        <p class="fw-semibold mb-0 fs-6 text-dark">Add to schedule</p>
+                                      </div>
 
-                                        <div class="col-sm-6 col-lg-2">
-                                          <label for="assignmentType" class="form-label small text-secondary mb-1"> Assignment type </label>
+                                      <div class="row g-4 align-items-end">
+                                        <div class="col-sm-6 col-lg-3">
+                                          <label for="assignmentType" class="form-label small text-muted"> Assignment type </label>
                                           <select id="assignmentType" class="form-select lesson-form-control">
                                             <option selected>Grade</option>
                                             <option>Student</option>
@@ -1009,8 +1006,8 @@
                                           </select>
                                         </div>
 
-                                        <div class="col-sm-6 col-lg-3">
-                                          <label for="chooseGrade" class="form-label small text-secondary mb-1"> Choose grade </label>
+                                        <div class="col-sm-6 col-lg-4">
+                                          <label for="chooseGrade" class="form-label small text-muted"> Choose grade </label>
                                           <select id="chooseGrade" class="form-select lesson-form-control">
                                             <option selected>3 grade - Jane Henderson</option>
                                             <option>2 grade - Michael Brown</option>
@@ -1019,118 +1016,121 @@
                                         </div>
 
                                         <div class="col-sm-6 col-lg-2">
-                                          <label for="lessonDate" class="form-label small text-secondary mb-1"> Date </label>
+                                          <label for="lessonDate" class="form-label small text-muted"> Date </label>
                                           <input type="date" class="form-control lesson-form-control" id="lessonDate" value="2026-04-12" />
                                         </div>
 
                                         <div class="col-sm-6 col-lg-3">
-                                          <button type="button" class="btn btn-primary lesson-add-btn">Add grade / student +</button>
+                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn fw-semibold rounded-3">+ Add</button>
                                         </div>
                                       </div>
                                     </div>
 
-                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded">
-                                      <div class="row g-3 align-items-end mb-3">
-                                        <div class="col-12 col-lg-2">
-                                          <p class="fw-semibold mb-0">Add Homework</p>
-                                        </div>
+                                    <div class="lesson-section-box bg-blue-opacity p-4 rounded-4 shadow-sm">
+                                      <div class="mb-4">
+                                        <h5 class="fw-semibold mb-0">Add Homework</h5>
+                                      </div>
 
-                                        <div class="col-sm-6 col-lg-3">
-                                          <label for="selectHomework" class="form-label small text-secondary mb-1"> Select homework </label>
-                                          <select id="selectHomework" class="form-select lesson-form-control">
+                                      <div class="row g-4 align-items-end mb-4">
+                                        <div class="col-sm-6 col-lg-4">
+                                          <label class="form-label small text-muted mb-1">Select homework</label>
+                                          <select class="form-select lesson-form-control">
                                             <option selected>Homework 4 — "My Pets"</option>
                                             <option>Homework 5 — "My School"</option>
                                           </select>
                                         </div>
 
-                                        <div class="col-sm-6 col-lg-2">
-                                          <label for="homeworkDueDate" class="form-label small text-secondary mb-1"> Due date </label>
-                                          <input type="date" class="form-control lesson-form-control" id="homeworkDueDate" value="2026-04-12" />
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-2">
-                                          <button type="button" class="btn btn-primary lesson-add-btn w-100">Create +</button>
-                                        </div>
-                                      </div>
-
-                                      <div class="row g-3 align-items-end mb-3">
                                         <div class="col-sm-6 col-lg-3">
-                                          <label for="relatedLesson" class="form-label small text-secondary mb-1"> Related lesson </label>
-                                          <select id="relatedLesson" class="form-select lesson-form-control">
-                                            <option selected>Lesson 1 - "MY Pets"</option>
+                                          <label class="form-label small text-muted mb-1">Due date</label>
+                                          <input type="date" class="form-control lesson-form-control" value="2026-04-12" />
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3 d-flex align-items-end">
+                                          <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Create +</button>
+                                        </div>
+                                      </div>
+
+                                      <div class="mb-4"></div>
+
+                                      <div class="row g-4 align-items-end mb-4">
+                                        <div class="col-sm-6 col-lg-4">
+                                          <label class="form-label small text-muted mb-1">Related lesson</label>
+                                          <select class="form-select lesson-form-control">
+                                            <option selected>Lesson 1 - "My Pets"</option>
                                           </select>
                                         </div>
 
-                                        <div class="col-sm-6 col-lg-2">
-                                          <label for="relatedHomeworkDate" class="form-label small text-secondary mb-1"> Due date </label>
-                                          <input type="date" class="form-control lesson-form-control" id="relatedHomeworkDate" value="2026-04-12" />
+                                        <div class="col-sm-6 col-lg-3">
+                                          <label class="form-label small text-muted mb-1">Due date</label>
+                                          <input type="date" class="form-control lesson-form-control" value="2026-04-12" />
                                         </div>
 
-                                        <div class="col-sm-6 col-lg-2">
-                                          <label for="assessmentType" class="form-label small text-secondary mb-1"> Assessment type </label>
-                                          <select id="assessmentType" class="form-select lesson-form-control">
-                                            <option selected>five-point scale</option>
-                                            <option>pass / fail</option>
+                                        <div class="col-sm-6 col-lg-3">
+                                          <label class="form-label small text-muted mb-1">Assessment type</label>
+                                          <select class="form-select lesson-form-control">
+                                            <option selected>Five-point scale</option>
+                                            <option>Pass / Fail</option>
                                           </select>
                                         </div>
                                       </div>
 
-                                      <div class="mb-3">
-                                        <p class="fw-semibold mb-2">Create related homework</p>
-                                        <textarea class="form-control lesson-form-control lesson-textarea" rows="4">Write an essay about your pet. We covered speech patterns related to pets in class; try to use them in your essay.</textarea>
+                                      <div class="mb-4">
+                                        <label class="form-label fw-semibold mb-2">Create related homework</label>
+                                        <textarea class="form-control lesson-form-control lesson-textarea p-3" rows="4"></textarea>
                                       </div>
 
-                                      <div class="lesson-section-box">
-                                        <p class="fw-semibold mb-3">Additional materials</p>
+                                      <div class="p-4 rounded-4 bg-light border mb-4">
+                                        <h6 class="fw-semibold mb-3">Additional materials</h6>
 
-                                        <div class="row g-3 align-items-end">
+                                        <div class="row g-4 align-items-end">
                                           <div class="col-md-3">
-                                            <label class="form-label small text-secondary mb-1"> Author </label>
+                                            <label class="form-label small text-muted mb-1">Author</label>
                                             <input type="text" class="form-control lesson-form-control" value="Emily Johnson" />
                                           </div>
 
                                           <div class="col-md-5">
-                                            <label class="form-label small text-secondary mb-1"> Book title </label>
-                                            <input type="text" class="form-control lesson-form-control" value='Textbook: "English for Elementary Kids"' />
+                                            <label class="form-label small text-muted mb-1">Book title</label>
+                                            <input type="text" class="form-control lesson-form-control" value="" />
                                           </div>
 
                                           <div class="col-md-2">
-                                            <label class="form-label small text-secondary mb-1"> Paragraph </label>
+                                            <label class="form-label small text-muted mb-1">Paragraph</label>
                                             <input type="text" class="form-control lesson-form-control" value='4 — "My Pets"' />
                                           </div>
 
-                                          <div class="col-md-2">
-                                            <button type="button" class="btn btn-primary lesson-add-btn w-100">Add +</button>
+                                          <div class="col-md-2 d-flex align-items-end">
+                                            <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Add +</button>
                                           </div>
                                         </div>
                                       </div>
 
-                                      <div class="d-flex flex-column gap-3 mt-3">
-                                        <p class="fw-semibold mb-0">Attached files</p>
+                                      <div class="mb-4">
+                                        <h6 class="fw-semibold mb-3">Attached files</h6>
 
-                                        <label for="homeworkFiles" class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center">
+                                        <label class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center p-4 rounded-4">
                                           <strong class="mb-1">
-                                            Drag &amp; drop files here or
-                                            <span class="text-primary">upload</span>
+                                            Drag & drop files here or
+                                            <span class="text-primary cursor-pointer">upload</span>
                                           </strong>
-                                          <small class="text-secondary"> Acceptable file formats: pdf, jpg, jpeg, png. Maximum size: 100 MB. </small>
+                                          <small class="text-muted"> Acceptable formats: pdf, jpg, jpeg, png. Max size: 100 MB </small>
                                         </label>
-                                        <input type="file" id="homeworkFiles" class="d-none" multiple />
+
+                                        <input type="file" class="d-none" multiple />
                                       </div>
 
-                                      <div class="d-flex gap-2 pt-2">
-                                        <button type="button" class="btn btn-outline-primary px-4">Cancel</button>
-                                        <button type="button" class="btn btn-primary px-4">Save</button>
+                                      <div class="d-flex justify-content-end gap-2 pt-2">
+                                        <button class="btn btn-outline-primary px-4 rounded-3">Cancel</button>
+
+                                        <button class="btn btn-primary px-4 rounded-3">Save</button>
                                       </div>
                                     </div>
-
                                     <div class="lesson-section-box bg-blue-opacity p-3 rounded">
-                                      <div class="row g-3 align-items-end">
-                                        <div class="col-12 col-lg-2">
-                                          <p class="fw-semibold mb-0">Add Test</p>
-                                        </div>
+                                      <div class="mb-3">
+                                        <p class="fw-semibold mb-0">Add Test</p>
+                                      </div>
 
-                                        <div class="col-sm-6 col-lg-3">
+                                      <div class="row g-3 align-items-end">
+                                        <div class="col-sm-6 col-lg-4">
                                           <label for="selectTest" class="form-label small text-secondary mb-1"> Select test </label>
                                           <select id="selectTest" class="form-select lesson-form-control">
                                             <option selected>Test 4 — "My Pets"</option>
@@ -1138,12 +1138,12 @@
                                           </select>
                                         </div>
 
-                                        <div class="col-sm-6 col-lg-2">
+                                        <div class="col-sm-6 col-lg-3">
                                           <label for="testDueDate" class="form-label small text-secondary mb-1"> Due date </label>
                                           <input type="date" class="form-control lesson-form-control" id="testDueDate" value="2026-04-12" />
                                         </div>
 
-                                        <div class="col-sm-6 col-lg-2">
+                                        <div class="col-sm-6 col-lg-3">
                                           <button type="button" class="btn btn-primary lesson-add-btn w-100">Create +</button>
                                         </div>
                                       </div>
@@ -1155,7 +1155,7 @@
                                         <button type="button" class="btn btn-primary px-4">Save</button>
                                       </div>
 
-                                      <button type="button" class="btn p-0 border-0 bg-transparent text-danger fw-semibold d-flex align-items-center gap-2">
+                                      <button class="btn-action btn-action-danger">
                                         <i class="bi bi-trash3"></i>
                                         Remove
                                       </button>
@@ -1201,109 +1201,117 @@
 
                           <div class="d-flex flex-column gap-2">
                             <div class="lesson-item">
-                              <div class="lesson-row d-flex justify-content-between align-items-center shadow rounded">
+                              <div class="lesson-row d-flex justify-content-between align-items-center shadow rounded p-3">
                                 <p class="mb-0 fw-semibold lesson-title-text">Lesson 3 - My friends</p>
-
                                 <div class="d-flex align-items-center gap-3">
                                   <button type="button" class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn">Edit</button>
-
-                                  <button class="btn p-0 border-0 bg-transparent lesson-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#lesson3Details" aria-expanded="false" aria-controls="lesson3Details">
+                                  <button class="btn p-0 border-0 bg-transparent lesson-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#lesson3Details">
                                     <i class="bi bi-chevron-down"></i>
                                   </button>
                                 </div>
                               </div>
 
                               <div class="collapse mt-2 shadow rounded" id="lesson3Details">
-                                <div class="lesson-details bg-white rounded p-3 shadow-sm">
+                                <div class="lesson-details bg-white rounded p-4 shadow-sm">
                                   <div class="lesson-view-mode">
-                                    <p class="mb-2">
-                                      <strong>Title:</strong>
-                                      <span class="lesson-view-title">Lesson 3 - My friends</span>
+                                    <h5 class="fw-semibold mb-3 lesson-view-title">Lesson 3 - My friends</h5>
+
+                                    <div class="row g-3">
+                                      <div class="col-md-6"><strong>Topic:</strong> <span class="lesson-view-topic">Friendship words and classroom discussion</span></div>
+                                      <div class="col-md-6"><strong>Date:</strong> <span class="lesson-view-date">2026-03-10</span></div>
+                                    </div>
+
+                                    <p class="mt-3">
+                                      <strong>Description:</strong><br />
+                                      <span class="lesson-view-description">Friendship words, listening exercises, and classroom discussion about friends.</span>
                                     </p>
-                                    <p class="mb-2">
-                                      <strong>Description:</strong>
-                                      <span class="lesson-view-description"> Friendship words, listening, classroom discussion. </span>
-                                    </p>
-                                    <p class="mb-0">
-                                      <strong>Date:</strong>
-                                      <span class="lesson-view-date">2026-03-10</span>
-                                    </p>
+
+                                    <div class="mt-4">
+                                      <strong>Additional Materials:</strong><br />
+                                      <span class="lesson-view-materials">Emily Johnson — "English for Elementary Kids" — Paragraph 4</span>
+                                    </div>
+
+                                    <div class="mt-3">
+                                      <strong>Attached Files:</strong>
+                                      <span class="lesson-view-files">friends_activity.pdf, photo1.jpg</span>
+                                    </div>
+
+                                    <div class="mt-4 border-top pt-3">
+                                      <strong>Scheduled for:</strong>
+                                      <span class="lesson-view-schedule">3 grade - Jane Henderson | 2026-03-10</span>
+                                    </div>
                                   </div>
 
-                                  <form class="lesson-edit-form d-none">
-                                    <div class="mb-3">
-                                      <label class="form-label">Title</label>
-                                      <input type="text" class="form-control lesson-input-title" value="Lesson 3 - My friends" />
+                                  <form class="lesson-edit-form d-none mt-3">
+                                    <div class="row g-3">
+                                      <div class="col-md-6">
+                                        <label class="form-label">Lesson Title</label>
+                                        <input type="text" class="form-control lesson-form-control lesson-input-title" value="Lesson 3 - My friends" />
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label class="form-label">Topic</label>
+                                        <input type="text" class="form-control lesson-form-control lesson-input-topic" value="Friendship words and classroom discussion" />
+                                      </div>
+                                      <div class="col-12">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control lesson-form-control lesson-textarea lesson-input-description" rows="4">Friendship words, listening exercises, and classroom discussion about friends.</textarea>
+                                      </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                      <label class="form-label">Description</label>
-                                      <textarea class="form-control lesson-input-description" rows="4">Friendship words, listening, classroom discussion.</textarea>
+                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded mt-4">
+                                      <p class="fw-semibold mb-3">Additional materials</p>
+                                      <div class="row g-3 align-items-end">
+                                        <div class="col-md-3">
+                                          <input type="text" class="form-control lesson-form-control lesson-input-author" value="Emily Johnson" placeholder="Author" />
+                                        </div>
+                                        <div class="col-md-5">
+                                          <input type="text" class="form-control lesson-form-control lesson-input-book" value='Textbook: "English for Elementary Kids"' placeholder="Book Title" />
+                                        </div>
+                                        <div class="col-md-2">
+                                          <input type="text" class="form-control lesson-form-control lesson-input-paragraph" value="4" placeholder="Paragraph" />
+                                        </div>
+                                        <div class="col-md-2">
+                                          <button type="button" class="btn btn-primary lesson-add-btn w-100">Add +</button>
+                                        </div>
+                                      </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                      <label class="form-label">Date</label>
-                                      <input type="date" class="form-control lesson-input-date" value="2026-03-10" />
+                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded mt-3">
+                                      <p class="fw-semibold mb-2">Attached files</p>
+                                      <label class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center p-4">
+                                        <strong>Drag & drop files here or <span class="text-primary cursor-pointer">upload</span></strong>
+                                        <small class="text-secondary">pdf, jpg, jpeg, png • Max 100 MB</small>
+                                      </label>
+                                      <input type="file" class="d-none" multiple />
                                     </div>
 
-                                    <div class="d-flex gap-2">
-                                      <button type="button" class="btn btn-primary lesson-save-btn">Save</button>
-                                      <button type="button" class="btn btn-outline-secondary lesson-cancel-btn">Cancel</button>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex flex-column gap-2">
-                            <div class="lesson-item">
-                              <div class="lesson-row d-flex justify-content-between align-items-center shadow rounded">
-                                <p class="mb-0 fw-semibold lesson-title-text">Lesson 2 - My Family</p>
-
-                                <div class="d-flex align-items-center gap-3">
-                                  <button type="button" class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn">Edit</button>
-
-                                  <button class="btn p-0 border-0 bg-transparent lesson-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#lesson2Details" aria-expanded="false" aria-controls="lesson2Details">
-                                    <i class="bi bi-chevron-down"></i>
-                                  </button>
-                                </div>
-                              </div>
-
-                              <div class="collapse mt-2 shadow rounded" id="lesson2Details">
-                                <div class="lesson-details bg-white rounded p-3 shadow-sm">
-                                  <div class="lesson-view-mode">
-                                    <p class="mb-2">
-                                      <strong>Title:</strong>
-                                      <span class="lesson-view-title">Lesson 2 - My Family</span>
-                                    </p>
-                                    <p class="mb-2">
-                                      <strong>Description:</strong>
-                                      <span class="lesson-view-description"> Friendship words, listening, classroom discussion. </span>
-                                    </p>
-                                    <p class="mb-0">
-                                      <strong>Date:</strong>
-                                      <span class="lesson-view-date">2026-03-10</span>
-                                    </p>
-                                  </div>
-
-                                  <form class="lesson-edit-form d-none">
-                                    <div class="mb-3">
-                                      <label class="form-label">Title</label>
-                                      <input type="text" class="form-control lesson-input-title" value="Lesson 3 - My friends" />
+                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded mt-3">
+                                      <p class="fw-semibold mb-3">Add to schedule</p>
+                                      <div class="row g-3 align-items-end">
+                                        <div class="col-lg-3">
+                                          <label class="form-label small text-muted">Assignment type</label>
+                                          <select class="form-select lesson-form-control">
+                                            <option selected>Grade</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                          <label class="form-label small text-muted">Choose grade</label>
+                                          <select class="form-select lesson-form-control">
+                                            <option selected>3 grade - Jane Henderson</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-lg-2">
+                                          <label class="form-label small text-muted">Date</label>
+                                          <input type="date" class="form-control lesson-form-control lesson-input-date" value="2026-03-10" />
+                                        </div>
+                                        <div class="col-lg-3">
+                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn">+ Add</button>
+                                        </div>
+                                      </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                      <label class="form-label">Description</label>
-                                      <textarea class="form-control lesson-input-description" rows="4">Friendship words, listening, classroom discussion.</textarea>
-                                    </div>
-
-                                    <div class="mb-3">
-                                      <label class="form-label">Date</label>
-                                      <input type="date" class="form-control lesson-input-date" value="2026-03-10" />
-                                    </div>
-
-                                    <div class="d-flex gap-2">
-                                      <button type="button" class="btn btn-primary lesson-save-btn">Save</button>
+                                    <div class="d-flex gap-2 mt-4">
+                                      <button type="button" class="btn btn-primary lesson-save-btn">Save Changes</button>
                                       <button type="button" class="btn btn-outline-secondary lesson-cancel-btn">Cancel</button>
                                     </div>
                                   </form>
@@ -2707,16 +2715,15 @@
                           </div>
 
                           <div class="d-flex gap-2 flex-wrap">
-                            <span class="badge bg-light text-dark border p-2"> 📄 Document Title </span>
+                            <span class="badge bg-light text-dark border p-2"></span>
 
-                            <span class="badge bg-light text-dark border p-2"> 📄 Textbook_3grade </span>
+                            <span class="badge bg-light text-dark border p-2"></span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- TEST  -->
                   <div class="tab-pane fade" id="test-pane" role="tabpanel" aria-labelledby="test-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <div class="bg-white rounded shadow-sm p-3">
@@ -3354,10 +3361,10 @@
 
                       <!-- Upload -->
                       <div class="mb-4">
-                        <label class="form-label fw-semibold mb-2">Upload images</label>
+                        <label class="form-label fw-semibold mb-2 cursor-pointer">Upload images</label>
 
                         <label class="dashboard-upload-box w-100 text-center rounded-4 p-4">
-                          <strong>Drag &amp; drop files here or <span class="text-primary">upload</span></strong>
+                          <strong>Drag &amp; drop files here or <span class="text-primary cursor-pointer">upload</span></strong>
                           <div class="small text-secondary mt-1">Acceptable file formats: pdf, jpg, jpeg, png. Maximum size: 100 MB.</div>
                         </label>
                       </div>

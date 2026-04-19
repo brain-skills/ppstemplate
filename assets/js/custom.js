@@ -682,93 +682,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-const viewButtons = document.querySelectorAll(".view-mode-btn");
-
-viewButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    viewButtons.forEach((b) => b.classList.remove("active"));
-
-    btn.classList.add("active");
-  });
-});
-document.querySelectorAll(".lesson-item").forEach((lesson) => {
-  const editBtn = lesson.querySelector(".lesson-edit-btn");
-  const saveBtn = lesson.querySelector(".lesson-save-btn");
-  const cancelBtn = lesson.querySelector(".lesson-cancel-btn");
-
-  const viewMode = lesson.querySelector(".lesson-view-mode");
-  const editForm = lesson.querySelector(".lesson-edit-form");
-
-  const titleTextTop = lesson.querySelector(".lesson-title-text");
-  const viewTitle = lesson.querySelector(".lesson-view-title");
-  const viewDescription = lesson.querySelector(".lesson-view-description");
-  const viewDate = lesson.querySelector(".lesson-view-date");
-
-  const inputTitle = lesson.querySelector(".lesson-input-title");
-  const inputDescription = lesson.querySelector(".lesson-input-description");
-  const inputDate = lesson.querySelector(".lesson-input-date");
-
-  // store original values for cancel
-  let originalData = {
-    title: inputTitle.value,
-    description: inputDescription.value,
-    date: inputDate.value,
-  };
-
-  editBtn.addEventListener("click", () => {
-    viewMode.classList.add("d-none");
-    editForm.classList.remove("d-none");
-  });
-
-  cancelBtn.addEventListener("click", () => {
-    inputTitle.value = originalData.title;
-    inputDescription.value = originalData.description;
-    inputDate.value = originalData.date;
-
-    editForm.classList.add("d-none");
-    viewMode.classList.remove("d-none");
-  });
-
-  saveBtn.addEventListener("click", () => {
-    const newTitle = inputTitle.value.trim();
-    const newDescription = inputDescription.value.trim();
-    const newDate = inputDate.value;
-
-    viewTitle.textContent = newTitle;
-    viewDescription.textContent = newDescription;
-    viewDate.textContent = newDate;
-    titleTextTop.textContent = newTitle;
-
-    originalData = {
-      title: newTitle,
-      description: newDescription,
-      date: newDate,
-    };
-
-    editForm.classList.add("d-none");
-    viewMode.classList.remove("d-none");
-  });
-});
-document.querySelectorAll(".lesson-item").forEach((lesson) => {
-  const editBtn = lesson.querySelector(".lesson-edit-btn");
-  const collapse = lesson.querySelector(".collapse");
-
-  const viewMode = lesson.querySelector(".lesson-view-mode");
-  const editForm = lesson.querySelector(".lesson-edit-form");
-
-  editBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapse);
-
-    if (!collapse.classList.contains("show")) {
-      bsCollapse.show();
-    }
-
-    viewMode.classList.add("d-none");
-    editForm.classList.remove("d-none");
-  });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -1200,5 +1113,46 @@ document.addEventListener("DOMContentLoaded", () => {
         tab.show();
       }
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".lesson-item").forEach((lesson) => {
+    const editBtn = lesson.querySelector(".lesson-edit-btn");
+    const saveBtn = lesson.querySelector(".lesson-save-btn");
+    const cancelBtn = lesson.querySelector(".lesson-cancel-btn");
+    const toggleBtn = lesson.querySelector(".lesson-toggle");
+
+    const collapseEl = lesson.querySelector(".collapse");
+    const viewMode = lesson.querySelector(".lesson-view-mode");
+    const editForm = lesson.querySelector(".lesson-edit-form");
+
+    if (!editBtn || !viewMode || !editForm || !collapseEl) return;
+
+    editBtn.addEventListener("click", () => {
+      if (!collapseEl.classList.contains("show")) {
+        const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: true });
+        bsCollapse.show();
+      }
+
+      viewMode.classList.add("d-none");
+      editForm.classList.remove("d-none");
+    });
+
+    if (cancelBtn) {
+      cancelBtn.addEventListener("click", () => {
+        editForm.classList.add("d-none");
+        viewMode.classList.remove("d-none");
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener("click", () => {
+        alert("Changes saved! (demo)");
+
+        editForm.classList.add("d-none");
+        viewMode.classList.remove("d-none");
+      });
+    }
   });
 });
