@@ -5,36 +5,12 @@
 
   --bs-primary: var(--blue);
   --bs-primary-rgb: 38, 150, 219;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito-Regular.ttf") format("truetype");
+  --bs-primary: #2696db;
 }
 
 @font-face {
   font-family: "OpenSans";
   src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "PTSans";
-  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 
 * {
@@ -1568,13 +1544,6 @@ footer address:hover img {
   box-shadow: none !important;
 }
 
-.lesson-row {
-  background: #fff;
-  border-radius: 14px;
-  padding: 1.15rem 1rem;
-  box-shadow: 0 0 0 1px #edf0f2;
-}
-
 #lessons .form-check-input {
   width: 2rem;
   height: 1rem;
@@ -1918,7 +1887,7 @@ select.form-select:focus {
 
   .schedule-table td,
   .schedule-table th {
-    padding: 18px 14px;
+    padding: 8px 10px;
   }
 }
 
@@ -2093,10 +2062,6 @@ select.form-select:focus {
   pointer-events: none;
   height: 1px;
   width: 1px;
-}
-
-:root {
-  --bs-primary: #2696db;
 }
 
 .grade-table th,
