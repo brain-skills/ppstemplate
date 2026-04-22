@@ -859,7 +859,7 @@
                                       </div>
                                     </div>
 
-                                    <div class="lesson-section-box bg-blue-opacity p-4 rounded-4 shadow-sm">
+                                    <div class="lesson-section-box bg-blue-opacity p-4 rounded shadow">
                                       <div class="mb-4">
                                         <h5 class="fw-semibold mb-0">Add Homework</h5>
                                       </div>
@@ -912,7 +912,7 @@
                                         <textarea class="form-control lesson-form-control lesson-textarea p-3" rows="4"></textarea>
                                       </div>
 
-                                      <div class="p-4 rounded-4 bg-light border mb-4">
+                                      <div class="p-4 rounded bg-light border mb-4">
                                         <h6 class="fw-semibold mb-3">Additional materials</h6>
 
                                         <div class="row g-4 align-items-end">
@@ -940,7 +940,7 @@
                                       <div class="mb-4">
                                         <h6 class="fw-semibold mb-3">Attached files</h6>
 
-                                        <label class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center p-4 rounded-4">
+                                        <label class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center p-4 rounded">
                                           <strong class="mb-1">
                                             Drag & drop files here or
                                             <span class="text-primary cursor-pointer">upload</span>
@@ -1045,7 +1045,7 @@
                               </div>
 
                               <div class="collapse mt-2 shadow rounded" id="lesson3Details">
-                                <div class="lesson-details bg-white rounded p-4 shadow-sm">
+                                <div class="lesson-details bg-white rounded p-4 shadow">
                                   <div class="lesson-view-mode">
                                     <h5 class="fw-semibold mb-3 lesson-view-title">Lesson 3 - My friends</h5>
 
@@ -1175,7 +1175,7 @@
                   <div class="tab-pane fade" id="schedule-pane" role="tabpanel" aria-labelledby="schedule-tab" tabindex="0">
                     <div class="d-flex flex-column gap-4">
                       <!-- HEADER -->
-                      <div class="bg-white rounded shadow-sm p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                      <div class="bg-white rounded shadow p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
                         <div class="d-flex align-items-center gap-3">
                           <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
                             <img src="./assets/images/icons/icon_calendar.svg" width="26" height="26" class="blue-icon" />
@@ -1194,7 +1194,7 @@
                       </div>
 
                       <!-- FILTERS -->
-                      <div class="bg-white rounded shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3">
                           <div class="col-md-3">
                             <label class="small text-secondary">Grade</label>
@@ -1238,101 +1238,210 @@
                       </div>
 
                       <!-- NAV -->
-                      <div class="bg-white rounded shadow-sm p-3 d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center gap-2">
-                          <button class="btn btn-light border">‹</button>
-                          <strong>April 2026</strong>
-                          <button class="btn btn-light border">›</button>
+                      <div class="schedule-head">
+                        <div class="d-flex align-items-center gap-2 position-relative">
+                          <button type="button" id="prevBtn" class="schedule-arrow">‹</button>
+
+                          <div class="position-relative">
+                            <div id="monthDisplay" class="fw-bold fs-5" style="cursor: pointer">December <span>2025</span></div>
+
+                            <input id="dateInput" type="text" class="fp-hidden" />
+                          </div>
+
+                          <button type="button" id="nextBtn" class="schedule-arrow">›</button>
                         </div>
 
-                        <button class="btn btn-outline-primary">Export</button>
+                        <div class="schedule-view">
+                          <button id="weekBtn" class="schedule-view-btn active fs-6">Week</button>
+                          <button id="dayBtn" class="schedule-view-btn fs-6">Day</button>
+                        </div>
                       </div>
 
                       <!-- TABLE -->
-                      <div class="bg-white rounded shadow-sm overflow-hidden">
-                        <div class="table-responsive">
-                          <table class="table align-middle mb-0">
-                            <thead class="bg-light">
-                              <tr>
-                                <th class="ps-4">Time</th>
-                                <th class="text-center">Mon</th>
-                                <th class="text-center">Tue</th>
-                                <th class="text-center">Wed</th>
-                                <th class="text-center">Thu</th>
-                                <th class="text-center">Fri</th>
-                              </tr>
-                            </thead>
+                      <div class="table-responsive schedule-table-wrap">
+                        <table class="table mb-0 schedule-table">
+                          <thead>
+                            <tr>
+                              <th class="time-header-col">
+                                <div class="d-flex align-items-center gap-2 justify-content-center">
+                                  <span>Time</span>
+                                </div>
+                              </th>
+                              <th>
+                                <small>01.12</small>
+                                <div>Sunday</div>
+                              </th>
+                              <th>
+                                <small>02.12</small>
+                                <div>Monday</div>
+                              </th>
+                              <th>
+                                <small>03.12</small>
+                                <div>Tuesday</div>
+                              </th>
+                              <th>
+                                <small>04.12</small>
+                                <div>Wednesday</div>
+                              </th>
+                              <th>
+                                <small>05.12</small>
+                                <div>Thursday</div>
+                              </th>
+                              <th>
+                                <small>06.12</small>
+                                <div>Friday</div>
+                              </th>
+                              <th>
+                                <small>07.12</small>
+                                <div>Saturday</div>
+                              </th>
+                            </tr>
+                          </thead>
 
-                            <tbody>
-                              <!-- 08:00 -->
-                              <tr>
-                                <td class="ps-4 fw-semibold">08:00</td>
-
-                                <td>
-                                  <div class="lesson p-3 bg-primary bg-opacity-10" data-subject="English" data-grade="1 grade" data-teacher="Jane Henderson">
-                                    <div class="fw-semibold text-primary">English</div>
-                                    <small>1 grade</small><br />
-                                    <small>Jane Henderson</small>
+                          <tbody>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">07:30 am</div>
+                                <div class="time-sub">1 lesson</div>
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">08:15 am</div>
+                                <div class="time-sub">2 lesson</div>
+                              </td>
+                              <td class="class-cell">English language <span class="grade">1 grade</span></td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td></td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">09:10 am</div>
+                                <div class="time-sub">3 lesson</div>
+                              </td>
+                              <td class="class-cell">English language <span class="grade">2 grade</span></td>
+                              <td></td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td></td>
+                              <td class="class-cell">English language <span class="grade">1 grade</span></td>
+                              <td class="individual-cell">
+                                Sarah Jefferson
+                                <span class="tag tag-green">individual</span>
+                              </td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">10:05 am</div>
+                                <div class="time-sub">4 lesson</div>
+                              </td>
+                              <td class="class-cell">Math <span class="grade">3 grade</span></td>
+                              <td class="class-cell">English language <span class="grade">4 grade</span></td>
+                              <td></td>
+                              <td class="class-cell">English language <span class="grade">5 grade</span></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">11:00 am</div>
+                                <div class="time-sub">5 lesson</div>
+                              </td>
+                              <td></td>
+                              <td class="class-cell">Math <span class="grade">2 grade</span></td>
+                              <td class="class-cell">English language <span class="grade">1 grade</span></td>
+                              <td></td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr class="lunch-row">
+                              <td colspan="8">
+                                <div class="d-flex justify-content-between align-items-center px-3">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="./assets/images/icons/icon_food.svg" alt="" width="16" height="16" />
+                                    <strong>Lunch</strong>
                                   </div>
-                                </td>
-
-                                <td></td>
-
-                                <td>
-                                  <div class="lesson p-3 bg-success bg-opacity-10" data-subject="Math" data-grade="3 grade" data-teacher="Michael Brown">
-                                    <div class="fw-semibold">Math</div>
-                                    <small>3 grade</small><br />
-                                    <small>Michael Brown</small>
-                                  </div>
-                                </td>
-
-                                <td></td>
-
-                                <td>
-                                  <div class="lesson p-3 bg-warning bg-opacity-10" data-subject="History" data-grade="2 grade" data-teacher="Anna Smith">
-                                    <div class="fw-semibold">History</div>
-                                    <small>2 grade</small><br />
-                                    <small>Anna Smith</small>
-                                  </div>
-                                </td>
-                              </tr>
-
-                              <!-- 09:00 -->
-                              <tr>
-                                <td class="ps-4 fw-semibold">09:00</td>
-
-                                <td></td>
-
-                                <td>
-                                  <div class="lesson p-3 bg-info bg-opacity-10" data-subject="Biology" data-grade="4 grade" data-teacher="Jane Henderson">
-                                    <div class="fw-semibold">Biology</div>
-                                    <small>4 grade</small><br />
-                                    <small>Jane Henderson</small>
-                                  </div>
-                                </td>
-
-                                <td></td>
-
-                                <td>
-                                  <div class="lesson p-3 bg-danger bg-opacity-10" data-subject="Individual" data-grade="individual" data-teacher="Sarah Jefferson">
-                                    <div class="fw-semibold">Individual</div>
-                                    <small>Session</small><br />
-                                    <small>Sarah Jefferson</small>
-                                  </div>
-                                </td>
-
-                                <td></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
+                                  <a class="lunch-link" href="#">Show today's menu →</a>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">01:00 pm</div>
+                                <div class="time-sub">7 lesson</div>
+                              </td>
+                              <td></td>
+                              <td class="meeting-cell">
+                                Weekly meeting
+                                <span class="tag tag-pink">teachers’ council</span>
+                              </td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td class="class-cell">English language <span class="grade">2 grade</span></td>
+                              <td></td>
+                              <td class="class-cell">English language <span class="grade">1 grade</span></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">02:00 pm</div>
+                                <div class="time-sub">8 lesson</div>
+                              </td>
+                              <td class="class-cell">English language <span class="grade">5 grade</span></td>
+                              <td></td>
+                              <td class="individual-cell">John Smith <span class="tag tag-green">individual</span></td>
+                              <td></td>
+                              <td class="class-cell">Math <span class="grade">3 grade</span></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">03:00 pm</div>
+                                <div class="time-sub">9 lesson</div>
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td class="class-cell">English language <span class="grade">4 grade</span></td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell">
+                                <div class="time-main">04:00 pm</div>
+                                <div class="time-sub">10 lesson</div>
+                              </td>
+                              <td class="class-cell">Math <span class="grade">1 grade</span></td>
+                              <td class="class-cell">English language <span class="grade">3 grade</span></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
 
                   <div class="tab-pane fade" id="schedule-pane" role="tabpanel" aria-labelledby="schedule-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
-                      <div class="bg-white rounded-3 shadow-sm p-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                      <div class="bg-white rounded-3 shadow p-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
                         <div class="d-flex align-items-center gap-2">
                           <img src="./assets/images/icons/icon_calendar.svg" width="22" height="22" class="blue-icon" alt="" />
                           <span class="fw-semibold">Class Schedule</span>
@@ -1344,7 +1453,7 @@
                         </div>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow-sm p-3">
+                      <div class="bg-white rounded-3 shadow p-3">
                         <div class="row g-2">
                           <div class="col-6 col-md-3">
                             <label class="small text-secondary">Grade</label>
@@ -1383,7 +1492,7 @@
                         </div>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow-sm p-2 d-flex justify-content-between align-items-center">
+                      <div class="bg-white rounded-3 shadow p-2 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center gap-2">
                           <button class="btn btn-sm btn-light border">
                             <i class="bi bi-chevron-left"></i>
@@ -1399,7 +1508,7 @@
                         <button class="btn btn-sm btn-outline-primary">Export</button>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow-sm overflow-hidden">
+                      <div class="bg-white rounded-3 shadow overflow-hidden">
                         <div class="table-responsive">
                           <table class="table table-sm align-middle mb-0">
                             <thead class="bg-light small">
@@ -1502,7 +1611,7 @@
                   <div class="tab-pane fade" id="attendance-pane" role="tabpanel" aria-labelledby="attendance-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3">
                             <label class="form-label small text-secondary mb-1">Grade</label>
@@ -1546,7 +1655,7 @@
                       <!-- Summary -->
                       <div class="row g-3">
                         <div class="col-12 col-xl-4">
-                          <div class="bg-white rounded-4 shadow-sm p-3 attendance-card h-100">
+                          <div class="bg-white rounded shadow p-3 attendance-card h-100">
                             <div class="d-flex flex-column gap-1">
                               <h6 class="fw-semibold mb-0">Monitoring</h6>
                               <small class="text-secondary">12.01.2025 - 12.07.2025</small>
@@ -1556,7 +1665,7 @@
                         </div>
 
                         <div class="col-12 col-sm-6 col-xl-2">
-                          <div class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center attendance-card h-100">
+                          <div class="bg-success bg-opacity-10 rounded shadow p-3 text-center attendance-card h-100">
                             <div class="small fw-semibold">Missed lessons</div>
                             <div class="fs-5 fw-bold lh-1 mt-2">
                               11
@@ -1567,7 +1676,7 @@
                         </div>
 
                         <div class="col-12 col-sm-6 col-xl-3">
-                          <div class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center attendance-card h-100">
+                          <div class="bg-success bg-opacity-10 rounded shadow p-3 text-center attendance-card h-100">
                             <div class="small fw-semibold">Valid reason</div>
                             <div class="fs-5 fw-bold lh-1 mt-2">
                               2
@@ -1578,7 +1687,7 @@
                         </div>
 
                         <div class="col-12 col-sm-6 col-xl-3">
-                          <div class="bg-danger bg-opacity-10 rounded-4 shadow-sm p-3 text-center attendance-card h-100">
+                          <div class="bg-danger bg-opacity-10 rounded shadow p-3 text-center attendance-card h-100">
                             <div class="small fw-semibold">Critical marks</div>
                             <div class="fs-5 fw-bold lh-1 mt-2">
                               1
@@ -1590,266 +1699,107 @@
                       </div>
 
                       <!-- Attendance table -->
-                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
-                        <div class="p-3 border-bottom d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
-                          <div class="d-flex align-items-center gap-4 flex-wrap">
-                            <h5 class="fw-bold mb-0">3 Grade</h5>
+                      <div class="container-fluid">
+                        <div class="bg-white rounded shadow p-3">
+                          <!-- Header -->
+                          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                            <h5 class="mb-0 fw-semibold">3 Grade</h5>
 
-                            <div class="d-flex align-items-center gap-2">
-                              <button type="button" class="btn btn-sm btn-light border rounded-circle attendance-nav-btn">
-                                <i class="bi bi-chevron-left"></i>
-                              </button>
-
-                              <div class="small fw-semibold">
-                                December
-                                <span class="text-secondary">2025</span>
-                              </div>
-
-                              <button type="button" class="btn btn-sm btn-light border rounded-circle attendance-nav-btn">
-                                <i class="bi bi-chevron-right"></i>
-                              </button>
+                            <div class="d-flex align-items-center gap-2 text-secondary">
+                              <button class="btn btn-sm btn-light px-2">‹</button>
+                              <span class="fw-medium">December 2025</span>
+                              <button class="btn btn-sm btn-light px-2">›</button>
                             </div>
                           </div>
 
-                          <div class="d-flex align-items-center gap-3 flex-wrap">
-                            <div class="d-flex align-items-center gap-2">
-                              <img src="https://i.pravatar.cc/32?img=12" class="rounded-circle" alt="Jane Henderson" width="32" height="32" />
-                              <div class="small">
-                                <div class="fw-semibold text-dark">Jane Henderson</div>
-                                <div class="text-secondary">curator</div>
-                              </div>
-                            </div>
+                          <!-- Table -->
+                          <div class="table-responsive">
+                            <table class="table align-middle mb-0 schedule-table">
+                              <!-- Head -->
+                              <thead class="table-light text-center">
+                                <tr>
+                                  <th class="text-start">Students</th>
+                                  <th>01.12<br /><small class="text-muted">Sunday</small></th>
+                                  <th>01.12<br /><small class="text-muted">Monday</small></th>
+                                  <th>01.12<br /><small class="text-muted">Tuesday</small></th>
+                                  <th>01.12<br /><small class="text-muted">Wednesday</small></th>
+                                  <th>01.12<br /><small class="text-muted">Thursday</small></th>
+                                  <th class="col-blue-active">01.12<br /><small>Friday</small></th>
+                                  <th class="col-blue">01.12<br /><small>Saturday</small></th>
+                                </tr>
+                              </thead>
 
-                            <div class="d-flex align-items-center gap-2 small">
-                              <button type="button" class="btn btn-sm btn-link text-primary text-decoration-none p-0 fw-semibold">Week</button>
-                              <button type="button" class="btn btn-sm btn-link text-secondary text-decoration-none p-0">Day</button>
-                            </div>
+                              <!-- Body -->
+                              <tbody class="text-center">
+                                <tr>
+                                  <td class="text-start d-flex align-items-center gap-2">
+                                    <img src="https://i.pravatar.cc/30?img=1" class="rounded-circle" />
+                                    Michael Brown
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                  <td><span class="status-absent">Absent</span></td>
+                                  <td><span class="status-absent">Absent</span></td>
+                                  <td><span class="status-absent">Absent</span></td>
+                                  <td class="col-blue-active"></td>
+                                  <td class="col-blue"></td>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-start d-flex align-items-center gap-2">
+                                    <img src="https://i.pravatar.cc/30?img=2" class="rounded-circle" />
+                                    Ella Williams
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td class="col-blue-active"></td>
+                                  <td class="col-blue"></td>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-start d-flex align-items-center gap-2">
+                                    <img src="https://i.pravatar.cc/30?img=3" class="rounded-circle" />
+                                    Grace Walker
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td><span class="status-sick">Sick</span></td>
+                                  <td><span class="status-sick">Sick</span></td>
+                                  <td class="col-blue-active"></td>
+                                  <td class="col-blue"></td>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-start d-flex align-items-center gap-2">
+                                    <img src="https://i.pravatar.cc/30?img=4" class="rounded-circle" />
+                                    Chloe Moore
+                                  </td>
+                                  <td></td>
+                                  <td><span class="status-absent">Absent</span></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td class="col-blue-active"></td>
+                                  <td class="col-blue"></td>
+                                </tr>
+
+                                <tr class="fw-semibold bg-light">
+                                  <td class="text-start">Total</td>
+                                  <td>10 / 10</td>
+                                  <td>9 / 10</td>
+                                  <td>8 / 10</td>
+                                  <td>8 / 10</td>
+                                  <td>8 / 10</td>
+                                  <td class="col-blue-active">10 / 10</td>
+                                  <td class="col-blue"></td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
-                        </div>
-
-                        <div class="table-responsive">
-                          <table class="table table-sm align-middle mb-0 attendance-table">
-                            <thead>
-                              <tr>
-                                <th class="attendance-student-col bg-light">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <i class="bi bi-people text-primary"></i>
-                                    <span>Students</span>
-                                  </div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="attendance-day">Sunday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="attendance-day">Monday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="attendance-day">Tuesday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="attendance-day">Wednesday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="attendance-day">Thursday</div>
-                                </th>
-                                <th class="text-center attendance-active-day">
-                                  <div class="small fw-semibold text-primary">01.12</div>
-                                  <div class="attendance-day text-primary">Friday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="attendance-day">Saturday</div>
-                                </th>
-                              </tr>
-                            </thead>
-
-                            <tbody>
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=1" class="rounded-circle" alt="Michael Brown" width="28" height="28" />
-                                    <span>Michael Brown</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-absent text-center">Absent</td>
-                                <td class="attendance-absent text-center">Absent</td>
-                                <td class="attendance-absent text-center">
-                                  Absent
-                                  <div class="small text-danger fw-semibold mt-1">3 <span class="text-secondary">()</span></div>
-                                </td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=2" class="rounded-circle" alt="Ella Williams" width="28" height="28" />
-                                    <span>Ella Williams</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=3" class="rounded-circle" alt="Logan Martinez" width="28" height="28" />
-                                    <span>Logan Martinez</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=4" class="rounded-circle" alt="Natalie Wilson" width="28" height="28" />
-                                    <span>Natalie Wilson</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=5" class="rounded-circle" alt="Grace Walker" width="28" height="28" />
-                                    <span>Grace Walker</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-sick text-center">
-                                  Sick
-                                  <div class="small text-success fw-semibold mt-1">※</div>
-                                </td>
-                                <td class="attendance-sick text-center">
-                                  Sick
-                                  <div class="small text-success fw-semibold mt-1">※</div>
-                                </td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=6" class="rounded-circle" alt="Chloe Moore" width="28" height="28" />
-                                    <span>Chloe Moore</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td class="attendance-absent text-center">Absent</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=7" class="rounded-circle" alt="Ethan Miller" width="28" height="28" />
-                                    <span>Ethan Miller</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-absent text-center">Absent</td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=8" class="rounded-circle" alt="Elisabeth King" width="28" height="28" />
-                                    <span>Elisabeth King</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=9" class="rounded-circle" alt="Mary-Ann Davis" width="28" height="28" />
-                                    <span>Mary-Ann Davis</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="attendance-student-cell">
-                                  <div class="d-flex align-items-center gap-2">
-                                    <img src="https://i.pravatar.cc/28?img=10" class="rounded-circle" alt="Caleb Thomas" width="28" height="28" />
-                                    <span>Caleb Thomas</span>
-                                  </div>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="attendance-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr class="attendance-total-row">
-                                <td class="fw-semibold">Total</td>
-                                <td class="text-center fw-semibold">10 / 10</td>
-                                <td class="text-center fw-semibold">9 / 10</td>
-                                <td class="text-center fw-semibold">8 / 10</td>
-                                <td class="text-center fw-semibold">8 / 10</td>
-                                <td class="text-center fw-semibold">8 / 10</td>
-                                <td class="text-center fw-semibold attendance-active-col">10 / 10</td>
-                                <td class="text-center fw-semibold"></td>
-                              </tr>
-                            </tbody>
-                          </table>
                         </div>
                       </div>
                     </div>
@@ -1860,7 +1810,7 @@
                   <div class="tab-pane fade" id="grades-pane" role="tabpanel" aria-labelledby="grades-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3">
                             <label class="form-label small text-secondary mb-1">Grade</label>
@@ -1900,7 +1850,7 @@
                       <!-- Summary cards -->
                       <div class="row g-3">
                         <div class="col-12 col-xl-4">
-                          <div class="bg-white rounded-4 shadow-sm p-3 h-100 dashboard-card">
+                          <div class="bg-white rounded shadow p-3 h-100 dashboard-card">
                             <h6 class="fw-semibold mb-1">Monitoring</h6>
                             <small class="text-secondary d-block mb-2">12.01.2025 – 12.07.2025</small>
                             <a href="#" class="small text-primary text-decoration-none"> <i class="bi bi-download me-1"></i>Download summary report </a>
@@ -1908,7 +1858,7 @@
                         </div>
 
                         <div class="col-12 col-md-4 col-xl-2">
-                          <div class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card">
+                          <div class="bg-success bg-opacity-10 rounded shadow p-3 text-center h-100 dashboard-card">
                             <div class="small fw-semibold">Average point</div>
                             <div class="fs-5 fw-bold mt-1">4.3 <span class="text-success">↑</span></div>
                             <small class="text-secondary">8% better than last week</small>
@@ -1916,7 +1866,7 @@
                         </div>
 
                         <div class="col-12 col-md-4 col-xl-3">
-                          <div class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card">
+                          <div class="bg-success bg-opacity-10 rounded shadow p-3 text-center h-100 dashboard-card">
                             <div class="small fw-semibold">High marks</div>
                             <div class="fs-5 fw-bold mt-1">27 <span class="text-success">(94%) ↑</span></div>
                             <small class="text-secondary">24% more than last week</small>
@@ -1924,7 +1874,7 @@
                         </div>
 
                         <div class="col-12 col-md-4 col-xl-3">
-                          <div class="bg-danger bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card">
+                          <div class="bg-danger bg-opacity-10 rounded shadow p-3 text-center h-100 dashboard-card">
                             <div class="small fw-semibold">Low marks</div>
                             <div class="fs-5 fw-bold mt-1">5 <span class="text-danger">(6%) ↑</span></div>
                             <small class="text-secondary">12% more than last week</small>
@@ -1933,97 +1883,54 @@
                       </div>
 
                       <!-- Table -->
-                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
-                        <div class="p-3 border-bottom d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
-                          <div class="d-flex align-items-center gap-4 flex-wrap">
-                            <h5 class="fw-bold mb-0">3 Grade</h5>
+                      <div class="bg-white rounded shadow">
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 p-3">
+                          <h5 class="mb-0 fw-semibold">3 Grade</h5>
 
-                            <div class="d-flex align-items-center gap-2">
-                              <button type="button" class="btn btn-sm btn-light border rounded-circle dashboard-nav-btn">
-                                <i class="bi bi-chevron-left"></i>
-                              </button>
-
-                              <div class="small fw-semibold">
-                                December
-                                <span class="text-secondary">2025</span>
-                              </div>
-
-                              <button type="button" class="btn btn-sm btn-light border rounded-circle dashboard-nav-btn">
-                                <i class="bi bi-chevron-right"></i>
-                              </button>
-                            </div>
-                          </div>
-
-                          <div class="d-flex align-items-center gap-3 flex-wrap">
-                            <div class="d-flex align-items-center gap-2">
-                              <img src="https://i.pravatar.cc/32?img=12" class="rounded-circle" alt="Jane Henderson" width="32" height="32" />
-                              <div class="small">
-                                <div class="fw-semibold text-dark">Jane Henderson</div>
-                                <div class="text-secondary">curator</div>
-                              </div>
-                            </div>
-
-                            <div class="small d-flex align-items-center gap-2">
-                              <a href="#" class="text-primary text-decoration-none fw-semibold">Week</a>
-                              <a href="#" class="text-secondary text-decoration-none">Day</a>
-                            </div>
+                          <div class="d-flex align-items-center gap-2 text-secondary">
+                            <button class="btn btn-sm btn-light px-2">‹</button>
+                            <span class="fw-medium">December 2025</span>
+                            <button class="btn btn-sm btn-light px-2">›</button>
                           </div>
                         </div>
 
+                        <!-- Table -->
                         <div class="table-responsive">
-                          <table class="table table-sm align-middle mb-0 dashboard-table">
-                            <thead>
+                          <table class="table align-middle mb-0 schedule-table">
+                            <!-- Head -->
+                            <thead class="table-light text-center">
                               <tr>
-                                <th class="dashboard-student-col bg-light">Students</th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Sunday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Monday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Tuesday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Wednesday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Thursday</div>
-                                </th>
-                                <th class="text-center dashboard-active-col">
-                                  <div class="small fw-semibold text-primary">01.12</div>
-                                  <div class="dashboard-day text-primary">Friday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Saturday</div>
-                                </th>
+                                <th class="text-start">Students</th>
+                                <th>01.12<br /><small class="text-muted">Sunday</small></th>
+                                <th>01.12<br /><small class="text-muted">Monday</small></th>
+                                <th>01.12<br /><small class="text-muted">Tuesday</small></th>
+                                <th>01.12<br /><small class="text-muted">Wednesday</small></th>
+                                <th>01.12<br /><small class="text-muted">Thursday</small></th>
+                                <th class="col-blue-active">01.12<br /><small>Friday</small></th>
+                                <th class="col-blue">01.12<br /><small>Saturday</small></th>
                               </tr>
                             </thead>
 
-                            <tbody>
+                            <!-- Body -->
+                            <tbody class="text-center">
                               <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=1" class="rounded-circle" alt="" width="28" height="28" />
+                                <td class="text-start d-flex align-items-center gap-2">
+                                  <img src="https://i.pravatar.cc/30?img=1" class="rounded-circle" />
                                   Michael Brown
                                 </td>
-                                <td class="text-center fw-semibold">5</td>
                                 <td></td>
-                                <td class="text-center fw-semibold">5 / 5</td>
-                                <td class="text-center fw-semibold">5</td>
-                                <td class="text-center fw-semibold">5</td>
-                                <td class="dashboard-active-col"></td>
                                 <td></td>
+                                <td><span class="status-absent">Absent</span></td>
+                                <td><span class="status-absent">Absent</span></td>
+                                <td><span class="status-absent">Absent</span></td>
+                                <td class="col-blue-active"></td>
+                                <td class="col-blue"></td>
                               </tr>
 
                               <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=2" class="rounded-circle" alt="" width="28" height="28" />
+                                <td class="text-start d-flex align-items-center gap-2">
+                                  <img src="https://i.pravatar.cc/30?img=2" class="rounded-circle" />
                                   Ella Williams
                                 </td>
                                 <td></td>
@@ -2031,120 +1938,47 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
+                                <td class="col-blue-active"></td>
+                                <td class="col-blue"></td>
                               </tr>
 
                               <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=3" class="rounded-circle" alt="" width="28" height="28" />
-                                  Logan Martinez
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center fw-semibold">4 / 5</td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center fw-semibold dashboard-active-col">5</td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=4" class="rounded-circle" alt="" width="28" height="28" />
-                                  Natalie Wilson
-                                </td>
-                                <td class="text-center">3</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=5" class="rounded-circle" alt="" width="28" height="28" />
+                                <td class="text-start d-flex align-items-center gap-2">
+                                  <img src="https://i.pravatar.cc/30?img=3" class="rounded-circle" />
                                   Grace Walker
                                 </td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="text-center">4</td>
-                                <td class="text-center">5</td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
+                                <td><span class="status-sick">Sick</span></td>
+                                <td><span class="status-sick">Sick</span></td>
+                                <td class="col-blue-active"></td>
+                                <td class="col-blue"></td>
                               </tr>
 
                               <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=6" class="rounded-circle" alt="" width="28" height="28" />
+                                <td class="text-start d-flex align-items-center gap-2">
+                                  <img src="https://i.pravatar.cc/30?img=4" class="rounded-circle" />
                                   Chloe Moore
                                 </td>
                                 <td></td>
-                                <td class="text-center">5</td>
+                                <td><span class="status-absent">Absent</span></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
+                                <td class="col-blue-active"></td>
+                                <td class="col-blue"></td>
                               </tr>
 
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=7" class="rounded-circle" alt="" width="28" height="28" />
-                                  Ethan Miller
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center fw-semibold">4 / 4</td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=8" class="rounded-circle" alt="" width="28" height="28" />
-                                  Elisabeth King
-                                </td>
-                                <td class="text-center fw-semibold">5</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=9" class="rounded-circle" alt="" width="28" height="28" />
-                                  Mary-Ann Davis
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center">5</td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=10" class="rounded-circle" alt="" width="28" height="28" />
-                                  Caleb Thomas
-                                </td>
-                                <td></td>
-                                <td class="text-center">4</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
+                              <tr class="fw-semibold bg-light">
+                                <td class="text-start">Total</td>
+                                <td>10 / 10</td>
+                                <td>9 / 10</td>
+                                <td>8 / 10</td>
+                                <td>8 / 10</td>
+                                <td>8 / 10</td>
+                                <td class="col-blue-active">10 / 10</td>
+                                <td class="col-blue"></td>
                               </tr>
                             </tbody>
                           </table>
@@ -2157,7 +1991,7 @@
 
                   <div class="tab-pane fade" id="homework-pane" role="tabpanel" aria-labelledby="homework-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
-                      <div class="bg-white rounded shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-md-2">
                             <label class="form-label small text-secondary">Subject</label>
@@ -2198,7 +2032,7 @@
                         </div>
                       </div>
 
-                      <div class="homework-card bg-white rounded shadow-sm">
+                      <div class="homework-card bg-white rounded shadow">
                         <div class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-1">Homework 1 — My pets</h6>
@@ -2349,7 +2183,7 @@
 
                   <div class="tab-pane fade" id="test-pane" role="tabpanel" aria-labelledby="test-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
-                      <div class="bg-white rounded shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3">
                           <div class="col-md-2">
                             <label class="small text-secondary">Grade</label>
@@ -2395,7 +2229,7 @@
                         </div>
                       </div>
 
-                      <div class="activity-card bg-white rounded shadow-sm">
+                      <div class="activity-card bg-white rounded shadow">
                         <div class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-0">Pronunciation</h6>
@@ -2482,7 +2316,7 @@
                   <div class="tab-pane fade" id="activities-pane" role="tabpanel" aria-labelledby="activities-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3 col-xl">
                             <label class="form-label small text-secondary mb-1">Grade</label>
@@ -2549,7 +2383,7 @@
                       </div>
 
                       <!-- Activity card collapsed -->
-                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                      <div class="activity-card bg-white rounded shadow">
                         <div class="p-3 d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-0">Pronunciation</h6>
@@ -2585,7 +2419,7 @@
                       </div>
 
                       <!-- Activity card collapsed -->
-                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                      <div class="activity-card bg-white rounded shadow">
                         <div class="p-3 d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-0">Pronunciation</h6>
@@ -2621,7 +2455,7 @@
                       </div>
 
                       <!-- Expanded activity -->
-                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                      <div class="activity-card bg-white rounded shadow">
                         <div class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-0">Pronunciation</h6>
@@ -2743,7 +2577,7 @@
                   <div class="tab-pane fade" id="announcements-pane" role="tabpanel" aria-labelledby="announcements-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Create announcement -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="d-flex justify-content-between align-items-center">
                           <h6 class="fw-semibold mb-0">Crete announcement</h6>
                           <button type="button" class="btn btn-sm btn-link text-secondary p-0">
@@ -2753,7 +2587,7 @@
                       </div>
 
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3">
                             <label class="form-label small text-secondary mb-1">Date</label>
@@ -2781,7 +2615,7 @@
 
                       <!-- Announcement list -->
                       <div class="d-flex flex-column gap-3">
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Open House Day at Philadelphia Progressive School</h6>
@@ -2800,7 +2634,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Enrollment for the 2025–2026 School Year is Now Open!</h6>
@@ -2824,7 +2658,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Update Your School Passes Starting January 1, 2026</h6>
@@ -2843,7 +2677,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Important: School Bus Route #12 Changes</h6>
@@ -2867,7 +2701,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">School Stadium Under Renovation During Holidays</h6>
@@ -2900,7 +2734,7 @@
                   <!-- events  -->
 
                   <div class="tab-pane fade" id="events-pane" role="tabpanel" aria-labelledby="events-tab" tabindex="0">
-                    <div class="bg-white rounded-4 shadow-sm p-4">
+                    <div class="bg-white rounded shadow p-4">
                       <!-- Header -->
                       <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="fw-bold mb-0">Crete event</h5>
@@ -2986,7 +2820,7 @@
                       <div class="mb-4">
                         <label class="form-label fw-semibold mb-2 cursor-pointer">Upload images</label>
 
-                        <label class="dashboard-upload-box w-100 text-center rounded-4 p-4">
+                        <label class="dashboard-upload-box w-100 text-center rounded p-4">
                           <strong>Drag &amp; drop files here or <span class="text-primary cursor-pointer">upload</span></strong>
                           <div class="small text-secondary mt-1">Acceptable file formats: pdf, jpg, jpeg, png. Maximum size: 100 MB.</div>
                         </label>
@@ -2996,26 +2830,26 @@
                       <div class="d-flex flex-wrap gap-3 align-items-start mb-4">
                         <div class="position-relative dashboard-thumb">
                           <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm">
+                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
                         </div>
 
                         <div class="position-relative dashboard-thumb">
                           <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm">
+                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
                         </div>
 
                         <div class="position-relative dashboard-thumb">
                           <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm">
+                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
 
                           <!-- Open menu example -->
-                          <div class="dashboard-thumb-menu shadow-sm rounded-3 p-2 bg-white">
+                          <div class="dashboard-thumb-menu shadow rounded-3 p-2 bg-white">
                             <button class="btn btn-sm btn-light w-100 text-start">Set as cover</button>
                             <button class="btn btn-sm btn-light w-100 text-start">Remove image</button>
                           </div>
@@ -3042,7 +2876,7 @@
                   <div class="tab-pane fade" id="notifications-pane" role="tabpanel" aria-labelledby="notifications-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3">
                             <label class="form-label small text-secondary mb-1">Announcement type</label>
@@ -3070,7 +2904,7 @@
 
                       <!-- Notifications list -->
                       <div class="d-flex flex-column gap-2">
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3089,7 +2923,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3110,7 +2944,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3131,7 +2965,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3150,7 +2984,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3171,7 +3005,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3190,7 +3024,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3209,7 +3043,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3230,7 +3064,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
