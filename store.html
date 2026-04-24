@@ -207,198 +207,161 @@
       <section class="profile-page pb-4 pb-lg-5 bg-white">
         <div class="container">
           <div class="profile-wrapper">
-            <div class="row g-4">
+            <div class="row">
+              <!-- SIDEBAR -->
               <div class="col-12 col-lg-3 col-xxl-3">
                 <div class="list-group profile-sidebar d-none d-md-flex flex-row flex-xl-column" id="profileTab" role="tablist">
-                  <button
-                    class="list-group-item list-group-item-action active d-flex flex-row align-items-center gap-3 shadow rounded mb-2"
-                    id="my-profile-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#my-profile-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="my-profile-pane"
-                    aria-selected="true"
-                  >
-                    <img src="./assets/images/icons/icon_user.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-semibold">Promotions and discounts</span>
+                  <button class="list-group-item list-group-item-action active d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-promotions" data-bs-toggle="tab" data-bs-target="#pane-promotions" type="button">
+                    <img src="./assets/images/icons/icon_hot_goods.svg" class="blue-icon" />
+                    <span>Promotions and discounts</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="class-management-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#class-management-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="class-management-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_settings.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Class management</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-gadgets" data-bs-toggle="tab" data-bs-target="#pane-gadgets" type="button">
+                    <img src="./assets/images/icons/icon_gadgets.svg" class="blue-icon" />
+                    <span>Gadgets</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="curriculum-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#curriculum-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="curriculum-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_science.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Curriculum</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-renovation" data-bs-toggle="tab" data-bs-target="#pane-renovation" type="button">
+                    <img src="./assets/images/icons/icon_reneweal.svg" class="blue-icon" />
+                    <span>Renovation</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="schedule-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#schedule-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="schedule-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Schedule</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-electronics" data-bs-toggle="tab" data-bs-target="#pane-electronics" type="button">
+                    <img src="./assets/images/icons/icon_electronic.svg" class="blue-icon" />
+                    <span>Electronics</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="attendance-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#attendance-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="attendance-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_list.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Attendance</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-clothes" data-bs-toggle="tab" data-bs-target="#pane-clothes" type="button">
+                    <img src="./assets/images/icons/icon_clothes.svg" class="blue-icon" />
+                    <span>Clothes</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="grades-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#grades-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="grades-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_award.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Grades</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-children" data-bs-toggle="tab" data-bs-target="#pane-children" type="button">
+                    <img src="./assets/images/icons/icon_childern.svg" class="blue-icon" />
+                    <span>For children</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="homework-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#homework-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="homework-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_lounge.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Homework</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-bags" data-bs-toggle="tab" data-bs-target="#pane-bags" type="button">
+                    <img src="./assets/images/icons/icon_bags.svg" class="blue-icon" />
+                    <span>Bags</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="test-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#test-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="test-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_test.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Test</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-furniture" data-bs-toggle="tab" data-bs-target="#pane-furniture" type="button">
+                    <img src="./assets/images/icons/icon_chair.svg" class="blue-icon" />
+                    <span>Furniture</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="activities-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#activities-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="activities-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_graph.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Activities</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-auto" data-bs-toggle="tab" data-bs-target="#pane-auto" type="button">
+                    <img src="./assets/images/icons/icon_auto.svg" class="blue-icon" />
+                    <span>Auto products</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="announcements-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#announcements-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="announcements-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_announcement.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Announcements</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-camping" data-bs-toggle="tab" data-bs-target="#pane-camping" type="button">
+                    <img src="./assets/images/icons/icon_camping.svg" class="blue-icon" />
+                    <span>Camping and hiking</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
-                    id="events-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#events-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="events-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_event.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">My Events</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-hobby" data-bs-toggle="tab" data-bs-target="#pane-hobby" type="button">
+                    <img src="./assets/images/icons/icon_hobby.svg" class="blue-icon" />
+                    <span>Hobby and craft</span>
                   </button>
 
-                  <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded"
-                    id="notifications-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#notifications-pane"
-                    type="button"
-                    role="tab"
-                    aria-controls="notifications-pane"
-                    aria-selected="false"
-                  >
-                    <img src="./assets/images/icons/icon_notification.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-medium fw-semibold">Notifications</span>
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-stationery" data-bs-toggle="tab" data-bs-target="#pane-stationery" type="button">
+                    <img src="./assets/images/icons/icon_tools.svg" class="blue-icon" />
+                    <span>Stationery</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-sports" data-bs-toggle="tab" data-bs-target="#pane-sports" type="button">
+                    <img src="./assets/images/icons/icon_sports.svg" class="blue-icon" />
+                    <span>Sporting goods</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-kitchen" data-bs-toggle="tab" data-bs-target="#pane-kitchen" type="button">
+                    <img src="./assets/images/icons/icon_kitchen.svg" class="blue-icon" />
+                    <span>Kitchen</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-cosmetics" data-bs-toggle="tab" data-bs-target="#pane-cosmetics" type="button">
+                    <img src="./assets/images/icons/icon_perfume.svg" class="blue-icon" />
+                    <span>Perfumes and cosmetics</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-pets" data-bs-toggle="tab" data-bs-target="#pane-pets" type="button">
+                    <img src="./assets/images/icons/icon_pets.svg" class="blue-icon" />
+                    <span>For pets</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-travel" data-bs-toggle="tab" data-bs-target="#pane-travel" type="button">
+                    <img src="./assets/images/icons/icon_travel.svg" class="blue-icon" />
+                    <span>Travel supplies</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-medicine" data-bs-toggle="tab" data-bs-target="#pane-medicine" type="button">
+                    <img src="./assets/images/icons/icon_media.svg" class="blue-icon" />
+                    <span>Medicines and vitamins</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-food" data-bs-toggle="tab" data-bs-target="#pane-food" type="button">
+                    <img src="./assets/images/icons/icon_food.svg" class="blue-icon" />
+                    <span>Food and drinks</span>
+                  </button>
+
+                  <button class="list-group-item list-group-item-action d-flex align-items-center gap-3 shadow rounded mb-2" id="tab-digital" data-bs-toggle="tab" data-bs-target="#pane-digital" type="button">
+                    <img src="./assets/images/icons/icon_games.svg" class="blue-icon" />
+                    <span>Digital goods</span>
                   </button>
                 </div>
+
+                <!-- MOBILE SELECT -->
                 <div class="d-md-none mb-3">
                   <select id="mobileTabSelect" class="form-select">
-                    <option value="my-profile-tab">Promotions and discounts</option>
-                    <option value="class-management-tab">Class management</option>
-                    <option value="curriculum-tab">Curriculum</option>
-                    <option value="schedule-tab">Schedule</option>
-                    <option value="attendance-tab">Attendance</option>
-                    <option value="grades-tab">Grades</option>
-                    <option value="homework-tab">Homework</option>
-                    <option value="test-tab">Test</option>
-                    <option value="activities-tab">Activities</option>
-                    <option value="announcements-tab">Announcements</option>
-                    <option value="events-tab">My Events</option>
-                    <option value="notifications-tab">Notifications</option>
+                    <option value="tab-promotions">Promotions</option>
+                    <option value="tab-gadgets">Gadgets</option>
+                    <option value="tab-renovation">Renovation</option>
+                    <option value="tab-electronics">Electronics</option>
+                    <option value="tab-clothes">Clothes</option>
+                    <option value="tab-children">Children</option>
+                    <option value="tab-bags">Bags</option>
+                    <option value="tab-furniture">Furniture</option>
+                    <option value="tab-auto">Auto</option>
+                    <option value="tab-camping">Camping</option>
+                    <option value="tab-hobby">Hobby</option>
+                    <option value="tab-stationery">Stationery</option>
+                    <option value="tab-sports">Sports</option>
+                    <option value="tab-kitchen">Kitchen</option>
+                    <option value="tab-cosmetics">Cosmetics</option>
+                    <option value="tab-pets">Pets</option>
+                    <option value="tab-travel">Travel</option>
+                    <option value="tab-medicine">Medicine</option>
+                    <option value="tab-food">Food</option>
+                    <option value="tab-digital">Digital</option>
                   </select>
                 </div>
               </div>
 
+              <!-- CONTENT -->
               <div class="col-12 col-lg-9 col-xxl-9">
-                <div class="tab-content" id="profileTabContent">
-                  <div class="tab-pane fade show active" id="promotions-pane" role="tabpanel" aria-labelledby="promotions-tab" tabindex="0">asdaasdasdasdasdsdasd</div>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="pane-promotions">Promotions content</div>
+                  <div class="tab-pane fade" id="pane-gadgets">Gadgets content</div>
+                  <div class="tab-pane fade" id="pane-renovation">Renovation content</div>
+                  <div class="tab-pane fade" id="pane-electronics">Electronics content</div>
+                  <div class="tab-pane fade" id="pane-clothes">Clothes content</div>
+                  <div class="tab-pane fade" id="pane-children">Children content</div>
+                  <div class="tab-pane fade" id="pane-bags">Bags content</div>
+                  <div class="tab-pane fade" id="pane-furniture">Furniture content</div>
+                  <div class="tab-pane fade" id="pane-auto">Auto content</div>
+                  <div class="tab-pane fade" id="pane-camping">Camping content</div>
+                  <div class="tab-pane fade" id="pane-hobby">Hobby content</div>
+                  <div class="tab-pane fade" id="pane-stationery">Stationery content</div>
+                  <div class="tab-pane fade" id="pane-sports">Sports content</div>
+                  <div class="tab-pane fade" id="pane-kitchen">Kitchen content</div>
+                  <div class="tab-pane fade" id="pane-cosmetics">Cosmetics content</div>
+                  <div class="tab-pane fade" id="pane-pets">Pets content</div>
+                  <div class="tab-pane fade" id="pane-travel">Travel content</div>
+                  <div class="tab-pane fade" id="pane-medicine">Medicine content</div>
+                  <div class="tab-pane fade" id="pane-food">Food content</div>
+                  <div class="tab-pane fade" id="pane-digital">Digital content</div>
                 </div>
               </div>
             </div>
