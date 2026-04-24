@@ -2,6 +2,7 @@
   --bg-white: #ffffff;
   --blue: #2696db;
   --text-grey: #777;
+  --white-50: #ffffff80;
 
   --bs-primary: var(--blue);
   --bs-primary-rgb: 38, 150, 219;
@@ -95,6 +96,9 @@ p {
 }
 .bg-white-20 {
   background-color: #ffffff33;
+}
+.text-white-50 {
+  color: #ffffff80 !important;
 }
 .bg-blurred {
   background: hsla(0, 0%, 100%, 0.08);
@@ -664,6 +668,10 @@ footer address:hover img {
 
 .blue-icon {
   filter: brightness(0) saturate(100%) invert(43%) sepia(84%) saturate(1454%) hue-rotate(183deg) brightness(92%) contrast(92%);
+}
+
+.white-icon {
+  filter: brightness(0) invert(1) brightness(1.2);
 }
 
 .btn[class*="btn-outline"] img {
@@ -2049,4 +2057,67 @@ footer input[type="range"] {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, #8b4cff, #ff4d94);
+  color: white;
+}
+
+.hero-suitcase-img {
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.product-card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.size-badge {
+  background: #f1f3f5;
+  color: #333;
+  border: 1px solid #dee2e6;
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.size-badge.active {
+  background: #212529;
+  color: white;
+  border-color: #212529;
+}
+
+.color-swatches {
+  display: flex;
+  gap: 8px;
+}
+
+.color-dot {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.price {
+  color: #212529;
+}
+
+.top-3 {
+  top: 0.75rem !important;
+}
+.start-3 {
+  left: 0.75rem !important;
 }

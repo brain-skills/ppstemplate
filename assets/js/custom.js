@@ -1304,3 +1304,80 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  function initSizeSelection() {
+    const sizeBadges = document.querySelectorAll(".size-badge");
+
+    sizeBadges.forEach((badge) => {
+      badge.addEventListener("click", function () {
+        const parentCard = this.closest(".product-card");
+        parentCard.querySelectorAll(".size-badge").forEach((b) => {
+          b.classList.remove("active");
+        });
+
+        this.classList.add("active");
+      });
+    });
+  }
+
+  function initColorSwatches() {
+    const colorDots = document.querySelectorAll(".color-dot");
+
+    colorDots.forEach((dot) => {
+      dot.addEventListener("click", function () {
+        const parentCard = this.closest(".product-card");
+        parentCard.querySelectorAll(".color-dot").forEach((d) => {
+          d.classList.remove("active");
+        });
+
+        this.classList.add("active");
+      });
+    });
+  }
+
+  function initAddToCart() {
+    const addToCartButtons = document.querySelectorAll(".btn-primary");
+
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const card = this.closest(".product-card");
+        const productName = card.querySelector(".card-title").textContent.trim();
+
+        this.innerHTML = `
+                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                    Adding...
+                `;
+        this.disabled = true;
+
+        setTimeout(() => {
+          alert(`✅ ${productName} has been added to your cart!`);
+
+          this.innerHTML = "Add to cart";
+          this.disabled = false;
+        }, 800);
+      });
+    });
+  }
+
+  function initCardHover() {
+    const cards = document.querySelectorAll(".product-card");
+
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        card.style.transform = "translateY(-8px)";
+        card.style.boxShadow = "0 15px 30px rgba(0,0,0,0.15)";
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0)";
+        card.style.boxShadow = "";
+      });
+    });
+  }
+
+  initSizeSelection();
+  initColorSwatches();
+  initAddToCart();
+  initCardHover();
+});
