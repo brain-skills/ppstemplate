@@ -156,8 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const category = btn.dataset.category;
         if (!category) return;
         setActive(category);
-        // optional: set hash to category (only if you want)
-        // history.replaceState(null, "", `#${category}`);
       });
     });
 
@@ -167,121 +165,92 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Read initial hash for category (only if matches allowed)
     const hashValue = (location.hash || "").slice(1);
     setActive(hashValue);
   })();
 
-  /* =========================
-     6) Font scaler (works even with DUPLICATE IDs)
-     - Your HTML has two "decrease/increase/fontSlider"
-     - This code supports ALL matching controls by selecting *all* of them.
-     ========================= */
   (function fontScaler() {
-    const tags = {
-      h1: 1.5,
-      h2: 1.3,
-      h3: 1.1,
-      h4: 0.9,
-      h5: 0.7,
-      p: 0.6,
-      span: 0.4,
-    };
+    const sliders = document.querySelectorAll("#fontSlider");
+    const increases = document.querySelectorAll("#increase");
+    const decreases = document.querySelectorAll("#decrease");
 
-    // Because IDs are duplicated, we select by CSS selector that matches both.
-    const sliders = Array.from(document.querySelectorAll("#fontSlider"));
-    const increases = Array.from(document.querySelectorAll("#increase"));
-    const decreases = Array.from(document.querySelectorAll("#decrease"));
-
-    // If you have no controls on this page, stop.
-    if (!sliders.length || !increases.length || !decreases.length) return;
+    if (!sliders.length) return;
 
     const baseSizes = new Map();
-    const DOWN_FACTOR = 0.5;
-    const SOFT_FLOOR = 0.85;
+    let currentStep = 0;
 
-    // Cache base sizes
-    Object.keys(tags).forEach((tag) => {
-      document.querySelectorAll(tag).forEach((el) => {
-        const prev = el.style.fontSize;
-        el.style.fontSize = "";
-        baseSizes.set(el, parseFloat(getComputedStyle(el).fontSize));
-        el.style.fontSize = prev;
+    const DOWN_FACTOR = 0.6;
+    const SOFT_FLOOR = 0.75;
+    const MAX_SCALE = 1.8;
+
+    function cacheBaseSizes() {
+      baseSizes.clear();
+      const selectors = "h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, .fs-1, .fs-2, .fs-3, .fs-4, .fs-5, .fs-6";
+
+      document.querySelectorAll(selectors).forEach((el) => {
+        if (baseSizes.has(el)) return;
+        const style = window.getComputedStyle(el);
+        const size = parseFloat(style.fontSize);
+        if (size > 5) {
+          baseSizes.set(el, size);
+        }
       });
-    });
+    }
 
-    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
-    const stepToPercent = (step) => 100 + step * 10;
+    function applyScale(step) {
+      currentStep = Math.max(-5, Math.min(5, step));
 
-    function applyFontScalingByStep(step) {
-      const percent = stepToPercent(step);
+      sliders.forEach((slider) => {
+        slider.value = currentStep;
+      });
 
-      if (percent === 100) {
-        baseSizes.forEach((base, el) => {
-          el.style.fontSize = base + "px";
-        });
-        return;
-      }
-
+      const percent = 100 + currentStep * 12;
       const delta = (percent - 100) / 100;
 
-      Object.entries(tags).forEach(([tag, mult]) => {
-        const upCap = 1 + 0.5 * mult;
+      baseSizes.forEach((baseSize, el) => {
+        let scale = 1 + delta * 0.9;
 
-        document.querySelectorAll(tag).forEach((el) => {
-          const base = baseSizes.get(el);
-          if (!base) return;
+        if (scale < SOFT_FLOOR) scale = SOFT_FLOOR;
+        if (scale > MAX_SCALE) scale = MAX_SCALE;
 
-          const effMult = delta < 0 ? mult * DOWN_FACTOR : mult;
-          let scale = 1 + delta * effMult;
+        el.style.fontSize = baseSize * scale + "px";
+      });
 
-          if (scale < SOFT_FLOOR) scale = SOFT_FLOOR;
-          if (scale > upCap) scale = upCap;
+      localStorage.setItem("fontStep", currentStep);
+    }
 
-          el.style.fontSize = base * scale + "px";
+    function init() {
+      cacheBaseSizes();
+
+      const saved = parseInt(localStorage.getItem("fontStep")) || 0;
+      currentStep = saved;
+
+      applyScale(currentStep);
+
+      sliders.forEach((slider) => {
+        slider.addEventListener("input", () => {
+          applyScale(parseInt(slider.value));
+        });
+      });
+
+      increases.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          applyScale(currentStep + 1);
+        });
+      });
+
+      decreases.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          applyScale(currentStep - 1);
         });
       });
     }
 
-    function setStepAndSave(step) {
-      const s = clamp(step | 0, -5, 5);
-
-      // Update ALL sliders to same value (footer + offcanvas)
-      sliders.forEach((sl) => {
-        sl.min = "-5";
-        sl.max = "5";
-        sl.step = "1";
-        sl.value = String(s);
-      });
-
-      applyFontScalingByStep(s);
-      localStorage.setItem("fontStep", String(s));
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
     }
-
-    const saved = Number(localStorage.getItem("fontStep"));
-    const start = Number.isFinite(saved) ? clamp(saved, -5, 5) : 0;
-
-    setStepAndSave(start);
-
-    // Sliders input
-    sliders.forEach((sl) => {
-      sl.addEventListener("input", () => setStepAndSave(Number(sl.value)));
-    });
-
-    // Buttons
-    increases.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const current = Number(sliders[0].value || 0);
-        setStepAndSave(current + 1);
-      });
-    });
-
-    decreases.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const current = Number(sliders[0].value || 0);
-        setStepAndSave(current - 1);
-      });
-    });
   })();
 
   (function sectionHashObserver() {
@@ -708,7 +677,6 @@ document.querySelectorAll(".lesson-item").forEach((lesson) => {
   const inputDescription = lesson.querySelector(".lesson-input-description");
   const inputDate = lesson.querySelector(".lesson-input-date");
 
-  // store original values for cancel
   let originalData = {
     title: inputTitle.value,
     description: inputDescription.value,
