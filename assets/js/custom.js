@@ -171,86 +171,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   (function fontScaler() {
     const sliders = document.querySelectorAll("#fontSlider");
-    const increases = document.querySelectorAll("#increase");
-    const decreases = document.querySelectorAll("#decrease");
+    const increaseBtns = document.querySelectorAll("#increase");
+    const decreaseBtns = document.querySelectorAll("#decrease");
 
     if (!sliders.length) return;
 
-    const baseSizes = new Map();
-    let currentStep = 0;
+    let step = parseInt(localStorage.getItem("fontStep")) || 0;
 
-    const DOWN_FACTOR = 0.6;
-    const SOFT_FLOOR = 0.75;
-    const MAX_SCALE = 1.8;
+    const MIN = -5;
+    const MAX = 5;
 
-    function cacheBaseSizes() {
-      baseSizes.clear();
-      const selectors = "h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, .fs-1, .fs-2, .fs-3, .fs-4, .fs-5, .fs-6";
+    function apply(stepValue) {
+      step = Math.max(MIN, Math.min(MAX, stepValue));
 
-      document.querySelectorAll(selectors).forEach((el) => {
-        if (baseSizes.has(el)) return;
-        const style = window.getComputedStyle(el);
-        const size = parseFloat(style.fontSize);
-        if (size > 5) {
-          baseSizes.set(el, size);
-        }
-      });
+      sliders.forEach((s) => (s.value = step));
+
+      const baseSize = 16;
+      const scale = 1 + step * 0.1;
+
+      document.documentElement.style.fontSize = baseSize * scale + "px";
+
+      localStorage.setItem("fontStep", step);
     }
 
-    function applyScale(step) {
-      currentStep = Math.max(-5, Math.min(5, step));
+    apply(step);
 
-      sliders.forEach((slider) => {
-        slider.value = currentStep;
+    sliders.forEach((slider) => {
+      slider.addEventListener("input", () => {
+        apply(parseInt(slider.value));
       });
+    });
 
-      const percent = 100 + currentStep * 12;
-      const delta = (percent - 100) / 100;
+    increaseBtns.forEach((btn) => {
+      btn.addEventListener("click", () => apply(step + 1));
+    });
 
-      baseSizes.forEach((baseSize, el) => {
-        let scale = 1 + delta * 0.9;
-
-        if (scale < SOFT_FLOOR) scale = SOFT_FLOOR;
-        if (scale > MAX_SCALE) scale = MAX_SCALE;
-
-        el.style.fontSize = baseSize * scale + "px";
-      });
-
-      localStorage.setItem("fontStep", currentStep);
-    }
-
-    function init() {
-      cacheBaseSizes();
-
-      const saved = parseInt(localStorage.getItem("fontStep")) || 0;
-      currentStep = saved;
-
-      applyScale(currentStep);
-
-      sliders.forEach((slider) => {
-        slider.addEventListener("input", () => {
-          applyScale(parseInt(slider.value));
-        });
-      });
-
-      increases.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          applyScale(currentStep + 1);
-        });
-      });
-
-      decreases.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          applyScale(currentStep - 1);
-        });
-      });
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", init);
-    } else {
-      init();
-    }
+    decreaseBtns.forEach((btn) => {
+      btn.addEventListener("click", () => apply(step - 1));
+    });
   })();
 
   (function sectionHashObserver() {

@@ -208,38 +208,195 @@
         <div class="container">
           <div class="profile-wrapper">
             <div class="row g-4">
-              <div class="col-12 col-lg-3 col-xxl-2">
-                <div class="list-group profile-sidebar overflow-hidden d-none d-md-flex flex-row flex-xl-column" id="profileTab" role="tablist">
+              <div class="col-12 col-lg-3 col-xxl-3">
+                <div class="list-group profile-sidebar d-none d-md-flex flex-row flex-xl-column" id="profileTab" role="tablist">
                   <button
-                    class="list-group-item list-group-item-action active d-flex flex-row align-items-center gap-3"
-                    id="promotions-tab"
+                    class="list-group-item list-group-item-action active d-flex flex-row align-items-center gap-3 shadow rounded mb-2"
+                    id="my-profile-tab"
                     data-bs-toggle="tab"
-                    data-bs-target="#promotions-pane"
+                    data-bs-target="#my-profile-pane"
                     type="button"
                     role="tab"
-                    aria-controls="promotions-pane"
+                    aria-controls="my-profile-pane"
                     aria-selected="true"
                   >
                     <img src="./assets/images/icons/icon_user.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-bold">Promotions and discounts</span>
+                    <span class="fs-6 fw-semibold">Promotions and discounts</span>
                   </button>
+
                   <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3"
-                    id="gadgets-tab"
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="class-management-tab"
                     data-bs-toggle="tab"
-                    data-bs-target="#gadgets-pane"
+                    data-bs-target="#class-management-pane"
                     type="button"
                     role="tab"
-                    aria-controls="gadgets-pane"
-                    aria-selected="true"
+                    aria-controls="class-management-pane"
+                    aria-selected="false"
                   >
-                    <img src="./assets/images/icons/icon_user.svg" alt="" class="blue-icon" />
-                    <span class="fs-6 fw-bold">Gadgets</span>
+                    <img src="./assets/images/icons/icon_settings.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Class management</span>
                   </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="curriculum-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#curriculum-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="curriculum-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_science.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Curriculum</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="schedule-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#schedule-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="schedule-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Schedule</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="attendance-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#attendance-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="attendance-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_list.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Attendance</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="grades-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#grades-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="grades-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_award.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Grades</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="homework-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#homework-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="homework-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_lounge.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Homework</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="test-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#test-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="test-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_test.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Test</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="activities-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#activities-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="activities-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_graph.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Activities</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="announcements-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#announcements-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="announcements-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_announcement.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Announcements</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded mb-2"
+                    id="events-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#events-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="events-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_event.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">My Events</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded"
+                    id="notifications-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#notifications-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="notifications-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_notification.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Notifications</span>
+                  </button>
+                </div>
+                <div class="d-md-none mb-3">
+                  <select id="mobileTabSelect" class="form-select">
+                    <option value="my-profile-tab">Promotions and discounts</option>
+                    <option value="class-management-tab">Class management</option>
+                    <option value="curriculum-tab">Curriculum</option>
+                    <option value="schedule-tab">Schedule</option>
+                    <option value="attendance-tab">Attendance</option>
+                    <option value="grades-tab">Grades</option>
+                    <option value="homework-tab">Homework</option>
+                    <option value="test-tab">Test</option>
+                    <option value="activities-tab">Activities</option>
+                    <option value="announcements-tab">Announcements</option>
+                    <option value="events-tab">My Events</option>
+                    <option value="notifications-tab">Notifications</option>
+                  </select>
                 </div>
               </div>
 
-              <div class="col-12 col-lg-9 col-xxl-10">
+              <div class="col-12 col-lg-9 col-xxl-9">
                 <div class="tab-content" id="profileTabContent">
                   <div class="tab-pane fade show active" id="promotions-pane" role="tabpanel" aria-labelledby="promotions-tab" tabindex="0">asdaasdasdasdasdsdasd</div>
                 </div>

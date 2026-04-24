@@ -2030,3 +2030,23 @@ footer input[type="range"] {
   font-size: 1.4rem;
   line-height: 1;
 }
+.scale-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.scale-control input[type="range"] {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.scale-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
