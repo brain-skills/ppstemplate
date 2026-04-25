@@ -1248,10 +1248,6 @@ footer address:hover img {
 }
 
 @media (max-width: 1200px) {
-  .profile-page .profile-wrapper {
-    padding: 20px;
-  }
-
   .profile-page .profile-sidebar {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -2075,11 +2071,7 @@ footer input[type="range"] {
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
 
 .size-badge {
@@ -2114,7 +2106,6 @@ footer input[type="range"] {
 .price {
   color: #212529;
 }
-
 .top-3 {
   top: 0.75rem !important;
 }
