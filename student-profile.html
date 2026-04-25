@@ -207,8 +207,8 @@
       <section class="profile-page pb-4 pb-lg-5 bg-white">
         <div class="container">
           <div class="profile-wrapper">
-            <div class="row g-4">
-              <div class="col-12 col-lg-3 col-xxl-3">
+            <div class="row g-4 mt-0 mt-xl-5">
+              <div class="col-12 col-xl-3 mb-md-4 m-xl-0 mt-0">
                 <div class="list-group profile-sidebar d-none d-md-flex flex-row flex-xl-column" id="profileTab" role="tablist">
                   <button
                     class="list-group-item list-group-item-action active d-flex flex-row align-items-center gap-3 shadow rounded mb-2"
@@ -396,27 +396,20 @@
                 </div>
               </div>
 
-              <div class="col-12 col-lg-9 col-xxl-9 mt-0">
+              <div class="col-12 col-xl-9 mt-0">
                 <div class="tab-content" id="profileTabContent">
                   <div class="tab-pane fade show active" id="my-profile-pane" role="tabpanel" aria-labelledby="my-profile-tab" tabindex="0">
-                    <div class="justify-content-end mb-3 d-none d-md-flex">
-                      <button class="d-flex btn btn-primary btn-sm profile-edit-btn gap-3">
-                        <p class="fs-6">Edit profile</p>
-                        <img src="./assets/images/icons/icon_gear.svg" alt="" />
-                      </button>
-                    </div>
-
-                    <div class="row g-4 align-items-start">
-                      <div class="col-12 col-md-4 col-xl-3">
+                    <div class="row g-3 align-items-start">
+                      <div class="col-12 col-sm-5 col-md-4 col-xl-3">
                         <div class="profile-photo-card position-relative">
                           <img src="./assets/images/teacher2.png" alt="Profile photo" class="img-fluid w-100 rounded profile-main-image" />
                         </div>
                       </div>
-                      <div class="col-12 col-md-8 col-xl-9 mt-0 mt-md-4">
+                      <div class="col-12 col-sm-6 col-md-8 col-xl-9">
                         <div>
                           <div class="d-flex flex-row align-items-center justify-content-between">
                             <h3 class="mb-2 fw-medium">Jane Henderson</h3>
-                            <div class="d-flex d-md-none">
+                            <div class="">
                               <button class="d-flex btn btn-primary btn-sm profile-edit-btn gap-3">
                                 <p class="fs-6">Edit profile</p>
                                 <img src="./assets/images/icons/icon_gear.svg" alt="" />
@@ -428,6 +421,10 @@
                           <p class="fw-semibold mb-4">Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple University.</p>
 
                           <ul class="list-unstyled profile-meta d-flex flex-column gap-3 mb-0">
+                            <li class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/icon_surround.svg" alt="" width="32" height="32" />
+                              <span class="fw-semibold">12, 3 grades</span>
+                            </li>
                             <li class="d-flex align-items-center gap-2">
                               <img src="./assets/images/icons/icon_calendar.svg" alt="" width="32" height="32" />
                               <span class="fw-semibold">May, 5</span>
@@ -447,90 +444,273 @@
 
                     <div class="mt-4 mt-xl-5">
                       <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mb-3">
-                        <h3 class="h5 mb-0 fw-semibold">My Curator</h3>
+                        <h3 class="h5 mb-0 fw-semibold">Certificates</h3>
+
+                        <input type="file" id="certificateUpload" accept="image/*,.pdf" hidden />
+
+                        <button class="btn btn-primary btn-sm profile-upload-btn d-flex gap-3 align-items-center justify-content-between" onclick="document.getElementById('certificateUpload').click()">
+                          <p class="fs-6 mb-0 cursor-pointer">Upload certificate</p>
+                          <span class="fw-bold fs-5">+</span>
+                        </button>
                       </div>
-                      <div>
-                        <div class="card border-0 bg-light">
-                          <div class="card-body">
-                            <div class="row align-items-start g-3">
-                              <div class="col-auto">
-                                <img src="./assets/images/teacher3.png" alt="Teacher" class="img-fluid rounded" style="width: 140px" />
-                              </div>
 
-                              <div class="col">
-                                <h5 class="mb-1 fw-semibold">Jane Henderson</h5>
-                                <p class="text-muted mb-2">English language</p>
+                      <div class="row g-3 certificates-scroll">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                          <a href="#" class="certificate-card d-block">
+                            <img src="./assets/images/certificate1.png" alt="Certificate 1" class="img-fluid w-100 rounded" />
+                          </a>
+                        </div>
 
-                                <p class="mb-3 text-secondary fw-semibold">Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple University.</p>
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                          <a href="#" class="certificate-card d-block">
+                            <img src="./assets/images/certificate2.png" alt="Certificate 2" class="img-fluid w-100 rounded" />
+                          </a>
+                        </div>
 
-                                <button class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2">Send message</button>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                          <a href="#" class="certificate-card d-block">
+                            <img src="./assets/images/certificate3.png" alt="Certificate 3" class="img-fluid w-100 rounded" />
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="tab-pane fade" id="classmates-pane" role="tabpanel" aria-labelledby="classmates-tab" tabindex="0">
-                    <div class="container py-4">
-                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
-                        <!-- Card -->
-                        <div class="col">
-                          <div class="card h-100 border-0 shadow-sm bg-light">
-                            <img src="./assets/images/student1.png" class="card-img-top" alt="student" />
-
-                            <div class="card-body pb-2">
-                              <h6 class="card-title mb-1">Ella Williams</h6>
-                              <p class="text-muted small mb-0">05.14.2016</p>
+                  <div class="tab-pane fade" id="class-management-pane" role="tabpanel" aria-labelledby="class-management-tab" tabindex="0">
+                    <section class="students-page">
+                      <div class="container px-0">
+                        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3 mb-4">
+                          <div class="d-flex flex-column flex-sm-row gap-3">
+                            <div>
+                              <label for="gradeFilter" class="form-label small text-muted mb-1"> Grade </label>
+                              <select id="gradeFilter" class="form-select student-filter-select">
+                                <option value="all">All grades</option>
+                                <option value="3" selected>3 grade</option>
+                                <option value="4">4 grade</option>
+                                <option value="5">5 grade</option>
+                              </select>
                             </div>
 
-                            <div class="card-footer bg-transparent border-0 pt-0">
-                              <button class="btn btn-primary w-100 d-flex justify-content-center align-items-center gap-2">Send message</button>
+                            <div>
+                              <label for="curatorFilter" class="form-label small text-muted mb-1"> Curator </label>
+                              <select id="curatorFilter" class="form-select student-filter-select">
+                                <option value="all">All curators</option>
+                                <option value="jane-henderson" selected>Jane Henderson</option>
+                                <option value="michael-brown">Michael Brown</option>
+                              </select>
                             </div>
                           </div>
+
+                          <button type="button" id="resetFiltersBtn" class="btn btn-link students-reset-btn text-decoration-none p-0 d-flex align-items-center gap-2">
+                            <img src="./assets/images/icons/icon_filter.svg" alt="" width="24" height="24" />
+                            <span class="text-dark fw-semibold">Reset filters</span>
+                          </button>
                         </div>
 
-                        <div class="col">
-                          <div class="card h-100 border-0 shadow-sm bg-light">
-                            <img src="./assets/images/student2.png" class="card-img-top" alt="" />
-                            <div class="card-body pb-2">
-                              <h6 class="mb-1">Logan Martinez</h6>
-                              <p class="text-muted small mb-0">09.21.2015</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0 pt-0">
-                              <button class="btn btn-primary w-100">Send message</button>
-                            </div>
-                          </div>
-                        </div>
+                        <div class="students-table-card rounded border overflow-hidden shadow">
+                          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 px-3 px-xl-4 py-3">
+                            <h3 class="students-grade-title mb-0" id="currentGradeTitle">3 Grade</h3>
 
-                        <div class="col">
-                          <div class="card h-100 border-0 shadow-sm bg-light">
-                            <img src="./assets/images/student3.png" class="card-img-top" alt="" />
-                            <div class="card-body pb-2">
-                              <h6 class="mb-1">Natalie Wilson</h6>
-                              <p class="text-muted small mb-0">06.10.2016</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0 pt-0">
-                              <button class="btn btn-primary w-100">Send message</button>
+                            <div class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/avatar.svg" alt="Curator" class="students-curator-avatar rounded" />
+                              <div class="lh-sm">
+                                <div class="students-curator-name" id="currentCuratorName">Jane Henderson</div>
+                                <div class="students-curator-role">curator</div>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
-                        <div class="col">
-                          <div class="card h-100 border-0 shadow-sm bg-light">
-                            <img src="./assets/images/student4.png" class="card-img-top" alt="" />
-                            <div class="card-body pb-2">
-                              <h6 class="mb-1">Grace Walker</h6>
-                              <p class="text-muted small mb-0">25.01.2016</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0 pt-0">
-                              <button class="btn btn-primary w-100">Send message</button>
-                            </div>
+                          <div class="table-responsive">
+                            <table class="table students-table align-middle mb-0">
+                              <thead>
+                                <tr>
+                                  <th class="border-end">Student</th>
+                                  <th class="border-end">Date of birth</th>
+                                  <th>Parents</th>
+                                  <th class=""></th>
+                                </tr>
+                              </thead>
+
+                              <tbody id="studentsTableBody">
+                                <tr data-grade="3" data-curator="jane-henderson">
+                                  <td class="border-end w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
+                                      <span>Michael Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">12.12.2016</td>
+                                  <td class="w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="text-end border-top">
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
+                                  </td>
+                                </tr>
+
+                                <tr data-grade="3" data-curator="jane-henderson">
+                                  <td class="border-end w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
+                                      <span>Michael Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">12.12.2016</td>
+                                  <td class="w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="text-end border-top">
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr data-grade="2" data-curator="jane-henderson">
+                                  <td class="border-end w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
+                                      <span>Michael Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">12.12.2016</td>
+                                  <td class="w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="text-end border-top">
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr data-grade="4" data-curator="jane-henderson">
+                                  <td class="border-end w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
+                                      <span>Michael Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">12.12.2016</td>
+                                  <td class="w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="text-end border-top">
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr data-grade="1" data-curator="jane-henderson">
+                                  <td class="border-end w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
+                                      <span>Michael Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">12.12.2016</td>
+                                  <td class="w-25">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="border-end">
+                                    <div class="d-flex align-items-center gap-2">
+                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
+                                      <span class="d-none d-lg-flex">Mary Brown</span>
+                                    </div>
+                                  </td>
+                                  <td class="text-end border-top">
+                                    <div class="dropdown">
+                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
+                                      </button>
+
+                                      <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">View</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                      </ul>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
+
+                          <div id="studentsEmptyState" class="p-4 text-center text-muted d-none">No students found for selected filters.</div>
                         </div>
                       </div>
-                    </div>
+                    </section>
                   </div>
 
                   <!-- CURRCILLUM  -->
@@ -1790,306 +1970,7 @@
                     </div>
                   </div>
 
-                  <!-- GRADES  -->
-
-                  <div class="tab-pane fade" id="grades-pane" role="tabpanel" aria-labelledby="grades-tab" tabindex="0">
-                    <div class="d-flex flex-column gap-3">
-                      <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
-                        <div class="row g-3 align-items-end">
-                          <div class="col-12 col-md-3">
-                            <label class="form-label small text-secondary mb-1">Grade</label>
-                            <select class="form-select form-select-sm dashboard-select">
-                              <option selected>All grades</option>
-                              <option>1 grade</option>
-                              <option>2 grade</option>
-                              <option>3 grade</option>
-                            </select>
-                          </div>
-
-                          <div class="col-12 col-md-3">
-                            <label class="form-label small text-secondary mb-1">Student</label>
-                            <select class="form-select form-select-sm dashboard-select">
-                              <option selected>All students</option>
-                              <option>Michael Brown</option>
-                              <option>Ella Williams</option>
-                              <option>Logan Martinez</option>
-                            </select>
-                          </div>
-
-                          <div class="col-12 col-md-3">
-                            <label class="form-label small text-secondary mb-1">Status</label>
-                            <select class="form-select form-select-sm dashboard-select">
-                              <option selected>Not selected</option>
-                              <option>High mark</option>
-                              <option>Low mark</option>
-                            </select>
-                          </div>
-
-                          <div class="col-12 col-md-3 d-flex justify-content-md-end">
-                            <button type="button" class="btn btn-sm btn-outline-secondary px-3"><i class="bi bi-funnel me-2"></i>Reset filters</button>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Summary cards -->
-                      <div class="row g-3">
-                        <div class="col-12 col-xl-4">
-                          <div class="bg-white rounded-4 shadow-sm p-3 h-100 dashboard-card">
-                            <h6 class="fw-semibold mb-1">Monitoring</h6>
-                            <small class="text-secondary d-block mb-2">12.01.2025 – 12.07.2025</small>
-                            <a href="#" class="small text-primary text-decoration-none"> <i class="bi bi-download me-1"></i>Download summary report </a>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-4 col-xl-2">
-                          <div class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card">
-                            <div class="small fw-semibold">Average point</div>
-                            <div class="fs-5 fw-bold mt-1">4.3 <span class="text-success">↑</span></div>
-                            <small class="text-secondary">8% better than last week</small>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-4 col-xl-3">
-                          <div class="bg-success bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card">
-                            <div class="small fw-semibold">High marks</div>
-                            <div class="fs-5 fw-bold mt-1">27 <span class="text-success">(94%) ↑</span></div>
-                            <small class="text-secondary">24% more than last week</small>
-                          </div>
-                        </div>
-
-                        <div class="col-12 col-md-4 col-xl-3">
-                          <div class="bg-danger bg-opacity-10 rounded-4 shadow-sm p-3 text-center h-100 dashboard-card">
-                            <div class="small fw-semibold">Low marks</div>
-                            <div class="fs-5 fw-bold mt-1">5 <span class="text-danger">(6%) ↑</span></div>
-                            <small class="text-secondary">12% more than last week</small>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Table -->
-                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
-                        <div class="p-3 border-bottom d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
-                          <div class="d-flex align-items-center gap-4 flex-wrap">
-                            <h5 class="fw-bold mb-0">3 Grade</h5>
-
-                            <div class="d-flex align-items-center gap-2">
-                              <button type="button" class="btn btn-sm btn-light border rounded dashboard-nav-btn">
-                                <i class="bi bi-chevron-left"></i>
-                              </button>
-
-                              <div class="small fw-semibold">
-                                December
-                                <span class="text-secondary">2025</span>
-                              </div>
-
-                              <button type="button" class="btn btn-sm btn-light border rounded dashboard-nav-btn">
-                                <i class="bi bi-chevron-right"></i>
-                              </button>
-                            </div>
-                          </div>
-
-                          <div class="d-flex align-items-center gap-3 flex-wrap">
-                            <div class="d-flex align-items-center gap-2">
-                              <img src="https://i.pravatar.cc/32?img=12" class="rounded" alt="Jane Henderson" width="32" height="32" />
-                              <div class="small">
-                                <div class="fw-semibold text-dark">Jane Henderson</div>
-                                <div class="text-secondary">curator</div>
-                              </div>
-                            </div>
-
-                            <div class="small d-flex align-items-center gap-2">
-                              <a href="#" class="text-primary text-decoration-none fw-semibold">Week</a>
-                              <a href="#" class="text-secondary text-decoration-none">Day</a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="table-responsive">
-                          <table class="table table-sm align-middle mb-0 dashboard-table">
-                            <thead>
-                              <tr>
-                                <th class="dashboard-student-col bg-light">Students</th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Sunday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Monday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Tuesday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Wednesday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Thursday</div>
-                                </th>
-                                <th class="text-center dashboard-active-col">
-                                  <div class="small fw-semibold text-primary">01.12</div>
-                                  <div class="dashboard-day text-primary">Friday</div>
-                                </th>
-                                <th class="text-center">
-                                  <div class="small fw-semibold">01.12</div>
-                                  <div class="dashboard-day">Saturday</div>
-                                </th>
-                              </tr>
-                            </thead>
-
-                            <tbody>
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=1" class="rounded" alt="" width="28" height="28" />
-                                  Michael Brown
-                                </td>
-                                <td class="text-center fw-semibold">5</td>
-                                <td></td>
-                                <td class="text-center fw-semibold">5 / 5</td>
-                                <td class="text-center fw-semibold">5</td>
-                                <td class="text-center fw-semibold">5</td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=2" class="rounded" alt="" width="28" height="28" />
-                                  Ella Williams
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=3" class="rounded" alt="" width="28" height="28" />
-                                  Logan Martinez
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center fw-semibold">4 / 5</td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center fw-semibold dashboard-active-col">5</td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=4" class="rounded" alt="" width="28" height="28" />
-                                  Natalie Wilson
-                                </td>
-                                <td class="text-center">3</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=5" class="rounded" alt="" width="28" height="28" />
-                                  Grace Walker
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center">4</td>
-                                <td class="text-center">5</td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=6" class="rounded" alt="" width="28" height="28" />
-                                  Chloe Moore
-                                </td>
-                                <td></td>
-                                <td class="text-center">5</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=7" class="rounded" alt="" width="28" height="28" />
-                                  Ethan Miller
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center fw-semibold">4 / 4</td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=8" class="rounded" alt="" width="28" height="28" />
-                                  Elisabeth King
-                                </td>
-                                <td class="text-center fw-semibold">5</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=9" class="rounded" alt="" width="28" height="28" />
-                                  Mary-Ann Davis
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center">5</td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-
-                              <tr>
-                                <td class="dashboard-student-cell d-flex align-items-center gap-2">
-                                  <img src="https://i.pravatar.cc/28?img=10" class="rounded" alt="" width="28" height="28" />
-                                  Caleb Thomas
-                                </td>
-                                <td></td>
-                                <td class="text-center">4</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="dashboard-active-col"></td>
-                                <td></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   <!-- HOMEWORKS  -->
-
                   <div class="tab-pane fade" id="homework-pane" role="tabpanel" aria-labelledby="homework-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <div class="bg-white rounded shadow p-3">
@@ -2478,143 +2359,12 @@
                     </div>
                   </div>
 
-                  <!-- TEST  -->
-                  <div class="tab-pane fade" id="test-pane" role="tabpanel" aria-labelledby="test-tab" tabindex="0">
-                    <div class="d-flex flex-column gap-3">
-                      <div class="bg-white rounded shadow-sm p-3">
-                        <div class="row g-3">
-                          <div class="col-md-2">
-                            <label class="small text-secondary">Grade</label>
-                            <select class="form-select form-select-sm">
-                              <option>All grades</option>
-                            </select>
-                          </div>
-
-                          <div class="col-md-2">
-                            <label class="small text-secondary">Student</label>
-                            <select class="form-select form-select-sm">
-                              <option>All students</option>
-                            </select>
-                          </div>
-
-                          <div class="col-md-2">
-                            <label class="small text-secondary">Activity type</label>
-                            <select class="form-select form-select-sm">
-                              <option>All types</option>
-                            </select>
-                          </div>
-
-                          <div class="col-md-2">
-                            <label class="small text-secondary">Status</label>
-                            <select class="form-select form-select-sm">
-                              <option>Not selected</option>
-                            </select>
-                          </div>
-
-                          <div class="col-md-2">
-                            <label class="small text-secondary">Due date</label>
-                            <input type="date" class="form-control form-control-sm" />
-                          </div>
-
-                          <div class="col-md-2 d-flex align-items-end">
-                            <button class="btn btn-outline-secondary btn-sm w-100">Reset filters</button>
-                          </div>
-                        </div>
-
-                        <div class="mt-3 small text-secondary d-flex gap-3">
-                          <span>Sort by: <strong class="text-primary">creation date</strong></span>
-                          <span>Only unassigned</span>
-                        </div>
-                      </div>
-
-                      <div class="activity-card bg-white rounded shadow-sm">
-                        <div class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
-                          <div>
-                            <h6 class="fw-semibold mb-0">Pronunciation</h6>
-                            <small class="text-secondary">Audio activity</small>
-                          </div>
-
-                          <div class="d-flex gap-4 small text-secondary text-center">
-                            <div>
-                              <strong>1–3</strong><br />
-                              grades
-                            </div>
-
-                            <div>
-                              <strong>4</strong><br />
-                              assignment
-                            </div>
-
-                            <div>
-                              <strong>1</strong><br />
-                              awaiting review
-                            </div>
-
-                            <div>
-                              <strong>09.01.2025 / 05.25.2026</strong><br />
-                              control points
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="p-3">
-                          <p class="text-secondary small">Read this text aloud and record the audio so we can track your pronunciation progress.</p>
-
-                          <div class="student-card p-3 rounded border mb-3">
-                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
-                              <div class="d-flex align-items-center gap-2">
-                                <img src="https://i.pravatar.cc/36?img=12" class="rounded" />
-                                <div>
-                                  <div class="fw-semibold">Michael Brown</div>
-                                  <small class="text-secondary">Student / 3 grade</small>
-                                </div>
-                              </div>
-
-                              <span class="badge bg-warning text-dark">Awaiting review</span>
-                            </div>
-
-                            <div class="audio-player d-flex align-items-center gap-3 mb-3">
-                              <button class="btn btn-light border btn-sm">▶</button>
-
-                              <div class="audio-wave flex-grow-1"></div>
-
-                              <small class="text-secondary">02:12</small>
-                            </div>
-
-                            <small class="text-secondary d-block mb-3"> submitted 09.01.2025 12:05 am </small>
-
-                            <textarea class="form-control form-control-sm mb-3" rows="2" placeholder="You can leave a comment here"></textarea>
-
-                            <div class="d-flex gap-2">
-                              <button class="btn btn-outline-primary btn-sm">Reassign</button>
-
-                              <button class="btn btn-primary btn-sm">Verify</button>
-                            </div>
-                          </div>
-
-                          <div class="student-card p-3 rounded border">
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                              <img src="https://i.pravatar.cc/36?img=22" class="rounded" />
-                              <div>
-                                <div class="fw-semibold">Logan Martinez</div>
-                              </div>
-                            </div>
-
-                            <p class="text-danger small mb-2">The student did not complete the assignment on time</p>
-
-                            <button class="btn btn-outline-primary btn-sm">Reassign</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   <!-- Activities  -->
 
                   <div class="tab-pane fade" id="activities-pane" role="tabpanel" aria-labelledby="activities-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3 col-xl">
                             <label class="form-label small text-secondary mb-1">Grade</label>
@@ -2681,7 +2431,7 @@
                       </div>
 
                       <!-- Activity card collapsed -->
-                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                      <div class="activity-card bg-white rounded shadow">
                         <div class="p-3 d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-0">Pronunciation</h6>
@@ -2717,7 +2467,7 @@
                       </div>
 
                       <!-- Activity card collapsed -->
-                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                      <div class="activity-card bg-white rounded shadow">
                         <div class="p-3 d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-0">Pronunciation</h6>
@@ -2753,7 +2503,7 @@
                       </div>
 
                       <!-- Expanded activity -->
-                      <div class="activity-card bg-white rounded-4 shadow-sm">
+                      <div class="activity-card bg-white rounded shadow">
                         <div class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
                           <div>
                             <h6 class="fw-semibold mb-0">Pronunciation</h6>
@@ -2875,7 +2625,7 @@
                   <div class="tab-pane fade" id="announcements-pane" role="tabpanel" aria-labelledby="announcements-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Create announcement -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="d-flex justify-content-between align-items-center">
                           <h6 class="fw-semibold mb-0">Crete announcement</h6>
                           <button type="button" class="btn btn-sm btn-link text-secondary p-0">
@@ -2885,7 +2635,7 @@
                       </div>
 
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3">
                             <label class="form-label small text-secondary mb-1">Date</label>
@@ -2913,7 +2663,7 @@
 
                       <!-- Announcement list -->
                       <div class="d-flex flex-column gap-3">
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Open House Day at Philadelphia Progressive School</h6>
@@ -2932,7 +2682,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Enrollment for the 2025–2026 School Year is Now Open!</h6>
@@ -2956,7 +2706,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Update Your School Passes Starting January 1, 2026</h6>
@@ -2975,7 +2725,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">Important: School Bus Route #12 Changes</h6>
@@ -2999,7 +2749,7 @@
                           </div>
                         </div>
 
-                        <div class="announcement-card bg-white rounded-4 shadow-sm p-4">
+                        <div class="announcement-card bg-white rounded shadow p-4">
                           <div class="d-flex justify-content-between align-items-start gap-3">
                             <div class="w-100">
                               <h6 class="fw-semibold mb-3">School Stadium Under Renovation During Holidays</h6>
@@ -3032,7 +2782,7 @@
                   <!-- events  -->
 
                   <div class="tab-pane fade" id="events-pane" role="tabpanel" aria-labelledby="events-tab" tabindex="0">
-                    <div class="bg-white rounded-4 shadow-sm p-4">
+                    <div class="bg-white rounded shadow p-4">
                       <!-- Header -->
                       <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="fw-bold mb-0">Crete event</h5>
@@ -3116,10 +2866,10 @@
 
                       <!-- Upload -->
                       <div class="mb-4">
-                        <label class="form-label fw-semibold mb-2">Upload images</label>
+                        <label class="form-label fw-semibold mb-2 cursor-pointer">Upload images</label>
 
-                        <label class="dashboard-upload-box w-100 text-center rounded-4 p-4">
-                          <strong>Drag &amp; drop files here or <span class="text-primary">upload</span></strong>
+                        <label class="dashboard-upload-box w-100 text-center rounded p-4">
+                          <strong>Drag &amp; drop files here or <span class="text-primary cursor-pointer">upload</span></strong>
                           <div class="small text-secondary mt-1">Acceptable file formats: pdf, jpg, jpeg, png. Maximum size: 100 MB.</div>
                         </label>
                       </div>
@@ -3128,26 +2878,26 @@
                       <div class="d-flex flex-wrap gap-3 align-items-start mb-4">
                         <div class="position-relative dashboard-thumb">
                           <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm">
+                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
                         </div>
 
                         <div class="position-relative dashboard-thumb">
                           <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm">
+                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
                         </div>
 
                         <div class="position-relative dashboard-thumb">
                           <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow-sm">
+                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
 
                           <!-- Open menu example -->
-                          <div class="dashboard-thumb-menu shadow-sm rounded-3 p-2 bg-white">
+                          <div class="dashboard-thumb-menu shadow rounded-3 p-2 bg-white">
                             <button class="btn btn-sm btn-light w-100 text-start">Set as cover</button>
                             <button class="btn btn-sm btn-light w-100 text-start">Remove image</button>
                           </div>
@@ -3174,7 +2924,7 @@
                   <div class="tab-pane fade" id="notifications-pane" role="tabpanel" aria-labelledby="notifications-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
                       <!-- Filters -->
-                      <div class="bg-white rounded-4 shadow-sm p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3">
                             <label class="form-label small text-secondary mb-1">Announcement type</label>
@@ -3202,7 +2952,7 @@
 
                       <!-- Notifications list -->
                       <div class="d-flex flex-column gap-2">
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3221,7 +2971,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3242,7 +2992,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3263,7 +3013,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3282,7 +3032,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3303,7 +3053,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3322,7 +3072,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3341,7 +3091,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">
@@ -3362,7 +3112,7 @@
                           </div>
                         </div>
 
-                        <div class="notification-card bg-white rounded-4 shadow-sm p-3">
+                        <div class="notification-card bg-white rounded shadow p-3">
                           <div class="d-flex justify-content-between gap-3">
                             <div class="d-flex gap-3">
                               <div class="dashboard-icon-box">

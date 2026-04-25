@@ -1247,76 +1247,6 @@ footer address:hover img {
   filter: brightness(0) invert(1);
 }
 
-@media (max-width: 1200px) {
-  .profile-page .profile-sidebar {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 12px;
-    border: 0;
-    background: transparent;
-  }
-
-  .profile-page .profile-sidebar .list-group-item {
-    border: 1px solid #e9ecef;
-    border-radius: 10px;
-    min-height: 56px;
-    padding: 12px;
-    justify-content: center;
-    background: #fff;
-  }
-
-  .profile-page .profile-sidebar .list-group-item span {
-    display: none;
-  }
-
-  .profile-page .profile-sidebar .list-group-item img {
-    margin: 0;
-  }
-
-  .profile-page .profile-sidebar .list-group-item.active {
-    background-color: #2696db;
-    border-color: #2696db;
-  }
-
-  .profile-page .profile-sidebar .list-group-item.active .blue-icon {
-    filter: brightness(0) invert(1);
-  }
-
-  .profile-page .profile-sidebar .list-group-item:hover .blue-icon {
-    filter: none;
-  }
-
-  .profile-page .profile-sidebar .list-group-item.active:hover .blue-icon {
-    filter: brightness(0) invert(1);
-  }
-
-  .profile-page .col-lg-3.col-xxl-2 {
-    width: 100%;
-  }
-
-  .profile-page .col-lg-9.col-xxl-10 {
-    width: 100%;
-  }
-
-  .profile-page .profile-photo-card {
-    max-width: 240px;
-  }
-
-  .profile-page .profile-main-image {
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .profile-page .profile-meta img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .profile-page .certificate-card img {
-    width: 100%;
-    display: block;
-  }
-}
 @media (max-width: 767.98px) {
   .profile-page .mt-4.mt-xl-5 .row.g-3 {
     display: flex;
@@ -1689,13 +1619,6 @@ select.form-select:focus {
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
-  }
-  .header__top {
-    height: 0px;
-  }
-
-  .header__bottom {
-    top: 10px;
   }
 }
 
