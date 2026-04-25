@@ -1381,3 +1381,23 @@ document.addEventListener("DOMContentLoaded", () => {
   initAddToCart();
   initCardHover();
 });
+
+function changeImage(el) {
+  document.getElementById("mainImage").src = el.src;
+  document.querySelectorAll(".thumbnail-img").forEach((img) => img.classList.remove("active"));
+  el.classList.add("active");
+}
+
+function selectColor(el) {
+  document.querySelectorAll(".color-swatch").forEach((c) => (c.style.borderColor = "#fff"));
+  el.style.borderColor = "#000";
+}
+
+function selectSize(el) {
+  document.querySelectorAll(".size-badge").forEach((s) => s.classList.remove("active"));
+  el.classList.add("active");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("%cProduct Detail Page Loaded", "color: green; font-weight: bold");
+});
