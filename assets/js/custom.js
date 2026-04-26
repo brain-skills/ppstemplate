@@ -1401,3 +1401,23 @@ function selectSize(el) {
 document.addEventListener("DOMContentLoaded", () => {
   console.log("%cProduct Detail Page Loaded", "color: green; font-weight: bold");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const showMoreBtn = document.getElementById("show-more-comments");
+  const hiddenComments = document.getElementById("hidden-comments");
+  let commentsShown = false;
+
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", function () {
+      if (!commentsShown) {
+        hiddenComments.classList.remove("d-none");
+        this.textContent = "Show less comments";
+        commentsShown = true;
+      } else {
+        hiddenComments.classList.add("d-none");
+        this.textContent = "Show 120 more comments";
+        commentsShown = false;
+      }
+    });
+  }
+});

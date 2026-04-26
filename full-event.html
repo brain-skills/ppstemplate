@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="MD Studio offers high-quality web development services including websites, CRM, and ERP systems. Responsive, functional, and effective solutions." />
-    <title>Events</title>
+    <title>Full Event</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png" />
@@ -192,7 +192,7 @@
         <button id="closeSearch">✕</button>
       </div>
     </div>
-    <main class="bg-white">
+    <main>
       <section class="pt-50 bg-white">
         <div class="container">
           <nav aria-label="breadcrumb">
@@ -200,228 +200,306 @@
               <li class="breadcrumb-item">
                 <a href="./index.html" class="text-decoration-none text-secondary">Home</a>
               </li>
-              <li class="breadcrumb-item active text-dark" aria-current="page">Events</li>
+              <li class="breadcrumb-item active text-dark" aria-current="page">Event</li>
             </ol>
           </nav>
         </div>
       </section>
-      <section class="py-4 py-xxl-5">
+      <section class="py-4 py-lg-5">
         <div class="container">
-          <!-- Title -->
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <img src="./assets/images/icons/icon_event.svg" alt="event icon" width="30" height="30" class="blue-icon" />
-            <h2 class="mb-0 fw-bold fs-2">Events</h2>
-          </div>
-
-          <div class="row g-3 mt-2" id="eventsGrid">
-            <div class="col-12 col-md-6 col-lg-3">
-              <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
-
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
-
-                  <div class="d-flex gap-2 align-items-center text-secondary mb-2">
-                    <img src="./assets/images/icons/icon_location.svg" alt="" width="16" height="16" />
-                    <span class="fs-5">Central Park, main entrance</span>
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <div id="zooCarousel" class="carousel slide position-relative rounded overflow-hidden shadow-sm" data-bs-ride="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/events/events-first-img.png" class="d-block w-100" alt="Girl with lemur" style="aspect-ratio: 16/10; object-fit: cover" />
                   </div>
-
-                  <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                    <div class="d-flex gap-2 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" width="16" height="16" />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">11</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">13</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">56</span>
-                    </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/events/events-second-img.png" class="d-block w-100" alt="Tiger" style="aspect-ratio: 16/10; object-fit: cover" />
                   </div>
-
-                  <p class="text-secondary mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
+                  <div class="carousel-item">
+                    <img src="./assets/images/events/events-third-img.png" class="d-block w-100" alt="Red Panda" style="aspect-ratio: 16/10; object-fit: cover" />
                   </div>
                 </div>
-              </article>
+
+                <button class="carousel-control-prev swiper-button-prev" type="button" data-bs-target="#zooCarousel" data-bs-slide="prev"></button>
+
+                <button class="carousel-control-next swiper-button-next" type="button" data-bs-target="#zooCarousel" data-bs-slide="next"></button>
+              </div>
+
+              <div class="row g-3 mt-3">
+                <div class="col-4 col-md-2">
+                  <img src="./assets/images/events/events-first-img.png" class="rounded w-100 shadow-sm" alt="Tiger" />
+                </div>
+                <div class="col-4 col-md-2">
+                  <img src="./assets/images/events/events-second-img.png" class="rounded w-100 shadow-sm" alt="Red Panda" />
+                </div>
+                <div class="col-4 col-md-2">
+                  <img src="./assets/images/events/events-third-img.png" class="rounded w-100 shadow-sm" alt="Girl with snake" />
+                </div>
+                <div class="col-4 col-md-2">
+                  <img src="./assets/images/events/events-first-img.png" class="rounded w-100 shadow-sm" alt="Lemur" />
+                </div>
+                <div class="col-4 col-md-2">
+                  <img src="./assets/images/events/events-second-img.png" class="rounded w-100 shadow-sm" alt="Tiger" />
+                </div>
+                <div class="col-4 col-md-2">
+                  <img src="./assets/images/events/events-third-img.png" class="rounded w-100 shadow-sm" alt="Red Panda" />
+                </div>
+              </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3">
-              <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
+            <!-- RIGHT COLUMN - Content -->
+            <div class="col-lg-5">
+              <h1 class="fw-bold fs-3 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</h1>
 
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
+              <div class="article-content mb-4">
+                <p class="text-muted">
+                  The school trip to the zoo is an exciting journey into the world of wildlife, where children will have the chance to see a variety of animals, including lions, giraffes, monkeys, and rare birds. The zoo features spacious enclosures,
+                  beautiful lakes, and themed areas that allow students to immerse themselves in different natural ecosystems and learn about the lives of animals in their natural habitats.
+                </p>
+              </div>
 
-                  <div class="d-flex gap-2 align-items-center text-secondary mb-2">
-                    <img src="./assets/images/icons/icon_location.svg" alt="" width="16" height="16" />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
+              <!-- Event Details Card -->
+              <div class="card border-0 shadow-sm rounded p-4 mb-4">
+                <h5 class="fw-semibold mb-3">Event details:</h5>
 
-                  <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                    <div class="d-flex gap-2 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" width="16" height="16" />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">11</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">13</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">56</span>
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="bi bi-ticket-perforated fs-4 text-success"></i>
+                  <div>
+                    <small class="text-muted">Tickets available</small><br />
+                    <strong>2 / 8</strong>
                   </div>
                 </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
 
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
-
-                  <div class="d-flex gap-2 align-items-center text-secondary mb-2">
-                    <img src="./assets/images/icons/icon_location.svg" alt="" width="16" height="16" />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                    <div class="d-flex gap-2 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" width="16" height="16" />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">11</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">13</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">56</span>
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="bi bi-calendar3 fs-4 text-success"></i>
+                  <div>
+                    <small class="text-muted">Date &amp; Time</small><br />
+                    <strong>January, 12 • 12:00</strong>
                   </div>
                 </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
 
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
-
-                  <div class="d-flex gap-2 align-items-center text-secondary mb-2">
-                    <img src="./assets/images/icons/icon_location.svg" alt="" width="16" height="16" />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                    <div class="d-flex gap-2 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" width="16" height="16" />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">11</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">13</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">56</span>
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="bi bi-geo-alt fs-4 text-success"></i>
+                  <div>
+                    <small class="text-muted">Location</small><br />
+                    <strong>Central Park, main entrance</strong>
                   </div>
                 </div>
-              </article>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-              <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
 
-                <div class="p-3 d-flex flex-column">
-                  <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
-
-                  <div class="d-flex gap-2 align-items-center text-secondary mb-2">
-                    <img src="./assets/images/icons/icon_location.svg" alt="" width="16" height="16" />
-                    <span class="fs-5">Central Park, main entrance</span>
-                  </div>
-
-                  <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                    <div class="d-flex gap-2 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" width="16" height="16" />
-                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
-                    </div>
-
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">11</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">13</span>
-                      <span class="fw-bold text-secondary">:</span>
-                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">56</span>
-                    </div>
-                  </div>
-
-                  <p class="text-secondary mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-5">$ 156.00</span>
-                      <small class="fs-6"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25">Book</button>
+                <div class="d-flex align-items-center gap-3 mb-4">
+                  <i class="bi bi-person-check fs-4 text-success"></i>
+                  <div>
+                    <small class="text-muted">For children from</small><br />
+                    <strong>7 years</strong>
                   </div>
                 </div>
-              </article>
+
+                <div class="d-flex align-items-end justify-content-between border-top pt-4">
+                  <div>
+                    <small class="text-muted">Price</small><br />
+                    <span class="fs-3 fw-bold text-success">$280.00</span>
+                    <small class="text-muted">/person</small>
+                  </div>
+                  <button class="btn btn-success py-2 px-4 rounded fw-semibold">Book</button>
+                </div>
+              </div>
+
+              <p class="text-center text-muted small">
+                Organized by <strong>Jane Henderson</strong><br />
+                Event Curator
+              </p>
             </div>
           </div>
         </div>
+        <div class="container mt-5" id="comments-section">
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <h4 class="fw-bold mb-0">Comments <span class="text-muted">(126)</span></h4>
+          </div>
+
+          <div id="visible-comments">
+            <div class="comment mb-5">
+              <div class="d-flex gap-3">
+                <img src="./assets/images/icons/avatar.svg" alt="Michael Brown" class="rounded-circle" width="48" height="48" />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <strong>Michael Brown</strong>
+                    <span class="badge bg-light text-dark border">student / 3 grade</span>
+                    <span class="ms-auto text-muted small">12.09.2025 10:15 am</span>
+                  </div>
+                  <p class="mb-3">Quisque condimentum venenatis nibh, in vulputate dui mattis quis...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="hidden-comments" class="d-none">
+            <div class="comment mb-5">
+              <div class="d-flex gap-3">
+                <img src="./assets/images/icons/avatar.svg" alt="Sarah Lee" class="rounded-circle" width="48" height="48" />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <strong>Sarah Lee</strong>
+                    <span class="badge bg-light text-dark border">Parent</span>
+                    <span class="ms-auto text-muted small">12.09.2025 11:05 am</span>
+                  </div>
+                  <p class="mb-3">Thank you for organizing this trip! My son is very excited to see the lemurs.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="comment mb-5">
+              <div class="d-flex gap-3">
+                <img src="./assets/images/icons/avatar.svg" alt="David Kim" class="rounded-circle" width="48" height="48" />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <strong>David Kim</strong>
+                    <span class="badge bg-light text-dark border">student / 3 grade</span>
+                    <span class="ms-auto text-muted small">12.09.2025 11:20 am</span>
+                  </div>
+                  <p class="mb-3">Will there be any feeding sessions? My daughter really wants to feed the giraffes.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="comment mb-5">
+              <div class="d-flex gap-3">
+                <img src="./assets/images/icons/avatar.svg" alt="Emma Wilson" class="rounded-circle" width="48" height="48" />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <strong>Emma Wilson</strong>
+                    <span class="badge bg-light text-dark border">Parent</span>
+                    <span class="ms-auto text-muted small">12.09.2025 11:45 am</span>
+                  </div>
+                  <p class="mb-3">Great event! Looking forward to it. Please let us know what to bring.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mb-5">
+            <button id="show-more-comments" class="btn btn-primary px-4 py-2">Show 120 more comments</button>
+          </div>
+        </div>
+        <section class="py-4 py-xxl-5 container d-flex flex-column" id="news">
+          <div>
+            <div class="d-flex align-items-center mb-4 justify-content-between">
+              <p class="fw-bold fs-2">You may like this news</p>
+            </div>
+          </div>
+
+          <div class="position-relative">
+            <div class="swiper">
+              <div class="swiper-wrapper pb-3">
+                <div class="swiper-slide px-2">
+                  <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+                  <div class="p-3 shadow rounded">
+                    <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+                    <div class="d-flex gap-3 align-items-center mb-3">
+                      <p class="fs-6 fw-light">07.12.2025 17:40</p>
+                      <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    </div>
+                    <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+                    <div class="d-flex flex-row gap-3">
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">upgrade</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide px-2">
+                  <img src="./assets/images/news/news-second-img.png" alt="news image" class="img-fluid w-100" />
+                  <div class="p-3 shadow rounded">
+                    <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+                    <div class="d-flex gap-3 align-items-center mb-3">
+                      <p class="fs-6 fw-light">07.12.2025 17:40</p>
+                      <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    </div>
+                    <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+                    <div class="d-flex flex-row gap-3">
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">upgrade</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide px-2">
+                  <img src="./assets/images/news/news-third-img.png" alt="news image" class="img-fluid w-100" />
+                  <div class="p-3 shadow rounded">
+                    <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+                    <div class="d-flex gap-3 align-items-center mb-3">
+                      <p class="fs-6 fw-light">07.12.2025 17:40</p>
+                      <img src="./assets/images/icons/icon_share.svg" alt="share icon" />
+                    </div>
+                    <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+                    <div class="d-flex flex-row gap-3">
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">upgrade</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide px-2">
+                  <img src="./assets/images/news/news-second-img.png" alt="news image" class="img-fluid w-100" />
+                  <div class="p-3 shadow rounded">
+                    <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+                    <div class="d-flex gap-3 align-items-center mb-3">
+                      <p class="fs-6 fw-light">07.12.2025 17:40</p>
+                      <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    </div>
+                    <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+                    <div class="d-flex flex-row gap-3">
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">upgrade</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide px-2">
+                  <img src="./assets/images/news/news-third-img.png" alt="news image" class="img-fluid w-100" />
+                  <div class="p-3 shadow rounded">
+                    <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+                    <div class="d-flex gap-3 align-items-center mb-3">
+                      <p class="fs-6 fw-light">07.12.2025 17:40</p>
+                      <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    </div>
+                    <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+                    <div class="d-flex flex-row gap-3">
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">upgrade</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide px-2">
+                  <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+                  <div class="p-3 shadow rounded">
+                    <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+                    <div class="d-flex gap-3 align-items-center mb-3">
+                      <p class="fs-6 fw-light">07.12.2025 17:40</p>
+                      <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    </div>
+                    <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+                    <div class="d-flex flex-row gap-3">
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
+                      <p class="p-2 bg-green-opacity rounded text-dark-opacity">upgrade</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev d-none d-xl-flex"></div>
+              <div class="swiper-button-next d-none d-xl-flex"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
