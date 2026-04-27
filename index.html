@@ -1042,10 +1042,16 @@
         </div>
       </section>
 
-      <div id="lightbox" class="lightbox d-none">
-        <div class="lightbox-content">
-          <button id="lightboxClose" class="lightbox-close">&times;</button>
-          <img id="lightboxImage" src="" alt="" />
+      <!-- Gallery Modal -->
+      <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content bg-transparent border-0 shadow-none">
+            <div class="modal-body p-2 position-relative">
+              <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" style="font-size: 1.8rem; z-index: 10"></button>
+
+              <img id="modalImage" src="" alt="" class="img-fluid rounded-3 w-100" />
+            </div>
+          </div>
         </div>
       </div>
     </main>

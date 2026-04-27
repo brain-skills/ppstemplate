@@ -967,45 +967,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const lightboxClose = document.getElementById("lightboxClose");
-  const galleryImages = document.querySelectorAll(".gallery-img");
+  const modalElement = document.getElementById("galleryModal");
+  const modalImage = document.getElementById("modalImage");
 
-  galleryImages.forEach((img) => {
-    img.addEventListener("click", function () {
-      lightboxImage.src = this.src;
-      lightboxImage.alt = this.alt;
-
-      lightbox.classList.remove("d-none");
-      setTimeout(() => {
-        lightbox.classList.add("show");
-      }, 10);
-
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  function closeLightbox() {
-    lightbox.classList.remove("show");
-    setTimeout(() => {
-      lightbox.classList.add("d-none");
-      document.body.style.overflow = "visible";
-    }, 400);
+  if (!modalElement || !modalImage) {
+    console.error("Gallery Modal not found!");
+    return;
   }
 
-  lightboxClose.addEventListener("click", closeLightbox);
+  const modal = new bootstrap.Modal(modalElement);
 
-  lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
+  function openImageInModal(img) {
+    if (!img) return;
+    modalImage.src = img.src;
+    modalImage.alt = img.alt || "Image";
+    modal.show();
+  }
+
+  document.querySelectorAll(".gallery-img").forEach((img) => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => openImageInModal(img));
   });
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && lightbox.classList.contains("show")) {
-      closeLightbox();
-    }
+  document.querySelectorAll(".profile-main-image").forEach((img) => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => openImageInModal(img));
+  });
+
+  document.querySelectorAll(".certificate-card img").forEach((img) => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => openImageInModal(img));
   });
 });
 
