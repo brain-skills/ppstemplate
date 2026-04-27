@@ -1979,3 +1979,28 @@ footer input[type="range"] {
 .start-3 {
   left: 0.75rem !important;
 }
+
+.wave-bar {
+  width: 3px;
+  background: linear-gradient(180deg, #0d6efd, #3b82f6);
+  border-radius: 50px;
+  animation: waveform 1.2s infinite ease-in-out;
+}
+
+@keyframes waveform {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.audio-waveform.playing .wave-bar {
+  animation-play-state: running;
+}
+
+.event-swiper-btn {
+  top: 50% !important;
+}

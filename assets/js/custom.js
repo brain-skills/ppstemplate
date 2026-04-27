@@ -1412,3 +1412,99 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function toggleAudio(btn) {
+  const icon = btn.querySelector("i");
+  const waveform = btn.parentElement.querySelector(".audio-waveform");
+
+  if (icon.classList.contains("bi-play-fill")) {
+    icon.classList.replace("bi-play-fill", "bi-pause-fill");
+    waveform.classList.add("playing");
+  } else {
+    icon.classList.replace("bi-pause-fill", "bi-play-fill");
+    waveform.classList.remove("playing");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselEl = document.getElementById("mainCarousel");
+
+  if (carouselEl) {
+    const carousel = new bootstrap.Carousel(carouselEl);
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    carouselEl.addEventListener("slid.bs.carousel", function (e) {
+      const activeIndex = e.to;
+      thumbnails.forEach((thumb) => {
+        thumb.classList.toggle("active", parseInt(thumb.getAttribute("data-bs-slide-to")) === activeIndex);
+      });
+    });
+
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        thumbnails.forEach((t) => t.classList.remove("active"));
+        thumb.classList.add("active");
+        carousel.to(parseInt(thumb.getAttribute("data-bs-slide-to")));
+      });
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const table = document.getElementById("cartTable");
+  const grandTotalEl = document.getElementById("grand-total");
+  const totalItemsEl = document.getElementById("total-items");
+  const payBtn = document.getElementById("pay-btn");
+
+  function calculateTotals() {
+    let grandTotal = 0;
+    let itemCount = 0;
+
+    table.querySelectorAll("tbody tr").forEach((row) => {
+      const price = parseFloat(row.dataset.price);
+      const qtyEl = row.querySelector(".quantity");
+      const qty = parseInt(qtyEl.textContent);
+      const itemTotalEl = row.querySelector(".item-total");
+
+      const itemTotal = price * qty;
+      itemTotalEl.textContent = "$" + itemTotal.toFixed(2);
+
+      grandTotal += itemTotal;
+      itemCount += qty;
+    });
+
+    grandTotalEl.textContent = "$" + grandTotal.toFixed(2);
+    totalItemsEl.textContent = itemCount + " items — $" + grandTotal.toFixed(2);
+    payBtn.textContent = "Pay $" + grandTotal.toFixed(2);
+  }
+
+  // Quantity Controls
+  table.addEventListener("click", function (e) {
+    const row = e.target.closest("tr");
+
+    if (e.target.classList.contains("increase")) {
+      const qtyEl = row.querySelector(".quantity");
+      qtyEl.textContent = parseInt(qtyEl.textContent) + 1;
+      calculateTotals();
+    }
+
+    if (e.target.classList.contains("decrease")) {
+      const qtyEl = row.querySelector(".quantity");
+      let qty = parseInt(qtyEl.textContent);
+      if (qty > 1) {
+        qtyEl.textContent = qty - 1;
+        calculateTotals();
+      }
+    }
+
+    if (e.target.closest(".remove-item")) {
+      if (confirm("Remove this item from cart?")) {
+        row.remove();
+        calculateTotals();
+      }
+    }
+  });
+
+  // Initial calculation
+  calculateTotals();
+});

@@ -63,7 +63,7 @@
             <button type="button" class="tool rounded p-2 bg-dark-opacity border-0" aria-label="Accessibility settings">
               <img src="./assets/images/icons/icon_glasses.svg" alt="Accessibility" width="24" height="24" />
             </button>
-            <a href="./cart.html" class="tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none header-item">
+            <a href="./tab-store-cart.html" class="tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none header-item">
               <img src="./assets/images/icons/icon_cart.svg" alt="Cart" width="24" height="24" />
               <span class="fs-6 mb-0 text-white d-none d-sm-flex">2 / 178.45</span>
             </a>
@@ -209,47 +209,43 @@
         <div class="container">
           <div class="row g-4">
             <div class="col-lg-7">
-              <div id="zooCarousel" class="carousel slide position-relative rounded overflow-hidden shadow-sm" data-bs-ride="false">
+              <div id="mainCarousel" class="carousel slide position-relative rounded overflow-hidden shadow-sm" data-bs-ride="false">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
+                  <div class="carousel-item active" data-index="0">
                     <img src="./assets/images/events/events-first-img.png" class="d-block w-100" alt="Girl with lemur" style="aspect-ratio: 16/10; object-fit: cover" />
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item" data-index="1">
                     <img src="./assets/images/events/events-second-img.png" class="d-block w-100" alt="Tiger" style="aspect-ratio: 16/10; object-fit: cover" />
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item" data-index="2">
                     <img src="./assets/images/events/events-third-img.png" class="d-block w-100" alt="Red Panda" style="aspect-ratio: 16/10; object-fit: cover" />
                   </div>
                 </div>
 
-                <button class="carousel-control-prev swiper-button-prev" type="button" data-bs-target="#zooCarousel" data-bs-slide="prev"></button>
+                <button class="carousel-control-prev swiper-button-prev event-swiper-btn" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev"></button>
 
-                <button class="carousel-control-next swiper-button-next" type="button" data-bs-target="#zooCarousel" data-bs-slide="next"></button>
+                <button class="carousel-control-next swiper-button-next event-swiper-btn" type="button" data-bs-target="#mainCarousel" data-bs-slide="next"></button>
               </div>
 
-              <div class="row g-3 mt-3">
+              <div class="row g-3 mt-3" id="thumbnailRow">
                 <div class="col-4 col-md-2">
-                  <img src="./assets/images/events/events-first-img.png" class="rounded w-100 shadow-sm" alt="Tiger" />
+                  <img src="./assets/images/events/events-first-img.png" class="thumbnail rounded w-100 shadow-sm active" alt="" data-bs-slide-to="0" />
                 </div>
                 <div class="col-4 col-md-2">
-                  <img src="./assets/images/events/events-second-img.png" class="rounded w-100 shadow-sm" alt="Red Panda" />
+                  <img src="./assets/images/events/events-second-img.png" class="thumbnail rounded w-100 shadow-sm" alt="" data-bs-slide-to="1" />
                 </div>
                 <div class="col-4 col-md-2">
-                  <img src="./assets/images/events/events-third-img.png" class="rounded w-100 shadow-sm" alt="Girl with snake" />
+                  <img src="./assets/images/events/events-third-img.png" class="thumbnail rounded w-100 shadow-sm" alt="" data-bs-slide-to="2" />
                 </div>
                 <div class="col-4 col-md-2">
-                  <img src="./assets/images/events/events-first-img.png" class="rounded w-100 shadow-sm" alt="Lemur" />
+                  <img src="./assets/images/events/events-third-img.png" class="thumbnail rounded w-100 shadow-sm" alt="" data-bs-slide-to="4" />
                 </div>
                 <div class="col-4 col-md-2">
-                  <img src="./assets/images/events/events-second-img.png" class="rounded w-100 shadow-sm" alt="Tiger" />
-                </div>
-                <div class="col-4 col-md-2">
-                  <img src="./assets/images/events/events-third-img.png" class="rounded w-100 shadow-sm" alt="Red Panda" />
+                  <img src="./assets/images/events/events-first-img.png" class="thumbnail rounded w-100 shadow-sm active" alt="" data-bs-slide-to="5" />
                 </div>
               </div>
             </div>
 
-            <!-- RIGHT COLUMN - Content -->
             <div class="col-lg-5">
               <h1 class="fw-bold fs-3 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</h1>
 
@@ -260,7 +256,6 @@
                 </p>
               </div>
 
-              <!-- Event Details Card -->
               <div class="card border-0 shadow-sm rounded p-4 mb-4">
                 <h5 class="fw-semibold mb-3">Event details:</h5>
 
@@ -313,6 +308,7 @@
             </div>
           </div>
         </div>
+
         <div class="container mt-5" id="comments-section">
           <div class="d-flex align-items-center justify-content-between mb-4">
             <h4 class="fw-bold mb-0">Comments <span class="text-muted">(126)</span></h4>
@@ -376,16 +372,48 @@
               </div>
             </div>
 
-            <div class="comment mb-5 border-bottom">
-              <div class="d-flex gap-3">
-                <img src="./assets/images/icons/avatar.svg" alt="Emma Wilson" class="rounded-circle" width="48" height="48" />
+            <div class="comment mb-5">
+              <div class="d-flex gap-3 p-3 border-bottom">
+                <img src="./assets/images/icons/avatar.svg" alt="Michael Brown" class="rounded-circle shadow-sm" width="56" height="56" />
+
                 <div class="flex-grow-1">
                   <div class="d-flex align-items-center gap-2 mb-2">
-                    <strong>Emma Wilson</strong>
-                    <span class="badge bg-light text-dark border">Parent</span>
-                    <span class="ms-auto text-muted small">12.09.2025 11:45 am</span>
+                    <strong class="text-dark">Michael Brown</strong>
+                    <span class="badge rounded-pill bg-info bg-opacity-10 text-info px-3 py-1 fs-6">Student • 5th Grade</span>
+                    <span class="ms-auto text-muted small d-flex align-items-center gap-1">
+                      <i class="bi bi-clock"></i>
+                      Sep 12, 2025 • 11:45 am
+                    </span>
                   </div>
-                  <p class="mb-3">Great event! Looking forward to it. Please let us know what to bring.</p>
+
+                  <div class="bg-light rounded-3 p-3 shadow-sm">
+                    <div class="d-flex align-items-center gap-3">
+                      <button onclick="toggleAudio(this)" class="btn btn-primary rounded-circle p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 42px; height: 42px">
+                        <i class="bi bi-play-fill fs-4"></i>
+                      </button>
+
+                      <div class="flex-grow-1">
+                        <div class="audio-waveform d-flex align-items-end gap-1" style="height: 42px">
+                          <div class="wave-bar" style="height: 30%"></div>
+                          <div class="wave-bar" style="height: 55%"></div>
+                          <div class="wave-bar" style="height: 80%"></div>
+                          <div class="wave-bar" style="height: 65%"></div>
+                          <div class="wave-bar" style="height: 90%"></div>
+                          <div class="wave-bar" style="height: 45%"></div>
+                          <div class="wave-bar" style="height: 75%"></div>
+                          <div class="wave-bar" style="height: 60%"></div>
+                          <div class="wave-bar" style="height: 85%"></div>
+                          <div class="wave-bar" style="height: 40%"></div>
+                          <div class="wave-bar" style="height: 70%"></div>
+                          <div class="wave-bar" style="height: 50%"></div>
+                        </div>
+                      </div>
+
+                      <div class="text-muted small fw-medium text-nowrap">02:12</div>
+                    </div>
+                  </div>
+
+                  <p class="mt-3 mb-0 text-muted small">Voice message from Michael</p>
                 </div>
               </div>
             </div>
@@ -395,7 +423,7 @@
             <button id="show-more-comments" class="btn btn-primary px-4 py-2">Show 120 more comments</button>
           </div>
         </div>
-        <section class="py-4 py-xxl-5 container d-flex flex-column" id="news">
+        <section class="py-4 container d-flex flex-column" id="news">
           <div>
             <div class="d-flex align-items-center mb-4 justify-content-between">
               <p class="fw-bold fs-2">You may also like these events</p>
