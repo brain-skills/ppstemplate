@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (resetBtn && filtersForm) {
     resetBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      filtersForm.querySelectorAll("select").forEach((select) => {
+
+      const selects = filtersForm.querySelectorAll("select");
+      if (!selects.length) return;
+
+      selects.forEach((select) => {
         select.selectedIndex = 0;
         select.dispatchEvent(new Event("change", { bubbles: true }));
       });
@@ -34,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!swipers.length) return;
 
     swipers.forEach((root) => {
-      if (root.dataset.swiperInited === "1") return;
+      if (!root || root.dataset.swiperInited === "1") return;
       root.dataset.swiperInited = "1";
 
       const nextEl = root.querySelector(".swiper-button-next");
@@ -45,11 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         loop: true,
         spaceBetween: 24,
         slidesPerView: 3,
-
         navigation: nextEl && prevEl ? { nextEl, prevEl } : undefined,
-
         pagination: pagEl ? { el: pagEl, clickable: true } : undefined,
-
         breakpoints: {
           0: { slidesPerView: 1, spaceBetween: 14 },
           768: { slidesPerView: 1, spaceBetween: 18 },
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hEl = el.querySelector('[data-part="h"]');
     const mEl = el.querySelector('[data-part="m"]');
     const sEl = el.querySelector('[data-part="s"]');
+
     if (!hEl || !mEl || !sEl) return;
 
     let total = hours * 3600 + minutes * 60 + seconds;
@@ -76,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dangerBg = "#D34E4E33";
     const dangerThreshold = 4 * 60 * 60;
 
-    const render = () => {
+    function render() {
       const h = Math.floor(total / 3600);
       const m = Math.floor((total % 3600) / 60);
       const s = total % 60;
@@ -89,20 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
       hEl.style.backgroundColor = bg;
       mEl.style.backgroundColor = bg;
       sEl.style.backgroundColor = bg;
-    };
+    }
 
     render();
 
     const timer = setInterval(() => {
-      total -= 1;
+      total--;
       if (total <= 0) {
         total = 0;
         clearInterval(timer);
       }
       render();
     }, 1000);
-
-    el.dataset.timer = "1";
   }
 
   document.querySelectorAll(".countdown").forEach((el) => {
@@ -110,21 +110,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   (function galleryTabs() {
-    const tabs = Array.from(document.querySelectorAll("#galleryTabs .gallery-tab"));
-    const items = Array.from(document.querySelectorAll("#galleryGrid .gallery-item"));
+    const tabs = document.querySelectorAll("#galleryTabs .gallery-tab");
+    const items = document.querySelectorAll("#galleryGrid .gallery-item");
     const select = document.getElementById("galleryCategorySelect");
     const emptyBlock = document.getElementById("galleryEmpty");
 
     if (!items.length) return;
 
     const defaultCategory = "all";
-
     const allowed = new Set(["all"]);
+
     tabs.forEach((b) => b.dataset.category && allowed.add(b.dataset.category));
     items.forEach((it) => it.dataset.category && allowed.add(it.dataset.category));
 
-    function normalize(category) {
-      const c = (category || "").trim();
+    function normalize(c) {
       return allowed.has(c) ? c : defaultCategory;
     }
 
@@ -138,35 +137,30 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.classList.toggle("text-dark", !isActive);
       });
 
-      let visibleCount = 0;
+      let visible = 0;
 
       items.forEach((item) => {
-        const itemCat = item.dataset.category;
-        const show = cat === "all" ? true : itemCat === cat;
+        const show = cat === "all" || item.dataset.category === cat;
         item.classList.toggle("d-none", !show);
-        if (show) visibleCount++;
+        if (show) visible++;
       });
 
-      if (emptyBlock) emptyBlock.classList.toggle("d-none", visibleCount !== 0);
+      if (emptyBlock) emptyBlock.classList.toggle("d-none", visible !== 0);
       if (select) select.value = cat;
     }
 
     tabs.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const category = btn.dataset.category;
-        if (!category) return;
-        setActive(category);
+        if (!btn.dataset.category) return;
+        setActive(btn.dataset.category);
       });
     });
 
     if (select) {
-      select.addEventListener("change", () => {
-        setActive(select.value);
-      });
+      select.addEventListener("change", () => setActive(select.value));
     }
 
-    const hashValue = (location.hash || "").slice(1);
-    setActive(hashValue);
+    setActive(location.hash?.slice(1));
   })();
 
   (function fontScaler() {
@@ -177,38 +171,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sliders.length) return;
 
     let step = parseInt(localStorage.getItem("fontStep")) || 0;
-
     const MIN = -5;
     const MAX = 5;
 
-    function apply(stepValue) {
-      step = Math.max(MIN, Math.min(MAX, stepValue));
+    function apply(v) {
+      step = Math.max(MIN, Math.min(MAX, v));
 
       sliders.forEach((s) => (s.value = step));
 
-      const baseSize = 16;
-      const scale = 1 + step * 0.1;
-
-      document.documentElement.style.fontSize = baseSize * scale + "px";
+      const base = 16;
+      document.documentElement.style.fontSize = base * (1 + step * 0.1) + "px";
 
       localStorage.setItem("fontStep", step);
     }
 
     apply(step);
 
-    sliders.forEach((slider) => {
-      slider.addEventListener("input", () => {
-        apply(parseInt(slider.value));
-      });
-    });
-
-    increaseBtns.forEach((btn) => {
-      btn.addEventListener("click", () => apply(step + 1));
-    });
-
-    decreaseBtns.forEach((btn) => {
-      btn.addEventListener("click", () => apply(step - 1));
-    });
+    sliders.forEach((s) => s.addEventListener("input", () => apply(parseInt(s.value))));
+    increaseBtns.forEach((b) => b.addEventListener("click", () => apply(step + 1)));
+    decreaseBtns.forEach((b) => b.addEventListener("click", () => apply(step - 1)));
   })();
 
   (function sectionHashObserver() {
@@ -217,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const galleryTabs = document.querySelectorAll("#galleryTabs .gallery-tab");
     const galleryCats = new Set(["all"]);
+
     galleryTabs.forEach((t) => t.dataset.category && galleryCats.add(t.dataset.category));
 
     let activeId = null;
@@ -227,8 +209,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!visible) return;
 
-        const currentHash = (location.hash || "").slice(1);
-        if (galleryCats.has(currentHash)) return;
+        const hash = location.hash.slice(1);
+        if (galleryCats.has(hash)) return;
 
         const id = visible.target.id;
         if (id && id !== activeId) {
@@ -237,7 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       },
       {
-        root: null,
         threshold: [0.2, 0.35, 0.5, 0.65],
         rootMargin: "-20% 0px -55% 0px",
       },
@@ -252,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("mobileSearchOverlay");
     const input = document.getElementById("mobileSearchInput");
 
-    if (!(openBtn && closeBtn && overlay && input)) return;
+    if (!openBtn || !closeBtn || !overlay || !input) return;
 
     openBtn.addEventListener("click", () => {
       overlay.style.display = "flex";
@@ -264,17 +245,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        overlay.style.display = "none";
-      }
+      if (e.key === "Escape") overlay.style.display = "none";
     });
   })();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchWrapper = document.querySelector(".top-bar__search");
-  const input = searchWrapper?.querySelector("input");
-  const button = searchWrapper?.querySelector("button");
+  if (!searchWrapper) return;
+
+  const input = searchWrapper.querySelector("input");
+  const button = searchWrapper.querySelector("button");
 
   if (!input || !button) return;
 
@@ -282,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
     input.focus();
   });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("newsGrid");
   const paginationWrap = document.getElementById("newsPagination");
@@ -289,7 +271,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!grid || !paginationWrap) return;
 
   const items = Array.from(grid.querySelectorAll(":scope > .col-12.col-md-6.col-lg-4"));
-  if (!items.length) return;
+
+  if (!items.length) {
+    paginationWrap.style.display = "none";
+    return;
+  }
 
   const perPage = 6;
   const totalPages = Math.ceil(items.length / perPage);
@@ -300,16 +286,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getPageFromUrl() {
-    const url = new URL(window.location.href);
-    const p = parseInt(url.searchParams.get("page") || "1", 10);
-    if (!Number.isFinite(p)) return 1;
-    return Math.min(Math.max(p, 1), totalPages);
+    try {
+      const url = new URL(window.location.href);
+      const p = parseInt(url.searchParams.get("page") || "1", 10);
+      return Math.min(Math.max(p || 1, 1), totalPages);
+    } catch {
+      return 1;
+    }
   }
 
   function setPageToUrl(page) {
-    const url = new URL(window.location.href);
-    url.searchParams.set("page", String(page));
-    window.history.pushState({}, "", url);
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set("page", String(page));
+      window.history.pushState({}, "", url);
+    } catch {}
   }
 
   function renderPage(page) {
@@ -317,6 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const end = start + perPage;
 
     items.forEach((el, idx) => {
+      if (!el) return;
       el.style.display = idx >= start && idx < end ? "" : "none";
     });
   }
@@ -328,6 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const addBtn = (label, page, disabled = false, active = false, aria = "") => {
       const li = document.createElement("li");
       li.className = "page-item";
+
       if (disabled) li.classList.add("disabled");
       if (active) li.classList.add("active");
 
@@ -335,8 +328,8 @@ document.addEventListener("DOMContentLoaded", () => {
       a.className = "page-link";
       a.href = "#";
       a.textContent = label;
-      if (aria) a.setAttribute("aria-label", aria);
 
+      if (aria) a.setAttribute("aria-label", aria);
       if (!disabled && !active) a.dataset.page = String(page);
 
       li.appendChild(a);
@@ -374,7 +367,9 @@ document.addEventListener("DOMContentLoaded", () => {
     renderPagination(safePage);
     setPageToUrl(safePage);
 
-    grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (grid.scrollIntoView) {
+      grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
 
   goToPage(getPageFromUrl());
@@ -385,32 +380,49 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".collapse").forEach((el) => {
-    const id = el.id;
+  const collapses = document.querySelectorAll(".collapse");
 
-    const update = () => {
-      const isOpen = el.classList.contains("show");
-      document.querySelectorAll(`[data-bs-target="#${id}"]`).forEach((btn) => {
-        const row = btn.closest(".files-row");
-        const icon = row?.querySelector(".files-toggle__chev");
-        if (!icon) return;
-        icon.classList.remove("bi-chevron-right", "bi-chevron-down");
-        icon.classList.add(isOpen ? "bi-chevron-down" : "bi-chevron-right");
-      });
-    };
+  if (collapses.length) {
+    collapses.forEach((el) => {
+      if (!el || !el.id) return;
 
-    el.addEventListener("shown.bs.collapse", update);
-    el.addEventListener("hidden.bs.collapse", update);
-    update();
-  });
+      const id = el.id;
+
+      const update = () => {
+        const isOpen = el.classList.contains("show");
+
+        const buttons = document.querySelectorAll(`[data-bs-target="#${id}"]`);
+        if (!buttons.length) return;
+
+        buttons.forEach((btn) => {
+          const row = btn.closest(".files-row");
+          const icon = row?.querySelector(".files-toggle__chev");
+          if (!icon) return;
+
+          icon.classList.remove("bi-chevron-right", "bi-chevron-down");
+          icon.classList.add(isOpen ? "bi-chevron-down" : "bi-chevron-right");
+        });
+      };
+
+      el.addEventListener("shown.bs.collapse", update);
+      el.addEventListener("hidden.bs.collapse", update);
+
+      update();
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
-  document.querySelectorAll(".top-bar__menu a[href]").forEach((a) => {
+  const menuLinks = document.querySelectorAll(".top-bar__menu a[href]");
+  if (!menuLinks.length) return;
+
+  menuLinks.forEach((a) => {
     const href = (a.getAttribute("href") || "").split("/").pop().toLowerCase();
-    if (href && href === current) a.classList.add("active");
+    if (href && href === current) {
+      a.classList.add("active");
+    }
   });
 });
 
@@ -422,6 +434,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = Array.from(document.querySelectorAll(".staff-item"));
   const empty = document.getElementById("staffEmpty");
   const searchInput = document.getElementById("staffSearch");
+
+  if (!tabs.length || !items.length) return;
 
   const DEFAULT_FILTER = (tabs[0]?.dataset.filter || "administration").toLowerCase();
   const validFilters = new Set(tabs.map((t) => (t.dataset.filter || "").toLowerCase()));
@@ -445,11 +459,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const okSearch = q === "" || text.includes(q);
 
       const show = okCategory && okSearch;
+
       item.classList.toggle("d-none", !show);
       if (show) visibleCount++;
     });
 
-    if (empty) empty.classList.toggle("d-none", visibleCount !== 0);
+    if (empty) {
+      empty.classList.toggle("d-none", visibleCount !== 0);
+    }
   }
 
   function getFilterFromHash() {
@@ -700,13 +717,27 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentDate = new Date();
 
   const prevBtn = document.getElementById("prevBtn");
+  const monthDisplay = document.getElementById("monthDisplay");
+
+  /* FIX: create function */
+  function updateMonthDisplay() {
+    if (!monthDisplay) return;
+
+    monthDisplay.textContent = currentDate.toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric",
+    });
+  }
 
   updateMonthDisplay();
 
-  prevBtn.addEventListener("click", () => {
-    currentDate.setMonth(currentDate.getMonth() - 1);
-    updateMonthDisplay();
-  });
+  /* FIX: check if button exists */
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      updateMonthDisplay();
+    });
+  }
 
   const gradeSelect = document.getElementById("grade");
   const subjectSelect = document.getElementById("subject");
@@ -717,6 +748,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const rows = document.querySelectorAll(".schedule-table tbody tr");
 
   function applyFilters() {
+    if (!gradeSelect || !subjectSelect || !teacherSelect) return;
+
     const gradeVal = gradeSelect.value.trim().toLowerCase();
     const subjectVal = subjectSelect.value.trim().toLowerCase();
     const teacherVal = teacherSelect.value.trim().toLowerCase();
@@ -746,6 +779,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (hasGrade) {
           const gradeSpan = cell.querySelector(".grade");
+
           if (gradeSpan) {
             if (!gradeSpan.innerText.toLowerCase().includes(gradeVal)) {
               matches = false;
@@ -768,52 +802,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  gradeSelect.addEventListener("change", applyFilters);
-  subjectSelect.addEventListener("change", applyFilters);
-  teacherSelect.addEventListener("change", applyFilters);
-  curatorSelect.addEventListener("change", applyFilters);
+  if (gradeSelect) gradeSelect.addEventListener("change", applyFilters);
+  if (subjectSelect) subjectSelect.addEventListener("change", applyFilters);
+  if (teacherSelect) teacherSelect.addEventListener("change", applyFilters);
 
-  resetBtn.addEventListener("click", () => {
-    gradeSelect.value = "";
-    subjectSelect.value = "";
-    teacherSelect.value = "";
-    curatorSelect.value = "";
-    applyFilters();
-  });
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      if (gradeSelect) gradeSelect.value = "";
+      if (subjectSelect) subjectSelect.value = "";
+      if (teacherSelect) teacherSelect.value = "";
 
-  const weekBtn = document.getElementById("weekBtn");
-  const dayBtn = document.getElementById("dayBtn");
-
-  weekBtn.addEventListener("click", () => {
-    weekBtn.classList.add("active");
-    dayBtn.classList.remove("active");
-
-    document.querySelectorAll(".schedule-table th:not(.time-header-col)").forEach((th) => {
-      th.style.display = "";
+      applyFilters();
     });
-
-    document.querySelectorAll(".schedule-table td:not(.time-cell)").forEach((td) => {
-      td.style.display = "";
-    });
-  });
-
-  dayBtn.addEventListener("click", () => {
-    dayBtn.classList.add("active");
-    weekBtn.classList.remove("active");
-
-    const todayIndex = new Date().getDay() + 1;
-
-    document.querySelectorAll(".schedule-table th").forEach((th, i) => {
-      th.style.display = i === 0 || i === todayIndex ? "" : "none";
-    });
-
-    document.querySelectorAll(".schedule-table tbody tr").forEach((row) => {
-      const cells = row.querySelectorAll("td");
-      cells.forEach((cell, i) => {
-        cell.style.display = i === 0 || i === todayIndex ? "" : "none";
-      });
-    });
-  });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -877,22 +878,42 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentPage = parseInt(urlParams.get("page")) || 1;
 
   const allCards = document.querySelectorAll(".news-page");
-  allCards.forEach((card) => {
-    card.style.display = parseInt(card.dataset.page) === currentPage ? "block" : "none";
-  });
+
+  if (allCards.length) {
+    allCards.forEach((card) => {
+      if (!card || !card.dataset.page) return;
+
+      card.style.display = parseInt(card.dataset.page) === currentPage ? "block" : "none";
+    });
+  }
 
   const pageLinks = document.querySelectorAll("#pagination .page-link");
-  pageLinks.forEach((link) => {
-    const parentLi = link.parentElement;
-    parentLi.classList.remove("active");
 
-    if (link.textContent === currentPage.toString()) {
-      parentLi.classList.add("active");
-    }
-  });
+  if (pageLinks.length) {
+    pageLinks.forEach((link) => {
+      const parentLi = link.parentElement;
+      if (!parentLi) return;
 
-  document.getElementById("prevBtn").classList.toggle("disabled", currentPage === 1);
-  document.getElementById("nextBtn").classList.toggle("disabled", currentPage === 4);
+      parentLi.classList.remove("active");
+
+      if (link.textContent.trim() === String(currentPage)) {
+        parentLi.classList.add("active");
+      }
+    });
+  }
+
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (prevBtn) {
+    prevBtn.classList.toggle("disabled", currentPage === 1);
+  }
+
+  if (nextBtn) {
+    const totalPages = Math.max(...Array.from(allCards).map((c) => parseInt(c.dataset.page || 1)));
+
+    nextBtn.classList.toggle("disabled", currentPage === totalPages);
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -970,123 +991,57 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalElement = document.getElementById("galleryModal");
   const modalImage = document.getElementById("modalImage");
 
-  if (!modalElement || !modalImage) {
-    console.error("Gallery Modal not found!");
-    return;
-  }
+  if (!modalElement || !modalImage || typeof bootstrap === "undefined") return;
 
   const modal = new bootstrap.Modal(modalElement);
 
   function openImageInModal(img) {
     if (!img) return;
-    modalImage.src = img.src;
+
+    modalImage.src = img.src || "";
     modalImage.alt = img.alt || "Image";
+
     modal.show();
   }
 
-  document.querySelectorAll(".gallery-img").forEach((img) => {
-    img.style.cursor = "zoom-in";
-    img.addEventListener("click", () => openImageInModal(img));
-  });
+  const galleryImgs = document.querySelectorAll(".gallery-img");
+  const profileImgs = document.querySelectorAll(".profile-main-image");
+  const certImgs = document.querySelectorAll(".certificate-card img");
 
-  document.querySelectorAll(".profile-main-image").forEach((img) => {
-    img.style.cursor = "zoom-in";
-    img.addEventListener("click", () => openImageInModal(img));
-  });
+  function bindImages(nodeList) {
+    if (!nodeList.length) return;
 
-  document.querySelectorAll(".certificate-card img").forEach((img) => {
-    img.style.cursor = "zoom-in";
-    img.addEventListener("click", () => openImageInModal(img));
-  });
-});
+    nodeList.forEach((img) => {
+      if (!img) return;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const gradeFilter = document.getElementById("gradeFilter");
-  const curatorFilter = document.getElementById("curatorFilter");
-  const resetBtn = document.getElementById("resetFiltersBtn");
-
-  const rows = document.querySelectorAll("#studentsTableBody tr");
-  const emptyState = document.getElementById("studentsEmptyState");
-
-  const gradeTitle = document.getElementById("currentGradeTitle");
-  const curatorName = document.getElementById("currentCuratorName");
-
-  function filterStudents() {
-    const selectedGrade = gradeFilter.value;
-    const selectedCurator = curatorFilter.value;
-
-    let visibleCount = 0;
-
-    rows.forEach((row) => {
-      const grade = row.dataset.grade;
-      const curator = row.dataset.curator;
-
-      const matchGrade = selectedGrade === "all" || selectedGrade === grade;
-      const matchCurator = selectedCurator === "all" || selectedCurator === curator;
-
-      if (matchGrade && matchCurator) {
-        row.style.display = "";
-        visibleCount++;
-      } else {
-        row.style.display = "none";
-      }
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => openImageInModal(img));
     });
-
-    emptyState.classList.toggle("d-none", visibleCount > 0);
-
-    gradeTitle.textContent = selectedGrade === "all" ? "All Grades" : selectedGrade + " Grade";
-
-    const curatorText = curatorFilter.options[curatorFilter.selectedIndex].text;
-    curatorName.textContent = selectedCurator === "all" ? "All Curators" : curatorText;
   }
 
-  gradeFilter.addEventListener("change", filterStudents);
-  curatorFilter.addEventListener("change", filterStudents);
-
-  resetBtn.addEventListener("click", () => {
-    gradeFilter.value = "all";
-    curatorFilter.value = "all";
-    filterStudents();
-  });
-
-  document.getElementById("studentsTableBody").addEventListener("click", (e) => {
-    const row = e.target.closest("tr");
-    if (!row) return;
-
-    const name = row.dataset.name;
-
-    if (e.target.classList.contains("action-view")) {
-      alert("Viewing " + name);
-    }
-
-    if (e.target.classList.contains("action-edit")) {
-      alert("Editing " + name);
-    }
-
-    if (e.target.classList.contains("action-delete")) {
-      const confirmDelete = confirm("Delete " + name + "?");
-      if (confirmDelete) {
-        row.remove();
-        filterStudents();
-      }
-    }
-  });
-
-  filterStudents();
+  bindImages(galleryImgs);
+  bindImages(profileImgs);
+  bindImages(certImgs);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".dropdown-item[data-tab]");
   const label = document.getElementById("mobileTabLabel");
 
+  if (!items.length) return;
+
   items.forEach((item) => {
     item.addEventListener("click", () => {
       const tabId = item.dataset.tab;
+      if (!tabId) return;
 
-      label.textContent = item.textContent.trim();
+      if (label) {
+        label.textContent = item.textContent.trim();
+      }
 
       const tabBtn = document.getElementById(tabId);
-      if (tabBtn) {
+
+      if (tabBtn && typeof bootstrap !== "undefined") {
         const tab = new bootstrap.Tab(tabBtn);
         tab.show();
       }
@@ -1167,10 +1122,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const monthDisplay = document.getElementById("monthDisplay");
   const input = document.getElementById("dateInput");
 
+  if (!monthDisplay || !input || typeof flatpickr === "undefined") return;
+
   const fp = flatpickr(input, {
     dateFormat: "F Y",
     defaultDate: new Date(),
-    onChange: (selectedDates, dateStr) => {
+    onChange: (selectedDates) => {
+      if (!selectedDates.length) return;
+
       const date = selectedDates[0];
 
       const month = date.toLocaleString("en", { month: "long" });
@@ -1183,68 +1142,6 @@ document.addEventListener("DOMContentLoaded", () => {
   monthDisplay.addEventListener("click", () => {
     fp.open();
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const weekBtn = document.getElementById("weekBtn");
-  const dayBtn = document.getElementById("dayBtn");
-  const table = document.querySelector(".schedule-table");
-
-  if (!weekBtn || !dayBtn || !table) return;
-
-  function setView(mode) {
-    const today = new Date().getDay();
-    const targetColumnIndex = today + 1;
-
-    const allTh = table.querySelectorAll("thead th");
-    const allRows = table.querySelectorAll("tbody tr");
-
-    if (mode === "day") {
-      weekBtn.classList.remove("active");
-      dayBtn.classList.add("active");
-
-      allTh.forEach((th, idx) => {
-        if (idx === 0 || idx === targetColumnIndex) {
-          th.style.display = "";
-        } else {
-          th.style.display = "none";
-        }
-      });
-
-      allRows.forEach((row) => {
-        if (row.classList.contains("lunch-row")) {
-          const lunchCell = row.querySelector("td");
-          if (lunchCell) lunchCell.colSpan = 2;
-          return;
-        }
-
-        const cells = row.querySelectorAll("td");
-        cells.forEach((td, idx) => {
-          if (idx === 0 || idx === targetColumnIndex) {
-            td.style.display = "";
-          } else {
-            td.style.display = "none";
-          }
-        });
-      });
-    } else {
-      weekBtn.classList.add("active");
-      dayBtn.classList.remove("active");
-
-      allTh.forEach((th) => (th.style.display = ""));
-      allRows.forEach((row) => {
-        if (row.classList.contains("lunch-row")) {
-          const lunchCell = row.querySelector("td");
-          if (lunchCell) lunchCell.colSpan = 8;
-          return;
-        }
-        row.querySelectorAll("td").forEach((td) => (td.style.display = ""));
-      });
-    }
-  }
-
-  weekBtn.addEventListener("click", () => setView("week"));
-  dayBtn.addEventListener("click", () => setView("day"));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1389,10 +1286,6 @@ function selectSize(el) {
   el.classList.add("active");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("%cProduct Detail Page Loaded", "color: green; font-weight: bold");
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   const showMoreBtn = document.getElementById("show-more-comments");
   const hiddenComments = document.getElementById("hidden-comments");
@@ -1457,17 +1350,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const payBtn = document.getElementById("pay-btn");
 
   function calculateTotals() {
+    if (!table) return;
+    if (!grandTotalEl || !totalItemsEl || !payBtn) return;
+
     let grandTotal = 0;
     let itemCount = 0;
 
-    table.querySelectorAll("tbody tr").forEach((row) => {
-      const price = parseFloat(row.dataset.price);
+    const rows = table.querySelectorAll("tbody tr");
+
+    rows.forEach((row) => {
+      const price = parseFloat(row.dataset.price || 0);
       const qtyEl = row.querySelector(".quantity");
-      const qty = parseInt(qtyEl.textContent);
+
+      if (!qtyEl) return;
+
+      const qty = parseInt(qtyEl.textContent || 0);
       const itemTotalEl = row.querySelector(".item-total");
 
       const itemTotal = price * qty;
-      itemTotalEl.textContent = "$" + itemTotal.toFixed(2);
+
+      if (itemTotalEl) {
+        itemTotalEl.textContent = "$" + itemTotal.toFixed(2);
+      }
 
       grandTotal += itemTotal;
       itemCount += qty;
@@ -1478,33 +1382,38 @@ document.addEventListener("DOMContentLoaded", function () {
     payBtn.textContent = "Pay $" + grandTotal.toFixed(2);
   }
 
-  // Quantity Controls
-  table.addEventListener("click", function (e) {
-    const row = e.target.closest("tr");
+  if (table) {
+    table.addEventListener("click", function (e) {
+      const row = e.target.closest("tr");
+      if (!row) return;
 
-    if (e.target.classList.contains("increase")) {
-      const qtyEl = row.querySelector(".quantity");
-      qtyEl.textContent = parseInt(qtyEl.textContent) + 1;
-      calculateTotals();
-    }
+      if (e.target.classList.contains("increase")) {
+        const qtyEl = row.querySelector(".quantity");
+        if (!qtyEl) return;
 
-    if (e.target.classList.contains("decrease")) {
-      const qtyEl = row.querySelector(".quantity");
-      let qty = parseInt(qtyEl.textContent);
-      if (qty > 1) {
-        qtyEl.textContent = qty - 1;
+        qtyEl.textContent = parseInt(qtyEl.textContent) + 1;
         calculateTotals();
       }
-    }
 
-    if (e.target.closest(".remove-item")) {
-      if (confirm("Remove this item from cart?")) {
-        row.remove();
-        calculateTotals();
+      if (e.target.classList.contains("decrease")) {
+        const qtyEl = row.querySelector(".quantity");
+        if (!qtyEl) return;
+
+        let qty = parseInt(qtyEl.textContent);
+        if (qty > 1) {
+          qtyEl.textContent = qty - 1;
+          calculateTotals();
+        }
       }
-    }
-  });
 
-  // Initial calculation
-  calculateTotals();
+      if (e.target.closest(".remove-item")) {
+        if (confirm("Remove this item from cart?")) {
+          row.remove();
+          calculateTotals();
+        }
+      }
+    });
+
+    calculateTotals();
+  }
 });

@@ -27,7 +27,7 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet" /> -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
@@ -196,8 +196,8 @@
         </header>
         <div id="mobileSearch" class="mobile-search">
           <div class="mobile-search__inner">
-            <input type="text" placeholder="Search..." />
-            <button id="closeSearch">✕</button>
+            <input type="text" id="mobileSearchInput" name="search" placeholder="Search..." autocomplete="off" />
+            <button id="closeSearch" type="button">✕</button>
           </div>
         </div>
         <section class="main-section position-relative overflow-hidden w-100 z-0">
@@ -299,7 +299,7 @@
           <div class="row g-4 g-xxl-5 align-items-start">
             <div class="col-12 col-xl-7">
               <div class="enrollment-section d-flex flex-column gap-4">
-                <div class="border-left-card p-3 p-md-4">
+                <div class="border-left-card">
                   <h4 class="fw-semibold mb-3">Dear parents!</h4>
 
                   <p class="fs-5 fw-normal mb-3">If you wish to enroll your child in our school, we recommend preparing the complete set of documents well in advance.</p>
@@ -421,11 +421,10 @@
           <div class="schedule-head mt-4">
             <div class="d-flex align-items-center gap-2 position-relative">
               <button type="button" id="prevBtn" class="schedule-arrow">‹</button>
-
               <div class="position-relative">
                 <div id="monthDisplay" class="fw-bold fs-5" style="cursor: pointer">December <span>2025</span></div>
 
-                <input id="dateInput" type="text" class="fp-hidden" />
+                <input id="dateInput" name="date" type="text" class="fp-hidden" />
               </div>
 
               <button type="button" id="nextBtn" class="schedule-arrow">›</button>
@@ -1148,7 +1147,7 @@
           <address class="d-flex flex-column gap-2 align-items-center align-items-xl-start">
             <div class="d-flex flex-row align-items-center gap-3">
               <img src="./assets/images/icons/icon_letter.svg" alt="letter icon" width="30" height="30" />
-              <a href="mailto:email@progressiveschool.edu" class="text-decoration-none fs-6 fw-bold text-black"> email@progressiveschool.edu </a>
+              <a href="mailto:email@progressiveschool.edu" class="text-decoration-none fs-6 fw-bold text-black text-break"> email@progressiveschool.edu </a>
             </div>
             <p class="text-dark-opacity fs-6">contact us if you have any questions about the platform</p>
           </address>

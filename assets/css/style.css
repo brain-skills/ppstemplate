@@ -292,6 +292,12 @@ p {
   }
 }
 
+@media (max-width: 1200px) {
+  .profile-sidebar .list-group-item span {
+    display: none !important;
+  }
+}
+
 @media (max-width: 575.98px) {
   .enrollment-collage {
     gap: 10px;
