@@ -416,9 +416,12 @@
                               </button>
                             </div>
                           </div>
-                          <p class="text-muted mb-3 fw-semibold text-dark-opacity">English language</p>
+                          <p class="text-muted mb-3 text-dark-opacity">3 grade</p>
 
-                          <p class="fw-semibold mb-4">Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple University.</p>
+                          <p class="mb-4">
+                            Jane Henderson is a curious and bright third-grade student who loves learning new things every day. He enjoys reading books, solving puzzles, and playing with his friends during recess. Michael is especially interested in
+                            science and often asks thoughtful questions in class. His positive attitude and eagerness to learn make him a joy for teachers and classmates alike.
+                          </p>
 
                           <ul class="list-unstyled profile-meta d-flex flex-column gap-3 mb-0">
                             <li class="d-flex align-items-center gap-2">
@@ -443,277 +446,102 @@
                     </div>
 
                     <div class="mt-4 mt-xl-5">
-                      <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mb-3">
-                        <h3 class="h5 mb-0 fw-semibold">Certificates</h3>
+                      <div class="card border-0 overflow-hidden curator-card">
+                        <div class="card-body p-0">
+                          <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+                            <h4 class="mb-0 fw-bold">My Curator</h4>
+                          </div>
 
-                        <input type="file" id="certificateUpload" accept="image/*,.pdf" hidden />
+                          <div class="row g-4">
+                            <div class="col-12 col-md-auto text-center">
+                              <img src="./assets/images/teacher3.png" alt="Jane Henderson" class="img-fluid rounded shadow curator-img" />
+                            </div>
 
-                        <button class="btn btn-primary btn-sm profile-upload-btn d-flex gap-3 align-items-center justify-content-between" onclick="document.getElementById('certificateUpload').click()">
-                          <p class="fs-6 mb-0 cursor-pointer">Upload certificate</p>
-                          <span class="fw-bold fs-5">+</span>
-                        </button>
-                      </div>
+                            <div class="col">
+                              <div class="d-flex flex-column gap-2">
+                                <div>
+                                  <h5 class="mb-1 fw-bold">Jane Henderson</h5>
+                                  <p class="text-primary fw-semibold mb-0">English Language Curator</p>
+                                </div>
 
-                      <div class="row g-3 certificates-scroll">
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                          <a href="#" class="certificate-card d-block">
-                            <img src="./assets/images/certificate1.png" alt="Certificate 1" class="img-fluid w-100 rounded" />
-                          </a>
-                        </div>
+                                <p class="text-muted mb-0">Experienced English teacher with 14 years of classroom expertise, TESOL certification, and a Master’s degree in Linguistics from Temple University.</p>
 
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                          <a href="#" class="certificate-card d-block">
-                            <img src="./assets/images/certificate2.png" alt="Certificate 2" class="img-fluid w-100 rounded" />
-                          </a>
-                        </div>
-
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                          <a href="#" class="certificate-card d-block">
-                            <img src="./assets/images/certificate3.png" alt="Certificate 3" class="img-fluid w-100 rounded" />
-                          </a>
+                                <div class="d-flex flex-column flex-sm-row gap-2 mt-3">
+                                  <button class="btn btn-primary px-4 rounded">Send Message</button>
+                                  <button class="btn btn-outline-primary px-4 rounded">View Profile</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div class="tab-pane fade" id="classmates-pane" role="tabpanel" aria-labelledby="classmates-tab" tabindex="0">
-                    <section class="students-page">
-                      <div class="container px-0">
-                        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3 mb-4">
-                          <div class="d-flex flex-column flex-sm-row gap-3">
-                            <div>
-                              <label for="gradeFilter" class="form-label small text-muted mb-1"> Grade </label>
-                              <select id="gradeFilter" class="form-select student-filter-select">
-                                <option value="all">All grades</option>
-                                <option value="3" selected>3 grade</option>
-                                <option value="4">4 grade</option>
-                                <option value="5">5 grade</option>
-                              </select>
-                            </div>
+                    <div class="container">
+                      <div class="row g-4">
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <img src="./assets/images/student1.png" class="card-img-top" />
 
-                            <div>
-                              <label for="curatorFilter" class="form-label small text-muted mb-1"> Curator </label>
-                              <select id="curatorFilter" class="form-select student-filter-select">
-                                <option value="all">All curators</option>
-                                <option value="jane-henderson" selected>Jane Henderson</option>
-                                <option value="michael-brown">Michael Brown</option>
-                              </select>
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold text-dark">Ella Williams</h6>
+                              <small class="text-secondary">05.14.2016</small>
+
+                              <button class="btn btn-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2 rounded mt-1 py-2 fs-6">Send message</button>
                             </div>
                           </div>
-
-                          <button type="button" id="resetFiltersBtn" class="btn btn-link students-reset-btn text-decoration-none p-0 d-flex align-items-center gap-2">
-                            <img src="./assets/images/icons/icon_filter.svg" alt="" width="24" height="24" />
-                            <span class="text-dark fw-semibold">Reset filters</span>
-                          </button>
                         </div>
 
-                        <div class="students-table-card rounded border overflow-hidden shadow">
-                          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 px-3 px-xl-4 py-3">
-                            <h3 class="students-grade-title mb-0" id="currentGradeTitle">3 Grade</h3>
-
-                            <div class="d-flex align-items-center gap-2">
-                              <img src="./assets/images/icons/avatar.svg" alt="Curator" class="students-curator-avatar rounded" />
-                              <div class="lh-sm">
-                                <div class="students-curator-name" id="currentCuratorName">Jane Henderson</div>
-                                <div class="students-curator-role">curator</div>
-                              </div>
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <img src="./assets/images/student2.png" class="card-img-top" />
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Logan Martinez</h6>
+                              <small class="text-secondary">09.21.2015</small>
+                              <button class="btn btn-primary btn-sm w-100 d-flex justify-content-center gap-2 rounded py-2 fs-6">Send message</button>
                             </div>
                           </div>
+                        </div>
 
-                          <div class="table-responsive">
-                            <table class="table students-table align-middle mb-0">
-                              <thead>
-                                <tr>
-                                  <th class="border-end">Student</th>
-                                  <th class="border-end">Date of birth</th>
-                                  <th>Parents</th>
-                                  <th class=""></th>
-                                </tr>
-                              </thead>
-
-                              <tbody id="studentsTableBody">
-                                <tr data-grade="3" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-
-                                <tr data-grade="3" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr data-grade="2" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr data-grade="4" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr data-grade="1" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <img src="./assets/images/student3.png" class="card-img-top" />
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Natalie Wilson</h6>
+                              <small class="text-secondary">08.10.2016</small>
+                              <button class="btn btn-primary btn-sm w-100 d-flex justify-content-center gap-2 rounded py-2 fs-6">Send message</button>
+                            </div>
                           </div>
+                        </div>
 
-                          <div id="studentsEmptyState" class="p-4 text-center text-muted d-none">No students found for selected filters.</div>
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <img src="./assets/images/student4.png" class="card-img-top" />
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Grace Walker</h6>
+                              <small class="text-secondary">25.01.2016</small>
+                              <button class="btn btn-primary btn-sm w-100 d-flex justify-content-center gap-2 rounded py-2 fs-6">Send message</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <img src="./assets/images/student1.png" class="card-img-top" />
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Chloe Moore</h6>
+                              <small class="text-secondary">12.06.2017</small>
+                              <button class="btn btn-primary btn-sm w-100 d-flex justify-content-center gap-2 rounded py-2 fs-6">Send message</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </section>
+                    </div>
                   </div>
 
-                  <!-- CURRCILLUM  -->
+                  <!-- LESSONS  -->
 
                   <div class="tab-pane fade" id="lessons-pane" role="tabpanel" aria-labelledby="lessons-tab" tabindex="0">
                     <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
@@ -847,7 +675,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-lg-3">
-                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn fw-semibold rounded-3">+ Add</button>
+                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn fw-semibold rounded">+ Add</button>
                                         </div>
                                       </div>
                                     </div>
@@ -872,7 +700,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-lg-3 d-flex align-items-end">
-                                          <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Create +</button>
+                                          <button class="btn btn-primary lesson-add-btn w-100 rounded">Create +</button>
                                         </div>
                                       </div>
 
@@ -925,7 +753,7 @@
                                           </div>
 
                                           <div class="col-md-2 d-flex align-items-end">
-                                            <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Add +</button>
+                                            <button class="btn btn-primary lesson-add-btn w-100 rounded">Add +</button>
                                           </div>
                                         </div>
                                       </div>
@@ -945,9 +773,9 @@
                                       </div>
 
                                       <div class="d-flex justify-content-end gap-2 pt-2">
-                                        <button class="btn btn-outline-primary px-4 rounded-3">Cancel</button>
+                                        <button class="btn btn-outline-primary px-4 rounded">Cancel</button>
 
-                                        <button class="btn btn-primary px-4 rounded-3">Save</button>
+                                        <button class="btn btn-primary px-4 rounded">Save</button>
                                       </div>
                                     </div>
                                     <div class="lesson-section-box bg-blue-opacity p-3 rounded">
@@ -1170,7 +998,7 @@
                       <!-- HEADER -->
                       <div class="bg-white rounded shadow p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
                         <div class="d-flex align-items-center gap-3">
-                          <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
+                          <div class="rounded bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
                             <img src="./assets/images/icons/icon_calendar.svg" width="26" height="26" class="blue-icon" />
                           </div>
 
@@ -1434,7 +1262,7 @@
 
                   <div class="tab-pane fade" id="schedule-pane" role="tabpanel" aria-labelledby="schedule-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
-                      <div class="bg-white rounded-3 shadow p-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                      <div class="bg-white rounded shadow p-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
                         <div class="d-flex align-items-center gap-2">
                           <img src="./assets/images/icons/icon_calendar.svg" width="22" height="22" class="blue-icon" alt="" />
                           <span class="fw-semibold">Class Schedule</span>
@@ -1446,7 +1274,7 @@
                         </div>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-2">
                           <div class="col-6 col-md-3">
                             <label class="small text-secondary">Grade</label>
@@ -1485,7 +1313,7 @@
                         </div>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow p-2 d-flex justify-content-between align-items-center">
+                      <div class="bg-white rounded shadow p-2 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center gap-2">
                           <button class="btn btn-sm btn-light border">
                             <i class="bi bi-chevron-left"></i>
@@ -1501,7 +1329,7 @@
                         <button class="btn btn-sm btn-outline-primary">Export</button>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow overflow-hidden">
+                      <div class="bg-white rounded shadow overflow-hidden">
                         <div class="table-responsive">
                           <table class="table table-sm align-middle mb-0">
                             <thead class="bg-light small">
@@ -2877,27 +2705,27 @@
                       <!-- Thumbnails -->
                       <div class="d-flex flex-wrap gap-3 align-items-start mb-4">
                         <div class="position-relative dashboard-thumb">
-                          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
+                          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded" />
                           <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
                         </div>
 
                         <div class="position-relative dashboard-thumb">
-                          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
+                          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded" />
                           <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
                         </div>
 
                         <div class="position-relative dashboard-thumb">
-                          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
+                          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded" />
                           <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
                             <i class="bi bi-three-dots-vertical"></i>
                           </button>
 
                           <!-- Open menu example -->
-                          <div class="dashboard-thumb-menu shadow rounded-3 p-2 bg-white">
+                          <div class="dashboard-thumb-menu shadow rounded p-2 bg-white">
                             <button class="btn btn-sm btn-light w-100 text-start">Set as cover</button>
                             <button class="btn btn-sm btn-light w-100 text-start">Remove image</button>
                           </div>
