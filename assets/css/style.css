@@ -1400,13 +1400,6 @@ footer address:hover img {
   filter: brightness(0) invert(1);
 }
 
-.lesson-accordion-item {
-  border-radius: 14px !important;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 0 0 1px #edf0f2;
-}
-
 .lesson-accordion-btn {
   background: #fff !important;
   color: #212529 !important;
@@ -1440,30 +1433,6 @@ footer address:hover img {
 #lessons .btn:focus,
 #lessons a:focus {
   box-shadow: none !important;
-}
-
-#lessons .lesson-row p {
-  font-size: 1rem;
-}
-
-#lessons .lesson-row a {
-  font-size: 0.875rem;
-}
-
-@media (max-width: 576px) {
-  .lesson-row {
-    padding: 1rem 0.875rem;
-  }
-
-  .lesson-row p {
-    font-size: 0.95rem;
-  }
-}
-.lesson-row {
-  background: #fff;
-  border-radius: 14px;
-  padding: 1.15rem 1rem;
-  box-shadow: 0 0 0 1px #edf0f2;
 }
 
 .lesson-details {
