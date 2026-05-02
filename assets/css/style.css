@@ -1526,7 +1526,7 @@ select.form-select:focus {
 
 .header {
   width: 100%;
-  height: 105px;
+  height: 130px;
   position: relative;
   overflow: hidden;
 }
@@ -1577,7 +1577,7 @@ select.form-select:focus {
   width: 100%;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
 }
 
