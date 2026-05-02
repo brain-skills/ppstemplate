@@ -359,11 +359,11 @@ p {
 
 .swiper-button-next {
   top: 10% !important;
-  right: 2% !important;
+  right: -7% !important;
 }
 .swiper-button-prev {
   top: 10% !important;
-  left: 2% !important;
+  left: -7% !important;
 }
 
 .main-section-btn-prev {
