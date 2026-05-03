@@ -31,38 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function initSwipers() {
-    if (typeof Swiper === "undefined") return;
-
-    const swipers = document.querySelectorAll(".swiper");
-    if (!swipers.length) return;
-
-    swipers.forEach((root) => {
-      if (!root || root.dataset.swiperInited === "1") return;
-      root.dataset.swiperInited = "1";
-
-      const nextEl = root.querySelector(".swiper-button-next");
-      const prevEl = root.querySelector(".swiper-button-prev");
-      const pagEl = root.querySelector(".swiper-pagination");
-
-      new Swiper(root, {
-        loop: true,
-        spaceBetween: 24,
-        slidesPerView: 3,
-        navigation: nextEl && prevEl ? { nextEl, prevEl } : undefined,
-        pagination: pagEl ? { el: pagEl, clickable: true } : undefined,
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 14 },
-          768: { slidesPerView: 1, spaceBetween: 18 },
-          1200: { slidesPerView: 2, spaceBetween: 24 },
-          1400: { slidesPerView: 3, spaceBetween: 24 },
-        },
-      });
-    });
-  }
-
-  initSwipers();
-
   function startCountdown(el, hours, minutes, seconds) {
     if (!el) return;
 
@@ -1416,4 +1384,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     calculateTotals();
   }
+});
+
+document.querySelectorAll("section").forEach((section) => {
+  const swiperEl = section.querySelector(".swiper");
+  if (!swiperEl) return;
+
+  const slides = parseInt(section.dataset.slides) || 3;
+  const gap = parseInt(section.dataset.gap) || 24;
+
+  new Swiper(swiperEl, {
+    slidesPerView: slides,
+    spaceBetween: gap,
+
+    loop: true,
+
+    navigation: {
+      nextEl: section.querySelector(".swiper-button-next"),
+      prevEl: section.querySelector(".swiper-button-prev"),
+    },
+
+    pagination: {
+      el: section.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: gap,
+      },
+      768: {
+        slidesPerView: Math.min(2, slides),
+        spaceBetween: gap,
+      },
+      1200: {
+        slidesPerView: slides,
+        spaceBetween: gap,
+      },
+    },
+  });
 });

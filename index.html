@@ -23,6 +23,7 @@
 
     <!-- Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -232,8 +233,22 @@
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="global-hover-lift">
-                  <img src="./assets/images/school/school1.png" alt="school image" class="about-img mb-3 w-100" />
+                <div class="hover-image-5">
+                  <a href="./assets/images/school/school1.png" data-lightbox="school-gallery" data-title="Our Mission">
+                    <img src="./assets/images/school/school1.png" alt="school image" class="about-img w-100" />
+                    <div>
+                      <i class="fa fa-search"></i>
+                    </div>
+                  </a>
+                </div>
+
+                <p class="fs-5 fw-bold mb-3 mt-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
+                <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community...</p>
+              </div>
+
+              <div class="swiper-slide">
+                <div>
+                  <img src="./assets/images/school/school2.png" alt="school image" class="about-img mb-3 w-100" />
                   <p class="fs-5 fw-bold mb-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
                   <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community dedicated to nurturing the academic, creative, and personal growth of every student...</p>
                 </div>
@@ -264,10 +279,10 @@
               </div>
             </div>
 
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
             <div class="swiper-pagination mb-4"></div>
           </div>
+          <div class="swiper-button-prev d-none d-xl-flex"></div>
+          <div class="swiper-button-next d-none d-xl-flex"></div>
         </div>
 
         <div class="bg-blue-10 border-start border-5 border-blue p-3 rounded shadow">
@@ -741,10 +756,10 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-button-prev d-none d-xl-flex"></div>
-            <div class="swiper-button-next d-none d-xl-flex"></div>
             <div class="swiper-pagination"></div>
           </div>
+          <div class="swiper-button-prev d-none d-xl-flex"></div>
+          <div class="swiper-button-next d-none d-xl-flex"></div>
         </div>
       </section>
       <section class="py-4 py-xxl-5 container d-flex flex-column gap-5" id="events">
@@ -963,10 +978,10 @@
               </div>
             </div>
 
-            <div class="swiper-button-prev d-none d-xxl-flex"></div>
-            <div class="swiper-button-next d-none d-xxl-flex"></div>
             <div class="swiper-pagination"></div>
           </div>
+          <div class="swiper-button-prev d-none d-xxl-flex"></div>
+          <div class="swiper-button-next d-none d-xxl-flex"></div>
         </div>
       </section>
       <section class="py-4 py-xxl-5 container d-flex flex-column gap-4" id="gallery">
