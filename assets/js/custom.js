@@ -1425,3 +1425,11 @@ document.querySelectorAll("section").forEach((section) => {
     },
   });
 });
+
+const lightbox = GLightbox({
+  selector: ".glightbox",
+  loop: true,
+  zoomable: true,
+  openEffect: "zoom",
+  closeEffect: "fade",
+});

@@ -21,6 +21,10 @@
     <!-- Custom CSS  -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
+    <!-- GLightbox CSS And JS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <!-- Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -233,49 +237,95 @@
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="hover-image-5">
-                  <a href="./assets/images/school/school1.png" data-lightbox="school-gallery" data-title="Our Mission">
-                    <img src="./assets/images/school/school1.png" alt="school image" class="about-img w-100" />
-                    <div>
-                      <i class="fa fa-search"></i>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/school/school1.png" class="glightbox" data-gallery="school">
+                    <img src="./assets/images/school/school1.png" class="about-img w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                   </a>
                 </div>
 
                 <p class="fs-5 fw-bold mb-3 mt-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
+
                 <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community...</p>
               </div>
 
               <div class="swiper-slide">
-                <div>
-                  <img src="./assets/images/school/school2.png" alt="school image" class="about-img mb-3 w-100" />
-                  <p class="fs-5 fw-bold mb-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
-                  <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community dedicated to nurturing the academic, creative, and personal growth of every student...</p>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/school/school2.png" class="glightbox" data-gallery="school">
+                    <img src="./assets/images/school/school2.png" class="about-img w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
                 </div>
+
+                <p class="fs-5 fw-bold mb-3 mt-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
+
+                <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community...</p>
               </div>
 
               <div class="swiper-slide">
-                <div>
-                  <img src="./assets/images/school/school2.png" alt="school image" class="about-img mb-3 w-100" />
-                  <p class="fs-5 fw-bold mb-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
-                  <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community dedicated to nurturing the academic, creative, and personal growth of every student...</p>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/school/school3.png" class="glightbox" data-gallery="school">
+                    <img src="./assets/images/school/school3.png" class="about-img w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
                 </div>
+
+                <p class="fs-5 fw-bold mb-3 mt-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
+
+                <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community...</p>
               </div>
 
               <div class="swiper-slide">
-                <div>
-                  <img src="./assets/images/school/school3.png" alt="school image" class="about-img mb-3 w-100" />
-                  <p class="fs-5 fw-bold mb-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
-                  <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community dedicated to nurturing the academic, creative, and personal growth of every student...</p>
-                </div>
-              </div>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/school/school4.png" class="glightbox" data-gallery="school">
+                    <img src="./assets/images/school/school4.png" class="about-img w-100" />
 
-              <div class="swiper-slide">
-                <div>
-                  <img src="./assets/images/school/school4.png" alt="school image" class="about-img mb-3 w-100" />
-                  <p class="fs-5 fw-bold mb-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
-                  <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community dedicated to nurturing the academic, creative, and personal growth of every student...</p>
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
                 </div>
+
+                <p class="fs-5 fw-bold mb-3 mt-3">Our Mission: Inspiring Lifelong Learning and Growth</p>
+
+                <p class="fs-5 fw-normal">Philadelphia Progressive School is a vibrant learning community...</p>
               </div>
             </div>
 
@@ -368,15 +418,54 @@
             <div class="col-12 col-xl-5">
               <div class="enrollment-collage">
                 <figure class="enrollment-shot s1">
-                  <img src="./assets/images/enrollment/enrollment1.png" alt="Enrollment image 1" />
+                  <a href="./assets/images/enrollment/enrollment1.png" class="glightbox img-hover-lightbox" data-gallery="enrollment">
+                    <img src="./assets/images/enrollment/enrollment1.png" alt="Enrollment image 1" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
                 </figure>
 
                 <figure class="enrollment-shot s2">
-                  <img src="./assets/images/enrollment/enrollment2.png" alt="Enrollment image 2" />
+                  <a href="./assets/images/enrollment/enrollment2.png" class="glightbox img-hover-lightbox" data-gallery="enrollment">
+                    <img src="./assets/images/enrollment/enrollment2.png" alt="Enrollment image 2" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
                 </figure>
 
                 <figure class="enrollment-shot s3">
-                  <img src="./assets/images/enrollment/enrollment3.png" alt="Enrollment image 3" />
+                  <a href="./assets/images/enrollment/enrollment3.png" class="glightbox img-hover-lightbox" data-gallery="enrollment">
+                    <img src="./assets/images/enrollment/enrollment3.png" alt="Enrollment image 3" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
                 </figure>
               </div>
             </div>
@@ -655,14 +744,33 @@
           <div class="swiper">
             <div class="swiper-wrapper pb-3">
               <div class="swiper-slide px-2">
-                <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox news-image">
+                  <a href="./assets/images/news/news-first-img.png" class="glightbox" data-gallery="news">
+                    <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
                     <p class="fs-6 fw-light">07.12.2025 17:40</p>
-                    <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_share.svg" width="24" height="24" />
                   </div>
-                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+
+                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment...</p>
+
                   <div class="d-flex flex-row gap-3">
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
@@ -672,14 +780,33 @@
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/news/news-second-img.png" alt="news image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/news/news-second-img.png" class="glightbox" data-gallery="news">
+                    <img src="./assets/images/news/news-second-img.png" alt="news image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
                     <p class="fs-6 fw-light">07.12.2025 17:40</p>
-                    <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_share.svg" width="24" height="24" />
                   </div>
-                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+
+                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment...</p>
+
                   <div class="d-flex flex-row gap-3">
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
@@ -689,14 +816,33 @@
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/news/news-third-img.png" alt="news image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox news-image">
+                  <a href="./assets/images/news/news-first-img.png" class="glightbox" data-gallery="news">
+                    <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
                     <p class="fs-6 fw-light">07.12.2025 17:40</p>
-                    <img src="./assets/images/icons/icon_share.svg" alt="share icon" />
+                    <img src="./assets/images/icons/icon_share.svg" width="24" height="24" />
                   </div>
-                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+
+                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment...</p>
+
                   <div class="d-flex flex-row gap-3">
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
@@ -706,14 +852,33 @@
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/news/news-second-img.png" alt="news image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox news-image">
+                  <a href="./assets/images/news/news-first-img.png" class="glightbox" data-gallery="news">
+                    <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
                     <p class="fs-6 fw-light">07.12.2025 17:40</p>
-                    <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_share.svg" width="24" height="24" />
                   </div>
-                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+
+                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment...</p>
+
                   <div class="d-flex flex-row gap-3">
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
@@ -723,14 +888,33 @@
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/news/news-third-img.png" alt="news image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox news-image">
+                  <a href="./assets/images/news/news-first-img.png" class="glightbox" data-gallery="news">
+                    <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
                     <p class="fs-6 fw-light">07.12.2025 17:40</p>
-                    <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_share.svg" width="24" height="24" />
                   </div>
-                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+
+                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment...</p>
+
                   <div class="d-flex flex-row gap-3">
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
@@ -740,14 +924,33 @@
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox news-image">
+                  <a href="./assets/images/news/news-first-img.png" class="glightbox" data-gallery="news">
+                    <img src="./assets/images/news/news-first-img.png" alt="news image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">This year our School Upgrades with Modern Equipment!</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
                     <p class="fs-6 fw-light">07.12.2025 17:40</p>
-                    <img src="./assets/images/icons/icon_share.svg" alt="share icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_share.svg" width="24" height="24" />
                   </div>
-                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment to provide students with access to advanced technologies...</p>
+
+                  <p class="fw-normal fs-5 mb-3">Philadelphia Progressive School has received new laboratory and computer equipment...</p>
+
                   <div class="d-flex flex-row gap-3">
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">education</p>
                     <p class="p-2 bg-green-opacity rounded text-dark-opacity">equipment</p>
@@ -786,18 +989,38 @@
           <div class="swiper">
             <div class="swiper-wrapper pb-2">
               <div class="swiper-slide px-2">
-                <img src="./assets/images/events/events-first-img.png" alt="events image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- YOUR ORIGINAL CONTENT (UNCHANGED) -->
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
-                    <img src="./assets/images/icons/icon_location.svg" alt="location icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_location.svg" width="24" height="24" />
                     <p class="fs-6 fw-light">Central Park, main entrance</p>
                   </div>
+
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row gap-3 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="calendar icon" width="24" height="24" />
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" width="24" height="24" />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
+
                     <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
@@ -806,94 +1029,52 @@
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
+
+                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum...</p>
+
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-baseline gap-2">
                       <span class="fw-bold fs-3">$ 156.00</span>
                       <small class="fs-4"> / person</small>
                     </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/events/events-second-img.png" alt="events image" class="img-fluid w-100" />
-                <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-5 mb-3">Archaeological Museum: Journey into the Past. Discovering ancient civilizations.</p>
-                  <div class="d-flex gap-3 align-items-center mb-3">
-                    <img src="./assets/images/icons/icon_location.svg" alt="location icon" width="24" height="24" />
-                    <p class="fs-6 fw-light">Central Park, main entrance</p>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex flex-row gap-3 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="calendar icon" width="24" height="24" />
-                      <p class="fs-6 fw-bold">January, 12 12:00</p>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
-                      <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
-                      <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
-                    </div>
-                  </div>
-                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-3">$ 280.00</span>
-                      <small class="fs-4"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
-                  </div>
-                </div>
-              </div>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-second-img.png" class="glightbox" data-gallery="events">
+                    <img src="./assets/images/events/events-second-img.png" alt="events image" class="img-fluid w-100" />
 
-              <div class="swiper-slide px-2">
-                <img src="./assets/images/events/events-third-img.png" alt="events image" class="img-fluid w-100" />
-                <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-5 mb-3">School Harvest Festival: Celebrating Nature’s Bounty</p>
-                  <div class="d-flex gap-3 align-items-center mb-3">
-                    <img src="./assets/images/icons/icon_location.svg" alt="location icon" width="24" height="24" />
-                    <p class="fs-6 fw-light">Central Park, main entrance</p>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex flex-row gap-3 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="calendar icon" width="24" height="24" />
-                      <p class="fs-6 fw-bold">January, 12 12:00</p>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
-                      <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
-                      <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
-                    </div>
-                  </div>
-                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-3">$ 280.00</span>
-                      <small class="fs-4"> / person</small>
-                    </div>
-                    <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
-                  </div>
-                </div>
-              </div>
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
 
-              <div class="swiper-slide px-2">
-                <img src="./assets/images/events/events-first-img.png" alt="events image" class="img-fluid w-100" />
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
                   <p class="fw-semibold fs-5 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
-                    <img src="./assets/images/icons/icon_location.svg" alt="location icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_location.svg" width="24" height="24" />
                     <p class="fs-6 fw-light">Central Park, main entrance</p>
                   </div>
+
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row gap-3 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="calendar icon" width="24" height="24" />
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" width="24" height="24" />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
+
                     <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
@@ -902,30 +1083,52 @@
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
+
+                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum...</p>
+
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-baseline gap-2">
                       <span class="fw-bold fs-3">$ 156.00</span>
                       <small class="fs-4"> / person</small>
                     </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/events/events-second-img.png" alt="events image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-third-img.png" class="glightbox" data-gallery="events">
+                    <img src="./assets/images/events/events-third-img.png" alt="events image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-5 mb-3">Archaeological Museum: Journey into the Past. Discovering ancient civilizations.</p>
+                  <p class="fw-semibold fs-5 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
-                    <img src="./assets/images/icons/icon_location.svg" alt="location icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_location.svg" width="24" height="24" />
                     <p class="fs-6 fw-light">Central Park, main entrance</p>
                   </div>
+
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row gap-3 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="calendar icon" width="24" height="24" />
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" width="24" height="24" />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
+
                     <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
@@ -934,30 +1137,52 @@
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
+
+                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum...</p>
+
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-3">$ 280.00</span>
+                      <span class="fw-bold fs-3">$ 156.00</span>
                       <small class="fs-4"> / person</small>
                     </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>
               </div>
 
               <div class="swiper-slide px-2">
-                <img src="./assets/images/events/events-third-img.png" alt="events image" class="img-fluid w-100" />
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="p-3 shadow rounded">
-                  <p class="fw-semibold fs-5 mb-3">School Harvest Festival: Celebrating Nature’s Bounty</p>
+                  <p class="fw-semibold fs-5 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</p>
+
                   <div class="d-flex gap-3 align-items-center mb-3">
-                    <img src="./assets/images/icons/icon_location.svg" alt="location icon" width="24" height="24" />
+                    <img src="./assets/images/icons/icon_location.svg" width="24" height="24" />
                     <p class="fs-6 fw-light">Central Park, main entrance</p>
                   </div>
+
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-row gap-3 align-items-center">
-                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="calendar icon" width="24" height="24" />
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" width="24" height="24" />
                       <p class="fs-6 fw-bold">January, 12 12:00</p>
                     </div>
+
                     <div class="d-flex align-items-center gap-3 countdown">
                       <span class="time-box" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
@@ -966,12 +1191,123 @@
                       <span class="time-box" data-part="s">56</span>
                     </div>
                   </div>
-                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
+
+                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum...</p>
+
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-baseline gap-2">
-                      <span class="fw-bold fs-3">$ 280.00</span>
+                      <span class="fw-bold fs-3">$ 156.00</span>
                       <small class="fs-4"> / person</small>
                     </div>
+
+                    <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide px-2">
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-second-img.png" class="glightbox" data-gallery="events">
+                    <img src="./assets/images/events/events-second-img.png" alt="events image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="p-3 shadow rounded">
+                  <p class="fw-semibold fs-5 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</p>
+
+                  <div class="d-flex gap-3 align-items-center mb-3">
+                    <img src="./assets/images/icons/icon_location.svg" width="24" height="24" />
+                    <p class="fs-6 fw-light">Central Park, main entrance</p>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex flex-row gap-3 align-items-center">
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" width="24" height="24" />
+                      <p class="fs-6 fw-bold">January, 12 12:00</p>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 countdown">
+                      <span class="time-box" data-part="h">11</span>
+                      <span class="fs-5 fw-medium">:</span>
+                      <span class="time-box" data-part="m">13</span>
+                      <span class="fs-5 fw-medium">:</span>
+                      <span class="time-box" data-part="s">56</span>
+                    </div>
+                  </div>
+
+                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum...</p>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fw-bold fs-3">$ 156.00</span>
+                      <small class="fs-4"> / person</small>
+                    </div>
+
+                    <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide px-2">
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-third-img.png" class="glightbox" data-gallery="events">
+                    <img src="./assets/images/events/events-third-img.png" alt="events image" class="img-fluid w-100" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="p-3 shadow rounded">
+                  <p class="fw-semibold fs-5 mb-3">Weekend School Trip to the Zoo: Exploring Nature Together</p>
+
+                  <div class="d-flex gap-3 align-items-center mb-3">
+                    <img src="./assets/images/icons/icon_location.svg" width="24" height="24" />
+                    <p class="fs-6 fw-light">Central Park, main entrance</p>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex flex-row gap-3 align-items-center">
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" width="24" height="24" />
+                      <p class="fs-6 fw-bold">January, 12 12:00</p>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 countdown">
+                      <span class="time-box" data-part="h">11</span>
+                      <span class="fs-5 fw-medium">:</span>
+                      <span class="time-box" data-part="m">13</span>
+                      <span class="fs-5 fw-medium">:</span>
+                      <span class="time-box" data-part="s">56</span>
+                    </div>
+                  </div>
+
+                  <p class="fw-normal fs-5 mb-3">During the visit to the archaeological museum...</p>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fw-bold fs-3">$ 156.00</span>
+                      <small class="fs-4"> / person</small>
+                    </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>

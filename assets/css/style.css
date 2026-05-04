@@ -360,21 +360,21 @@ p {
 
 .swiper-button-next {
   top: 10% !important;
-  right: -5% !important;
+  right: -4% !important;
 }
 .swiper-button-prev {
   top: 10% !important;
-  left: -5% !important;
+  left: -4% !important;
 }
 
 .main-section-btn-prev {
   top: 50% !important;
-  left: 6% !important;
+  left: 8% !important;
 }
 
 .main-section-btn-next {
   top: 50% !important;
-  right: 6% !important;
+  right: 8% !important;
 }
 
 .swiper-pagination {
@@ -2015,101 +2015,125 @@ footer input[type="range"] {
   border-color: #000;
 }
 
-.hover-image-5 a {
+.img-hover-lightbox {
   position: relative;
-  z-index: 1;
-  display: block;
   overflow: hidden;
-  height: auto;
-  text-align: center;
-  background: #bfe2ff;
+  border-radius: 16px;
 }
 
-.hover-image-5 a img {
-  opacity: 1;
-  transition: opacity 0.5s;
-  position: relative;
-  max-width: 100%;
-  height: auto;
+.img-hover-lightbox a {
   display: block;
+  position: relative;
 }
 
-.hover-image-5 a:hover img {
-  opacity: 0.5;
-}
-
-.hover-image-5 a div {
-  position: absolute;
-  top: 0;
-  left: 0;
+.img-hover-lightbox img {
   width: 100%;
-  height: 100%;
+  display: block;
+  transition: transform 0.7s ease;
 }
 
-.hover-image-5 a div::before,
-.hover-image-5 a div::after {
+.img-hover-lightbox .overlay {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
-  content: "";
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   opacity: 0;
-  transition:
-    opacity 0.5s,
-    transform 0.5s;
+  transition: 0.35s ease;
+}
+
+.img-hover-lightbox i {
+  color: #fff;
+  font-size: 30px;
+
+  transform: scale(0.6);
+  opacity: 0;
+  transition: 0.35s ease;
+  z-index: 2;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
 }
 
-.hover-image-5 a div::before {
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  transform: scale(0, 1);
-}
-
-.hover-image-5 a div::after {
-  border-right: 2px solid #fff;
-  border-left: 2px solid #fff;
-  transform: scale(1, 0);
-}
-
-.hover-image-5 a:hover div::before,
-.hover-image-5 a:hover div::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.hover-image-5 div img,
-.hover-image-5 div i {
-  display: block;
+.frame .top {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -24px;
-  margin-left: -24px;
-  width: 48px;
-  height: 48px;
-  transition: transform 0.5s ease 0s;
-  transform: scale(0);
-  font-size: 48px;
-  color: #fff;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: #fff;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s ease;
 }
-.hover-image-5 a:hover div img,
-.hover-image-5 a:hover div i {
-  transform: scale(1);
+
+.frame .bottom {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: #fff;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: 0.5s ease;
+}
+
+.frame .left {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  width: 2px;
+  background: #fff;
+
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.5s ease;
+}
+
+.frame .right {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  right: 15px;
+  width: 2px;
+  background: #fff;
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: 0.5s ease;
+}
+
+.img-hover-lightbox:hover img {
+  transform: scale(1.12);
+}
+
+.img-hover-lightbox:hover .overlay {
   opacity: 1;
 }
 
-.glightbox-container .gslide-image {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
+.img-hover-lightbox:hover i {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.glightbox-container .gslide-image img {
-  max-width: 90vw !important;
-  max-height: 90vh !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain;
+.img-hover-lightbox:hover .top,
+.img-hover-lightbox:hover .bottom {
+  transform: scaleX(1);
+}
+
+.img-hover-lightbox:hover .left,
+.img-hover-lightbox:hover .right {
+  transform: scaleY(1);
 }
