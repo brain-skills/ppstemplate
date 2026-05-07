@@ -161,38 +161,34 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
   (function sectionHashObserver() {
-    const sections = document.querySelectorAll("main section[id]");
+    const sections = document.querySelectorAll("section[id]");
+
     if (!sections.length) return;
 
-    const galleryTabs = document.querySelectorAll("#galleryTabs .gallery-tab");
-    const galleryCats = new Set(["all"]);
-
-    galleryTabs.forEach((t) => t.dataset.category && galleryCats.add(t.dataset.category));
-
-    let activeId = null;
+    let currentSection = "";
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
 
-        if (!visible) return;
+            if (id && currentSection !== id) {
+              currentSection = id;
 
-        const hash = location.hash.slice(1);
-        if (galleryCats.has(hash)) return;
-
-        const id = visible.target.id;
-        if (id && id !== activeId) {
-          activeId = id;
-          history.replaceState(null, "", `#${id}`);
-        }
+              history.replaceState(null, "", `#${id}`);
+            }
+          }
+        });
       },
       {
-        threshold: [0.2, 0.35, 0.5, 0.65],
-        rootMargin: "-20% 0px -55% 0px",
+        threshold: 0.5,
       },
     );
 
-    sections.forEach((sec) => observer.observe(sec));
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
   })();
 
   (function mobileSearchOverlay() {
@@ -953,43 +949,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setActive(".top-bar__menu a");
 
   setActive(".header_items a");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const modalElement = document.getElementById("galleryModal");
-  const modalImage = document.getElementById("modalImage");
-
-  if (!modalElement || !modalImage || typeof bootstrap === "undefined") return;
-
-  const modal = new bootstrap.Modal(modalElement);
-
-  function openImageInModal(img) {
-    if (!img) return;
-
-    modalImage.src = img.src || "";
-    modalImage.alt = img.alt || "Image";
-
-    modal.show();
-  }
-
-  const galleryImgs = document.querySelectorAll(".gallery-img");
-  const profileImgs = document.querySelectorAll(".profile-main-image");
-  const certImgs = document.querySelectorAll(".certificate-card img");
-
-  function bindImages(nodeList) {
-    if (!nodeList.length) return;
-
-    nodeList.forEach((img) => {
-      if (!img) return;
-
-      img.style.cursor = "zoom-in";
-      img.addEventListener("click", () => openImageInModal(img));
-    });
-  }
-
-  bindImages(galleryImgs);
-  bindImages(profileImgs);
-  bindImages(certImgs);
 });
 
 document.addEventListener("DOMContentLoaded", () => {

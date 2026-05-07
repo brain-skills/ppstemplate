@@ -32,14 +32,12 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet" /> -->
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
     <main>
       <div class="page-hero">
-        <header>
+        <header class="sticky-top">
           <div class="top-bar">
             <div class="container d-flex py-3 justify-content-between align-items-center">
               <button class="btn p-0 border-0 bg-transparent d-flex d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu">
@@ -84,56 +82,48 @@
                 <div class="dropdown" data-bs-auto-close="outside">
                   <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="./assets/images/icons/icon_key.svg" alt="Account" width="24" height="24" />
-                    <span class="fs-6 mb-0 text-truncate-signup" title="Sign up">Sign up</span>
+                    <span class="fs-6 mb-0 text-truncate-signup">Sign up</span>
                   </button>
 
-                  <ul class="dropdown-menu dropdown-menu-end p-0 login-dropdown border-0 shadow-lg rounded overflow-hidden">
-                    <li class="p-3 login-card">
+                  <!-- Login Dropdown -->
+                  <ul class="dropdown-menu dropdown-menu-end login-dropdown p-0 border-0 shadow-lg rounded-3 overflow-hidden" id="loginDropdown">
+                    <li class="p-4 login-card">
                       <div class="text-center mb-4">
-                        <div class="login-icon mx-auto mb-2">
-                          <img src="./assets/images/icons/icon_secure.svg" alt="" width="28" />
+                        <div class="login-icon mx-auto mb-3">
+                          <img src="./assets/images/icons/icon_secure.svg" alt="" width="32" />
                         </div>
-
-                        <h5 class="fw-bold mb-1 fs-5">Welcome back</h5>
-                        <p class="text-muted fs-6 mb-0">Login to continue your account</p>
+                        <h5 class="fw-bold mb-1">Welcome back</h5>
+                        <p class="text-muted mb-0">Login to continue your account</p>
                       </div>
 
                       <form class="d-grid gap-3">
                         <div>
-                          <input type="text" id="login-username" name="username" class="form-control form-control-lg login-input" placeholder="Email or username" autocomplete="username" required />
+                          <input type="text" id="login-username" class="form-control form-control-lg" placeholder="Email or username" autocomplete="username" required />
                         </div>
 
                         <div>
-                          <input type="password" id="login-password" name="password" class="form-control form-control-lg login-input" placeholder="Password" autocomplete="current-password" required />
+                          <input type="password" id="login-password" class="form-control form-control-lg" placeholder="Password" autocomplete="current-password" required />
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center small">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="remember" name="remember" />
+                            <input class="form-check-input" type="checkbox" id="remember" />
                             <label class="form-check-label text-muted" for="remember">Remember me</label>
                           </div>
-
                           <a href="#" class="text-primary text-decoration-none">Forgot?</a>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg w-100 login-btn">Sign in</button>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Sign in</button>
 
-                        <div class="divider d-flex align-items-center my-0">
+                        <div class="divider d-flex align-items-center my-3">
                           <div class="flex-grow-1 border-top"></div>
                           <span class="px-3 text-muted small">or</span>
                           <div class="flex-grow-1 border-top"></div>
                         </div>
 
                         <div class="d-grid gap-2">
-                          <button type="button" class="btn btn-outline-danger social-btn">
-                            <i class="bi bi-google"></i>
-                            Google
-                          </button>
-
-                          <button type="button" class="btn btn-outline-primary social-btn">
-                            <i class="bi bi-facebook"></i>
-                            Facebook
-                          </button>
+                          <button type="button" class="btn btn-outline-danger"><i class="bi bi-google"></i> Google</button>
+                          <button type="button" class="btn btn-outline-primary"><i class="bi bi-facebook"></i> Facebook</button>
                         </div>
                       </form>
                     </li>
@@ -722,7 +712,7 @@
       </section>
       <section class="py-4 py-xxl-5 container d-flex flex-column gap-5" id="news">
         <div>
-          <div class="d-flex align-items-center mb-4 justify-content-between">
+          <div class="d-flex align-items-center mb-4 justify-content-between flex-wrap gap-3">
             <div class="d-flex flex-row gap-3 align-items-center">
               <img src="./assets/images/icons/icon_news.svg" alt="news icon" width="30" height="30" class="blue-icon" />
               <p class="fw-bold fs-3">Latest news</p>
@@ -1022,11 +1012,11 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
+                      <span class="time-box p-2 rounded" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
+                      <span class="time-box p-2 rounded" data-part="m">13</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
+                      <span class="time-box p-2 rounded" data-part="s">56</span>
                     </div>
                   </div>
 
@@ -1076,11 +1066,11 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
+                      <span class="time-box p-2 rounded" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
+                      <span class="time-box p-2 rounded" data-part="m">13</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
+                      <span class="time-box p-2 rounded" data-part="s">56</span>
                     </div>
                   </div>
 
@@ -1130,11 +1120,11 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
+                      <span class="time-box p-2 rounded" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
+                      <span class="time-box p-2 rounded" data-part="m">13</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
+                      <span class="time-box p-2 rounded" data-part="s">56</span>
                     </div>
                   </div>
 
@@ -1184,11 +1174,11 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
+                      <span class="time-box p-2 rounded" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
+                      <span class="time-box p-2 rounded" data-part="m">13</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
+                      <span class="time-box p-2 rounded" data-part="s">56</span>
                     </div>
                   </div>
 
@@ -1238,11 +1228,11 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
+                      <span class="time-box p-2 rounded" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
+                      <span class="time-box p-2 rounded" data-part="m">13</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
+                      <span class="time-box p-2 rounded" data-part="s">56</span>
                     </div>
                   </div>
 
@@ -1292,11 +1282,11 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 countdown">
-                      <span class="time-box" data-part="h">11</span>
+                      <span class="time-box p-2 rounded" data-part="h">11</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="m">13</span>
+                      <span class="time-box p-2 rounded" data-part="m">13</span>
                       <span class="fs-5 fw-medium">:</span>
-                      <span class="time-box" data-part="s">56</span>
+                      <span class="time-box p-2 rounded" data-part="s">56</span>
                     </div>
                   </div>
 
@@ -1321,7 +1311,7 @@
         </div>
       </section>
       <section class="py-4 py-xxl-5 container d-flex flex-column gap-4" id="gallery">
-        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
           <div class="d-flex align-items-center gap-3">
             <img src="./assets/images/icons/icon_media.svg" alt="media icon" width="28" height="28" class="blue-icon" />
             <h3 class="fw-bold mb-0">Gallery</h3>
@@ -1364,22 +1354,117 @@
 
         <div class="row g-3" id="galleryGrid">
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="outdoor">
-            <img src="./assets/images/gallery/gallery-first-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-first-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-first-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
+
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="outdoor">
-            <img src="./assets/images/gallery/gallery-fourth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-fourth-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-fourth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
+
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="outdoor">
-            <img src="./assets/images/gallery/gallery-fifth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-fifth-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-fifth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
+
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="indoor">
-            <img src="./assets/images/gallery/gallery-third-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-third-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-third-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
+
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="indoor">
-            <img src="./assets/images/gallery/gallery-second-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-second-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-second-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
+
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="indoor">
-            <img src="./assets/images/gallery/gallery-sixth-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-sixth-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-sixth-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1393,19 +1478,6 @@
           <button class="btn btn-outline-primary px-4 rounded">Show more</button>
         </div>
       </section>
-
-      <!-- Gallery Modal -->
-      <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content bg-transparent border-0 shadow-none">
-            <div class="modal-body p-2 position-relative">
-              <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" style="font-size: 1.8rem; z-index: 10"></button>
-
-              <img id="modalImage" src="" alt="" class="img-fluid rounded w-75" />
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
 
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
@@ -1421,7 +1493,7 @@
           </div>
 
           <!-- MENU 1 -->
-          <div class="col-12 col-md-3 col-xl-2">
+          <div class="col-6 col-sm-4 col-md-3 col-xl-2">
             <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-center text-xl-start">
               <li><a href="./index.html" class="text-decoration-none text-dark fw-bold fs-6">Home</a></li>
               <li><a href="./about.html" class="text-decoration-none text-dark fw-bold fs-6">About School</a></li>
@@ -1434,7 +1506,7 @@
           </div>
 
           <!-- MENU 2 -->
-          <div class="col-12 col-md-3 col-xl-2">
+          <div class="col-6 col-sm-4 col-md-3 col-xl-2">
             <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-center text-xl-start">
               <li><a href="./classes.html" class="text-decoration-none text-dark fw-bold fs-6">Classes and Courses</a></li>
               <li><a href="./staff.html" class="text-decoration-none text-dark fw-bold fs-6">Staff</a></li>
@@ -1447,7 +1519,7 @@
           </div>
 
           <!-- MENU 3 -->
-          <div class="col-12 col-md-2 col-xl-2">
+          <div class="col-12 col-sm-4 col-md-2 col-xl-2">
             <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-center text-xl-start">
               <li><a href="./contact.html" class="text-decoration-none text-dark fw-bold fs-6">Contact Us</a></li>
               <li><a href="./store.html" class="text-decoration-none text-dark fw-bold fs-6">Store</a></li>

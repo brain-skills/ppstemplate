@@ -402,18 +402,6 @@ p {
   border-radius: 12px !important;
 }
 
-.time-box {
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 22px;
-  font-weight: 600;
-  font-family: monospace;
-  min-width: 42px;
-  text-align: center;
-  background-color: #2696db33;
-  transition: background-color 0.2s ease;
-}
-
 .gallery-tab.active {
   color: #0d6efd !important;
   font-weight: 700 !important;
@@ -2136,4 +2124,34 @@ footer input[type="range"] {
 .img-hover-lightbox:hover .left,
 .img-hover-lightbox:hover .right {
   transform: scaleY(1);
+}
+
+@media (max-width: 767.98px) {
+  #loginDropdown {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+    z-index: 1055 !important;
+  }
+
+  .dropdown.show #loginDropdown::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  header.sticky-top {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
 }
