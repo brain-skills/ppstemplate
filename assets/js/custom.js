@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       select.addEventListener("change", () => setActive(select.value));
     }
 
-    setActive(location.hash?.slice(1));
+    setActive(location.hash?.slice("all"));
   })();
 
   (function fontScaler() {
@@ -162,33 +162,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   (function sectionHashObserver() {
     const sections = document.querySelectorAll("section[id]");
-
     if (!sections.length) return;
 
-    let currentSection = "";
+    let currentSection = location.hash.replace("#", "") || "";
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
+          if (!entry.isIntersecting) return;
 
-            if (id && currentSection !== id) {
-              currentSection = id;
+          const id = entry.target.id;
+          if (!id || currentSection === id) return;
 
-              history.replaceState(null, "", `#${id}`);
-            }
-          }
+          currentSection = id;
+
+          history.replaceState(null, "", `#${id}`);
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.6,
       },
     );
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
   })();
 
   (function mobileSearchOverlay() {
