@@ -21,11 +21,18 @@
     <!-- Custom CSS  -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
+    <!-- GLightbox CSS And JS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <!-- Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
     <header>
@@ -73,56 +80,48 @@
             <div class="dropdown" data-bs-auto-close="outside">
               <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="./assets/images/icons/icon_key.svg" alt="Account" width="24" height="24" />
-                <span class="fs-6 mb-0 text-truncate-signup" title="Sign up">Sign up</span>
+                <span class="fs-6 mb-0 text-truncate-signup">Sign up</span>
               </button>
 
-              <ul class="dropdown-menu dropdown-menu-end p-0 login-dropdown border-0 shadow-lg rounded overflow-hidden">
-                <li class="p-3 login-card">
+              <!-- Login Dropdown -->
+              <ul class="dropdown-menu dropdown-menu-end login-dropdown p-0 border-0 shadow-lg rounded-3 overflow-hidden" id="loginDropdown">
+                <li class="p-4 login-card">
                   <div class="text-center mb-4">
-                    <div class="login-icon mx-auto mb-2">
-                      <img src="./assets/images/icons/icon_secure.svg" alt="" width="28" />
+                    <div class="login-icon mx-auto mb-3">
+                      <img src="./assets/images/icons/icon_secure.svg" alt="" width="32" />
                     </div>
-
-                    <h5 class="fw-bold mb-1 fs-5">Welcome back</h5>
-                    <p class="text-muted fs-6 mb-0">Login to continue your account</p>
+                    <h5 class="fw-bold mb-1">Welcome back</h5>
+                    <p class="text-muted mb-0">Login to continue your account</p>
                   </div>
 
                   <form class="d-grid gap-3">
                     <div>
-                      <input type="text" id="login-username" name="username" class="form-control form-control-lg login-input" placeholder="Email or username" autocomplete="username" required />
+                      <input type="text" id="login-username" class="form-control form-control-lg" placeholder="Email or username" autocomplete="username" required />
                     </div>
 
                     <div>
-                      <input type="password" id="login-password" name="password" class="form-control form-control-lg login-input" placeholder="Password" autocomplete="current-password" required />
+                      <input type="password" id="login-password" class="form-control form-control-lg" placeholder="Password" autocomplete="current-password" required />
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center small">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="remember" name="remember" />
+                        <input class="form-check-input" type="checkbox" id="remember" />
                         <label class="form-check-label text-muted" for="remember">Remember me</label>
                       </div>
-
                       <a href="#" class="text-primary text-decoration-none">Forgot?</a>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-lg w-100 login-btn">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-lg w-100">Sign in</button>
 
-                    <div class="divider d-flex align-items-center my-0">
+                    <div class="divider d-flex align-items-center my-3">
                       <div class="flex-grow-1 border-top"></div>
                       <span class="px-3 text-muted small">or</span>
                       <div class="flex-grow-1 border-top"></div>
                     </div>
 
                     <div class="d-grid gap-2">
-                      <button type="button" class="btn btn-outline-danger social-btn">
-                        <i class="bi bi-google"></i>
-                        Google
-                      </button>
-
-                      <button type="button" class="btn btn-outline-primary social-btn">
-                        <i class="bi bi-facebook"></i>
-                        Facebook
-                      </button>
+                      <button type="button" class="btn btn-outline-danger"><i class="bi bi-google"></i> Google</button>
+                      <button type="button" class="btn btn-outline-primary"><i class="bi bi-facebook"></i> Facebook</button>
                     </div>
                   </form>
                 </li>
@@ -195,7 +194,7 @@
       </div>
     </div>
     <main class="bg-white">
-      <section class="pt-3 bg-white">
+      <section class="pt-0 pt-xl-3 bg-white">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
@@ -274,18 +273,58 @@
               </div>
             </div>
 
-            <!-- Right: responsive collage -->
             <div class="col-12 col-xl-5">
               <div class="enrollment-collage">
-                <div class="enrollment-shot s1">
-                  <img src="./assets/images/enrollment/enrollment1.png" alt="enrollment image" />
-                </div>
-                <div class="enrollment-shot s2">
-                  <img src="./assets/images/enrollment/enrollment2.png" alt="enrollment image" />
-                </div>
-                <div class="enrollment-shot s3">
-                  <img src="./assets/images/enrollment/enrollment3.png" alt="enrollment image" />
-                </div>
+                <figure class="enrollment-shot s1">
+                  <a href="./assets/images/enrollment/enrollment1.png" class="glightbox img-hover-lightbox" data-gallery="enrollment">
+                    <img src="./assets/images/enrollment/enrollment1.png" alt="Enrollment image 1" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </figure>
+
+                <figure class="enrollment-shot s2">
+                  <a href="./assets/images/enrollment/enrollment2.png" class="glightbox img-hover-lightbox" data-gallery="enrollment">
+                    <img src="./assets/images/enrollment/enrollment2.png" alt="Enrollment image 2" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </figure>
+
+                <figure class="enrollment-shot s3">
+                  <a href="./assets/images/enrollment/enrollment3.png" class="glightbox img-hover-lightbox" data-gallery="enrollment">
+                    <img src="./assets/images/enrollment/enrollment3.png" alt="Enrollment image 3" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </figure>
               </div>
             </div>
           </div>

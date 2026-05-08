@@ -26,6 +26,8 @@
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
     <header>
@@ -260,10 +262,10 @@
           <div class="schedule-head mt-4">
             <div class="d-flex align-items-center gap-2 position-relative">
               <button type="button" id="prevBtn" class="schedule-arrow">‹</button>
-
               <div class="position-relative">
                 <div id="monthDisplay" class="fw-bold fs-5" style="cursor: pointer">December <span>2025</span></div>
-                <input id="dateInput" type="date" class="form-control position-absolute mt-2 d-none" style="width: 180px" />
+
+                <input id="dateInput" name="date" type="text" class="fp-hidden" />
               </div>
 
               <button type="button" id="nextBtn" class="schedule-arrow">›</button>
@@ -279,32 +281,32 @@
             <table class="table mb-0 schedule-table">
               <thead>
                 <tr>
-                  <th class="time-header-col">
+                  <th class="time-header-col border-end">
                     <div class="d-flex align-items-center gap-2 justify-content-center">
                       <span>Time</span>
                     </div>
                   </th>
-                  <th>
+                  <th class="border-end">
                     <small>01.12</small>
                     <div>Sunday</div>
                   </th>
-                  <th>
+                  <th class="border-end">
                     <small>02.12</small>
                     <div>Monday</div>
                   </th>
-                  <th>
+                  <th class="border-end">
                     <small>03.12</small>
                     <div>Tuesday</div>
                   </th>
-                  <th>
+                  <th class="border-end">
                     <small>04.12</small>
                     <div>Wednesday</div>
                   </th>
-                  <th>
+                  <th class="border-end">
                     <small>05.12</small>
                     <div>Thursday</div>
                   </th>
-                  <th>
+                  <th class="border-end">
                     <small>06.12</small>
                     <div>Friday</div>
                   </th>
@@ -316,73 +318,72 @@
               </thead>
 
               <tbody>
-                <!-- More rows added so table looks substantial even after filtering -->
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">07:30 am</div>
                     <div class="time-sub">1 lesson</div>
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">08:15 am</div>
                     <div class="time-sub">2 lesson</div>
                   </td>
-                  <td class="class-cell">English language <span class="grade">1 grade</span></td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td></td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td></td>
+                  <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="border-end"></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">09:10 am</div>
                     <div class="time-sub">3 lesson</div>
                   </td>
-                  <td class="class-cell">English language <span class="grade">2 grade</span></td>
-                  <td></td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td></td>
-                  <td class="class-cell">English language <span class="grade">1 grade</span></td>
-                  <td class="individual-cell">
+                  <td class="class-cell border-end">English language <span class="grade">2 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
+                  <td class="individual-cell border-end">
                     Sarah Jefferson
                     <span class="tag tag-green">individual</span>
                   </td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">10:05 am</div>
                     <div class="time-sub">4 lesson</div>
                   </td>
-                  <td class="class-cell">Math <span class="grade">3 grade</span></td>
-                  <td class="class-cell">English language <span class="grade">4 grade</span></td>
-                  <td></td>
-                  <td class="class-cell">English language <span class="grade">5 grade</span></td>
-                  <td></td>
-                  <td></td>
+                  <td class="class-cell border-end">Math <span class="grade">3 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">4 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">English language <span class="grade">5 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">11:00 am</div>
                     <div class="time-sub">5 lesson</div>
                   </td>
-                  <td></td>
-                  <td class="class-cell">Math <span class="grade">2 grade</span></td>
-                  <td class="class-cell">English language <span class="grade">1 grade</span></td>
-                  <td></td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">Math <span class="grade">2 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="border-end"></td>
                   <td></td>
                 </tr>
                 <tr class="lunch-row">
@@ -397,58 +398,58 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">01:00 pm</div>
                     <div class="time-sub">7 lesson</div>
                   </td>
-                  <td></td>
-                  <td class="meeting-cell">
+                  <td class="border-end"></td>
+                  <td class="meeting-cell border-end">
                     Weekly meeting
                     <span class="tag tag-pink">teachers’ council</span>
                   </td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td class="class-cell">English language <span class="grade">2 grade</span></td>
-                  <td></td>
-                  <td class="class-cell">English language <span class="grade">1 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">2 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">02:00 pm</div>
                     <div class="time-sub">8 lesson</div>
                   </td>
-                  <td class="class-cell">English language <span class="grade">5 grade</span></td>
-                  <td></td>
-                  <td class="individual-cell">John Smith <span class="tag tag-green">individual</span></td>
-                  <td></td>
-                  <td class="class-cell">Math <span class="grade">3 grade</span></td>
-                  <td></td>
+                  <td class="class-cell border-end">English language <span class="grade">5 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="individual-cell border-end">John Smith <span class="tag tag-green">individual</span></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">Math <span class="grade">3 grade</span></td>
+                  <td class="border-end"></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">03:00 pm</div>
                     <div class="time-sub">9 lesson</div>
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td class="class-cell">English language <span class="grade">4 grade</span></td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td></td>
-                  <td></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
+                  <td class="class-cell border-end">English language <span class="grade">4 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td class="time-cell">
+                  <td class="time-cell border-end">
                     <div class="time-main">04:00 pm</div>
                     <div class="time-sub">10 lesson</div>
                   </td>
-                  <td class="class-cell">Math <span class="grade">1 grade</span></td>
-                  <td class="class-cell">English language <span class="grade">3 grade</span></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td class="class-cell border-end">Math <span class="grade">1 grade</span></td>
+                  <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
+                  <td class="border-end"></td>
                   <td></td>
                 </tr>
               </tbody>
@@ -459,7 +460,7 @@
     </main>
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
       <div class="container d-flex flex-column flex-xl-row justify-content-between gap-4 gap-xl-5 align-items-center align-items-xl-start">
-        <div class="d-flex flex-column gap-3 justify-content-between align-items-center align-items-xl-start" style="">
+        <div class="d-flex flex-column gap-3 justify-content-between align-items-center align-items-xl-start">
           <img src="./assets/logo/school-logo.svg" alt="School logo" class="footer-logo" />
 
           <span class="fs-6 text-dark-opacity fw-light w-100 text-center text-xl-start"> Official and legal information required for display: copyrights, organization details, etc </span>

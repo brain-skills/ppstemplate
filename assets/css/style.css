@@ -450,6 +450,7 @@ footer address:hover img {
 
 .mobile-menu.offcanvas {
   border-right: 1px solid rgba(0, 0, 0, 0.06);
+  z-index: 9999;
 }
 
 .mobile-menu__link {
@@ -1515,7 +1516,7 @@ select.form-select:focus {
 
 .header {
   width: 100%;
-  height: 110px;
+  height: 130px;
   position: relative;
   overflow: hidden;
 }
@@ -1968,6 +1969,9 @@ footer input[type="range"] {
   }
   .header_items {
     top: 34%;
+  }
+  .header {
+    height: 110px;
   }
 }
 
