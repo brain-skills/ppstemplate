@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
-    <header>
+    <header class="sticky-top">
       <div class="top-bar">
         <div class="container d-flex py-3 justify-content-between align-items-center">
           <button class="btn p-0 border-0 bg-transparent d-flex d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu">
@@ -54,7 +54,7 @@
           </nav>
 
           <div class="d-flex align-items-center gap-2 gap-xxl-4 flex-wrap">
-            <div class="top-bar__search d-flex align-items-center">
+            <div class="top-bar__search icon-btn d-flex align-items-center">
               <div class="d-none d-xxl-flex bg-white-20 px-3 py-1 rounded align-items-center">
                 <input type="text" id="desktopSearchInput" name="search" placeholder="Search" class="border-0 bg-transparent text-white flex-grow-1" autocomplete="off" aria-label="Search" />
 
@@ -68,11 +68,11 @@
               </button>
             </div>
 
-            <button type="button" class="tool rounded p-2 bg-dark-opacity border-0" aria-label="Accessibility settings">
+            <button type="button" class="icon-btn tool rounded p-2 bg-dark-opacity border-0" aria-label="Accessibility settings">
               <img src="./assets/images/icons/icon_glasses.svg" alt="Accessibility" width="24" height="24" />
             </button>
 
-            <a href="./tab-store-cart.html" class="tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none header-item">
+            <a href="./tab-store-cart.html" class="icon-btn tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none header-item">
               <img src="./assets/images/icons/icon_cart.svg" alt="Cart" width="24" height="24" />
               <span class="fs-6 mb-0 text-white d-none d-sm-flex">2 / 178.45</span>
             </a>
@@ -133,54 +133,55 @@
       <div class="header z-2">
         <div class="header__top bg-white"></div>
         <div class="container header__bottom bg-white"></div>
+
         <div class="header_items d-flex justify-content-center justify-content-lg-between container">
           <a href="/" class="nav-logo">
             <img src="./assets/logo/school-logo.svg" alt="School logo" />
           </a>
 
           <div class="d-none d-lg-flex flex-row align-items-center gap-3 gap-xxl-4">
-            <a href="./index.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_dashboard.svg" alt="Home icon" width="24" height="24" />
+            <a href="./index.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_dashboard.svg" alt="Home icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">Home</span>
             </a>
 
-            <a href="./about.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_school.svg" alt="About icon" width="24" height="24" />
+            <a href="./about.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_school.svg" alt="About icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">About</span>
             </a>
 
-            <a href="./enrollment.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_education.svg" alt="Enrollment icon" width="24" height="24" />
+            <a href="./enrollment.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_education.svg" alt="Enrollment icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">Enrollment</span>
             </a>
 
-            <a href="./schedule.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule icon" width="24" height="24" />
+            <a href="./schedule.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">Schedule</span>
             </a>
 
-            <a href="./news.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_news.svg" alt="News icon" width="24" height="24" />
+            <a href="./news.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_news.svg" alt="News icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">News</span>
             </a>
 
-            <a href="./events.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_event.svg" alt="Events icon" width="24" height="24" />
+            <a href="./events.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_event.svg" alt="Events icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">Events</span>
             </a>
 
-            <a href="./gallery.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_media.svg" alt="Gallery icon" width="24" height="24" />
+            <a href="./gallery.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_media.svg" alt="Gallery icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">Gallery</span>
             </a>
 
-            <a href="./files.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_folder.svg" alt="Files icon" width="24" height="24" />
+            <a href="./files.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_folder.svg" alt="Files icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">Files</span>
             </a>
 
-            <a href="./contact.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_phone.svg" alt="Contact icon" width="24" height="24" />
+            <a href="./contact.html" class="nav-link-custom d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_phone.svg" alt="Contact icon" width="24" height="24" class="icon-filter-muted" />
               <span class="fs-6">Contact</span>
             </a>
           </div>
@@ -207,11 +208,10 @@
         </div>
       </section>
       <section class="py-4 py-xxl-5 container d-flex flex-column gap-4 gap-xxl-5" id="about-school">
-        <!-- Heading + intro -->
         <div>
           <div class="d-flex gap-3 align-items-center mb-3 mb-xxl-4">
             <img src="./assets/images/icons/icon_school.svg" alt="school icon" width="30" height="30" />
-            <p class="fw-bold fs-2 mb-0">About School</p>
+            <p class="fw-bold fs-2 mb-0 section-title">About School</p>
           </div>
 
           <p class="fs-6 fs-md-5 fs-lg-4 fw-semibold mb-0">
@@ -220,7 +220,6 @@
           </p>
         </div>
 
-        <!-- Info card -->
         <div class="bg-blue-10 border-start border-5 border-blue p-3 rounded shadow">
           <p class="fs-6 fs-md-5 fs-lg-4 mb-0">
             Our goals focus on fostering a supportive and inclusive environment where diversity is celebrated and all students feel valued and empowered. We strive to develop confident, responsible individuals who are equipped with the knowledge and
