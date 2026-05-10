@@ -186,28 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section) => observer.observe(section));
   })();
-
-  (function mobileSearchOverlay() {
-    const openBtn = document.getElementById("openSearch");
-    const closeBtn = document.getElementById("closeSearch");
-    const overlay = document.getElementById("mobileSearchOverlay");
-    const input = document.getElementById("mobileSearchInput");
-
-    if (!openBtn || !closeBtn || !overlay || !input) return;
-
-    openBtn.addEventListener("click", () => {
-      overlay.style.display = "flex";
-      input.focus();
-    });
-
-    closeBtn.addEventListener("click", () => {
-      overlay.style.display = "none";
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") overlay.style.display = "none";
-    });
-  })();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -910,25 +888,6 @@ document.addEventListener("DOMContentLoaded", function () {
   switchGrade(5);
 });
 
-const openBtn = document.getElementById("openSearch");
-const closeBtn = document.getElementById("closeSearch");
-const search = document.getElementById("mobileSearch");
-
-openBtn.addEventListener("click", () => {
-  search.classList.add("active");
-  search.querySelector("input").focus();
-});
-
-closeBtn.addEventListener("click", () => {
-  search.classList.remove("active");
-});
-
-search.addEventListener("click", (e) => {
-  if (e.target === search) {
-    search.classList.remove("active");
-  }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
@@ -1414,5 +1373,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!notificationBtn.contains(e.target) && !notificationWindow.contains(e.target)) {
       notificationWindow.classList.remove("active");
     }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const openBtn = document.getElementById("openSearch");
+  const overlay = document.getElementById("headerSearchOverlay");
+  const closeBtn = document.getElementById("closeSearch");
+  const input = document.getElementById("headerSearchInput");
+
+  console.log(openBtn, overlay); // 🔥 debug check
+
+  if (!openBtn || !overlay) return;
+
+  openBtn.addEventListener("click", function () {
+    overlay.classList.add("active");
+    setTimeout(() => input.focus(), 100);
+  });
+
+  closeBtn.addEventListener("click", function () {
+    overlay.classList.remove("active");
   });
 });

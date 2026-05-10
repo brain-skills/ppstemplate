@@ -114,7 +114,7 @@
                 </a>
 
                 <div class="dropdown" data-bs-auto-close="outside">
-                  <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle no-caret" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="./assets/images/icons/icon_key.svg" alt="Account" width="24" height="24" />
                     <span class="fs-6 mb-0 text-truncate-signup">Sign up</span>
                   </button>
@@ -162,6 +162,13 @@
                       </form>
                     </li>
                   </ul>
+                </div>
+              </div>
+              <div id="headerSearchOverlay" class="header-search-overlay rounded">
+                <div class="container d-flex align-items-center gap-2">
+                  <input type="text" id="headerSearchInput" class="form-control border-1 shadow-none fs-5" placeholder="Search..." />
+
+                  <button type="button" id="closeSearch" class="btn border-0 bg-primary rounded fs-4 text-white">✕</button>
                 </div>
               </div>
             </div>
@@ -224,12 +231,6 @@
             </div>
           </div>
         </header>
-        <div id="mobileSearch" class="mobile-search">
-          <div class="mobile-search__inner">
-            <input type="text" id="mobileSearchInput" name="search" placeholder="Search..." autocomplete="off" />
-            <button id="closeSearch" type="button">✕</button>
-          </div>
-        </div>
         <section class="main-section position-relative overflow-hidden w-100 z-0">
           <img src="./assets/images/main.png" alt="School" class="hero-image d-none d-sm-block" />
           <img src="./assets/images/main-mobile.png" alt="School" class="hero-image w-100 d-block d-sm-none" />
@@ -1517,9 +1518,9 @@
 
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
       <div class="container">
-        <div class="row g-4 align-items-start">
+        <div class="row g-1 align-items-start" style="justify-content: space-between">
           <!-- LOGO -->
-          <div class="col-12 col-md-4 col-xl-4">
+          <div class="col-12 col-md-4 col-xl-3">
             <div class="d-flex flex-column gap-3 align-items-center align-items-xl-start text-center text-xl-start">
               <img src="./assets/logo/school-logo.svg" alt="School logo" class="footer-logo" />
 
@@ -1554,7 +1555,7 @@
           </div>
 
           <!-- MENU 3 -->
-          <div class="col-12 col-sm-4 col-md-2 col-xl-1">
+          <div class="col-12 col-sm-4 col-md-2 col-xl-2">
             <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-center text-xl-start">
               <li><a href="./contact.html" class="text-decoration-none text-dark fw-bold fs-6">Contact Us</a></li>
               <li><a href="./store.html" class="text-decoration-none text-dark fw-bold fs-6">Store</a></li>
@@ -1562,7 +1563,7 @@
           </div>
 
           <!-- CONTACTS -->
-          <div class="col-12 col-xl-3 d-none d-xl-flex">
+          <div class="col-12 col-xl-2 d-none d-xl-flex">
             <div class="d-flex flex-column gap-4 align-items-center align-items-xl-start">
               <h5 class="fs-4 fw-medium d-none d-xl-block">Contacts</h5>
 
