@@ -2359,3 +2359,7 @@ footer a:hover {
   visibility: visible;
   transform: translateY(0);
 }
+
+.notification-item:hover {
+  background-color: #f5f9ff;
+}
