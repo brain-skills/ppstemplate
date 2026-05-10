@@ -458,7 +458,6 @@ footer a {
 
 footer a:hover {
   color: #2696db !important;
-  transform: translateY(-2px);
   text-decoration: underline;
 }
 
@@ -2281,4 +2280,82 @@ footer a:hover {
 .dropdown-menu .dropdown-item:hover {
   background-color: #2696db !important;
   color: #fff !important;
+}
+.side-ask-btn {
+  position: fixed;
+  right: -58px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  background-color: #249fdd;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 500;
+  z-index: 2000;
+  border: none;
+  white-space: nowrap;
+  border-radius: 8px 8px 0 0;
+}
+
+.side-ask-btn i {
+  transform: rotate(0deg);
+  display: inline-block;
+}
+.chat-window {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 420px;
+  z-index: 3000;
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+.chat-window.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .chat-window {
+    right: 50% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    max-width: none !important;
+    bottom: 20px !important;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.notification-wrapper {
+  position: relative;
+}
+
+.notification-window {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition: 0.25s ease;
+}
+
+.notification-window.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }

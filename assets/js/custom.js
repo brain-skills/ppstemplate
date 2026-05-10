@@ -1388,3 +1388,31 @@ const lightbox = GLightbox({
   openEffect: "zoom",
   closeEffect: "fade",
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const askBtn = document.getElementById("askQuestionBtn");
+  const chatWindow = document.getElementById("supportChat");
+  const closeBtn = document.getElementById("closeChat");
+
+  function toggleChat() {
+    chatWindow.classList.toggle("active");
+  }
+
+  askBtn.addEventListener("click", toggleChat);
+  closeBtn.addEventListener("click", toggleChat);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const notificationBtn = document.getElementById("notificationBtn");
+  const notificationWindow = document.getElementById("notificationWindow");
+
+  notificationBtn.addEventListener("click", () => {
+    notificationWindow.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!notificationBtn.contains(e.target) && !notificationWindow.contains(e.target)) {
+      notificationWindow.classList.remove("active");
+    }
+  });
+});
