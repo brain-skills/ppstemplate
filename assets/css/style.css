@@ -2436,3 +2436,13 @@ header {
     scrollbar-width: none;
   }
 }
+
+.breadcrumb-container {
+  padding-top: 0px;
+}
+
+@media (max-width: 1000px) {
+  .breadcrumb-container {
+    padding-top: 175px;
+  }
+}

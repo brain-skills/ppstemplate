@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
-    <header>
+    <header class="sticky-top">
       <div class="top-bar">
         <div class="container d-flex py-3 justify-content-between align-items-center">
           <button class="btn p-0 border-0 bg-transparent d-flex d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu">
@@ -54,7 +54,7 @@
           </nav>
 
           <div class="d-flex align-items-center gap-2 gap-xxl-4 flex-wrap">
-            <div class="top-bar__search d-flex align-items-center">
+            <div class="top-bar__search icon-btn d-flex align-items-center">
               <div class="d-none d-xxl-flex bg-white-20 px-3 py-1 rounded align-items-center">
                 <input type="text" id="desktopSearchInput" name="search" placeholder="Search" class="border-0 bg-transparent text-white flex-grow-1" autocomplete="off" aria-label="Search" />
 
@@ -68,17 +68,51 @@
               </button>
             </div>
 
-            <button type="button" class="tool rounded p-2 bg-dark-opacity border-0" aria-label="Accessibility settings">
-              <img src="./assets/images/icons/icon_glasses.svg" alt="Accessibility" width="24" height="24" />
-            </button>
+            <div class="notification-wrapper">
+              <button type="button" id="notificationBtn" class="icon-btn tool rounded p-2 bg-dark-opacity border-0" aria-label="Notifications">
+                <img src="./assets/images/icons/icon_notification.svg" alt="Notifications" width="24" height="24" />
+              </button>
 
-            <a href="./tab-store-cart.html" class="tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none header-item">
+              <div id="notificationWindow" class="notification-window shadow rounded">
+                <div class="p-3 border-bottom">
+                  <p class="mb-0 fw-bold fs-5 text-black">Notifications</p>
+                </div>
+
+                <div>
+                  <div class="notification-item d-flex gap-3 align-items-start border-bottom p-3 cursor-pointer">
+                    <img src="./assets/images/icons/avatar.svg" class="rounded" width="40" height="40" alt="User" />
+
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="mb-0 fw-semibold text-black">John Doe</p>
+                        <small class="text-muted">2m</small>
+                      </div>
+                      <small class="text-muted">Sent you a new message</small>
+                    </div>
+                  </div>
+
+                  <div class="notification-item d-flex gap-3 align-items-start p-3 cursor-pointer">
+                    <img src="./assets/images/icons/avatar.svg" class="rounded" width="40" height="40" alt="User" />
+
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="mb-0 fw-semibold text-black">Anna Smith</p>
+                        <small class="text-muted">1h</small>
+                      </div>
+                      <small class="text-muted">Updated your profile</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="./tab-store-cart.html" class="icon-btn tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none header-item">
               <img src="./assets/images/icons/icon_cart.svg" alt="Cart" width="24" height="24" />
               <span class="fs-6 mb-0 text-white d-none d-sm-flex">2 / 178.45</span>
             </a>
 
             <div class="dropdown" data-bs-auto-close="outside">
-              <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle no-caret" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="./assets/images/icons/icon_key.svg" alt="Account" width="24" height="24" />
                 <span class="fs-6 mb-0 text-truncate-signup">Sign up</span>
               </button>
@@ -128,73 +162,75 @@
               </ul>
             </div>
           </div>
+          <div id="headerSearchOverlay" class="header-search-overlay rounded">
+            <div class="container d-flex align-items-center gap-2">
+              <input type="text" id="headerSearchInput" class="form-control border-1 shadow-none fs-5" placeholder="Search..." />
+
+              <button type="button" id="closeSearch" class="btn border-0 bg-primary rounded fs-4 text-white">✕</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="header z-2">
         <div class="header__top bg-white"></div>
         <div class="container header__bottom bg-white"></div>
+
         <div class="header_items d-flex justify-content-center justify-content-lg-between container">
           <a href="/" class="nav-logo">
             <img src="./assets/logo/school-logo.svg" alt="School logo" />
           </a>
 
           <div class="d-none d-lg-flex flex-row align-items-center gap-3 gap-xxl-4">
-            <a href="./index.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_dashboard.svg" alt="Home icon" width="24" height="24" />
+            <a href="./index.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_dashboard.svg" alt="Home icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">Home</span>
             </a>
 
-            <a href="./about.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_school.svg" alt="About icon" width="24" height="24" />
+            <a href="./about.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_school.svg" alt="About icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">About</span>
             </a>
 
-            <a href="./enrollment.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_education.svg" alt="Enrollment icon" width="24" height="24" />
+            <a href="./enrollment.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_education.svg" alt="Enrollment icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">Enrollment</span>
             </a>
 
-            <a href="./schedule.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule icon" width="24" height="24" />
+            <a href="./schedule.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">Schedule</span>
             </a>
 
-            <a href="./news.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_news.svg" alt="News icon" width="24" height="24" />
+            <a href="./news.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_news.svg" alt="News icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">News</span>
             </a>
 
-            <a href="./events.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_event.svg" alt="Events icon" width="24" height="24" />
+            <a href="./events.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_event.svg" alt="Events icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">Events</span>
             </a>
 
-            <a href="./gallery.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_media.svg" alt="Gallery icon" width="24" height="24" />
+            <a href="./gallery.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_media.svg" alt="Gallery icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">Gallery</span>
             </a>
 
-            <a href="./files.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_folder.svg" alt="Files icon" width="24" height="24" />
+            <a href="./files.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_folder.svg" alt="Files icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">Files</span>
             </a>
 
-            <a href="./contact.html" class="d-flex flex-column align-items-center gap-2 text-decoration-none text-dark">
-              <img src="./assets/images/icons/icon_phone.svg" alt="Contact icon" width="24" height="24" />
+            <a href="./contact.html" class="nav-link-custom d-flex flex-column align-items-center gap-1 text-decoration-none text-dark">
+              <img src="./assets/images/icons/icon_phone.svg" alt="Contact icon" width="34" height="34" class="icon-filter-muted" />
               <span class="fs-6">Contact</span>
             </a>
           </div>
         </div>
       </div>
     </header>
-    <div id="mobileSearch" class="mobile-search">
-      <div class="mobile-search__inner">
-        <input type="text" placeholder="Search..." />
-        <button id="closeSearch">✕</button>
-      </div>
-    </div>
     <main class="bg-white">
-      <section class="pt-0 pt-xl-3 bg-white">
+      <section class="breadcrumb-container bg-white">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
