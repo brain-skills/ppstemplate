@@ -21,11 +21,18 @@
     <!-- Custom CSS  -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
+    <!-- GLightbox CSS And JS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <!-- Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
     <header class="sticky-top">
@@ -223,7 +230,7 @@
       </div>
     </header>
     <main class="bg-white">
-      <section class="pt-3 bg-white">
+      <section class="bg-white breadcrumb-container">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
@@ -236,10 +243,10 @@
         </div>
       </section>
       <section class="py-4 py-xxl-5 container d-flex flex-column gap-4" id="gallery">
-        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
           <div class="d-flex align-items-center gap-3">
             <img src="./assets/images/icons/icon_media.svg" alt="media icon" width="28" height="28" class="blue-icon" />
-            <h3 class="fw-bold mb-0">Gallery</h3>
+            <h3 class="fw-bold mb-0 section-title">Gallery</h3>
           </div>
 
           <ul class="nav justify-content-center gap-3 m-0 p-0 d-none d-xl-flex" id="galleryTabs">
@@ -266,8 +273,7 @@
             </li>
           </ul>
 
-          <!-- Mobile Select -->
-          <select class="form-select fw-semibold d-xl-none" id="galleryCategorySelect" style="max-width: 220px">
+          <select class="form-select fw-semibold d-xl-none" id="galleryCategorySelect">
             <option value="all" selected>All</option>
             <option value="outdoor">Outdoor</option>
             <option value="indoor">Indoor</option>
@@ -278,57 +284,132 @@
           </select>
         </div>
 
-        <!-- Gallery Grid -->
         <div class="row g-3" id="galleryGrid">
-          <!-- Outdoor -->
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="outdoor">
-            <img src="./assets/images/gallery/gallery-first-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-first-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-first-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
 
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="outdoor">
-            <img src="./assets/images/gallery/gallery-fourth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-fourth-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-fourth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
 
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="outdoor">
-            <img src="./assets/images/gallery/gallery-fifth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-fifth-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-fifth-img.png" alt="Outdoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
 
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="indoor">
-            <img src="./assets/images/gallery/gallery-third-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-third-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-third-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
 
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="indoor">
-            <img src="./assets/images/gallery/gallery-second-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-second-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-second-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
+
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
+            </div>
           </div>
 
           <div class="col-6 col-md-6 col-lg-4 gallery-item" data-category="indoor">
-            <img src="./assets/images/gallery/gallery-sixth-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
-          </div>
+            <div class="img-hover-lightbox">
+              <a href="./assets/images/gallery/gallery-sixth-img.png" class="glightbox" data-gallery="gallery">
+                <img src="./assets/images/gallery/gallery-sixth-img.png" alt="Indoor" class="img-fluid w-100 rounded shadow-sm gallery-img" />
 
-          <div class="col-12 d-none" id="galleryEmpty">
-            <div class="text-center py-5">
-              <p class="fs-5 fw-bold text-muted mb-0">No images in this category.</p>
+                <div class="overlay">
+                  <span class="frame">
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                  </span>
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Button -->
+        <div class="col-12 d-none" id="galleryEmpty">
+          <div class="text-center py-5">
+            <p class="fs-5 fw-bold text-muted mb-0">No images in this category.</p>
+          </div>
+        </div>
+
         <div class="d-flex justify-content-center mt-3">
           <button class="btn btn-outline-primary px-4 rounded">Show more</button>
         </div>
       </section>
-      <!-- Gallery Modal -->
-      <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content bg-transparent border-0 shadow-none">
-            <div class="modal-body p-2 position-relative">
-              <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" style="font-size: 1.8rem; z-index: 10"></button>
-
-              <img id="modalImage" src="" alt="" class="img-fluid rounded-3 w-100" />
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
       <div class="container d-flex flex-column flex-xl-row justify-content-between gap-4 gap-xl-5 align-items-center align-items-xl-start">

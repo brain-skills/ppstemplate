@@ -21,10 +21,18 @@
     <!-- Custom CSS  -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
+    <!-- GLightbox CSS And JS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <!-- Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
     <header class="sticky-top">
@@ -222,7 +230,7 @@
       </div>
     </header>
     <main>
-      <section class="pt-3 bg-white">
+      <section class="bg-white breadcrumb-container">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
@@ -275,136 +283,100 @@
           <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3" id="staffGrid">
             <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
               <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                    <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="card-body">
                   <h5 class="fw-semibold mb-1">Emily Parker</h5>
                   <div class="text-muted fs-6 mb-2">Mathematics</div>
                   <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
                 </div>
+
                 <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
+                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                    Send message
+                    <i class="bi bi-chat-dots"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
               <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                    <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="card-body">
                   <h5 class="fw-semibold mb-1">Emily Parker</h5>
                   <div class="text-muted fs-6 mb-2">Mathematics</div>
                   <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
                 </div>
+
                 <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
+                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                    Send message
+                    <i class="bi bi-chat-dots"></i>
+                  </button>
                 </div>
               </div>
             </div>
             <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
               <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                    <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
                 <div class="card-body">
                   <h5 class="fw-semibold mb-1">Emily Parker</h5>
                   <div class="text-muted fs-6 mb-2">Mathematics</div>
                   <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
                 </div>
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
-                </div>
-              </div>
-            </div>
-            <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
-              <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Emily Parker</h5>
-                  <div class="text-muted fs-6 mb-2">Mathematics</div>
-                  <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
-                </div>
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
-                </div>
-              </div>
-            </div>
-            <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
-              <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Emily Parker</h5>
-                  <div class="text-muted fs-6 mb-2">Mathematics</div>
-                  <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
-                </div>
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
-                </div>
-              </div>
-            </div>
 
-            <div class="col staff-item" data-category="faculty" data-name="Jane Henderson English language Experienced English teacher 14 years">
-              <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher3.png" class="card-img-top" alt="Jane Henderson" />
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Jane Henderson</h5>
-                  <div class="text-muted fs-6 mb-2">English language</div>
-                  <p class="small text-muted mb-0">Experienced English teacher with 14 years of classroom experience and a Master's degree.</p>
-                </div>
                 <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col staff-item" data-category="faculty" data-name="Margaret Ellis Literature Distinguished teacher 15 years awards">
-              <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher4.png" class="card-img-top" alt="Margaret Ellis" />
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Margaret Ellis</h5>
-                  <div class="text-muted fs-6 mb-2">Literature</div>
-                  <p class="small text-muted mb-0">Distinguished Literature teacher with over 15 years of experience and multiple awards.</p>
-                </div>
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col staff-item" data-category="medical" data-name="Sarah Mitchell English language TESOL instructor 10 years">
-              <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher2.png" class="card-img-top" alt="Sarah Mitchell" />
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Sarah Mitchell</h5>
-                  <div class="text-muted fs-6 mb-2">English language</div>
-                  <p class="small text-muted mb-0">TESOL certified instructor with 10 years of experience teaching English to diverse groups.</p>
-                </div>
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col staff-item" data-category="other" data-name="James Reynolds Literature Award-winning teacher 12 years publications">
-              <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher5.png" class="card-img-top" alt="James Reynolds" />
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">James Reynolds</h5>
-                  <div class="text-muted fs-6 mb-2">Literature</div>
-                  <p class="small text-muted mb-0">Award-winning English & Literature teacher with 12 years of experience and publications.</p>
-                </div>
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col staff-item" data-category="other" data-name="David Thompson Physical Education Veteran teacher 15 years athletics health">
-              <div class="card h-100 shadow-sm border-0">
-                <img src="./assets/images/teacher5.png" class="card-img-top" alt="David Thompson" />
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">David Thompson</h5>
-                  <div class="text-muted fs-6 mb-2">Physical Education</div>
-                  <p class="small text-muted mb-0">Veteran PE teacher with 15 years of experience, specializing in youth athletics and health education.</p>
-                </div>
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">Send message <i class="bi bi-chat-dots"></i></button>
+                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                    Send message
+                    <i class="bi bi-chat-dots"></i>
+                  </button>
                 </div>
               </div>
             </div>

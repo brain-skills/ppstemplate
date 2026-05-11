@@ -1340,12 +1340,16 @@ document.querySelectorAll("section").forEach((section) => {
   });
 });
 
-const lightbox = GLightbox({
-  selector: ".glightbox",
-  loop: true,
-  zoomable: true,
-  openEffect: "zoom",
-  closeEffect: "fade",
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof GLightbox !== "undefined") {
+    const lightbox = GLightbox({
+      selector: ".glightbox",
+      loop: true,
+      zoomable: true,
+      openEffect: "zoom",
+      closeEffect: "fade",
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1357,8 +1361,13 @@ document.addEventListener("DOMContentLoaded", () => {
     chatWindow.classList.toggle("active");
   }
 
-  askBtn.addEventListener("click", toggleChat);
-  closeBtn.addEventListener("click", toggleChat);
+  if (askBtn && chatWindow) {
+    askBtn.addEventListener("click", toggleChat);
+  }
+
+  if (closeBtn && chatWindow) {
+    closeBtn.addEventListener("click", toggleChat);
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1393,5 +1402,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeBtn.addEventListener("click", function () {
     overlay.classList.remove("active");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".js-open-news");
+
+  cards.forEach((card) => {
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", () => {
+      window.location.href = "news-article-template.html";
+    });
   });
 });

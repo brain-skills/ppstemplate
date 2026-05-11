@@ -21,11 +21,18 @@
     <!-- Custom CSS  -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
+    <!-- GLightbox CSS And JS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <!-- Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   </head>
   <body>
     <header class="sticky-top">
@@ -52,18 +59,18 @@
                 <input type="text" id="desktopSearchInput" name="search" placeholder="Search" class="border-0 bg-transparent text-white flex-grow-1" autocomplete="off" aria-label="Search" />
 
                 <button type="button" class="btn p-0 border-0 bg-transparent" id="desktopSearchBtn" aria-label="Search">
-                  <img src="./assets/images/icons/icon_search.svg" alt="Search" width="18" height="18" />
+                  <img src="./assets/images/icons/icon_search.svg" alt="Search" width="28" height="28" />
                 </button>
               </div>
 
               <button id="openSearch" class="d-xxl-none bg-transparent border-0 p-1" aria-label="Open search">
-                <img src="./assets/images/icons/icon_search.svg" alt="Search icon" width="24" height="24" />
+                <img src="./assets/images/icons/icon_search.svg" alt="Search icon" width="28" height="28" />
               </button>
             </div>
 
             <div class="notification-wrapper">
               <button type="button" id="notificationBtn" class="icon-btn tool rounded p-2 bg-dark-opacity border-0" aria-label="Notifications">
-                <img src="./assets/images/icons/icon_notification.svg" alt="Notifications" width="24" height="24" />
+                <img src="./assets/images/icons/icon_notification.svg" alt="Notifications" width="28" height="28" />
               </button>
 
               <div id="notificationWindow" class="notification-window shadow rounded">
@@ -100,13 +107,13 @@
             </div>
 
             <a href="./tab-store-cart.html" class="icon-btn tool rounded p-2 bg-dark-opacity d-flex gap-2 align-items-center text-decoration-none header-item">
-              <img src="./assets/images/icons/icon_cart.svg" alt="Cart" width="24" height="24" />
+              <img src="./assets/images/icons/icon_cart.svg" alt="Cart" width="28" height="28" />
               <span class="fs-6 mb-0 text-white d-none d-sm-flex">2 / 178.45</span>
             </a>
 
             <div class="dropdown" data-bs-auto-close="outside">
               <button type="button" class="btn p-0 border-0 bg-transparent d-flex gap-2 align-items-center text-white dropdown-toggle no-caret" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="./assets/images/icons/icon_key.svg" alt="Account" width="24" height="24" />
+                <img src="./assets/images/icons/icon_key.svg" alt="Account" width="28" height="28" />
                 <span class="fs-6 mb-0 text-truncate-signup">Sign up</span>
               </button>
 
@@ -223,7 +230,7 @@
       </div>
     </header>
     <main class="bg-white">
-      <section class="pt-3 bg-white">
+      <section class="bg-white breadcrumb-container">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
@@ -246,9 +253,22 @@
           <div class="row g-3 mt-2" id="eventsGrid">
             <div class="col-12 col-md-6 col-lg-3">
               <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox d-block" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
 
                 <div class="p-3 d-flex flex-column">
                   <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
@@ -280,6 +300,7 @@
                       <span class="fw-bold fs-5">$ 156.00</span>
                       <small class="fs-6"> / person</small>
                     </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>
@@ -288,9 +309,22 @@
 
             <div class="col-12 col-md-6 col-lg-3">
               <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox d-block" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
 
                 <div class="p-3 d-flex flex-column">
                   <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
@@ -322,6 +356,63 @@
                       <span class="fw-bold fs-5">$ 156.00</span>
                       <small class="fs-6"> / person</small>
                     </div>
+
+                    <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox d-block" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="p-3 d-flex flex-column">
+                  <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
+
+                  <div class="d-flex gap-2 align-items-center text-secondary mb-2">
+                    <img src="./assets/images/icons/icon_location.svg" alt="" width="16" height="16" />
+                    <span class="fs-5">Central Park, main entrance</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" width="16" height="16" />
+                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-1">
+                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">11</span>
+                      <span class="fw-bold text-secondary">:</span>
+                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">13</span>
+                      <span class="fw-bold text-secondary">:</span>
+                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">56</span>
+                    </div>
+                  </div>
+
+                  <p class="text-secondary mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fw-bold fs-5">$ 156.00</span>
+                      <small class="fs-6"> / person</small>
+                    </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>
@@ -329,9 +420,22 @@
             </div>
             <div class="col-12 col-md-6 col-lg-3">
               <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox d-block" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
 
                 <div class="p-3 d-flex flex-column">
                   <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
@@ -363,6 +467,7 @@
                       <span class="fw-bold fs-5">$ 156.00</span>
                       <small class="fs-6"> / person</small>
                     </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>
@@ -370,9 +475,22 @@
             </div>
             <div class="col-12 col-md-6 col-lg-3">
               <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox d-block" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
 
                 <div class="p-3 d-flex flex-column">
                   <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
@@ -404,6 +522,7 @@
                       <span class="fw-bold fs-5">$ 156.00</span>
                       <small class="fs-6"> / person</small>
                     </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>
@@ -411,9 +530,22 @@
             </div>
             <div class="col-12 col-md-6 col-lg-3">
               <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
-                <a href="#" class="d-block">
-                  <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
-                </a>
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox d-block" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
 
                 <div class="p-3 d-flex flex-column">
                   <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
@@ -445,6 +577,62 @@
                       <span class="fw-bold fs-5">$ 156.00</span>
                       <small class="fs-6"> / person</small>
                     </div>
+
+                    <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <article class="bg-white rounded-4 shadow-sm border overflow-hidden h-100">
+                <div class="img-hover-lightbox">
+                  <a href="./assets/images/events/events-first-img.png" class="glightbox d-block" data-gallery="events">
+                    <img src="./assets/images/events/events-first-img.png" alt="events image" class="w-100" loading="lazy" />
+
+                    <div class="overlay">
+                      <span class="frame">
+                        <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span>
+                      </span>
+
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="p-3 d-flex flex-column">
+                  <h3 class="fw-semibold fs-5 mb-2">Weekend School Trip to the Zoo: Exploring Nature Together</h3>
+
+                  <div class="d-flex gap-2 align-items-center text-secondary mb-2">
+                    <img src="./assets/images/icons/icon_location.svg" alt="" width="16" height="16" />
+                    <span class="fs-5">Central Park, main entrance</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img src="./assets/images/icons/icon_calendar-gray.svg" alt="" width="16" height="16" />
+                      <span class="fw-bold text-dark"> January, 12 12:00 </span>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-1">
+                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">11</span>
+                      <span class="fw-bold text-secondary">:</span>
+                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">13</span>
+                      <span class="fw-bold text-secondary">:</span>
+                      <span class="px-2 py-1 rounded-2 fw-bold bg-primary bg-opacity-10 text-dark">56</span>
+                    </div>
+                  </div>
+
+                  <p class="text-secondary mb-3">During the visit to the archaeological museum, students will explore fascinating artifacts and uncover stories from ancient times.</p>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-baseline gap-2">
+                      <span class="fw-bold fs-5">$ 156.00</span>
+                      <small class="fs-6"> / person</small>
+                    </div>
+
                     <button class="btn btn-primary w-25" onclick="window.location.href = 'full-event.html'">Book</button>
                   </div>
                 </div>

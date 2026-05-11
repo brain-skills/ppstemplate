@@ -2446,3 +2446,58 @@ header {
     padding-top: 175px;
   }
 }
+
+.pagination-wrapper {
+  padding: 10px 0;
+}
+
+.pagination-modern {
+  gap: 8px;
+}
+
+.pagination-btn {
+  list-style: none;
+}
+
+.pagination-link {
+  border: none;
+  min-width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 15px;
+
+  color: #2b2b2b;
+  background: #f5f6f8;
+
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.pagination-link:hover {
+  background: #e9efff;
+  color: #1f4bff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(31, 75, 255, 0.15);
+}
+
+.pagination-link.active {
+  background: #2696db;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(31, 75, 255, 0.25);
+}
+
+.pagination-nav {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pagination-btn.disabled .pagination-link {
+  opacity: 0.4;
+  pointer-events: none;
+}
