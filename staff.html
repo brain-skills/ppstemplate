@@ -249,136 +249,139 @@
             <h1 class="h4 fw-semibold mb-0">Staff</h1>
           </div>
 
-          <div class="input-group input-group-sm mb-4" style="max-width: 320px">
+          <div class="input-group input-group-sm mb-4">
             <input id="staffSearch" type="text" class="form-control" placeholder="Search" aria-label="Search staff" />
             <span class="input-group-text bg-white">
               <i class="bi bi-search"></i>
             </span>
           </div>
 
-          <ul class="nav nav-tabs border-0" id="gradeTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="grade1-tab" data-bs-toggle="tab" data-bs-target="#grade1" type="button" role="tab">Grade 1</button>
+          <ul class="nav nav-tabs mb-3 flex-wrap gap-2" id="gradeTab" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#grade1" type="button">Grade 1</button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="grade2-tab" data-bs-toggle="tab" data-bs-target="#grade2" type="button" role="tab">Grade 2</button>
+
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#grade2" type="button">Grade 2</button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="grade3-tab" data-bs-toggle="tab" data-bs-target="#grade3" type="button" role="tab">Grade 3</button>
+
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#grade3" type="button">Grade 3</button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="grade4-tab" data-bs-toggle="tab" data-bs-target="#grade4" type="button" role="tab">Grade 4</button>
+
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#grade4" type="button">Grade 4</button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="grade10-tab" data-bs-toggle="tab" data-bs-target="#grade10" type="button" role="tab">Grade 10</button>
+
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#grade10" type="button">Grade 10</button>
             </li>
           </ul>
 
-          <div class="d-none" id="staffEmpty">
-            <div class="text-center py-5">
-              <p class="fs-6 fw-semibold text-muted mb-0">No staff found.</p>
-            </div>
-          </div>
-
-          <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3" id="staffGrid">
-            <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
-              <div class="card h-100 shadow-sm border-0">
-                <div class="img-hover-lightbox">
-                  <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
-                    <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
-
-                    <div class="overlay">
-                      <span class="frame">
-                        <span class="top"></span>
-                        <span class="right"></span>
-                        <span class="bottom"></span>
-                        <span class="left"></span>
-                      </span>
-
-                      <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="tab-content" id="gradeTabContent">
+            <!-- GRADE 1 -->
+            <div class="tab-pane fade show active" id="grade1" role="tabpanel">
+              <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+                <!-- CARD -->
+                <div class="col staff-item">
+                  <div class="card h-100 shadow-sm border-0">
+                    <div class="img-hover-lightbox">
+                      <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                        <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                      </a>
                     </div>
-                  </a>
-                </div>
 
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Emily Parker</h5>
-                  <div class="text-muted fs-6 mb-2">Mathematics</div>
-                  <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
-                </div>
-
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">
-                    Send message
-                    <i class="bi bi-chat-dots"></i>
-                  </button>
+                    <div class="card-body">
+                      <h5 class="fw-semibold mb-1">Emily Parker</h5>
+                      <div class="text-muted fs-6 mb-2">Mathematics</div>
+                      <p class="small text-muted mb-0">Certified Math Specialist with 8 years experience.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
-              <div class="card h-100 shadow-sm border-0">
-                <div class="img-hover-lightbox">
-                  <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
-                    <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
 
-                    <div class="overlay">
-                      <span class="frame">
-                        <span class="top"></span>
-                        <span class="right"></span>
-                        <span class="bottom"></span>
-                        <span class="left"></span>
-                      </span>
-
-                      <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- GRADE 2 -->
+            <div class="tab-pane fade" id="grade2" role="tabpanel">
+              <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+                <div class="col staff-item">
+                  <div class="card h-100 shadow-sm border-0">
+                    <div class="img-hover-lightbox">
+                      <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                        <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                      </a>
                     </div>
-                  </a>
-                </div>
 
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Emily Parker</h5>
-                  <div class="text-muted fs-6 mb-2">Mathematics</div>
-                  <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
-                </div>
-
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">
-                    Send message
-                    <i class="bi bi-chat-dots"></i>
-                  </button>
+                    <div class="card-body">
+                      <h5 class="fw-semibold mb-1">Emily Parker</h5>
+                      <div class="text-muted fs-6 mb-2">Mathematics</div>
+                      <p class="small text-muted mb-0">Certified Math Specialist with 8 years experience.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col staff-item" data-category="administration" data-name="Emily Parker Mathematics Certified Math Specialist 8 years">
-              <div class="card h-100 shadow-sm border-0">
-                <div class="img-hover-lightbox">
-                  <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
-                    <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
 
-                    <div class="overlay">
-                      <span class="frame">
-                        <span class="top"></span>
-                        <span class="right"></span>
-                        <span class="bottom"></span>
-                        <span class="left"></span>
-                      </span>
-
-                      <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- GRADE 3 -->
+            <div class="tab-pane fade" id="grade3" role="tabpanel">
+              <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+                <div class="col staff-item">
+                  <div class="card h-100 shadow-sm border-0">
+                    <div class="img-hover-lightbox">
+                      <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                        <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                      </a>
                     </div>
-                  </a>
-                </div>
 
-                <div class="card-body">
-                  <h5 class="fw-semibold mb-1">Emily Parker</h5>
-                  <div class="text-muted fs-6 mb-2">Mathematics</div>
-                  <p class="small text-muted mb-0">Certified Math Specialist with 8 years of teaching experience and a Master's degree in Education.</p>
-                </div>
-
-                <div class="card-footer bg-white border-0 pt-0">
-                  <button class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-2">
-                    Send message
-                    <i class="bi bi-chat-dots"></i>
-                  </button>
+                    <div class="card-body">
+                      <h5 class="fw-semibold mb-1">Emily Parker</h5>
+                      <div class="text-muted fs-6 mb-2">Mathematics</div>
+                      <p class="small text-muted mb-0">Certified Math Specialist with 8 years experience.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            <!-- GRADE 4 -->
+            <div class="tab-pane fade" id="grade4" role="tabpanel">
+              <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+                <div class="col staff-item">
+                  <div class="card h-100 shadow-sm border-0">
+                    <div class="img-hover-lightbox">
+                      <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                        <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                      </a>
+                    </div>
+
+                    <div class="card-body">
+                      <h5 class="fw-semibold mb-1">Emily Parker</h5>
+                      <div class="text-muted fs-6 mb-2">Mathematics</div>
+                      <p class="small text-muted mb-0">Certified Math Specialist with 8 years experience.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col staff-item">
+                  <div class="card h-100 shadow-sm border-0">
+                    <div class="img-hover-lightbox">
+                      <a href="./assets/images/teacher2.png" class="glightbox d-block" data-gallery="staff">
+                        <img src="./assets/images/teacher2.png" class="card-img-top" alt="Emily Parker" />
+                      </a>
+                    </div>
+
+                    <div class="card-body">
+                      <h5 class="fw-semibold mb-1">Emily Parker</h5>
+                      <div class="text-muted fs-6 mb-2">Mathematics</div>
+                      <p class="small text-muted mb-0">Certified Math Specialist with 8 years experience.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GRADE 10 -->
+            <div class="tab-pane fade" id="grade10" role="tabpanel">
+              <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-4"></div>
             </div>
           </div>
         </div>
