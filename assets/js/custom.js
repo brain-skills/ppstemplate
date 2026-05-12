@@ -1112,12 +1112,26 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartButtons.forEach((button) => {
       button.addEventListener("click", function () {
         const card = this.closest(".product-card");
-        const productName = card.querySelector(".card-title").textContent.trim();
+
+        if (!card) {
+          console.warn("No .product-card parent found");
+          return;
+        }
+
+        const titleElement = card.querySelector(".card-title");
+
+        if (!titleElement) {
+          console.warn("No .card-title found");
+          return;
+        }
+
+        const productName = titleElement.textContent.trim();
 
         this.innerHTML = `
-                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
-                    Adding...
-                `;
+        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+        Adding...
+      `;
+
         this.disabled = true;
 
         setTimeout(() => {
@@ -1390,8 +1404,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("headerSearchOverlay");
   const closeBtn = document.getElementById("closeSearch");
   const input = document.getElementById("headerSearchInput");
-
-  console.log(openBtn, overlay); // 🔥 debug check
 
   if (!openBtn || !overlay) return;
 
