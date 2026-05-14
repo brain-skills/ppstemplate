@@ -376,6 +376,48 @@
 
                   <button
                     class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded justify-content-center justify-content-xl-start mb-2"
+                    id="payments-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#payments-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="payments-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_bill.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Payments and Bills</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded justify-content-center justify-content-xl-start mb-2"
+                    id="forms-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#forms-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="forms-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_folder.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">My Forms</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded justify-content-center justify-content-xl-start mb-2"
+                    id="video-monitoring-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#video-monitoring-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="video-monitoring-pane"
+                    aria-selected="false"
+                  >
+                    <img src="./assets/images/icons/icon_videocall.svg" alt="" class="blue-icon" />
+                    <span class="fs-6 fw-medium fw-semibold">Video monitoring</span>
+                  </button>
+
+                  <button
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded justify-content-center justify-content-xl-start mb-2"
                     id="announcements-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#announcements-pane"
@@ -2700,6 +2742,571 @@
                                 </div>
                               </div>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activities  -->
+
+                  <div class="tab-pane fade" id="payments-pane" role="tabpanel" aria-labelledby="payments-tab" tabindex="0">
+                    <div class="d-flex flex-column gap-3">
+                      <!-- TOP FILTERS -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <!-- STUDENTS -->
+                          <div class="col-12 col-xl-4">
+                            <div class="d-flex gap-2 flex-wrap">
+                              <button class="btn btn-primary d-flex align-items-center gap-2 px-3 py-2 rounded-3">
+                                <img src="./assets/images/avatar-1.png" width="32" height="32" class="rounded-circle object-fit-cover" alt="" />
+
+                                <div class="text-start lh-sm">
+                                  <div class="fw-semibold small text-white">Michael Brown</div>
+                                  <div class="small text-white-50">Student / 3 grade</div>
+                                </div>
+                              </button>
+
+                              <button class="btn btn-light border d-flex align-items-center gap-2 px-3 py-2 rounded-3">
+                                <img src="./assets/images/avatar-2.png" width="32" height="32" class="rounded-circle object-fit-cover" alt="" />
+
+                                <div class="text-start lh-sm">
+                                  <div class="fw-semibold small">Elisabeth Brown</div>
+                                  <div class="small text-secondary">Student / 8 grade</div>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- PURPOSE -->
+                          <div class="col-12 col-md-4 col-xl-2">
+                            <label class="small text-secondary mb-1">Purpose</label>
+
+                            <select class="form-select form-select-sm rounded-3">
+                              <option>School tuition</option>
+                              <option>Books</option>
+                              <option>Transport</option>
+                            </select>
+                          </div>
+
+                          <!-- DATE -->
+                          <div class="col-12 col-md-4 col-xl-3">
+                            <label class="small text-secondary mb-1">Dates</label>
+
+                            <input type="text" class="form-control form-control-sm rounded-3" value="01.01.2025 - 01.01.2026" />
+                          </div>
+
+                          <!-- STATUS -->
+                          <div class="col-12 col-md-4 col-xl-2">
+                            <label class="small text-secondary mb-1">Status</label>
+
+                            <select class="form-select form-select-sm rounded-3">
+                              <option>Not selected</option>
+                              <option>Complete</option>
+                              <option>Expired</option>
+                              <option>Awaiting payment</option>
+                            </select>
+                          </div>
+
+                          <!-- RESET -->
+                          <div class="col-12 col-xl-1">
+                            <button class="btn btn-link text-decoration-none small text-secondary p-0">
+                              <i class="bi bi-funnel me-1"></i>
+                              Reset
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- BILL ITEM -->
+                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
+                        <!-- HEADER -->
+                        <div class="p-3 border-bottom d-flex flex-column flex-xl-row justify-content-between align-items-xl-center gap-3">
+                          <div class="d-flex align-items-start gap-3 flex-wrap flex-grow-1">
+                            <div class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/icon_bill.svg" width="18" height="18" class="blue-icon" alt="" />
+
+                              <span class="fw-semibold">Invoice</span>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">2 680</div>
+                              <div class="small text-secondary">Amount, $</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">School tuition for 2026</div>
+                              <div class="small text-secondary">Purpose</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">Michael Brown</div>
+                              <div class="small text-secondary">Student</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">12.10.2025</div>
+                              <div class="small text-secondary">Payment deadline</div>
+                            </div>
+
+                            <a href="#" class="text-decoration-none small d-flex align-items-center gap-1 mt-1">
+                              <i class="bi bi-download"></i>
+                              Download receipt
+                            </a>
+                          </div>
+
+                          <div class="d-flex align-items-center gap-2">
+                            <span class="badge text-bg-warning fw-medium px-3 py-2">Awaiting payment</span>
+
+                            <button class="btn btn-sm border-0 shadow-none" data-bs-toggle="collapse" data-bs-target="#paymentDetails">
+                              <i class="bi bi-chevron-down"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="collapse show" id="paymentDetails">
+                          <div class="p-3 p-xl-4">
+                            <div class="row g-4">
+                              <!-- ORGANIZATION -->
+                              <div class="col-12 col-xl-6">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                  <h6 class="fw-semibold mb-0">Organization details</h6>
+
+                                  <div class="d-flex gap-2">
+                                    <button class="btn btn-sm btn-light border">
+                                      <i class="bi bi-copy"></i>
+                                    </button>
+
+                                    <button class="btn btn-sm btn-light border">
+                                      <i class="bi bi-share"></i>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <div class="d-flex flex-column gap-2 small">
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Institution:</div>
+                                    <div class="col-8 fw-medium">Philadelphia Progressive School</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Legal Name:</div>
+                                    <div class="col-8">Educational Center “Philadelphia Progressive”</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Address:</div>
+                                    <div class="col-8">12345 Walnut Street, Philadelphia, PA 19104, USA</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Phone:</div>
+                                    <div class="col-8">+1 (215) 555-7890</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Email:</div>
+                                    <div class="col-8">
+                                      <a href="#" class="text-decoration-none">info@phillyprogressive.edu</a>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Tax ID:</div>
+                                    <div class="col-8">123456789</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Registration:</div>
+                                    <div class="col-8">9876543210</div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- BANK -->
+                              <div class="col-12 col-xl-6">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                  <h6 class="fw-semibold mb-0">Bank details</h6>
+
+                                  <div class="d-flex gap-2">
+                                    <button class="btn btn-sm btn-light border">
+                                      <i class="bi bi-copy"></i>
+                                    </button>
+
+                                    <button class="btn btn-sm btn-light border">
+                                      <i class="bi bi-share"></i>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <div class="d-flex flex-column gap-2 small">
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Bank:</div>
+                                    <div class="col-8 fw-medium">First National Bank</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Account Number:</div>
+                                    <div class="col-8">41001234567890123456</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Correspondent:</div>
+                                    <div class="col-8">3010810000000000225</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">Account:</div>
+                                    <div class="col-8">021000021</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 text-secondary">SWIFT/BIC:</div>
+                                    <div class="col-8">FNBOUS33</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- BUTTON -->
+                            <div class="pt-4">
+                              <button class="btn btn-primary px-5 rounded-3">Pay</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- COMPLETE BILL -->
+                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
+                        <div class="p-3 d-flex flex-column flex-xl-row justify-content-between align-items-xl-center gap-3">
+                          <div class="d-flex align-items-start gap-3 flex-wrap flex-grow-1">
+                            <div class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/icon_bill.svg" width="18" height="18" class="blue-icon" alt="" />
+
+                              <span class="fw-semibold">Invoice</span>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">2 680</div>
+                              <div class="small text-secondary">Amount, $</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">School tuition for 2026</div>
+                              <div class="small text-secondary">Purpose</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">Michael Brown</div>
+                              <div class="small text-secondary">Student</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">12.10.2025</div>
+                              <div class="small text-secondary">Payment deadline</div>
+                            </div>
+
+                            <a href="#" class="text-decoration-none small d-flex align-items-center gap-1 mt-1">
+                              <i class="bi bi-download"></i>
+                              Download receipt
+                            </a>
+                          </div>
+
+                          <div class="d-flex align-items-center gap-2">
+                            <span class="badge text-bg-success fw-medium px-3 py-2">Complete</span>
+
+                            <button class="btn btn-sm border-0 shadow-none">
+                              <i class="bi bi-chevron-down"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- EXPIRED BILL -->
+                      <div class="bg-white rounded-4 shadow-sm overflow-hidden">
+                        <div class="p-3 d-flex flex-column flex-xl-row justify-content-between align-items-xl-center gap-3">
+                          <div class="d-flex align-items-start gap-3 flex-wrap flex-grow-1">
+                            <div class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/icon_bill.svg" width="18" height="18" class="blue-icon" alt="" />
+
+                              <span class="fw-semibold">Invoice</span>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">2 680</div>
+                              <div class="small text-secondary">Amount, $</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">School tuition for 2026</div>
+                              <div class="small text-secondary">Purpose</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">Michael Brown</div>
+                              <div class="small text-secondary">Student</div>
+                            </div>
+
+                            <div>
+                              <div class="fw-semibold">12.10.2025</div>
+                              <div class="small text-secondary">Payment deadline</div>
+                            </div>
+                          </div>
+
+                          <div class="d-flex align-items-center gap-2">
+                            <span class="badge text-bg-danger fw-medium px-3 py-2">Expired</span>
+
+                            <button class="btn btn-sm border-0 shadow-none">
+                              <i class="bi bi-chevron-down"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- My Forms  -->
+                  <div class="tab-pane fade" id="forms-pane" role="tabpanel" aria-labelledby="forms-tab" tabindex="0">
+                    <div class="d-flex flex-column gap-3">
+                      <!-- FILTERS -->
+                      <div class="bg-white rounded-4 shadow-sm p-3">
+                        <div class="row g-3 align-items-end">
+                          <!-- STUDENTS -->
+                          <div class="col-12 col-xl-3">
+                            <div class="d-flex gap-2 flex-wrap">
+                              <button class="btn btn-primary d-flex align-items-center gap-2 px-3 py-2 rounded-3">
+                                <img src="./assets/images/avatar-1.png" width="32" height="32" class="rounded-circle object-fit-cover" alt="" />
+
+                                <div class="text-start lh-sm">
+                                  <div class="fw-semibold small text-white">Michael Brown</div>
+                                  <div class="small text-white-50">Student / 3 grade</div>
+                                </div>
+                              </button>
+
+                              <button class="btn btn-light border d-flex align-items-center gap-2 px-3 py-2 rounded-3">
+                                <img src="./assets/images/avatar-2.png" width="32" height="32" class="rounded-circle object-fit-cover" alt="" />
+
+                                <div class="text-start lh-sm">
+                                  <div class="fw-semibold small">Elisabeth Brown</div>
+                                  <div class="small text-secondary">Student / 8 grade</div>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- FORM TYPE -->
+                          <div class="col-12 col-md-6 col-xl-2">
+                            <label class="small text-secondary mb-1">Form type</label>
+
+                            <select class="form-select form-select-sm rounded-3">
+                              <option>All types</option>
+                              <option>Applications</option>
+                              <option>Certificates</option>
+                              <option>Reports</option>
+                            </select>
+                          </div>
+
+                          <!-- PURPOSE -->
+                          <div class="col-12 col-md-6 col-xl-2">
+                            <label class="small text-secondary mb-1">Purpose</label>
+
+                            <select class="form-select form-select-sm rounded-3">
+                              <option>Not selected</option>
+                              <option>Education</option>
+                              <option>Medical</option>
+                            </select>
+                          </div>
+
+                          <!-- DATE -->
+                          <div class="col-12 col-md-6 col-xl-2">
+                            <label class="small text-secondary mb-1">Date</label>
+
+                            <div class="position-relative">
+                              <input type="text" class="form-control form-control-sm rounded-3 pe-5" placeholder="Not selected" />
+
+                              <i class="bi bi-calendar position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
+                            </div>
+                          </div>
+
+                          <!-- SEARCH -->
+                          <div class="col-12 col-md-6 col-xl-2">
+                            <label class="small text-secondary mb-1 opacity-0">Search</label>
+
+                            <div class="position-relative">
+                              <input type="text" class="form-control form-control-sm rounded-3 pe-5" placeholder="Search by title" />
+
+                              <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
+                            </div>
+                          </div>
+
+                          <!-- RESET -->
+                          <div class="col-12 col-xl-1">
+                            <button class="btn btn-link text-decoration-none text-secondary small p-0">
+                              <i class="bi bi-funnel me-1"></i>
+                              Reset filters
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- FORMS LIST -->
+                      <div class="d-flex flex-column gap-2">
+                        <!-- FOLDER -->
+                        <div class="bg-white rounded-3 shadow-sm px-3 py-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                              <button class="btn btn-sm border-0 shadow-none p-0" data-bs-toggle="collapse" data-bs-target="#folderOne">
+                                <i class="bi bi-chevron-down small"></i>
+                              </button>
+
+                              <img src="./assets/images/icons/icon_folder.svg" width="18" height="18" class="blue-icon" alt="" />
+
+                              <span class="fw-semibold small">Folder Title</span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3">
+                              <span class="small text-secondary">12 documents</span>
+
+                              <button class="btn btn-sm border-0 shadow-none p-0">
+                                <i class="bi bi-three-dots-vertical"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- INSIDE -->
+                          <div class="collapse show pt-2" id="folderOne">
+                            <div class="d-flex flex-column gap-2 ps-4">
+                              <div class="bg-light rounded-3 px-3 py-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="./assets/images/icons/icon_document.svg" width="16" height="16" alt="" />
+
+                                    <span class="small fw-medium">Document Title</span>
+                                  </div>
+
+                                  <button class="btn btn-sm border-0 shadow-none p-0">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div class="bg-light rounded-3 px-3 py-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="./assets/images/icons/icon_document.svg" width="16" height="16" alt="" />
+
+                                    <span class="small fw-medium">Document Title</span>
+                                  </div>
+
+                                  <button class="btn btn-sm border-0 shadow-none p-0">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div class="bg-light rounded-3 px-3 py-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="./assets/images/icons/icon_document.svg" width="16" height="16" alt="" />
+
+                                    <span class="small fw-medium">Document Title</span>
+                                  </div>
+
+                                  <button class="btn btn-sm border-0 shadow-none p-0">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- CLOSED FOLDERS -->
+                        <div class="bg-white rounded-3 shadow-sm px-3 py-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                              <button class="btn btn-sm border-0 shadow-none p-0">
+                                <i class="bi bi-chevron-right small"></i>
+                              </button>
+
+                              <img src="./assets/images/icons/icon_folder.svg" width="18" height="18" class="blue-icon" alt="" />
+
+                              <span class="fw-semibold small">Folder Title</span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3">
+                              <span class="small text-secondary">183 documents</span>
+
+                              <button class="btn btn-sm border-0 shadow-none p-0">
+                                <i class="bi bi-three-dots-vertical"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="bg-white rounded-3 shadow-sm px-3 py-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                              <button class="btn btn-sm border-0 shadow-none p-0">
+                                <i class="bi bi-chevron-right small"></i>
+                              </button>
+
+                              <img src="./assets/images/icons/icon_folder.svg" width="18" height="18" class="blue-icon" alt="" />
+
+                              <span class="fw-semibold small">Folder Title</span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3">
+                              <span class="small text-secondary">65 documents</span>
+
+                              <button class="btn btn-sm border-0 shadow-none p-0">
+                                <i class="bi bi-three-dots-vertical"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- DOCUMENTS -->
+                        <div class="bg-white rounded-3 shadow-sm px-3 py-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/icon_document.svg" width="16" height="16" alt="" />
+
+                              <span class="small fw-semibold">Document Title</span>
+                            </div>
+
+                            <button class="btn btn-sm border-0 shadow-none p-0">
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="bg-white rounded-3 shadow-sm px-3 py-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/icon_document.svg" width="16" height="16" alt="" />
+
+                              <span class="small fw-semibold">Document Title</span>
+                            </div>
+
+                            <button class="btn btn-sm border-0 shadow-none p-0">
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="bg-white rounded-3 shadow-sm px-3 py-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                              <img src="./assets/images/icons/icon_document.svg" width="16" height="16" alt="" />
+
+                              <span class="small fw-semibold">Document Title</span>
+                            </div>
+
+                            <button class="btn btn-sm border-0 shadow-none p-0">
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
                           </div>
                         </div>
                       </div>
