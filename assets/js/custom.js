@@ -1114,14 +1114,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = this.closest(".product-card");
 
         if (!card) {
-          console.warn("No .product-card parent found");
           return;
         }
 
         const titleElement = card.querySelector(".card-title");
 
         if (!titleElement) {
-          console.warn("No .card-title found");
           return;
         }
 

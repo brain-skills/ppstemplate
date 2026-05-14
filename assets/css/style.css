@@ -1073,85 +1073,6 @@ footer address:hover img {
   padding-bottom: 6px;
 }
 
-.staff-cal {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.staff-cal__grid {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-}
-
-.staff-cal__time {
-  border-right: 1px solid rgba(0, 0, 0, 0.06);
-  background: #fff;
-}
-
-.staff-cal__days {
-  overflow-x: auto;
-}
-
-.staff-cal__th {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 10px 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  background: #fff;
-}
-
-.staff-cal__t {
-  font-size: 12px;
-  padding: 14px 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  color: rgba(0, 0, 0, 0.55);
-  height: 48px;
-  display: flex;
-  align-items: center;
-}
-
-.staff-cal__row {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(160px, 1fr));
-}
-@media (min-width: 1200px) {
-  .staff-cal__row {
-    grid-template-columns: repeat(6, minmax(160px, 1fr));
-  }
-}
-
-.staff-cal__row--head .staff-cal__th {
-  border-right: 1px solid rgba(0, 0, 0, 0.06);
-}
-.staff-cal__cell {
-  border-right: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  height: 48px;
-  padding: 6px;
-}
-
-.staff-cal__event {
-  height: 100%;
-  border-radius: 10px;
-  background: rgba(38, 150, 219, 0.1);
-  padding: 8px 10px;
-  font-size: 12px;
-  line-height: 1.15;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.85);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.staff-cal__event--accent {
-  background: rgba(79, 202, 45, 0.14);
-}
-
 .announce-card {
   transition:
     transform 0.18s ease,
@@ -1299,11 +1220,6 @@ footer address:hover img {
   .profile-page .tab-pane .d-flex.justify-content-end.mb-3 {
     margin-bottom: 12px !important;
   }
-
-  .profile-page .profile-photo-card {
-    width: 100%;
-  }
-
   .profile-page .profile-main-image {
     width: 100%;
     height: auto;
@@ -1381,6 +1297,7 @@ footer address:hover img {
     height: 12px;
   }
 }
+
 .certificates-scroll {
   scrollbar-width: none;
   -ms-overflow-style: none;
