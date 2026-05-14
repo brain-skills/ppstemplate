@@ -1426,3 +1426,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownElement = document.getElementById("loginDropdown");
+
+  if (dropdownElement) {
+    dropdownElement.addEventListener("click", function (e) {
+      e.stopImmediatePropagation();
+    });
+  }
+});

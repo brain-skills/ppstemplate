@@ -120,46 +120,60 @@
               </button>
 
               <!-- Login Dropdown -->
-              <ul class="dropdown-menu dropdown-menu-end login-dropdown p-0 border-0 shadow-lg rounded-3 overflow-hidden" id="loginDropdown">
+              <ul class="dropdown-menu dropdown-menu-end login-dropdown p-0 border-0 shadow-lg rounded-3 overflow-hidden" id="loginDropdown" aria-labelledby="loginDropdownBtn">
                 <li class="p-4 login-card">
-                  <div class="text-center mb-4">
-                    <div class="login-icon mx-auto mb-3">
-                      <img src="./assets/images/icons/icon_secure.svg" alt="" width="32" />
+                  <ul class="nav nav-tabs nav-justified mb-4 border-0" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active fw-semibold" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-form" type="button" role="tab">Login</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link fw-semibold" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup-form" type="button" role="tab">Sign Up</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="login-form" role="tabpanel">
+                      <form class="d-grid gap-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Email or username" required />
+                        <input type="password" class="form-control form-control-lg" placeholder="Password" required />
+
+                        <div class="d-flex justify-content-between small">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember" />
+                            <label class="form-check-label" for="remember">Remember me</label>
+                          </div>
+                          <a href="#" class="text-primary">Forgot?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+                      </form>
                     </div>
-                    <h5 class="fw-bold mb-1">Welcome back</h5>
-                    <p class="text-muted mb-0">Login to continue your account</p>
+
+                    <div class="tab-pane fade" id="signup-form" role="tabpanel">
+                      <form class="d-grid gap-3">
+                        <div class="row g-3">
+                          <div class="col-6"><input type="text" class="form-control form-control-lg" placeholder="First name" required /></div>
+                          <div class="col-6"><input type="text" class="form-control form-control-lg" placeholder="Last name" required /></div>
+                        </div>
+                        <input type="email" class="form-control form-control-lg" placeholder="Email address" required />
+                        <input type="password" class="form-control form-control-lg" placeholder="Create password" required />
+
+                        <button type="submit" class="btn btn-primary btn-lg">Create account</button>
+                      </form>
+                    </div>
                   </div>
 
-                  <form class="d-grid gap-3">
-                    <div>
-                      <input type="text" id="login-username" class="form-control form-control-lg" placeholder="Email or username" autocomplete="username" required />
-                    </div>
-
-                    <div>
-                      <input type="password" id="login-password" class="form-control form-control-lg" placeholder="Password" autocomplete="current-password" required />
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center small">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="remember" />
-                        <label class="form-check-label text-muted" for="remember">Remember me</label>
-                      </div>
-                      <a href="#" class="text-primary text-decoration-none">Forgot?</a>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-lg w-100">Sign in</button>
-
-                    <div class="divider d-flex align-items-center my-3">
+                  <div>
+                    <div class="divider d-flex align-items-center my-2">
                       <div class="flex-grow-1 border-top"></div>
                       <span class="px-3 text-muted small">or</span>
                       <div class="flex-grow-1 border-top"></div>
                     </div>
-
                     <div class="d-grid gap-2">
                       <button type="button" class="btn btn-outline-danger"><i class="bi bi-google"></i> Google</button>
                       <button type="button" class="btn btn-outline-primary"><i class="bi bi-facebook"></i> Facebook</button>
                     </div>
-                  </form>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -3222,13 +3236,6 @@
 
         <div class="d-flex flex-column align-items-center align-items-xl-start">
           <h5 class="fs-4 fw-medium mb-4 d-none d-xl-flex">Contacts</h5>
-          <address class="d-flex flex-column gap-2 align-items-center align-items-xl-start">
-            <div class="d-flex flex-row align-items-center gap-3">
-              <img src="./assets/images/icons/icon_phone.svg" alt="Phone icon" width="30" height="30" />
-              <a href="tel:+12345678900" class="text-decoration-none fs-6 fw-bold text-black">+1 (234) 567-89-00</a>
-            </div>
-            <p class="text-dark-opacity fs-6">for schools and educational institutions</p>
-          </address>
           <address class="d-flex flex-column gap-2 align-items-center align-items-xl-start">
             <div class="d-flex flex-row align-items-center gap-3">
               <img src="./assets/images/icons/icon_phone.svg" alt="Phone icon" width="30" height="30" />
