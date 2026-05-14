@@ -279,7 +279,7 @@
                   </button>
 
                   <button
-                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 gap-3 shadow rounded justify-content-center justify-content-xl-start mb-2"
+                    class="list-group-item list-group-item-action d-flex flex-row align-items-center gap-3 py-2 shadow rounded justify-content-center justify-content-xl-start mb-2"
                     id="lessons-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#lessons-pane"
@@ -619,6 +619,8 @@
                     </div>
                   </div>
 
+                  <!-- Classmates  -->
+
                   <div class="tab-pane fade" id="classmates-pane" role="tabpanel" aria-labelledby="classmates-tab" tabindex="0">
                     <section class="students-page">
                       <div class="container px-0">
@@ -854,6 +856,275 @@
                         </div>
                       </div>
                     </section>
+                  </div>
+
+                  <!-- Lessons -->
+
+                  <div class="tab-pane fade" id="lessons-pane" role="tabpanel" aria-labelledby="lessons-tab" tabindex="0">
+                    <div class="d-flex flex-column gap-4">
+                      <!-- HEADER -->
+                      <div class="bg-white rounded shadow p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
+                            <img src="./assets/images/icons/icon_calendar.svg" width="26" height="26" class="blue-icon" />
+                          </div>
+
+                          <div>
+                            <h4 class="fw-bold mb-1">Class Schedule</h4>
+                            <p class="text-secondary mb-0 small">Manage lessons, meetings, and individual sessions</p>
+                          </div>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                          <button class="btn btn-outline-primary">Today</button>
+                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">+ Add Event</button>
+                        </div>
+                      </div>
+
+                      <!-- FILTERS -->
+                      <div class="bg-white rounded shadow p-3">
+                        <div class="row g-3">
+                          <div class="col-md-3">
+                            <label class="small text-secondary">Grade</label>
+                            <select id="filterGrade" class="form-select">
+                              <option value="all">All grades</option>
+                              <option value="1 grade">1 grade</option>
+                              <option value="2 grade">2 grade</option>
+                              <option value="3 grade">3 grade</option>
+                              <option value="4 grade">4 grade</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-3">
+                            <label class="small text-secondary">Teacher</label>
+                            <select id="filterTeacher" class="form-select">
+                              <option value="all">All teachers</option>
+                              <option value="Jane Henderson">Jane Henderson</option>
+                              <option value="Michael Brown">Michael Brown</option>
+                              <option value="Anna Smith">Anna Smith</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-3">
+                            <label class="small text-secondary">Subject</label>
+                            <select id="filterSubject" class="form-select">
+                              <option value="all">All subjects</option>
+                              <option value="English">English</option>
+                              <option value="Math">Math</option>
+                              <option value="Biology">Biology</option>
+                              <option value="History">History</option>
+                            </select>
+                          </div>
+
+                          <div class="col-md-3 d-flex align-items-end">
+                            <div class="d-flex gap-2 w-100">
+                              <button class="btn btn-primary flex-fill">Week</button>
+                              <button class="btn btn-outline-primary flex-fill">Day</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- NAV -->
+                      <div class="schedule-head">
+                        <div class="d-flex align-items-center gap-2 position-relative">
+                          <button type="button" id="prevBtn" class="schedule-arrow">‹</button>
+
+                          <div class="position-relative">
+                            <div id="monthDisplay" class="fw-bold fs-5" style="cursor: pointer">December <span>2025</span></div>
+
+                            <input id="dateInput" type="text" class="fp-hidden" />
+                          </div>
+
+                          <button type="button" id="nextBtn" class="schedule-arrow">›</button>
+                        </div>
+
+                        <div class="schedule-view">
+                          <button id="weekBtn" class="schedule-view-btn active fs-6">Week</button>
+                          <button id="dayBtn" class="schedule-view-btn fs-6">Day</button>
+                        </div>
+                      </div>
+
+                      <!-- TABLE -->
+                      <div class="table-responsive schedule-table-wrap">
+                        <table class="table mb-0 schedule-table">
+                          <thead>
+                            <tr>
+                              <th class="bg-blue-opacity border-end">
+                                <div class="d-flex align-items-center gap-2 justify-content-center">
+                                  <span>Time</span>
+                                </div>
+                              </th>
+                              <th class="border-end">
+                                <small>01.12</small>
+                                <div>Sunday</div>
+                              </th>
+                              <th class="border-end">
+                                <small>02.12</small>
+                                <div>Monday</div>
+                              </th>
+                              <th class="border-end">
+                                <small>03.12</small>
+                                <div>Tuesday</div>
+                              </th>
+                              <th class="border-end">
+                                <small>04.12</small>
+                                <div>Wednesday</div>
+                              </th>
+                              <th class="border-end">
+                                <small>05.12</small>
+                                <div>Thursday</div>
+                              </th>
+                              <th class="border-end">
+                                <small>06.12</small>
+                                <div>Friday</div>
+                              </th>
+                              <th>
+                                <small>07.12</small>
+                                <div>Saturday</div>
+                              </th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="bg-blue-opacity border-end time-cell">
+                                <div class="time-main">07:30 am</div>
+                                <div class="time-sub">1 lesson</div>
+                              </td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">08:15 am</div>
+                                <div class="time-sub">2 lesson</div>
+                              </td>
+                              <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="border-end"></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">09:10 am</div>
+                                <div class="time-sub">3 lesson</div>
+                              </td>
+                              <td class="class-cell border-end">English language <span class="grade">2 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
+                              <td class="individual-cell border-end">
+                                Sarah Jefferson
+                                <span class="tag tag-green">individual</span>
+                              </td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">10:05 am</div>
+                                <div class="time-sub">4 lesson</div>
+                              </td>
+                              <td class="class-cell border-end">Math <span class="grade">3 grade</span></td>
+                              <td class="class-cell border-end">English language <span class="grade">4 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">English language <span class="grade">5 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">11:00 am</div>
+                                <div class="time-sub">5 lesson</div>
+                              </td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">Math <span class="grade">2 grade</span></td>
+                              <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="border-end"></td>
+                              <td></td>
+                            </tr>
+                            <tr class="lunch-row">
+                              <td colspan="8">
+                                <div class="d-flex justify-content-between align-items-center px-3">
+                                  <div class="d-flex align-items-center gap-2">
+                                    <img src="./assets/images/icons/icon_food.svg" alt="" width="16" height="16" />
+                                    <strong>Lunch</strong>
+                                  </div>
+                                  <a class="lunch-link" href="#">Show today's menu →</a>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">01:00 pm</div>
+                                <div class="time-sub">7 lesson</div>
+                              </td>
+                              <td class="border-end"></td>
+                              <td class="border-end">
+                                Weekly meeting
+                                <span class="tag tag-pink">teachers’ council</span>
+                              </td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="class-cell border-end">English language <span class="grade">2 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">English language <span class="grade">1 grade</span></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">02:00 pm</div>
+                                <div class="time-sub">8 lesson</div>
+                              </td>
+                              <td class="class-cell border-end">English language <span class="grade">5 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="border-end">John Smith <span class="tag tag-green">individual</span></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">Math <span class="grade">3 grade</span></td>
+                              <td class="border-end"></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">03:00 pm</div>
+                                <div class="time-sub">9 lesson</div>
+                              </td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td class="class-cell border-end">English language <span class="grade">4 grade</span></td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="time-cell bg-blue-opacity border-end">
+                                <div class="time-main">04:00 pm</div>
+                                <div class="time-sub">10 lesson</div>
+                              </td>
+                              <td class="class-cell border-end">Math <span class="grade">1 grade</span></td>
+                              <td class="class-cell border-end">English language <span class="grade">3 grade</span></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td class="border-end"></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
 
                   <!-- CURRCILLUM  -->
