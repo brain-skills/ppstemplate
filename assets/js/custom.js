@@ -793,21 +793,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const EMOJIS = ["😄", "😂", "🔥", "🥳", "😎", "🤩", "😺", "✨", "💙", "🎉", "📎", "😮", "🙌", "👍", "🫶"];
+document.addEventListener("DOMContentLoaded", () => {
+  const EMOJIS = ["😄", "😂", "🔥", "🥳", "😎", "🤩", "😺", "✨", "💙", "🎉", "📎", "😮", "🙌", "👍", "🫶"];
 
-document.querySelectorAll(".emoji-hover").forEach((btn) => {
-  const content = btn.querySelector(".icon-content");
-  const original = content.innerHTML;
+  document.querySelectorAll(".emoji-hover").forEach((btn) => {
+    const content = btn.querySelector(".icon-content");
+    if (!content) return;
 
-  btn.addEventListener("mouseenter", () => {
-    const emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
-    content.innerHTML = emoji;
-    content.classList.add("emoji");
-  });
+    const original = content.innerHTML;
 
-  btn.addEventListener("mouseleave", () => {
-    content.innerHTML = original;
-    content.classList.remove("emoji");
+    btn.addEventListener("mouseenter", () => {
+      const emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+      content.innerHTML = emoji;
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      content.innerHTML = original;
+    });
   });
 });
 

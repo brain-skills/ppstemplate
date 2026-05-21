@@ -2437,3 +2437,55 @@ header {
     transform: translate(-50%, -50%);
   }
 }
+#chatList .list-group-item {
+  background: #fff;
+  color: #000;
+}
+
+#chatList .list-group-item h6 {
+  color: #000;
+}
+
+#chatList .list-group-item p {
+  color: #6c757d;
+}
+
+#chatList .list-group-item small {
+  color: #6c757d;
+}
+
+#chatList .list-group-item:hover {
+  background: #f5f7fa;
+}
+
+#chatList .list-group-item.active {
+  background: #2f8ed9 !important;
+  color: #fff;
+}
+
+#chatList .list-group-item.active h6,
+#chatList .list-group-item.active p,
+#chatList .list-group-item.active small {
+  color: #fff !important;
+}
+
+#chatList .list-group-item.active .badge {
+  background: #fff;
+  color: #2f8ed9;
+}
+
+.input-block .btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+.input-block .btn:hover {
+  background-color: #fff;
+  color: inherit;
+  border-color: #dee2e6;
+}
+.input-block .btn img {
+  filter: none !important;
+  transition: none;
+}
