@@ -111,7 +111,7 @@
               </button>
 
               <!-- Login Dropdown -->
-              <ul class="dropdown-menu dropdown-menu-end login-dropdown p-0 border-0 shadow-lg rounded-3 overflow-hidden" id="loginDropdown" aria-labelledby="loginDropdownBtn">
+              <ul class="dropdown-menu dropdown-menu-end login-dropdown p-0 border-0 shadow-lg rounded overflow-hidden" id="loginDropdown" aria-labelledby="loginDropdownBtn">
                 <li class="p-4 login-card">
                   <ul class="nav nav-tabs nav-justified mb-4 border-0" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -237,14 +237,19 @@
       </div>
     </header>
     <main class="bg-white">
-      <section class="bg-white breadcrumb-container">
+      <section class="bg-light border-bottom py-3 breadcrumb-container">
         <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
+          <nav aria-label="breadcrumb" class="d-flex align-items-center">
+            <ol class="breadcrumb mb-0 align-items-center" style="--bs-breadcrumb-divider: &quot;›&quot;">
               <li class="breadcrumb-item">
-                <a href="./index.html" class="text-decoration-none text-secondary">Home</a>
+                <a href="./index.html" class="text-decoration-none text-muted breadcrumb-link"> Home </a>
               </li>
-              <li class="breadcrumb-item active text-dark" aria-current="page">Chat</li>
+
+              <li class="breadcrumb-item">
+                <a href="#" class="text-decoration-none text-muted breadcrumb-link"> Messages </a>
+              </li>
+
+              <li class="breadcrumb-item active text-dark fw-semibold" aria-current="page">Chat</li>
             </ol>
           </nav>
         </div>
@@ -255,74 +260,74 @@
           <h5 class="mb-0 text-black fw-bold">Messages</h5>
         </div>
 
-        <div class="row g-3" style="height: 70vh; min-height: 500px">
-          <!-- Left – chat list -->
-          <div class="col-lg-4 col-xl-3 bg-white d-flex flex-column shadow rounded overflow-hidden">
-            <div class="py-3 border-bottom">
-              <div class="input-group input-group-sm">
-                <input type="text" class="form-control py-2" placeholder="Search or start new chat" />
+        <div class="row g-3">
+          <div class="col-lg-4 col-xl-3">
+            <div id="chat-users" class="bg-white border shadow-sm rounded overflow-hidden d-flex flex-column h-100">
+              <div class="p-3 border-bottom bg-light">
+                <div class="input-group input-group-sm">
+                  <span class="input-group-text bg-white border-0">🔍</span>
+                  <input type="text" class="form-control border-0 shadow-none py-2" placeholder="Search or start new chat" />
+                </div>
               </div>
-            </div>
 
-            <div class="flex-grow-1 overflow-auto">
-              <div class="list-group list-group-flush" id="chatList">
+              <div class="flex-grow-1 overflow-auto p-2" id="chatList">
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action px-3 py-3 active rounded"
+                  class="list-group-item list-group-item-action border-bottom rounded mb-2 p-3 active"
                   data-chat="michael"
                   data-name="Michael Brown"
                   data-role="Student / 3 grade"
                   data-avatar="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96"
                 >
-                  <div class="d-flex align-items-start">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96" alt="" class="rounded me-3" width="48" height="48" />
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96" class="rounded flex-shrink-0" width="48" height="48" />
+
                     <div class="flex-grow-1 overflow-hidden">
-                      <div class="d-flex justify-content-between align-items-center mb-1">
-                        <h6 class="mb-0">Michael Brown</h6>
-                        <small class="text-white">09:27 pm</small>
+                      <div class="d-flex justify-content-between">
+                        <h6 class="mb-0 fw-semibold">Michael Brown</h6>
+                        <small class="text-muted">09:27</small>
                       </div>
-                      <p class="mb-1 small text-truncate">I'm having trouble with problem number 7...</p>
-                      <small class="text-muted">Student / 3 grade</small>
+
+                      <p class="mb-0 small text-muted text-truncate">I'm having trouble with problem number 7...</p>
+
+                      <small class="text-primary">Student / 3 grade</small>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action border-bottom rounded mb-2 p-3" data-chat="jane" data-name="Jane Henderson" data-role="Teacher / English language" data-avatar="/assets/images/icons/avatar.svg">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="/assets/images/icons/avatar.svg" class="rounded" width="48" height="48" />
+
+                    <div class="flex-grow-1 overflow-hidden">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="mb-0 fw-semibold">Jane Henderson</h6>
+                        <small class="text-muted">08:17</small>
+                      </div>
+
+                      <p class="mb-0 small text-muted text-truncate">Good morning! Reminder: math homework due Friday...</p>
                     </div>
                   </div>
                 </a>
 
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action px-3 py-3 rounded"
-                  data-chat="jane"
-                  data-name="Jane Henderson"
-                  data-role="Teacher / English language"
-                  data-avatar="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96"
-                >
-                  <div class="d-flex align-items-start">
-                    <img src="./assets/images/icons/avatar.svg" alt="" class="rounded me-3" width="48" height="48" />
-                    <div class="flex-grow-1 overflow-hidden">
-                      <div class="d-flex justify-content-between align-items-center mb-1">
-                        <h6 class="mb-0">Jane Henderson</h6>
-                        <small class="text-muted">08:17 am</small>
-                      </div>
-                      <p class="mb-1 small text-truncate">Good morning! Reminder: math homework due Friday...</p>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href="#"
-                  class="list-group-item list-group-item-action px-3 py-3 rounded"
+                  class="list-group-item list-group-item-action border-bottom rounded mb-2 p-3"
                   data-chat="elisabeth"
                   data-name="Elisabeth King"
                   data-role="Student / 8 grade"
                   data-avatar="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96"
                 >
-                  <div class="d-flex align-items-start">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96" alt="" class="rounded me-3" width="48" height="48" />
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96" class="rounded" width="48" height="48" />
+
                     <div class="flex-grow-1 overflow-hidden">
-                      <div class="d-flex justify-content-between align-items-center mb-1">
-                        <h6 class="mb-0">Elisabeth King</h6>
+                      <div class="d-flex justify-content-between">
+                        <h6 class="mb-0 fw-semibold">Elisabeth King</h6>
                         <small class="text-muted">Yesterday</small>
                       </div>
-                      <p class="mb-1 small text-truncate">If anything is unclear, I'm always here :)</p>
+
+                      <p class="mb-0 small text-muted text-truncate">If anything is unclear, I'm always here :)</p>
                     </div>
                   </div>
                 </a>
@@ -330,35 +335,29 @@
             </div>
           </div>
 
-          <!-- Right – conversation -->
-          <div class="col-lg-8 col-xl-9 d-flex flex-column bg-white shadow rounded overflow-hidden">
-            <div class="p-3 border-bottom d-flex align-items-center gap-3" id="chatHeader">
-              <img id="headerAvatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96" alt="" class="rounded" width="48" height="48" />
-              <div>
-                <h6 class="mb-0" id="headerName">Michael Brown</h6>
-                <small class="text-muted" id="headerRole">Student / 3 grade • Online</small>
+          <div class="col-lg-8 col-xl-9">
+            <div id="chat-content" class="bg-white border shadow-sm rounded overflow-hidden d-none d-lg-flex flex-column h-100">
+              <div class="p-2 d-lg-none border-bottom">
+                <a href="#" id="backToUsers" class="text-decoration-none fw-semibold"> ← Back </a>
               </div>
-            </div>
 
-            <div class="messages-container flex-grow-1 d-flex flex-column gap-3 p-4 overflow-auto" id="messagesContainer"></div>
+              <div class="p-3 border-bottom d-flex align-items-center gap-3 bg-light">
+                <img id="headerAvatar" class="rounded border" width="48" height="48" />
 
-            <div class="align-items-center input-block gap-2 d-flex w-100 mb-3">
-              <input type="text" class="rounded form-control form-control-lg chat-input message-input" placeholder="Type ..." autocomplete="off" style="min-height: min-content" />
-              <div class="d-flex flex-row gap-2 align-items-center">
-                <button class="btn btn-outline-secondary">
-                  <img src="./assets/images/icons/icon_attach.svg" alt="" />
-                </button>
+                <div>
+                  <h6 id="headerName" class="mb-0 fw-semibold"></h6>
+                  <small id="headerRole" class="text-muted"></small>
+                </div>
+              </div>
 
-                <button id="emoji-picker-button" type="button" class="btn btn-outline-secondary emoji-hover">
-                  <span class="icon-content">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-emoji-laughing" viewBox="0 0 16 16">
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                      <path
-                        d="M12.331 9.5a1 1 0 0 1 0 1A5 5 0 0 1 8 13a5 5 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5M7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5"
-                      />
-                    </svg>
-                  </span>
-                </button>
+              <div id="messagesContainer" class="flex-grow-1 p-4 overflow-auto d-flex flex-column gap-3"></div>
+
+              <div class="p-3 border-top bg-light">
+                <div class="d-flex align-items-center gap-2 chat-input">
+                  <input type="text" class="form-control form-control-lg border-0 shadow-none rounded" placeholder="Type a message..." />
+                  <button class="btn btn-outline-secondary">📎</button>
+                  <button id="emoji-picker-button" class="btn btn-outline-secondary emoji-hover">😊</button>
+                </div>
               </div>
             </div>
           </div>

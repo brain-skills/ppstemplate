@@ -756,44 +756,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const chatItems = document.querySelectorAll("#chatList a");
-  const headerName = document.getElementById("headerName");
-  const headerRole = document.getElementById("headerRole");
-  const headerAvatar = document.getElementById("headerAvatar");
-  const messagesContainer = document.getElementById("messagesContainer");
-
-  function loadChat(chatId) {
-    const template = document.getElementById("chat-" + chatId);
-    if (template) {
-      messagesContainer.innerHTML = template.innerHTML;
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    } else {
-      messagesContainer.innerHTML = '<div class="text-center text-muted my-5 py-5">No messages yet</div>';
-    }
-  }
-
-  chatItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      chatItems.forEach((i) => i.classList.remove("active"));
-      item.classList.add("active");
-
-      headerName.textContent = item.dataset.name;
-      headerRole.textContent = item.dataset.role + " • Online";
-      headerAvatar.src = item.dataset.avatar;
-
-      loadChat(item.dataset.chat);
-    });
-  });
-
-  const activeItem = document.querySelector("#chatList a.active");
-  if (activeItem) {
-    loadChat(activeItem.dataset.chat);
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   const EMOJIS = ["😄", "😂", "🔥", "🥳", "😎", "🤩", "😺", "✨", "💙", "🎉", "📎", "😮", "🙌", "👍", "🫶"];
 
   document.querySelectorAll(".emoji-hover").forEach((btn) => {
@@ -1438,3 +1400,61 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chatItems = document.querySelectorAll("#chatList a");
+  const usersBlock = document.getElementById("chat-users");
+  const chatBlock = document.getElementById("chat-content");
+  const backBtn = document.getElementById("backToUsers");
+
+  const headerName = document.getElementById("headerName");
+  const headerRole = document.getElementById("headerRole");
+  const headerAvatar = document.getElementById("headerAvatar");
+  const messagesContainer = document.getElementById("messagesContainer");
+
+  function loadChat(chatId) {
+    const template = document.getElementById("chat-" + chatId);
+
+    if (template) {
+      messagesContainer.innerHTML = "";
+      messagesContainer.appendChild(template.content.cloneNode(true));
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  }
+
+  chatItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      chatItems.forEach((i) => i.classList.remove("active"));
+      item.classList.add("active");
+
+      headerName.textContent = item.dataset.name;
+      headerRole.textContent = item.dataset.role + " • Online";
+      headerAvatar.src = item.dataset.avatar;
+
+      loadChat(item.dataset.chat);
+
+      if (window.innerWidth < 992) {
+        usersBlock.classList.add("d-none");
+        chatBlock.classList.remove("d-none");
+      }
+    });
+  });
+
+  backBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    usersBlock.classList.remove("d-none");
+    chatBlock.classList.add("d-none");
+  });
+});
+
+const initialUser = document.querySelector("#chatList a.active") || document.querySelector("#chatList a");
+
+if (initialUser) {
+  initialUser.classList.add("active");
+
+  headerName.textContent = initialUser.dataset.name;
+  headerRole.textContent = initialUser.dataset.role + " • Online";
+  headerAvatar.src = initialUser.dataset.avatar;
+}

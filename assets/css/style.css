@@ -2474,18 +2474,34 @@ header {
   color: #2f8ed9;
 }
 
-.input-block .btn {
+.chat-input .btn {
   width: 44px;
   height: 44px;
   padding: 0;
 }
 
-.input-block .btn:hover {
+.chat-input .btn:hover {
   background-color: #fff;
   color: inherit;
   border-color: #dee2e6;
 }
-.input-block .btn img {
+.chat-input .btn img {
   filter: none !important;
   transition: none;
+}
+
+.breadcrumb-link {
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #0d6efd !important;
+  opacity: 0.85;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #adb5bd;
+  font-weight: 600;
 }

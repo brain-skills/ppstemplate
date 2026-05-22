@@ -259,7 +259,7 @@
       <section class="profile-page py-4 py-lg-5 bg-white">
         <div class="container">
           <div class="profile-wrapper">
-            <div class="row g-4 mt-0 mt-xl-5">
+            <div class="row g-4">
               <div class="col-12 col-xl-3 mb-md-4 m-xl-0 mt-0">
                 <div class="list-group profile-sidebar d-none d-md-flex flex-row flex-xl-column gap-1 gap-xl-0" id="profileTab" role="tablist">
                   <button
@@ -589,7 +589,7 @@
                         <div class="modal-body p-2 position-relative">
                           <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" style="font-size: 1.8rem; z-index: 10"></button>
 
-                          <img id="modalImage" src="" alt="" class="img-fluid rounded-3 w-100" />
+                          <img id="modalImage" src="" alt="" class="img-fluid rounded w-100" />
                         </div>
                       </div>
                     </div>
@@ -966,7 +966,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-lg-3">
-                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn fw-semibold rounded-3">+ Add</button>
+                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn fw-semibold rounded">+ Add</button>
                                         </div>
                                       </div>
                                     </div>
@@ -991,7 +991,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-lg-3 d-flex align-items-end">
-                                          <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Create +</button>
+                                          <button class="btn btn-primary lesson-add-btn w-100 rounded">Create +</button>
                                         </div>
                                       </div>
 
@@ -1044,7 +1044,7 @@
                                           </div>
 
                                           <div class="col-md-2 d-flex align-items-end">
-                                            <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Add +</button>
+                                            <button class="btn btn-primary lesson-add-btn w-100 rounded">Add +</button>
                                           </div>
                                         </div>
                                       </div>
@@ -1064,9 +1064,9 @@
                                       </div>
 
                                       <div class="d-flex justify-content-end gap-2 pt-2">
-                                        <button class="btn btn-outline-primary px-4 rounded-3">Cancel</button>
+                                        <button class="btn btn-outline-primary px-4 rounded">Cancel</button>
 
-                                        <button class="btn btn-primary px-4 rounded-3">Save</button>
+                                        <button class="btn btn-primary px-4 rounded">Save</button>
                                       </div>
                                     </div>
                                     <div class="lesson-section-box bg-blue-opacity p-3 rounded">
@@ -1289,7 +1289,7 @@
                       <!-- HEADER -->
                       <div class="bg-white rounded shadow p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
                         <div class="d-flex align-items-center gap-3">
-                          <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
+                          <div class="rounded bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
                             <img src="./assets/images/icons/icon_calendar.svg" width="26" height="26" class="blue-icon" />
                           </div>
 
@@ -1553,7 +1553,7 @@
 
                   <div class="tab-pane fade" id="schedule-pane" role="tabpanel" aria-labelledby="schedule-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
-                      <div class="bg-white rounded-3 shadow p-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                      <div class="bg-white rounded shadow p-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
                         <div class="d-flex align-items-center gap-2">
                           <img src="./assets/images/icons/icon_calendar.svg" width="22" height="22" class="blue-icon" alt="" />
                           <span class="fw-semibold">Class Schedule</span>
@@ -1565,7 +1565,7 @@
                         </div>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow p-3">
+                      <div class="bg-white rounded shadow p-3">
                         <div class="row g-2">
                           <div class="col-6 col-md-3">
                             <label class="small text-secondary">Grade</label>
@@ -1604,7 +1604,7 @@
                         </div>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow p-2 d-flex justify-content-between align-items-center">
+                      <div class="bg-white rounded shadow p-2 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center gap-2">
                           <button class="btn btn-sm btn-light border">
                             <i class="bi bi-chevron-left"></i>
@@ -1620,7 +1620,7 @@
                         <button class="btn btn-sm btn-outline-primary">Export</button>
                       </div>
 
-                      <div class="bg-white rounded-3 shadow overflow-hidden">
+                      <div class="bg-white rounded shadow overflow-hidden">
                         <div class="table-responsive">
                           <table class="table table-sm align-middle mb-0">
                             <thead class="bg-light small">
@@ -2900,187 +2900,117 @@
 
                   <!-- events  -->
 
-                  <div class="tab-pane fade" id="events-pane" role="tabpanel" aria-labelledby="events-tab" tabindex="0">
-                    <div class="bg-white rounded shadow p-4">
-                      <!-- Header -->
-                      <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="fw-bold mb-0">Crete event</h5>
-                        <button type="button" class="btn btn-sm btn-link text-secondary p-0">
-                          <i class="bi bi-chevron-down"></i>
-                        </button>
+                  <div class="tab-pane fade" id="events-pane" role="tabpanel">
+                    <div class="bg-white rounded shadow-sm p-4">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold mb-0">Events</h5>
+
+                        <button class="btn btn-primary btn-md" data-bs-toggle="collapse" data-bs-target="#createEventBox">Create Event</button>
                       </div>
 
-                      <!-- Form -->
-                      <div class="row g-3 mb-3">
-                        <div class="col-12 col-md-3">
-                          <label class="form-label small text-secondary mb-1">Roles</label>
-                          <select class="form-select form-select-sm dashboard-select">
-                            <option selected>All roles</option>
-                          </select>
-                        </div>
+                      <div class="d-flex flex-wrap gap-3 mb-4">
+                        <div class="position-relative">
+                          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&h=220&fit=crop" class="img-fluid rounded" />
 
-                        <div class="col-12 col-md-3">
-                          <label class="form-label small text-secondary mb-1">Grade</label>
-                          <select class="form-select form-select-sm dashboard-select">
-                            <option selected>1–3 grades</option>
-                          </select>
-                        </div>
+                          <div class="dropdown position-absolute top-0 end-0 m-2">
+                            <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
 
-                        <div class="col-12 col-md-3">
-                          <label class="form-label small text-secondary mb-1">Event date</label>
-                          <div class="position-relative">
-                            <input type="text" class="form-control form-control-sm pe-5" value="01.12.2026" />
-                            <i class="bi bi-calendar3 position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><button class="dropdown-item">Set as cover</button></li>
+                              <li><button class="dropdown-item text-danger">Remove</button></li>
+                            </ul>
                           </div>
                         </div>
 
-                        <div class="col-12 col-md-3">
-                          <label class="form-label small text-secondary mb-1">Event time</label>
-                          <div class="position-relative">
-                            <input type="text" class="form-control form-control-sm pe-5" value="12:00 am" />
-                            <i class="bi bi-clock position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
-                          </div>
-                        </div>
+                        <div class="position-relative">
+                          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=220&fit=crop" class="img-fluid rounded" />
 
-                        <div class="col-12 col-lg-7">
-                          <label class="form-label small text-secondary mb-1">Select location</label>
-                          <div class="position-relative">
-                            <input type="text" class="form-control form-control-sm pe-5" value="Central Park, main entrance" />
-                            <i class="bi bi-geo-alt position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
-                          </div>
-                        </div>
+                          <div class="dropdown position-absolute top-0 end-0 m-2">
+                            <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </button>
 
-                        <div class="col-6 col-lg-1">
-                          <label class="form-label small text-secondary mb-1">Price, $</label>
-                          <input type="text" class="form-control form-control-sm" value="280" />
-                        </div>
-
-                        <div class="col-6 col-lg-2">
-                          <label class="form-label small text-secondary mb-1">Price type</label>
-                          <select class="form-select form-select-sm dashboard-select">
-                            <option selected>Per person</option>
-                          </select>
-                        </div>
-
-                        <div class="col-12">
-                          <label class="form-label small text-secondary mb-1">Event title</label>
-                          <input type="text" class="form-control form-control-sm" value="Weekend School Trip to the Zoo: Exploring Nature Together" />
-                        </div>
-
-                        <div class="col-12">
-                          <div class="event-editor-toolbar border rounded-top px-2 py-1 small text-secondary d-flex flex-wrap gap-2">
-                            <i class="bi bi-type-bold"></i>
-                            <i class="bi bi-type-italic"></i>
-                            <i class="bi bi-type-underline"></i>
-                            <i class="bi bi-list-ul"></i>
-                            <i class="bi bi-list-ol"></i>
-                            <i class="bi bi-link-45deg"></i>
-                            <i class="bi bi-paperclip"></i>
-                            <i class="bi bi-image"></i>
-                          </div>
-
-                          <textarea class="form-control form-control-sm rounded-top-0" rows="4" placeholder="Event description"></textarea>
-                        </div>
-                      </div>
-
-                      <!-- Upload -->
-                      <div class="mb-4">
-                        <label class="form-label fw-semibold mb-2 cursor-pointer">Upload images</label>
-
-                        <label class="dashboard-upload-box w-100 text-center rounded p-4">
-                          <strong>Drag &amp; drop files here or <span class="text-primary cursor-pointer">upload</span></strong>
-                          <div class="small text-secondary mt-1">Acceptable file formats: pdf, jpg, jpeg, png. Maximum size: 100 MB.</div>
-                        </label>
-                      </div>
-
-                      <!-- Thumbnails -->
-                      <div class="d-flex flex-wrap gap-3 align-items-start mb-4">
-                        <div class="position-relative dashboard-thumb">
-                          <div class="img-hover-lightbox">
-                            <a href="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200" class="glightbox d-block" data-gallery="dashboard-gallery">
-                              <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-
-                              <div class="overlay">
-                                <span class="frame">
-                                  <span class="top"></span>
-                                  <span class="right"></span>
-                                  <span class="bottom"></span>
-                                  <span class="left"></span>
-                                </span>
-
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                              </div>
-                            </a>
-                          </div>
-
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
-                            <i class="bi bi-three-dots-vertical"></i>
-                          </button>
-                        </div>
-
-                        <div class="position-relative dashboard-thumb">
-                          <div class="img-hover-lightbox">
-                            <a href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200" class="glightbox d-block" data-gallery="dashboard-gallery">
-                              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-
-                              <div class="overlay">
-                                <span class="frame">
-                                  <span class="top"></span>
-                                  <span class="right"></span>
-                                  <span class="bottom"></span>
-                                  <span class="left"></span>
-                                </span>
-
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                              </div>
-                            </a>
-                          </div>
-
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
-                            <i class="bi bi-three-dots-vertical"></i>
-                          </button>
-                        </div>
-
-                        <div class="position-relative dashboard-thumb">
-                          <div class="img-hover-lightbox">
-                            <a href="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1200" class="glightbox d-block" data-gallery="dashboard-gallery">
-                              <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=300&h=220&fit=crop" alt="Event image" class="img-fluid rounded-3" />
-
-                              <div class="overlay">
-                                <span class="frame">
-                                  <span class="top"></span>
-                                  <span class="right"></span>
-                                  <span class="bottom"></span>
-                                  <span class="left"></span>
-                                </span>
-
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                              </div>
-                            </a>
-                          </div>
-
-                          <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-1 shadow">
-                            <i class="bi bi-three-dots-vertical"></i>
-                          </button>
-
-                          <!-- Open menu example -->
-                          <div class="dashboard-thumb-menu shadow rounded-3 p-2 bg-white">
-                            <button class="btn btn-sm btn-light w-100 text-start">Set as cover</button>
-                            <button class="btn btn-sm btn-light w-100 text-start">Remove image</button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><button class="dropdown-item">Set as cover</button></li>
+                              <li><button class="dropdown-item text-danger">Remove</button></li>
+                            </ul>
                           </div>
                         </div>
                       </div>
 
-                      <!-- Footer actions -->
-                      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-                        <div class="d-flex gap-2">
-                          <button type="button" class="btn btn-outline-primary px-4">Cancel</button>
-                          <button type="button" class="btn btn-primary px-4">Publish</button>
-                        </div>
+                      <div class="collapse" id="createEventBox">
+                        <div class="border rounded p-4">
+                          <div class="row g-3">
+                            <div class="col-md-3">
+                              <label class="form-label small text-muted">Roles</label>
+                              <select class="form-select form-select-sm">
+                                <option>All roles</option>
+                              </select>
+                            </div>
 
-                        <div class="form-check m-0 d-flex align-items-center gap-2">
-                          <input class="form-check-input m-0" type="checkbox" id="saveDraftEvent" />
-                          <label class="form-check-label small text-secondary" for="saveDraftEvent"> Save as draft </label>
+                            <div class="col-md-3">
+                              <label class="form-label small text-muted">Grade</label>
+                              <select class="form-select form-select-sm">
+                                <option>1–3 grades</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="form-label small text-muted">Date</label>
+                              <input class="form-control form-control-sm" value="01.12.2026" />
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="form-label small text-muted">Time</label>
+                              <input class="form-control form-control-sm" value="12:00 am" />
+                            </div>
+
+                            <div class="col-12 col-lg-7">
+                              <label class="form-label small text-muted">Location</label>
+                              <input class="form-control form-control-sm" value="Central Park" />
+                            </div>
+
+                            <div class="col-6 col-lg-2">
+                              <label class="form-label small text-muted">Price</label>
+                              <input class="form-control form-control-sm" value="280" />
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                              <label class="form-label small text-muted">Type</label>
+                              <select class="form-select form-select-sm">
+                                <option>Per person</option>
+                              </select>
+                            </div>
+
+                            <div class="col-12">
+                              <label class="form-label small text-muted">Title</label>
+                              <input class="form-control form-control-sm" value="Weekend School Trip" />
+                            </div>
+
+                            <div class="col-12">
+                              <textarea class="form-control form-control-sm" rows="4" placeholder="Description"></textarea>
+                            </div>
+                          </div>
+
+                          <div class="mt-3">
+                            <label class="form-label fw-semibold">Upload images</label>
+
+                            <label class="w-100 border rounded p-4 text-center text-muted bg-light"> Drag & drop or <span class="text-primary">upload</span> </label>
+                          </div>
+
+                          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-4">
+                            <div class="d-flex gap-2">
+                              <button class="btn btn-outline-secondary btn-sm">Cancel</button>
+                              <button class="btn btn-primary btn-sm">Publish</button>
+                            </div>
+
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="saveDraftEvent" />
+                              <label class="form-check-label text-muted small" for="saveDraftEvent"> Save as draft </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3090,7 +3020,6 @@
 
                   <div class="tab-pane fade" id="notifications-pane" role="tabpanel" aria-labelledby="notifications-tab" tabindex="0">
                     <div class="d-flex flex-column gap-3">
-                      <!-- Filters -->
                       <div class="bg-white rounded shadow p-3">
                         <div class="row g-3 align-items-end">
                           <div class="col-12 col-md-3">
@@ -3310,108 +3239,98 @@
       </section>
     </main>
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
-      <div class="container d-flex flex-column flex-xl-row justify-content-between gap-4 gap-xl-5 align-items-center align-items-xl-start">
-        <div class="d-flex flex-column gap-3 justify-content-between align-items-center align-items-xl-start">
-          <img src="./assets/logo/school-logo.svg" alt="School logo" class="footer-logo" />
+      <div class="container">
+        <div class="row g-4 g-lg-1 align-items-start" style="justify-content: space-between">
+          <!-- LOGO -->
+          <div class="col-12 col-md-4 col-xl-3">
+            <div class="d-flex flex-column gap-3 align-items-center align-items-xl-start text-center text-xl-start">
+              <img src="./assets/logo/school-logo.svg" alt="School logo" class="footer-logo" />
 
-          <span class="fs-6 text-dark-opacity fw-light w-100 text-center text-xl-start"> Official and legal information required for display: copyrights, organization details, etc </span>
-        </div>
-
-        <nav aria-label="Main navigation" class="d-none d-xl-flex">
-          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-            <li>
-              <a href="./index.html" class="text-decoration-none text-dark fw-bold fs-6">Home</a>
-            </li>
-            <li>
-              <a href="./about.html" class="text-decoration-none text-dark fw-bold fs-6">About School</a>
-            </li>
-            <li>
-              <a href="./enrollment.html" class="text-decoration-none text-dark fw-bold fs-6">Enrollment</a>
-            </li>
-            <li>
-              <a href="./schedule.html" class="text-decoration-none text-dark fw-bold fs-6">Schedule</a>
-            </li>
-            <li>
-              <a href="./news.html" class="text-decoration-none text-dark fw-bold fs-6">News</a>
-            </li>
-            <li>
-              <a href="./events.html" class="text-decoration-none text-dark fw-bold fs-6">Events</a>
-            </li>
-            <li>
-              <a href="./gallery.html" class="text-decoration-none text-dark fw-bold fs-6">Gallery</a>
-            </li>
-          </ul>
-        </nav>
-
-        <nav aria-label="School services" class="d-none d-xl-flex">
-          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-            <li>
-              <a href="./classes.html" class="text-decoration-none text-dark fw-bold fs-6">Classes and Courses</a>
-            </li>
-            <li>
-              <a href="./staff.html" class="text-decoration-none text-dark fw-bold fs-6">Staff</a>
-            </li>
-            <li>
-              <a href="./announcements.html" class="text-decoration-none text-dark fw-bold fs-6">Announcements</a>
-            </li>
-            <li>
-              <a href="./school-bus.html" class="text-decoration-none text-dark fw-bold fs-6">School Bus</a>
-            </li>
-            <li>
-              <a href="./menu.html" class="text-decoration-none text-dark fw-bold fs-6">Menu</a>
-            </li>
-            <li>
-              <a href="./sport.html" class="text-decoration-none text-dark fw-bold fs-6">Sport</a>
-            </li>
-            <li>
-              <a href="./policy.html" class="text-decoration-none text-dark fw-bold fs-6">Policy</a>
-            </li>
-          </ul>
-        </nav>
-
-        <nav aria-label="School services" class="d-none d-xl-flex">
-          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-            <li>
-              <a href="./contact.html" class="text-decoration-none text-dark fw-bold fs-6">Contact us</a>
-            </li>
-            <li>
-              <a href="./store.html" class="text-decoration-none text-dark fw-bold fs-6">Store</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="d-flex flex-column align-items-center align-items-xl-start">
-          <h5 class="fs-4 fw-medium mb-4 d-none d-xl-flex">Contacts</h5>
-          <address class="d-flex flex-column gap-2 align-items-center align-items-xl-start">
-            <div class="d-flex flex-row align-items-center gap-3">
-              <img src="./assets/images/icons/icon_phone.svg" alt="Phone icon" width="30" height="30" />
-              <a href="tel:+12345678900" class="text-decoration-none fs-6 fw-bold text-black">+1 (234) 567-89-00</a>
+              <span class="fs-6 text-dark-opacity fw-light"> Official and legal information required for display: copyrights, organization details, etc </span>
             </div>
-            <p class="text-dark-opacity fs-6">for parents of students and children entering schools</p>
-          </address>
-          <address class="d-flex flex-column gap-2 align-items-center align-items-xl-start">
-            <div class="d-flex flex-row align-items-center gap-3">
-              <img src="./assets/images/icons/icon_letter.svg" alt="letter icon" width="30" height="30" />
-              <a href="mailto:email@progressiveschool.edu" class="text-decoration-none fs-6 fw-bold text-black"> email@progressiveschool.edu </a>
+          </div>
+
+          <!-- MENU 1 -->
+          <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+            <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-center text-xl-start">
+              <li><a href="./index.html" class="text-decoration-none text-dark fw-bold fs-6">Home</a></li>
+              <li><a href="./about.html" class="text-decoration-none text-dark fw-bold fs-6">About School</a></li>
+              <li><a href="./enrollment.html" class="text-decoration-none text-dark fw-bold fs-6">Enrollment</a></li>
+              <li><a href="./schedule.html" class="text-decoration-none text-dark fw-bold fs-6">Schedule</a></li>
+              <li><a href="./news.html" class="text-decoration-none text-dark fw-bold fs-6">News</a></li>
+              <li><a href="./events.html" class="text-decoration-none text-dark fw-bold fs-6">Events</a></li>
+              <li><a href="./gallery.html" class="text-decoration-none text-dark fw-bold fs-6">Gallery</a></li>
+            </ul>
+          </div>
+
+          <!-- MENU 2 -->
+          <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+            <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-center text-xl-start">
+              <li><a href="./classes.html" class="text-decoration-none text-dark fw-bold fs-6">Classes and Courses</a></li>
+              <li><a href="./staff.html" class="text-decoration-none text-dark fw-bold fs-6">Staff</a></li>
+              <li><a href="./announcements.html" class="text-decoration-none text-dark fw-bold fs-6">Announcements</a></li>
+              <li><a href="./school-bus.html" class="text-decoration-none text-dark fw-bold fs-6">School Bus</a></li>
+              <li><a href="./menu.html" class="text-decoration-none text-dark fw-bold fs-6">Menu</a></li>
+              <li><a href="./sport.html" class="text-decoration-none text-dark fw-bold fs-6">Sport</a></li>
+              <li><a href="./policy.html" class="text-decoration-none text-dark fw-bold fs-6">Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- MENU 3 -->
+          <div class="col-12 col-sm-4 col-md-2 col-xl-2">
+            <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-center text-xl-start">
+              <li><a href="./contact.html" class="text-decoration-none text-dark fw-bold fs-6">Contact Us</a></li>
+              <li><a href="./store.html" class="text-decoration-none text-dark fw-bold fs-6">Store</a></li>
+            </ul>
+          </div>
+
+          <!-- CONTACTS -->
+          <div class="col-12 col-xl-2 d-none d-xl-flex">
+            <div class="d-flex flex-column gap-4 align-items-center align-items-xl-start">
+              <h5 class="fs-4 fw-medium d-none d-xl-block">Contacts</h5>
+
+              <address class="mb-0">
+                <div class="d-flex align-items-center gap-3">
+                  <img src="./assets/images/icons/icon_phone.svg" width="30" />
+                  <a href="tel:+12345678900" class="text-decoration-none fw-bold text-black text-break"> +1 (234) 567-89-00 </a>
+                </div>
+                <p class="text-dark-opacity fs-6 mb-0">for schools</p>
+              </address>
+
+              <address class="mb-0">
+                <div class="d-flex align-items-center gap-3">
+                  <img src="./assets/images/icons/icon_letter.svg" width="30" />
+                  <a href="mailto:email@progressiveschool.edu" class="text-decoration-none fw-bold text-black text-break"> email@progressiveschool.edu </a>
+                </div>
+                <p class="text-dark-opacity fs-6 mb-0">contact us anytime</p>
+              </address>
             </div>
-            <p class="text-dark-opacity fs-6">contact us if you have any questions about the platform</p>
-          </address>
+          </div>
         </div>
       </div>
-      <div class="footer-border-top d-flex flex-column flex-md-row align-items-center gap-3 gap-md-5 justify-content-between py-3 py-xl-4 container">
-        <div class="d-flex flex-row align-items-center gap-4">
-          <p class="fs-5">Powered by</p>
-          <img src="./assets/logo/mds-logo.svg" alt="" />
-        </div>
-        <div class="d-flex align-items-center gap-3 scale-control">
-          <img src="./assets/images/icons/icon_glasses-grey.svg" alt="glasses icon" width="30" height="30" />
-          <span class="scale-label fs-5 fw-bold">scale</span>
 
-          <button id="decrease" type="button" class="scale-btn btn rounded border-primary text-primary lh-1" aria-label="Decrease">−</button>
+      <!-- BOTTOM BAR -->
+      <div class="footer-border-top py-3 container">
+        <div class="row align-items-center justify-content-between g-3">
+          <div class="col-12 col-md-auto d-flex justify-content-center justify-content-md-start align-items-center gap-3">
+            <p class="fs-5 mb-0">Powered by</p>
+            <img src="./assets/logo/mds-logo.svg" alt="logo" />
+          </div>
 
-          <input type="range" id="fontSlider" class="scale-range" min="-5" max="5" step="1" value="0" />
+          <!-- SCALE CONTROL -->
+          <div class="col-12 col-md-auto d-flex align-items-center justify-content-center gap-3 scale-control">
+            <img src="./assets/images/icons/icon_glasses-grey.svg" width="30" />
 
-          <button id="increase" type="button" class="scale-btn btn rounded border-primary text-primary lh-1" aria-label="Increase">+</button>
+            <span class="fw-bold">Scale</span>
+
+            <button id="decrease" type="button" class="btn btn-outline-primary">−</button>
+
+            <input type="range" id="fontSlider" min="-5" max="5" step="1" value="0" />
+
+            <button id="increase" type="button" class="btn btn-outline-primary">+</button>
+
+            <span id="fontSizeLabel" class="fs-6 fw-semibold text-dark-opacity"></span>
+          </div>
         </div>
       </div>
     </footer>
@@ -3504,7 +3423,7 @@
 
     <div class="modal fade" id="addEventModal" tabindex="-1">
       <div class="modal-dialog">
-        <div class="modal-content rounded-3">
+        <div class="modal-content rounded">
           <div class="modal-header">
             <h5 class="modal-title">Add Event</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
