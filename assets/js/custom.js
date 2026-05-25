@@ -1415,7 +1415,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadChat(chatId) {
     const template = document.getElementById("chat-" + chatId);
 
-    if (template) {
+    if (template && messagesContainer) {
       messagesContainer.innerHTML = "";
       messagesContainer.appendChild(template.content.cloneNode(true));
       messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -1429,24 +1429,30 @@ document.addEventListener("DOMContentLoaded", () => {
       chatItems.forEach((i) => i.classList.remove("active"));
       item.classList.add("active");
 
-      headerName.textContent = item.dataset.name;
-      headerRole.textContent = item.dataset.role + " • Online";
-      headerAvatar.src = item.dataset.avatar;
+      if (headerName) headerName.textContent = item.dataset.name || "";
+      if (headerRole) headerRole.textContent = (item.dataset.role || "") + " • Online";
+      if (headerAvatar) headerAvatar.src = item.dataset.avatar || "";
 
       loadChat(item.dataset.chat);
 
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 992 && usersBlock && chatBlock) {
         usersBlock.classList.add("d-none");
         chatBlock.classList.remove("d-none");
       }
     });
   });
 
-  backBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    usersBlock.classList.remove("d-none");
-    chatBlock.classList.add("d-none");
-  });
+  if (backBtn && usersBlock && chatBlock) {
+    backBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      usersBlock.classList.remove("d-none");
+      chatBlock.classList.add("d-none");
+    });
+  }
+
+  if (chatItems.length > 0) {
+    chatItems[0].click();
+  }
 });
 
 const initialUser = document.querySelector("#chatList a.active") || document.querySelector("#chatList a");
@@ -1458,3 +1464,57 @@ if (initialUser) {
   headerRole.textContent = initialUser.dataset.role + " • Online";
   headerAvatar.src = initialUser.dataset.avatar;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dateInput = document.getElementById("dateInput");
+  const monthDisplay = document.getElementById("monthDisplay");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (!dateInput || !monthDisplay) return;
+
+  let currentDate = new Date();
+
+  function updateMonthDisplay(date) {
+    const month = date.toLocaleString("en-US", { month: "long" });
+    const year = date.getFullYear();
+    monthDisplay.innerHTML = `${month} <span>${year}</span>`;
+  }
+
+  updateMonthDisplay(currentDate);
+
+  const picker = flatpickr(dateInput, {
+    dateFormat: "d.m.Y",
+    defaultDate: currentDate,
+    locale: "en",
+
+    onChange: function (selectedDates) {
+      if (!selectedDates.length) return;
+
+      currentDate = selectedDates[0];
+      updateMonthDisplay(currentDate);
+    },
+  });
+
+  monthDisplay.addEventListener("click", () => {
+    picker.open();
+  });
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+
+      picker.setDate(currentDate, true);
+      updateMonthDisplay(currentDate);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+
+      picker.setDate(currentDate, true);
+      updateMonthDisplay(currentDate);
+    });
+  }
+});

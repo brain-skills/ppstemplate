@@ -13,6 +13,9 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png" />
 
+    <!-- Calendat  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
     <!-- CSS Libraries  -->
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
@@ -239,19 +242,20 @@
       </div>
     </header>
     <main class="bg-white">
-      <section class="bg-white breadcrumb-container">
+      <section class="bg-light breadcrumb-container">
         <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
+          <nav aria-label="breadcrumb" class="d-flex align-items-center py-3">
+            <ol class="breadcrumb mb-0 align-items-center" style="--bs-breadcrumb-divider: &quot;›&quot;">
               <li class="breadcrumb-item">
-                <a href="./index.html" class="text-decoration-none text-secondary">Home</a>
+                <a href="./index.html" class="text-decoration-none text-muted breadcrumb-link"> Home </a>
               </li>
-              <li class="breadcrumb-item active text-dark" aria-current="page">Schedule</li>
+
+              <li class="breadcrumb-item active text-dark fw-semibold" aria-current="page">Schedule</li>
             </ol>
           </nav>
         </div>
       </section>
-      <section class="py-4" id="schedule">
+      <section class="py-4 py-xxl-5" id="schedule">
         <div class="container">
           <div class="d-flex flex-row gap-3 align-items-center mb-4">
             <img src="./assets/images/icons/icon_calendar.svg" alt="Schedule" width="30" height="30" class="blue-icon" />
@@ -307,7 +311,7 @@
               <div class="position-relative">
                 <div id="monthDisplay" class="fw-bold fs-5" style="cursor: pointer">December <span>2025</span></div>
 
-                <input id="dateInput" name="date" type="text" class="fp-hidden" />
+                <input id="dateInput" name="date" type="text" style="opacity: 0; position: absolute; pointer-events: none" />
               </div>
 
               <button type="button" id="nextBtn" class="schedule-arrow">›</button>
@@ -692,5 +696,8 @@
 
     <!-- Custom Scripts  -->
     <script src="./assets/js/custom.js"></script>
+
+    <!-- Calendar  -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </body>
 </html>

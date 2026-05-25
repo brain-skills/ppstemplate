@@ -2505,3 +2505,7 @@ header {
   color: #adb5bd;
   font-weight: 600;
 }
+
+.icon-transform:hover {
+  transform: scale(1.15);
+}
