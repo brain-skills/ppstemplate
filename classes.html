@@ -237,14 +237,15 @@
       </div>
     </header>
     <main>
-      <section class="bg-white breadcrumb-container">
+      <section class="bg-light breadcrumb-container">
         <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0">
+          <nav aria-label="breadcrumb" class="d-flex align-items-center py-3">
+            <ol class="breadcrumb mb-0 align-items-center" style="--bs-breadcrumb-divider: &quot;›&quot;">
               <li class="breadcrumb-item">
-                <a href="./index.html" class="text-decoration-none text-secondary">Home</a>
+                <a href="./index.html" class="text-decoration-none text-muted breadcrumb-link"> Home </a>
               </li>
-              <li class="breadcrumb-item active text-dark" aria-current="page">Classes and Courses</li>
+
+              <li class="breadcrumb-item active text-dark fw-semibold" aria-current="page">Classes and Courses</li>
             </ol>
           </nav>
         </div>
@@ -252,10 +253,10 @@
       <section class="py-4 py-xxl-5 bg-white">
         <div class="container">
           <div class="d-flex align-items-center gap-3 mb-4">
-            <span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-primary bg-opacity-10">
-              <img src="./assets/images/icons/icon_education.svg" alt="" width="22" height="22" class="blue-icon" />
+            <span class="d-inline-flex align-items-center justify-content-center">
+              <img src="./assets/images/icons/icon_education.svg" alt="" width="39" height="39" class="blue-icon" />
             </span>
-            <h2 class="mb-0 fw-bold">Classes and Courses</h2>
+            <h2 class="fw-bold fs-2 mb-0 section-title">Classes and Courses</h2>
           </div>
           <div class="mb-4 w-50">
             <label for="subjectSelect" class="form-label text-muted mb-1">Select subject</label>
