@@ -231,19 +231,21 @@
       </div>
     </header>
     <main>
-      <section class="bg-white breadcrumb-container">
+      <section class="bg-light breadcrumb-container">
         <div class="container">
-          <!-- Breadcrumb -->
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item"><a href="./index.html" class="text-decoration-none text-secondary">Home</a></li>
-              <li class="breadcrumb-item"><a href="./store.html" class="text-decoration-none text-secondary">Store</a></li>
-              <li class="breadcrumb-item active">Classic Summer Breeze Cotton T-Shirt</li>
+          <nav aria-label="breadcrumb" class="d-flex align-items-center py-3">
+            <ol class="breadcrumb mb-0 align-items-center" style="--bs-breadcrumb-divider: &quot;›&quot;">
+              <li class="breadcrumb-item">
+                <a href="./index.html" class="text-decoration-none text-muted breadcrumb-link"> Home </a>
+              </li>
+
+              <li class="breadcrumb-item active text-dark fw-semibold" aria-current="page">Store</li>
             </ol>
           </nav>
         </div>
       </section>
-      <div class="container mb-5">
+
+      <section class="container py-4 py-xxl-5">
         <div class="card shadow border-0 rounded-4 overflow-hidden">
           <div class="card-header bg-white py-3">
             <h4 class="mb-0 fw-semibold">Cart</h4>
@@ -394,7 +396,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer class="bg-dark-opacity pt-4 d-flex flex-column gap-4">
