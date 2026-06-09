@@ -197,15 +197,7 @@ p {
   transition: transform 0.4s ease;
 }
 
-.top-bar__menu a:hover::after {
-  transform: scaleX(1);
-}
-
-.top-bar__menu a.active {
-  color: #ffffff !important;
-  font-weight: 600;
-}
-
+.top-bar__menu a:hover::after,
 .top-bar__menu a.active::after {
   transform: scaleX(1);
 }
@@ -216,6 +208,12 @@ p {
 
 .top-bar__search input::placeholder {
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.top-bar__menu a.active {
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
 }
 
 .top-bar__search img {
@@ -2507,4 +2505,45 @@ header {
 
 .icon-transform:hover {
   transform: scale(1.15);
+}
+
+.route-map-section {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+}
+
+.route-map-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+.route-map-section .container {
+  position: relative;
+  height: 100%;
+}
+
+.route-info {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.route-stops li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ecc71;
 }

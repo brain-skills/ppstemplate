@@ -239,7 +239,7 @@
       </div>
     </header>
     <main>
-      <section class="bg-light breadcrumb-container">
+      <section class="bg-light breadcrumb-container mb-4 mb-xxl-5">
         <div class="container">
           <nav aria-label="breadcrumb" class="d-flex align-items-center py-3">
             <ol class="breadcrumb mb-0 align-items-center" style="--bs-breadcrumb-divider: &quot;›&quot;">
@@ -252,129 +252,134 @@
           </nav>
         </div>
       </section>
-      <section class="py-4 py-lg-5 bg-white" id="school-bus">
+      <section class="bg-white" id="school-bus">
+        <!-- Container content -->
         <div class="container">
-          <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="d-flex align-items-center gap-3 mb-4">
             <img src="./assets/images/icons/icon_auto.svg" alt="" width="30" height="30" class="blue-icon" />
+
             <h2 class="fw-bold fs-2 mb-0 section-title">School Bus</h2>
           </div>
+        </div>
 
-          <div class="row g-3">
-            <!-- LEFT: filters -->
-            <div class="col-12 col-lg-4 col-xxl-3">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body p-3 p-lg-4">
-                  <div class="d-flex align-items-center justify-content-between mb-2">
-                    <h3 class="h6 fw-semibold mb-0">Find your route</h3>
-                    <span class="badge text-bg-primary-subtle text-primary border border-primary-subtle">Live</span>
-                  </div>
+        <!-- Full width map -->
+        <div class="route-map-section">
+          <img src="./assets/images/map.png" alt="Map" class="route-map-image" />
 
-                  <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text bg-white">
-                      <i class="bi bi-geo-alt"></i>
-                    </span>
-                    <input id="busAddress" type="text" class="form-control" placeholder="Enter your address" aria-label="Enter your address" />
-                    <button class="btn btn-primary" id="busSearchBtn" type="button">Search</button>
-                  </div>
+          <div class="container h-100">
+            <div class="route-card position-relative w-50 rounded shadow p-4 bg-white top-50 translate-middle-y">
+              <h5 class="fw-semibold mb-2">Find your route</h5>
 
-                  <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="busRoundTrip" checked />
-                    <label class="form-check-label" for="busRoundTrip">Round trip</label>
-                  </div>
+              <p class="text-secondary small mb-3">Enter your stop and you will see the nearest bus</p>
 
-                  <div class="d-flex align-items-center justify-content-between mb-2">
-                    <h4 class="h6 fw-semibold mb-0">Routes list</h4>
-                    <button class="btn btn-sm btn-outline-secondary" type="button" id="busResetRoutes">Reset</button>
-                  </div>
+              <div class="mb-3">
+                <label class="form-label small">From</label>
 
-                  <!-- Route buttons (Bootstrap only) -->
-                  <div class="d-grid gap-2" id="busRoutes">
-                    <button class="btn btn-outline-primary text-start bus-route-btn" data-route="route-a" type="button"><span class="me-2">🟦</span> Route A</button>
-                    <button class="btn btn-outline-primary text-start bus-route-btn" data-route="route-b" type="button"><span class="me-2">🟩</span> Route B</button>
-                    <button class="btn btn-outline-primary text-start bus-route-btn" data-route="route-c" type="button"><span class="me-2">🟪</span> Route C</button>
-                    <button class="btn btn-outline-primary text-start bus-route-btn" data-route="route-d" type="button"><span class="me-2">🟧</span> Route D</button>
-                  </div>
-
-                  <div class="alert alert-primary mt-3 mb-0 py-2 px-3 small d-flex align-items-center gap-2">
-                    <i class="bi bi-info-circle"></i>
-                    <span>Pick a route — map + schedule will update.</span>
-                  </div>
-                </div>
+                <input type="text" class="form-control" placeholder="Oakwood Avenue" />
               </div>
-            </div>
 
-            <!-- RIGHT: map -->
-            <div class="col-12 col-lg-8 col-xxl-9">
-              <div class="card border-0 shadow-sm overflow-hidden">
-                <div class="card-body p-0 position-relative">
-                  <div id="busMap" style="height: 420px; width: 100%"></div>
+              <button class="btn btn-primary w-100 mb-4">Search routes</button>
 
-                  <div class="position-absolute top-0 end-0 m-3 d-flex flex-wrap gap-2">
-                    <span class="badge bg-white text-dark border shadow-sm"> <i class="bi bi-mouse me-1"></i>Drag • Zoom </span>
-                    <span class="badge bg-white text-dark border shadow-sm" id="busActiveRouteBadge"> Route A </span>
-                  </div>
-                </div>
+              <div class="route-info">
+                <h6 class="fw-bold mb-1">Route 12</h6>
+
+                <p class="small text-muted mb-3">Riverside Park – Philadelphia Progressive School</p>
+
+                <ul class="route-stops list-unstyled mb-0">
+                  <li class="position-relative ps-3 mb-2">Riverside Park Terminal</li>
+                  <li class="position-relative ps-3 mb-2">Maple Grove Stop</li>
+                  <li class="position-relative ps-3 mb-2">Oakwood Avenue</li>
+                  <li class="position-relative ps-3 mb-2">Pinecrest Junction</li>
+                  <li class="position-relative ps-3 mb-2">Greenfield Library</li>
+                  <li class="position-relative ps-3 mb-2">Elm Street Corner</li>
+                  <li class="position-relative ps-3 mb-2">Hilltop Shopping Center</li>
+                  <li class="position-relative ps-3 mb-2">Sunnyside Apartments</li>
+                  <li class="position-relative ps-3 mb-2">Cityview Elementary</li>
+                  <li class="position-relative ps-3 mb-2">Willow Creek Park</li>
+                  <li class="position-relative ps-3 mb-2">Philadelphia Progressive School</li>
+                </ul>
               </div>
             </div>
           </div>
-
-          <!-- SCHEDULE -->
-          <div class="row g-3 mt-3">
-            <!-- Calendar -->
-            <div class="col-12 col-lg-4 col-xxl-3">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body p-3 p-lg-4">
+        </div>
+      </section>
+      <section class="py-4 py-xxl-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-6 col-xl-4">
+              <div class="card border-0 border-start border-4 border-primary shadow h-100">
+                <div class="card-body">
                   <div class="d-flex align-items-center gap-2 mb-2">
-                    <i class="bi bi-calendar3 text-primary"></i>
-                    <h3 class="h6 fw-semibold mb-0">Schedule</h3>
+                    <i class="bi bi-bus-front text-primary"></i>
+                    <strong>Route 12</strong>
                   </div>
 
-                  <!-- FullCalendar mounts here -->
-                  <div id="busCalendar"></div>
+                  <p class="mb-0 text-secondary">Riverside Park – Philadelphia Progressive School</p>
                 </div>
               </div>
             </div>
 
-            <!-- List -->
-            <div class="col-12 col-lg-8 col-xxl-9">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body p-3 p-lg-4">
-                  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
-                    <div>
-                      <div class="fw-semibold">Trips</div>
-                      <div class="small text-muted">
-                        <span id="busSelectedDateText">Select a day</span> •
-                        <span id="busSelectedRouteText">Route A</span>
-                      </div>
-                    </div>
-
-                    <div class="btn-group btn-group-sm" role="group" aria-label="Direction">
-                      <button class="btn btn-outline-primary active" id="busToSchoolBtn" type="button">To School</button>
-                      <button class="btn btn-outline-primary" id="busFromSchoolBtn" type="button">From School</button>
-                    </div>
+            <div class="col-md-6 col-xl-4">
+              <div class="card border-0 border-start border-4 border-success shadow h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-bus-front text-success"></i>
+                    <strong>Route 25</strong>
                   </div>
 
-                  <div class="table-responsive">
-                    <table class="table table-sm align-middle mb-0">
-                      <thead class="table-light">
-                        <tr>
-                          <th style="min-width: 180px">Stop</th>
-                          <th>Time</th>
-                          <th class="text-end">Notes</th>
-                        </tr>
-                      </thead>
-                      <tbody id="busScheduleBody">
-                        <tr>
-                          <td colspan="3" class="text-center text-muted py-4">Pick a date on the calendar</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <p class="mb-0 text-secondary">Downtown Station – Philadelphia Progressive School</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <div class="card border-0 border-start border-4 border-danger shadow h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-bus-front text-danger"></i>
+                    <strong>Route 31</strong>
                   </div>
 
-                  <div class="small text-muted mt-3">
-                    Tip: you can share this page with the route in URL like
-                    <code>#route-b</code>.
+                  <p class="mb-0 text-secondary">Westside Mall – Philadelphia Progressive School</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <div class="card border-0 border-start border-4 border-warning shadow h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-bus-front text-warning"></i>
+                    <strong>Route 64</strong>
                   </div>
+
+                  <p class="mb-0 text-secondary">Sunnyvale Apartments – Philadelphia Progressive School</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <div class="card border-0 border-start border-4 border-danger shadow h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-bus-front text-info"></i>
+                    <strong>Route 102</strong>
+                  </div>
+
+                  <p class="mb-0 text-secondary">Riverside Park Terminal – Philadelphia Progressive School</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <div class="card border-0 border-start border-4 border-info shadow h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-bus-front text-info"></i>
+                    <strong>Route 214</strong>
+                  </div>
+
+                  <p class="mb-0 text-secondary">Cityview Elementary – Philadelphia Progressive School</p>
                 </div>
               </div>
             </div>
