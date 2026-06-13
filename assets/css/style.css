@@ -226,6 +226,10 @@ p {
   filter: none !important;
 }
 
+.main-section {
+  margin-top: -80px;
+}
+
 @media (max-width: 1400px) {
   .top-bar__search input::placeholder {
     font-size: 14px;
@@ -805,6 +809,12 @@ footer address:hover img {
   }
   .map-iframe {
     min-height: 420px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-section {
+    margin-top: 40px;
   }
 }
 
