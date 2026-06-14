@@ -68,7 +68,7 @@
               </button>
             </div>
 
-            <div class="notification-wrapper">
+            <div class="notification-wrapper position-relative">
               <button type="button" id="notificationBtn" class="icon-btn tool rounded p-2 bg-dark-opacity border-0" aria-label="Notifications">
                 <img src="./assets/images/icons/icon_notification.svg" alt="Notifications" width="24" height="24" />
               </button>
@@ -244,14 +244,15 @@
       </div>
     </header>
     <main>
-      <section class="bg-white breadcrumb-container">
+      <section class="bg-light breadcrumb-container">
         <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider: &quot;/&quot;">
+          <nav aria-label="breadcrumb" class="d-flex align-items-center py-3">
+            <ol class="breadcrumb mb-0 align-items-center" style="--bs-breadcrumb-divider: &quot;›&quot;">
               <li class="breadcrumb-item">
-                <a href="./index.html" class="text-decoration-none text-secondary">Home</a>
+                <a href="./index.html" class="text-decoration-none text-muted breadcrumb-link"> Home </a>
               </li>
-              <li class="breadcrumb-item active text-dark" aria-current="page">Teacher Profile</li>
+
+              <li class="breadcrumb-item active text-dark fw-semibold" aria-current="page">Teacher Profile</li>
             </ol>
           </nav>
         </div>
@@ -477,7 +478,7 @@
                           <div class="d-flex flex-row align-items-center justify-content-between">
                             <h3 class="mb-2 fw-medium">Jane Henderson</h3>
                             <div class="">
-                              <button class="d-flex btn btn-primary btn-sm profile-edit-btn gap-3">
+                              <button class="d-flex btn btn-primary btn-sm gap-3">
                                 <p class="fs-6">Edit profile</p>
                                 <img src="./assets/images/icons/icon_gear.svg" alt="" />
                               </button>
@@ -502,7 +503,7 @@
                             </li>
                             <li class="d-flex align-items-center gap-2">
                               <img src="./assets/images/icons/icon_letter.svg" alt="" width="32" height="32" />
-                              <a href="mailto:administration@progressive.edu" class="text-decoration-none fw-semibold"> administration@progressive.edu </a>
+                              <a href="mailto:administration@progressive.edu" class="text-decoration-none fw-semibold text-primary"> administration@progressive.edu </a>
                             </li>
                           </ul>
                         </div>
@@ -1145,7 +1146,7 @@
                           </div>
 
                           <div class="d-flex flex-column gap-2">
-                            <div class="lesson-item">
+                            <div class="lesson-item shadow">
                               <div class="lesson-row d-flex justify-content-between align-items-center shadow rounded p-3">
                                 <p class="mb-0 fw-semibold lesson-title-text">Lesson 3 - My friends</p>
                                 <div class="d-flex align-items-center gap-3">
