@@ -657,7 +657,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prevBtn");
   const monthDisplay = document.getElementById("monthDisplay");
 
-  /* FIX: create function */
   function updateMonthDisplay() {
     if (!monthDisplay) return;
 
@@ -669,7 +668,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateMonthDisplay();
 
-  /* FIX: check if button exists */
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
       currentDate.setMonth(currentDate.getMonth() - 1);
@@ -1517,4 +1515,18 @@ document.addEventListener("DOMContentLoaded", () => {
       updateMonthDisplay(currentDate);
     });
   }
+});
+
+document.querySelectorAll(".reset-filters-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const container = button.closest(".d-flex");
+
+    container.querySelectorAll(".filter-select").forEach((select) => {
+      select.selectedIndex = 0;
+    });
+
+    container.querySelectorAll(".filter-date").forEach((input) => {
+      input.value = "";
+    });
+  });
 });

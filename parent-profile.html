@@ -535,12 +535,8 @@
 
                           <ul class="list-unstyled profile-meta d-flex flex-column gap-3 mb-0">
                             <li class="d-flex align-items-center gap-2">
-                              <img src="./assets/images/icons/icon_surround.svg" alt="" width="32" height="32" />
-                              <span class="fw-semibold">12, 3 grades</span>
-                            </li>
-                            <li class="d-flex align-items-center gap-2">
-                              <img src="./assets/images/icons/icon_calendar.svg" alt="" width="32" height="32" />
-                              <span class="fw-semibold">May, 5</span>
+                              <img src="./assets/images/icons/icon_birthday.svg" alt="" width="32" height="32" />
+                              <span class="fw-semibold">June 3</span>
                             </li>
                             <li class="d-flex align-items-center gap-2">
                               <img src="./assets/images/icons/icon_phone.svg" alt="" width="32" height="32" />
@@ -548,7 +544,7 @@
                             </li>
                             <li class="d-flex align-items-center gap-2">
                               <img src="./assets/images/icons/icon_letter.svg" alt="" width="32" height="32" />
-                              <a href="mailto:administration@progressive.edu" class="text-decoration-none fw-semibold text-primary"> administration@progressive.edu </a>
+                              <a href="mailto:administration@progressive.edu" class="text-decoration-none fw-medium text-primary"> administration@progressive.edu </a>
                             </li>
                           </ul>
                         </div>
@@ -637,306 +633,185 @@
                   <!-- Classmates  -->
 
                   <div class="tab-pane fade" id="classmates-pane" role="tabpanel" aria-labelledby="classmates-tab" tabindex="0">
-                    <section class="students-page">
-                      <div class="container px-0">
-                        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3 mb-4">
-                          <div class="d-flex flex-column flex-sm-row gap-3">
-                            <div>
-                              <label for="gradeFilter" class="form-label small text-muted mb-1"> Grade </label>
-                              <select id="gradeFilter" class="form-select student-filter-select">
-                                <option value="all">All grades</option>
-                                <option value="3" selected>3 grade</option>
-                                <option value="4">4 grade</option>
-                                <option value="5">5 grade</option>
-                              </select>
+                    <div class="container px-0">
+                      <div class="row g-4">
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <div class="img-hover-lightbox">
+                              <a href="./assets/images/student1.png" class="glightbox d-block" data-gallery="students">
+                                <img src="./assets/images/student1.png" class="card-img-top" alt="Ella Williams" />
+
+                                <div class="overlay">
+                                  <span class="frame">
+                                    <span class="top"></span>
+                                    <span class="right"></span>
+                                    <span class="bottom"></span>
+                                    <span class="left"></span>
+                                  </span>
+
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                              </a>
                             </div>
 
-                            <div>
-                              <label for="curatorFilter" class="form-label small text-muted mb-1"> Curator </label>
-                              <select id="curatorFilter" class="form-select student-filter-select">
-                                <option value="all">All curators</option>
-                                <option value="jane-henderson" selected>Jane Henderson</option>
-                                <option value="michael-brown">Michael Brown</option>
-                              </select>
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold text-dark">Ella Williams</h6>
+                              <small class="text-secondary">05.14.2016</small>
+
+                              <button class="btn btn-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2 rounded mt-1 py-2 fs-6 fw-semibold">Send message</button>
                             </div>
                           </div>
-
-                          <button type="button" id="resetFiltersBtn" class="btn btn-link students-reset-btn text-decoration-none p-0 d-flex align-items-center gap-2">
-                            <img src="./assets/images/icons/icon_filter.svg" alt="" width="24" height="24" />
-                            <span class="text-dark fw-semibold">Reset filters</span>
-                          </button>
                         </div>
 
-                        <div class="students-table-card rounded border overflow-hidden shadow">
-                          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 px-3 px-xl-4 py-3">
-                            <h3 class="students-grade-title mb-0" id="currentGradeTitle">3 Grade</h3>
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <div class="img-hover-lightbox">
+                              <a href="./assets/images/student2.png" class="glightbox d-block" data-gallery="students">
+                                <img src="./assets/images/student2.png" class="card-img-top" alt="Logan Martinez" />
 
-                            <div class="d-flex align-items-center gap-2">
-                              <img src="./assets/images/icons/avatar.svg" alt="Curator" class="students-curator-avatar rounded" />
-                              <div class="lh-sm">
-                                <div class="students-curator-name" id="currentCuratorName">Jane Henderson</div>
-                                <div class="students-curator-role">curator</div>
-                              </div>
+                                <div class="overlay">
+                                  <span class="frame">
+                                    <span class="top"></span>
+                                    <span class="right"></span>
+                                    <span class="bottom"></span>
+                                    <span class="left"></span>
+                                  </span>
+
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Logan Martinez</h6>
+                              <small class="text-secondary">09.21.2015</small>
+
+                              <button class="btn btn-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2 rounded mt-1 py-2 fs-6 fw-semibold">Send message</button>
                             </div>
                           </div>
+                        </div>
 
-                          <div class="table-responsive">
-                            <table class="table students-table align-middle mb-0">
-                              <thead>
-                                <tr>
-                                  <th class="border-end">Student</th>
-                                  <th class="border-end">Date of birth</th>
-                                  <th>Parents</th>
-                                  <th class=""></th>
-                                </tr>
-                              </thead>
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <div class="img-hover-lightbox">
+                              <a href="./assets/images/student3.png" class="glightbox d-block" data-gallery="students">
+                                <img src="./assets/images/student3.png" class="card-img-top" alt="Natalie Wilson" />
 
-                              <tbody id="studentsTableBody">
-                                <tr data-grade="3" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
+                                <div class="overlay">
+                                  <span class="frame">
+                                    <span class="top"></span>
+                                    <span class="right"></span>
+                                    <span class="bottom"></span>
+                                    <span class="left"></span>
+                                  </span>
 
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                              </a>
+                            </div>
 
-                                <tr data-grade="3" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Natalie Wilson</h6>
+                              <small class="text-secondary">08.10.2016</small>
 
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr data-grade="2" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr data-grade="4" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr data-grade="1" data-curator="jane-henderson">
-                                  <td class="border-end w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="student-avatar rounded" />
-                                      <span>Michael Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">12.12.2016</td>
-                                  <td class="w-25">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="border-end">
-                                    <div class="d-flex align-items-center gap-2">
-                                      <img src="./assets/images/icons/avatar.svg" alt="" class="parent-avatar rounded" />
-                                      <span class="d-none d-lg-flex">Mary Brown</span>
-                                    </div>
-                                  </td>
-                                  <td class="text-end border-top">
-                                    <div class="dropdown">
-                                      <button class="btn p-0 border-0 bg-transparent students-dots-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical blue-icon"></i>
-                                      </button>
-
-                                      <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="#">View</a></li>
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                      </ul>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+                              <button class="btn btn-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2 rounded mt-1 py-2 fs-6 fw-semibold">Send message</button>
+                            </div>
                           </div>
+                        </div>
 
-                          <div id="studentsEmptyState" class="p-4 text-center text-muted d-none">No students found for selected filters.</div>
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <div class="img-hover-lightbox">
+                              <a href="./assets/images/student4.png" class="glightbox d-block" data-gallery="students">
+                                <img src="./assets/images/student4.png" class="card-img-top" alt="Grace Walker" />
+
+                                <div class="overlay">
+                                  <span class="frame">
+                                    <span class="top"></span>
+                                    <span class="right"></span>
+                                    <span class="bottom"></span>
+                                    <span class="left"></span>
+                                  </span>
+
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Grace Walker</h6>
+                              <small class="text-secondary">25.01.2016</small>
+
+                              <button class="btn btn-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2 rounded mt-1 py-2 fs-6 fw-semibold">Send message</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                          <div class="card border-0 shadow-sm rounded overflow-hidden h-100">
+                            <div class="img-hover-lightbox">
+                              <a href="./assets/images/student1.png" class="glightbox d-block" data-gallery="students">
+                                <img src="./assets/images/student1.png" class="card-img-top" alt="Chloe Moore" />
+
+                                <div class="overlay">
+                                  <span class="frame">
+                                    <span class="top"></span>
+                                    <span class="right"></span>
+                                    <span class="bottom"></span>
+                                    <span class="left"></span>
+                                  </span>
+
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                              </a>
+                            </div>
+
+                            <div class="card-body p-2 d-flex flex-column gap-2">
+                              <h6 class="mb-0 fw-semibold">Chloe Moore</h6>
+                              <small class="text-secondary">12.06.2017</small>
+
+                              <button class="btn btn-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2 rounded mt-1 py-2 fs-6 fw-semibold">Send message</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </section>
+                    </div>
                   </div>
 
                   <!-- Lessons -->
 
                   <div class="tab-pane fade" id="lessons-pane" role="tabpanel" aria-labelledby="lessons-tab" tabindex="0">
                     <div class="d-flex flex-column gap-4">
-                      <!-- HEADER -->
-                      <div class="bg-white rounded shadow p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
-                        <div class="d-flex align-items-center gap-3">
-                          <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
-                            <img src="./assets/images/icons/icon_calendar.svg" width="26" height="26" class="blue-icon" />
-                          </div>
-
-                          <div>
-                            <h4 class="fw-bold mb-1">Class Schedule</h4>
-                            <p class="text-secondary mb-0 small">Manage lessons, meetings, and individual sessions</p>
-                          </div>
-                        </div>
-
-                        <div class="d-flex gap-2">
-                          <button class="btn btn-outline-primary">Today</button>
-                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">+ Add Event</button>
-                        </div>
-                      </div>
-
                       <!-- FILTERS -->
-                      <div class="bg-white rounded shadow p-3">
-                        <div class="row g-3">
-                          <div class="col-md-3">
-                            <label class="small text-secondary">Grade</label>
-                            <select id="filterGrade" class="form-select">
-                              <option value="all">All grades</option>
-                              <option value="1 grade">1 grade</option>
-                              <option value="2 grade">2 grade</option>
-                              <option value="3 grade">3 grade</option>
-                              <option value="4 grade">4 grade</option>
-                            </select>
-                          </div>
+                      <div class="d-flex align-items-start flex-wrap gap-3 border-bottom pb-3 justify-content-between">
+                        <!-- Subjects -->
+                        <div class="col-12 col-md-3">
+                          <select class="form-select filter-select">
+                            <option selected>All subjects</option>
+                            <option>Math</option>
+                            <option>English</option>
+                            <option>Science</option>
+                          </select>
+                        </div>
 
-                          <div class="col-md-3">
-                            <label class="small text-secondary">Teacher</label>
-                            <select id="filterTeacher" class="form-select">
-                              <option value="all">All teachers</option>
-                              <option value="Jane Henderson">Jane Henderson</option>
-                              <option value="Michael Brown">Michael Brown</option>
-                              <option value="Anna Smith">Anna Smith</option>
-                            </select>
-                          </div>
+                        <!-- Teachers -->
+                        <div class="col-12 col-md-3">
+                          <select class="form-select filter-select">
+                            <option selected>All Teachers</option>
+                            <option>John Doe</option>
+                            <option>Jane Smith</option>
+                            <option>Mike Johnson</option>
+                          </select>
+                        </div>
 
-                          <div class="col-md-3">
-                            <label class="small text-secondary">Subject</label>
-                            <select id="filterSubject" class="form-select">
-                              <option value="all">All subjects</option>
-                              <option value="English">English</option>
-                              <option value="Math">Math</option>
-                              <option value="Biology">Biology</option>
-                              <option value="History">History</option>
-                            </select>
-                          </div>
+                        <!-- Date -->
+                        <div class="col-12 col-md-3">
+                          <input type="date" class="form-control filter-date" />
+                        </div>
 
-                          <div class="col-md-3 d-flex align-items-end">
-                            <div class="d-flex gap-2 w-100">
-                              <button class="btn btn-primary flex-fill">Week</button>
-                              <button class="btn btn-outline-primary flex-fill">Day</button>
-                            </div>
-                          </div>
+                        <!-- Reset button -->
+                        <div class="col-12 col-md-auto">
+                          <button class="btn btn-outline-secondary reset-filters-btn">Reset Filters</button>
                         </div>
                       </div>
 
@@ -1142,523 +1017,40 @@
                     </div>
                   </div>
 
-                  <!-- CURRCILLUM  -->
-
-                  <div class="tab-pane fade" id="curriculum-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
-                      <ul class="nav gap-4" role="tablist">
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link grade-tab active fw-semibold" data-bs-toggle="tab" data-bs-target="#grade1" type="button" role="tab" aria-selected="true">1 grade</button>
-                        </li>
-
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link grade-tab fw-semibold" data-bs-toggle="tab" data-bs-target="#grade2" type="button" role="tab" aria-selected="false">2 grade</button>
-                        </li>
-
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link grade-tab fw-semibold" data-bs-toggle="tab" data-bs-target="#grade3" type="button" role="tab" aria-selected="false">3 grade</button>
-                        </li>
-                      </ul>
-
-                      <ul class="nav nav-pills gap-3" role="tablist">
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link lesson-tab active d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#lessons" type="button" role="tab" aria-selected="true">
-                            <img src="./assets/images/icons/icon_book.svg" class="blue-icon" alt="Lessons" />
-                            <small class="fs-6 fw-semibold">Lessons</small>
-                          </button>
-                        </li>
-
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link lesson-tab d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#homeworks" type="button" role="tab" aria-selected="false">
-                            <img src="./assets/images/icons/icon_lounge.svg" class="blue-icon" alt="Homeworks" />
-                            <small class="fs-6 fw-semibold">Homeworks</small>
-                          </button>
-                        </li>
-
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link lesson-tab d-flex flex-column align-items-center gap-2" data-bs-toggle="tab" data-bs-target="#tests" type="button" role="tab" aria-selected="false">
-                            <img src="./assets/images/icons/icon_test.svg" class="blue-icon" alt="Tests" />
-                            <small class="fs-6 fw-semibold">Tests</small>
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div class="tab-content pt-4">
-                      <div class="tab-pane fade show active" id="presentation" role="tabpanel">
-                        <div class="d-flex flex-column gap-3">
-                          <div class="accordion" id="lessonAccordion">
-                            <div class="accordion-item lesson-accordion-item border-0 shadow reounded">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed lesson-accordion-btn fw-semibold shadow rounded" type="button" data-bs-toggle="collapse" data-bs-target="#createLesson" aria-expanded="false" aria-controls="createLesson">
-                                  Create new lesson
-                                </button>
-                              </h2>
-
-                              <div id="createLesson" class="accordion-collapse collapse" data-bs-parent="#lessonAccordion">
-                                <div class="accordion-body bg-white">
-                                  <div class="d-flex flex-column gap-4">
-                                    <div class="row g-3">
-                                      <div class="col-md-6">
-                                        <input type="text" class="form-control lesson-form-control" id="lessonTitle" placeholder="Enter lesson title" />
-                                      </div>
-
-                                      <div class="col-md-6">
-                                        <input type="text" class="form-control lesson-form-control" id="lessonTopic" placeholder="Enter topic" />
-                                      </div>
-
-                                      <div class="col-12">
-                                        <textarea class="form-control lesson-form-control lesson-textarea" id="lessonDescription" rows="5" placeholder="Write lesson description"></textarea>
-                                      </div>
-                                    </div>
-
-                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded">
-                                      <p class="fw-semibold mb-3">Additional materials</p>
-
-                                      <div class="row g-3 align-items-end">
-                                        <div class="col-md-3">
-                                          <input type="text" class="form-control lesson-form-control" id="materialAuthor" placeholder="AUthor" />
-                                        </div>
-
-                                        <div class="col-md-5">
-                                          <input type="text" class="form-control lesson-form-control" id="bookTitle" placeholder="Book Title" />
-                                        </div>
-
-                                        <div class="col-md-2">
-                                          <input type="text" class="form-control lesson-form-control" id="bookParagraph" placeholder="Paragraph" />
-                                        </div>
-
-                                        <div class="col-md-2">
-                                          <button type="button" class="btn btn-primary lesson-add-btn w-100">Add +</button>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="d-flex flex-column gap-3 bg-blue-opacity p-3 rounded">
-                                      <p class="fw-semibold mb-0">Attached files</p>
-
-                                      <label for="lessonFiles" class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center">
-                                        <strong class="mb-1">
-                                          Drag &amp; drop files here or
-                                          <span class="text-primary cursor-pointer">upload</span>
-                                        </strong>
-                                        <small class="text-secondary"> Acceptable file formats: pdf, jpg, jpeg, png. Maximum size: 100 MB. </small>
-                                      </label>
-                                      <input type="file" id="lessonFiles" class="d-none" multiple />
-                                    </div>
-                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded">
-                                      <div class="mb-3">
-                                        <p class="fw-semibold mb-0 fs-6 text-dark">Add to schedule</p>
-                                      </div>
-
-                                      <div class="row g-4 align-items-end">
-                                        <div class="col-sm-6 col-lg-3">
-                                          <label for="assignmentType" class="form-label small text-muted"> Assignment type </label>
-                                          <select id="assignmentType" class="form-select lesson-form-control">
-                                            <option selected>Grade</option>
-                                            <option>Student</option>
-                                            <option>Group</option>
-                                          </select>
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-4">
-                                          <label for="chooseGrade" class="form-label small text-muted"> Choose grade </label>
-                                          <select id="chooseGrade" class="form-select lesson-form-control">
-                                            <option selected>3 grade - Jane Henderson</option>
-                                            <option>2 grade - Michael Brown</option>
-                                            <option>1 grade - Anna Smith</option>
-                                          </select>
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-2">
-                                          <label for="lessonDate" class="form-label small text-muted"> Date </label>
-                                          <input type="date" class="form-control lesson-form-control" id="lessonDate" value="2026-04-12" />
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-3">
-                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn fw-semibold rounded-3">+ Add</button>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="lesson-section-box bg-blue-opacity p-4 rounded shadow">
-                                      <div class="mb-4">
-                                        <h5 class="fw-semibold mb-0">Add Homework</h5>
-                                      </div>
-
-                                      <div class="row g-4 align-items-end mb-4">
-                                        <div class="col-sm-6 col-lg-4">
-                                          <label class="form-label small text-muted mb-1">Select homework</label>
-                                          <select class="form-select lesson-form-control">
-                                            <option selected>Homework 4 — "My Pets"</option>
-                                            <option>Homework 5 — "My School"</option>
-                                          </select>
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-3">
-                                          <label class="form-label small text-muted mb-1">Due date</label>
-                                          <input type="date" class="form-control lesson-form-control" value="2026-04-12" />
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-3 d-flex align-items-end">
-                                          <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Create +</button>
-                                        </div>
-                                      </div>
-
-                                      <div class="mb-4"></div>
-
-                                      <div class="row g-4 align-items-end mb-4">
-                                        <div class="col-sm-6 col-lg-4">
-                                          <label class="form-label small text-muted mb-1">Related lesson</label>
-                                          <select class="form-select lesson-form-control">
-                                            <option selected>Lesson 1 - "My Pets"</option>
-                                          </select>
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-3">
-                                          <label class="form-label small text-muted mb-1">Due date</label>
-                                          <input type="date" class="form-control lesson-form-control" value="2026-04-12" />
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-3">
-                                          <label class="form-label small text-muted mb-1">Assessment type</label>
-                                          <select class="form-select lesson-form-control">
-                                            <option selected>Five-point scale</option>
-                                            <option>Pass / Fail</option>
-                                          </select>
-                                        </div>
-                                      </div>
-
-                                      <div class="mb-4">
-                                        <label class="form-label fw-semibold mb-2">Create related homework</label>
-                                        <textarea class="form-control lesson-form-control lesson-textarea p-3" rows="4"></textarea>
-                                      </div>
-
-                                      <div class="p-4 rounded bg-light border mb-4">
-                                        <h6 class="fw-semibold mb-3">Additional materials</h6>
-
-                                        <div class="row g-4 align-items-end">
-                                          <div class="col-md-3">
-                                            <label class="form-label small text-muted mb-1">Author</label>
-                                            <input type="text" class="form-control lesson-form-control" value="Emily Johnson" />
-                                          </div>
-
-                                          <div class="col-md-5">
-                                            <label class="form-label small text-muted mb-1">Book title</label>
-                                            <input type="text" class="form-control lesson-form-control" value="" />
-                                          </div>
-
-                                          <div class="col-md-2">
-                                            <label class="form-label small text-muted mb-1">Paragraph</label>
-                                            <input type="text" class="form-control lesson-form-control" value='4 — "My Pets"' />
-                                          </div>
-
-                                          <div class="col-md-2 d-flex align-items-end">
-                                            <button class="btn btn-primary lesson-add-btn w-100 rounded-3">Add +</button>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div class="mb-4">
-                                        <h6 class="fw-semibold mb-3">Attached files</h6>
-
-                                        <label class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center p-4 rounded">
-                                          <strong class="mb-1">
-                                            Drag & drop files here or
-                                            <span class="text-primary cursor-pointer">upload</span>
-                                          </strong>
-                                          <small class="text-muted"> Acceptable formats: pdf, jpg, jpeg, png. Max size: 100 MB </small>
-                                        </label>
-
-                                        <input type="file" class="d-none" multiple />
-                                      </div>
-
-                                      <div class="d-flex justify-content-end gap-2 pt-2">
-                                        <button class="btn btn-outline-primary px-4 rounded-3">Cancel</button>
-
-                                        <button class="btn btn-primary px-4 rounded-3">Save</button>
-                                      </div>
-                                    </div>
-                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded">
-                                      <div class="mb-3">
-                                        <p class="fw-semibold mb-0">Add Test</p>
-                                      </div>
-
-                                      <div class="row g-3 align-items-end">
-                                        <div class="col-sm-6 col-lg-4">
-                                          <label for="selectTest" class="form-label small text-secondary mb-1"> Select test </label>
-                                          <select id="selectTest" class="form-select lesson-form-control">
-                                            <option selected>Test 4 — "My Pets"</option>
-                                            <option>Test 5 — "My School"</option>
-                                          </select>
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-3">
-                                          <label for="testDueDate" class="form-label small text-secondary mb-1"> Due date </label>
-                                          <input type="date" class="form-control lesson-form-control" id="testDueDate" value="2026-04-12" />
-                                        </div>
-
-                                        <div class="col-sm-6 col-lg-3">
-                                          <button type="button" class="btn btn-primary lesson-add-btn w-100">Create +</button>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 pt-2 border-top">
-                                      <div class="d-flex gap-2">
-                                        <button type="button" class="btn btn-outline-primary px-4">Cancel</button>
-                                        <button type="button" class="btn btn-primary px-4">Save</button>
-                                      </div>
-
-                                      <button class="btn-action btn-action-danger">
-                                        <i class="bi bi-trash3"></i>
-                                        Remove
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 px-1">
-                            <div class="d-flex flex-wrap align-items-center gap-4">
-                              <div class="d-flex align-items-center gap-2">
-                                <img src="./assets/images/icons/icon_sort.svg" alt="Sort" class="blue-icon" />
-                                <small class="fw-medium text-dark">
-                                  Sort by:
-                                  <a href="#" class="text-primary text-decoration-none"> creation date </a>
-                                </small>
-                              </div>
-
-                              <div class="form-check form-switch m-0 d-flex align-items-center gap-2 ps-0">
-                                <input class="form-check-input m-0" type="checkbox" role="switch" id="onlyUnassigned" />
-                                <label class="form-check-label small text-secondary" for="onlyUnassigned"> Only unassigned </label>
-                              </div>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                              <small class="fw-semibold text-dark mb-0">View mode:</small>
-
-                              <button type="button" class="btn p-0 border-0 bg-transparent view-mode-btn active" aria-label="Grid view">
-                                <img src="./assets/images/icons/icon_dashboard.svg" alt="Grid view" />
-                              </button>
-
-                              <button type="button" class="btn p-0 border-0 bg-transparent view-mode-btn" aria-label="List view">
-                                <img src="./assets/images/icons/icon_list.svg" alt="List view" />
-                              </button>
-
-                              <button type="button" class="btn p-0 border-0 bg-transparent view-mode-btn" aria-label="Calendar view">
-                                <img src="./assets/images/icons/icon_calendar.svg" alt="Calendar view" />
-                              </button>
-                            </div>
-                          </div>
-
-                          <div class="d-flex flex-column gap-2">
-                            <div class="lesson-item shadow">
-                              <div class="lesson-row d-flex justify-content-between align-items-center shadow rounded p-3">
-                                <p class="mb-0 fw-semibold lesson-title-text">Lesson 3 - My friends</p>
-                                <div class="d-flex align-items-center gap-3">
-                                  <button type="button" class="btn p-0 border-0 bg-transparent text-primary small fw-semibold lesson-edit-btn">Edit</button>
-                                  <button class="btn p-0 border-0 bg-transparent lesson-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#lesson3Details">
-                                    <i class="bi bi-chevron-down"></i>
-                                  </button>
-                                </div>
-                              </div>
-
-                              <div class="collapse mt-2 shadow rounded" id="lesson3Details">
-                                <div class="lesson-details bg-white rounded p-4 shadow">
-                                  <div class="lesson-view-mode">
-                                    <h5 class="fw-semibold mb-3 lesson-view-title">Lesson 3 - My friends</h5>
-
-                                    <div class="row g-3">
-                                      <div class="col-md-6"><strong>Topic:</strong> <span class="lesson-view-topic">Friendship words and classroom discussion</span></div>
-                                      <div class="col-md-6"><strong>Date:</strong> <span class="lesson-view-date">2026-03-10</span></div>
-                                    </div>
-
-                                    <p class="mt-3">
-                                      <strong>Description:</strong><br />
-                                      <span class="lesson-view-description">Friendship words, listening exercises, and classroom discussion about friends.</span>
-                                    </p>
-
-                                    <div class="mt-4">
-                                      <strong>Additional Materials:</strong><br />
-                                      <span class="lesson-view-materials">Emily Johnson — "English for Elementary Kids" — Paragraph 4</span>
-                                    </div>
-
-                                    <div class="mt-3">
-                                      <strong>Attached Files:</strong>
-                                      <span class="lesson-view-files">friends_activity.pdf, photo1.jpg</span>
-                                    </div>
-
-                                    <div class="mt-4 border-top pt-3">
-                                      <strong>Scheduled for:</strong>
-                                      <span class="lesson-view-schedule">3 grade - Jane Henderson | 2026-03-10</span>
-                                    </div>
-                                  </div>
-
-                                  <form class="lesson-edit-form d-none mt-3">
-                                    <div class="row g-3">
-                                      <div class="col-md-6">
-                                        <label class="form-label">Lesson Title</label>
-                                        <input type="text" class="form-control lesson-form-control lesson-input-title" value="Lesson 3 - My friends" />
-                                      </div>
-                                      <div class="col-md-6">
-                                        <label class="form-label">Topic</label>
-                                        <input type="text" class="form-control lesson-form-control lesson-input-topic" value="Friendship words and classroom discussion" />
-                                      </div>
-                                      <div class="col-12">
-                                        <label class="form-label">Description</label>
-                                        <textarea class="form-control lesson-form-control lesson-textarea lesson-input-description" rows="4">Friendship words, listening exercises, and classroom discussion about friends.</textarea>
-                                      </div>
-                                    </div>
-
-                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded mt-4">
-                                      <p class="fw-semibold mb-3">Additional materials</p>
-                                      <div class="row g-3 align-items-end">
-                                        <div class="col-md-3">
-                                          <input type="text" class="form-control lesson-form-control lesson-input-author" value="Emily Johnson" placeholder="Author" />
-                                        </div>
-                                        <div class="col-md-5">
-                                          <input type="text" class="form-control lesson-form-control lesson-input-book" value='Textbook: "English for Elementary Kids"' placeholder="Book Title" />
-                                        </div>
-                                        <div class="col-md-2">
-                                          <input type="text" class="form-control lesson-form-control lesson-input-paragraph" value="4" placeholder="Paragraph" />
-                                        </div>
-                                        <div class="col-md-2">
-                                          <button type="button" class="btn btn-primary lesson-add-btn w-100">Add +</button>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded mt-3">
-                                      <p class="fw-semibold mb-2">Attached files</p>
-                                      <label class="lesson-upload-box d-flex flex-column align-items-center justify-content-center text-center p-4">
-                                        <strong>Drag & drop files here or <span class="text-primary cursor-pointer">upload</span></strong>
-                                        <small class="text-secondary">pdf, jpg, jpeg, png • Max 100 MB</small>
-                                      </label>
-                                      <input type="file" class="d-none" multiple />
-                                    </div>
-
-                                    <div class="lesson-section-box bg-blue-opacity p-3 rounded mt-3">
-                                      <p class="fw-semibold mb-3">Add to schedule</p>
-                                      <div class="row g-3 align-items-end">
-                                        <div class="col-lg-3">
-                                          <label class="form-label small text-muted">Assignment type</label>
-                                          <select class="form-select lesson-form-control">
-                                            <option selected>Grade</option>
-                                          </select>
-                                        </div>
-                                        <div class="col-lg-4">
-                                          <label class="form-label small text-muted">Choose grade</label>
-                                          <select class="form-select lesson-form-control">
-                                            <option selected>3 grade - Jane Henderson</option>
-                                          </select>
-                                        </div>
-                                        <div class="col-lg-2">
-                                          <label class="form-label small text-muted">Date</label>
-                                          <input type="date" class="form-control lesson-form-control lesson-input-date" value="2026-03-10" />
-                                        </div>
-                                        <div class="col-lg-3">
-                                          <button type="button" class="btn btn-primary w-100 lesson-add-btn">+ Add</button>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div class="d-flex gap-2 mt-4">
-                                      <button type="button" class="btn btn-primary lesson-save-btn">Save Changes</button>
-                                      <button type="button" class="btn btn-outline-secondary lesson-cancel-btn">Cancel</button>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- HOMEWORKS -->
-                      <div class="tab-pane fade" id="homeworks" role="tabpanel">
-                        <div class="p-4 bg-white rounded shadow">
-                          <p class="fs-5 fw-bold mb-0">Create New Homework</p>
-                        </div>
-                      </div>
-
-                      <!-- TESTS -->
-                      <div class="tab-pane fade" id="tests" role="tabpanel">
-                        <div class="p-4 bg-white rounded shadow">
-                          <p class="fs-5 fw-bold mb-0">Create New Test</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   <!-- Schedule  -->
                   <div class="tab-pane fade" id="schedule-pane" role="tabpanel" aria-labelledby="schedule-tab" tabindex="0">
                     <div class="d-flex flex-column gap-4">
-                      <!-- HEADER -->
-                      <div class="bg-white rounded shadow p-3 p-lg-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
-                        <div class="d-flex align-items-center gap-3">
-                          <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px">
-                            <img src="./assets/images/icons/icon_calendar.svg" width="26" height="26" class="blue-icon" />
-                          </div>
-
-                          <div>
-                            <h4 class="fw-bold mb-1">Class Schedule</h4>
-                            <p class="text-secondary mb-0 small">Manage lessons, meetings, and individual sessions</p>
-                          </div>
+                      <div class="d-flex align-items-start flex-wrap gap-3 border-bottom pb-3 justify-content-between">
+                        <!-- Subjects -->
+                        <div class="col-12 col-md-3">
+                          <select class="form-select filter-select">
+                            <option selected>All subjects</option>
+                            <option>Math</option>
+                            <option>English</option>
+                            <option>Science</option>
+                          </select>
                         </div>
 
-                        <div class="d-flex gap-2">
-                          <button class="btn btn-outline-primary">Today</button>
-                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">+ Add Event</button>
+                        <!-- Teachers -->
+                        <div class="col-12 col-md-3">
+                          <select class="form-select filter-select">
+                            <option selected>All Teachers</option>
+                            <option>John Doe</option>
+                            <option>Jane Smith</option>
+                            <option>Mike Johnson</option>
+                          </select>
                         </div>
-                      </div>
 
-                      <!-- FILTERS -->
-                      <div class="bg-white rounded shadow p-3">
-                        <div class="row g-3">
-                          <div class="col-md-3">
-                            <label class="small text-secondary">Grade</label>
-                            <select id="filterGrade" class="form-select">
-                              <option value="all">All grades</option>
-                              <option value="1 grade">1 grade</option>
-                              <option value="2 grade">2 grade</option>
-                              <option value="3 grade">3 grade</option>
-                              <option value="4 grade">4 grade</option>
-                            </select>
-                          </div>
+                        <!-- Date -->
+                        <div class="col-12 col-md-3">
+                          <input type="date" class="form-control filter-date" />
+                        </div>
 
-                          <div class="col-md-3">
-                            <label class="small text-secondary">Teacher</label>
-                            <select id="filterTeacher" class="form-select">
-                              <option value="all">All teachers</option>
-                              <option value="Jane Henderson">Jane Henderson</option>
-                              <option value="Michael Brown">Michael Brown</option>
-                              <option value="Anna Smith">Anna Smith</option>
-                            </select>
-                          </div>
-
-                          <div class="col-md-3">
-                            <label class="small text-secondary">Subject</label>
-                            <select id="filterSubject" class="form-select">
-                              <option value="all">All subjects</option>
-                              <option value="English">English</option>
-                              <option value="Math">Math</option>
-                              <option value="Biology">Biology</option>
-                              <option value="History">History</option>
-                            </select>
-                          </div>
-
-                          <div class="col-md-3 d-flex align-items-end">
-                            <div class="d-flex gap-2 w-100">
-                              <button class="btn btn-primary flex-fill">Week</button>
-                              <button class="btn btn-outline-primary flex-fill">Day</button>
-                            </div>
-                          </div>
+                        <!-- Reset button -->
+                        <div class="col-12 col-md-auto">
+                          <button class="btn btn-outline-secondary reset-filters-btn">Reset Filters</button>
                         </div>
                       </div>
-
                       <!-- NAV -->
                       <div class="schedule-head">
                         <div class="d-flex align-items-center gap-2 position-relative">
