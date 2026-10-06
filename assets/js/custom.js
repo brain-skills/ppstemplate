@@ -131,61 +131,257 @@ document.addEventListener("DOMContentLoaded", () => {
     setActive(location.hash?.slice("all"));
   })();
 
-  (function fontScaler() {
-    const sliders = document.querySelectorAll("#fontSlider");
-    const increaseBtns = document.querySelectorAll("#increase");
-    const decreaseBtns = document.querySelectorAll("#decrease");
+     function initFontScaler() {
+        const sliders = document.querySelectorAll("#fontSlider");
+        const increaseBtns = document.querySelectorAll("#increase");
+        const decreaseBtns = document.querySelectorAll("#decrease");
+        const resetBtns = document.querySelectorAll("#resetFont");
+        const fontSizeLabels = document.querySelectorAll("#fontSizeLabel");
 
-    if (!sliders.length) return;
+        if (!sliders.length && !increaseBtns.length) return;
 
-    let step = parseInt(localStorage.getItem("fontStep")) || 0;
-    const MIN = -5;
-    const MAX = 5;
+        const FONT_MAP = {
+          80: 12,
+          90: 14,
+          100: 16,
+          110: 18,
+          125: 20,
+          150: 22,
+          175: 24,
+          200: 28,
+        };
 
-    function apply(v) {
-      step = Math.max(MIN, Math.min(MAX, v));
+        const ALL_STEPS = [80, 90, 100, 110, 125, 150, 175, 200];
+        const DEFAULT_PERCENT = 100;
+        const BASE_FONT_PX = 16;
 
-      sliders.forEach((s) => (s.value = step));
+        function getMaxPercent() {
+          const width = window.innerWidth;
 
-      const base = 16;
-      document.documentElement.style.fontSize = base * (1 + step * 0.1) + "px";
+          if (width > 1920) return 200;
+          if (width >= 1200) return 150;
 
-      localStorage.setItem("fontStep", step);
-    }
+          return 125;
+        }
 
-    apply(step);
+        function getAvailableSteps() {
+          const maxPercent = getMaxPercent();
 
-    sliders.forEach((s) => s.addEventListener("input", () => apply(parseInt(s.value))));
-    increaseBtns.forEach((b) => b.addEventListener("click", () => apply(step + 1)));
-    decreaseBtns.forEach((b) => b.addEventListener("click", () => apply(step - 1)));
-  })();
+          return ALL_STEPS.filter((step) => step <= maxPercent);
+        }
 
-  (function sectionHashObserver() {
-    const sections = document.querySelectorAll("section[id]");
-    if (!sections.length) return;
+        let savedPercent = parseInt(localStorage.getItem("fontPercent"), 10);
 
-    let currentSection = location.hash.replace("#", "") || "";
+        if (isNaN(savedPercent) || !(savedPercent in FONT_MAP)) {
+          savedPercent = DEFAULT_PERCENT;
+        }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+        let savedInteractionScroll = null;
 
-          const id = entry.target.id;
-          if (!id || currentSection === id) return;
+        function captureScrollPosition() {
+          return {
+            left: window.scrollX,
+            top: window.scrollY,
+            nested: Array.from(document.querySelectorAll(".offcanvas-body"), (element) => ({
+              element,
+              left: element.scrollLeft,
+              top: element.scrollTop,
+            })),
+          };
+        }
 
-          currentSection = id;
+        document.addEventListener(
+          "pointerdown",
+          (event) => {
+            if (event.target.closest(".scale-control, .scale-widget")) {
+              savedInteractionScroll = captureScrollPosition();
+            }
+          },
+          true,
+        );
 
-          history.replaceState(null, "", `#${id}`);
+        document.addEventListener(
+          "keydown",
+          (event) => {
+            const control = event.target.closest(".scale-control, .scale-widget");
+
+            if (control && (event.key === "Enter" || event.key === " ")) {
+              savedInteractionScroll = captureScrollPosition();
+            }
+          },
+          true,
+        );
+
+        function rescaleIcons(currentPx) {
+          const scale = currentPx / BASE_FONT_PX;
+
+          const icons = document.querySelectorAll("svg, img[src*='icon'], img[src*='svg'], .scale-control img");
+
+          icons.forEach((icon) => {
+            if (!icon.dataset.baseWidth) {
+              const rect = icon.getBoundingClientRect();
+
+              const attrW = parseFloat(icon.getAttribute("width")) || rect.width || 16;
+
+              const attrH = parseFloat(icon.getAttribute("height")) || rect.height || 16;
+
+              icon.dataset.baseWidth = attrW;
+              icon.dataset.baseHeight = attrH;
+            }
+
+            const baseW = parseFloat(icon.dataset.baseWidth);
+            const baseH = parseFloat(icon.dataset.baseHeight);
+
+            let newW;
+            let newH;
+
+            if (scale === 1) {
+              newW = baseW;
+              newH = baseH;
+            } else {
+              newW = Math.max(8, baseW * scale);
+              newH = Math.max(8, baseH * scale);
+            }
+
+            icon.style.setProperty("width", `${newW}px`, "important");
+            icon.style.setProperty("height", `${newH}px`, "important");
+            icon.style.setProperty("max-width", "100%", "important");
+            icon.style.setProperty("max-height", "100%", "important");
+            icon.style.setProperty("flex-shrink", "0", "important");
+          });
+        }
+
+        function updateUI(currentPercent) {
+          const availableSteps = getAvailableSteps();
+          const minStep = availableSteps[0];
+          const maxStep = availableSteps[availableSteps.length - 1];
+
+          fontSizeLabels.forEach((label) => {
+            label.textContent = `${currentPercent}%`;
+          });
+
+          sliders.forEach((slider) => {
+            slider.min = 0;
+            slider.max = availableSteps.length - 1;
+            slider.step = 1;
+            slider.value = availableSteps.indexOf(currentPercent);
+          });
+        }
+
+        function apply(targetPercent, preserveScrollPosition = false, anchorElement = null) {
+          const availableSteps = getAvailableSteps();
+          const minStep = availableSteps[0];
+          const maxStep = availableSteps[availableSteps.length - 1];
+
+          let currentPercent = Math.max(minStep, Math.min(maxStep, targetPercent));
+
+          const scrollPosition = savedInteractionScroll || captureScrollPosition();
+
+          savedInteractionScroll = null;
+
+          const anchorTop = anchorElement?.getBoundingClientRect().top;
+          const root = document.documentElement;
+          const body = document.body;
+
+          const previousScrollBehavior = root.style.scrollBehavior;
+          const previousRootOverflowAnchor = root.style.overflowAnchor;
+          const previousBodyOverflowAnchor = body.style.overflowAnchor;
+
+          if (preserveScrollPosition) {
+            root.style.scrollBehavior = "auto";
+            root.style.overflowAnchor = "none";
+            body.style.overflowAnchor = "none";
+          }
+
+          currentPercent = availableSteps.reduce((nearest, step) => (Math.abs(step - currentPercent) < Math.abs(nearest - currentPercent) ? step : nearest));
+
+          const targetPx = FONT_MAP[currentPercent];
+
+          root.style.fontSize = `${targetPx}px`;
+
+          rescaleIcons(targetPx);
+
+          localStorage.setItem("fontPercent", currentPercent);
+          updateUI(currentPercent);
+
+          if (preserveScrollPosition) {
+            window.scrollTo(scrollPosition.left, scrollPosition.top);
+
+            scrollPosition.nested.forEach(({ element, left, top }) => {
+              element.scrollTo(left, top);
+            });
+
+            if (Number.isFinite(anchorTop) && anchorElement?.isConnected) {
+              window.scrollBy(0, anchorElement.getBoundingClientRect().top - anchorTop);
+            }
+
+            root.style.scrollBehavior = previousScrollBehavior;
+            root.style.overflowAnchor = previousRootOverflowAnchor;
+            body.style.overflowAnchor = previousBodyOverflowAnchor;
+          }
+
+          return currentPercent;
+        }
+
+        savedPercent = apply(savedPercent);
+
+        window.addEventListener("resize", () => {
+          const currentPercent = parseInt(localStorage.getItem("fontPercent"), 10) || DEFAULT_PERCENT;
+
+          savedPercent = apply(currentPercent, true);
         });
-      },
-      {
-        threshold: 0.6,
-      },
-    );
 
-    sections.forEach((section) => observer.observe(section));
-  })();
+        function stepChange(direction, button) {
+          const availableSteps = getAvailableSteps();
+          const currentIndex = availableSteps.indexOf(savedPercent);
+
+          let nextIndex = currentIndex === -1 ? availableSteps.indexOf(DEFAULT_PERCENT) : currentIndex + direction;
+
+          if (nextIndex >= 0 && nextIndex < availableSteps.length) {
+            savedPercent = apply(availableSteps[nextIndex], true, button);
+          }
+        }
+
+        increaseBtns.forEach((button) => {
+          button.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+          });
+
+          button.addEventListener("click", () => {
+            stepChange(1, button);
+          });
+        });
+
+        decreaseBtns.forEach((button) => {
+          button.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+          });
+
+          button.addEventListener("click", () => {
+            stepChange(-1, button);
+          });
+        });
+
+        resetBtns.forEach((button) => {
+          button.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+          });
+
+          button.addEventListener("click", () => {
+            savedPercent = apply(DEFAULT_PERCENT, true, button);
+          });
+        });
+
+        sliders.forEach((slider) => {
+          slider.addEventListener("input", () => {
+            const val = parseInt(slider.value, 10);
+            const availableSteps = getAvailableSteps();
+            savedPercent = apply(availableSteps[val], true, slider);
+          });
+        });
+      }
+
+  initFontScaler();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -199,121 +395,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   button.addEventListener("click", () => {
     input.focus();
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.getElementById("newsGrid");
-  const paginationWrap = document.getElementById("newsPagination");
-
-  if (!grid || !paginationWrap) return;
-
-  const items = Array.from(grid.querySelectorAll(":scope > .col-12.col-md-6.col-lg-4"));
-
-  if (!items.length) {
-    paginationWrap.style.display = "none";
-    return;
-  }
-
-  const perPage = 6;
-  const totalPages = Math.ceil(items.length / perPage);
-
-  if (totalPages <= 1) {
-    paginationWrap.style.display = "none";
-    return;
-  }
-
-  function getPageFromUrl() {
-    try {
-      const url = new URL(window.location.href);
-      const p = parseInt(url.searchParams.get("page") || "1", 10);
-      return Math.min(Math.max(p || 1, 1), totalPages);
-    } catch {
-      return 1;
-    }
-  }
-
-  function setPageToUrl(page) {
-    try {
-      const url = new URL(window.location.href);
-      url.searchParams.set("page", String(page));
-      window.history.pushState({}, "", url);
-    } catch {}
-  }
-
-  function renderPage(page) {
-    const start = (page - 1) * perPage;
-    const end = start + perPage;
-
-    items.forEach((el, idx) => {
-      if (!el) return;
-      el.style.display = idx >= start && idx < end ? "" : "none";
-    });
-  }
-
-  function renderPagination(currentPage) {
-    const ul = document.createElement("ul");
-    ul.className = "pagination pagination-sm justify-content-start mb-0";
-
-    const addBtn = (label, page, disabled = false, active = false, aria = "") => {
-      const li = document.createElement("li");
-      li.className = "page-item";
-
-      if (disabled) li.classList.add("disabled");
-      if (active) li.classList.add("active");
-
-      const a = document.createElement("a");
-      a.className = "page-link";
-      a.href = "#";
-      a.textContent = label;
-
-      if (aria) a.setAttribute("aria-label", aria);
-      if (!disabled && !active) a.dataset.page = String(page);
-
-      li.appendChild(a);
-      ul.appendChild(li);
-    };
-
-    addBtn("‹", currentPage - 1, currentPage === 1, false, "Previous page");
-
-    for (let p = 1; p <= totalPages; p++) {
-      addBtn(String(p), p, false, p === currentPage, `Page ${p}`);
-    }
-
-    addBtn("›", currentPage + 1, currentPage === totalPages, false, "Next page");
-
-    paginationWrap.innerHTML = "";
-    paginationWrap.appendChild(ul);
-
-    ul.addEventListener("click", (e) => {
-      const link = e.target.closest("a.page-link");
-      if (!link) return;
-
-      e.preventDefault();
-
-      const page = parseInt(link.dataset.page || "", 10);
-      if (!Number.isFinite(page)) return;
-
-      goToPage(page);
-    });
-  }
-
-  function goToPage(page) {
-    const safePage = Math.min(Math.max(page, 1), totalPages);
-
-    renderPage(safePage);
-    renderPagination(safePage);
-    setPageToUrl(safePage);
-
-    if (grid.scrollIntoView) {
-      grid.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }
-
-  goToPage(getPageFromUrl());
-
-  window.addEventListener("popstate", () => {
-    goToPage(getPageFromUrl());
   });
 });
 
@@ -362,114 +443,6 @@ document.addEventListener("DOMContentLoaded", () => {
       a.classList.add("active");
     }
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const tabsWrap = document.getElementById("staffTabs");
-  if (!tabsWrap) return;
-
-  const tabs = Array.from(tabsWrap.querySelectorAll(".nav-link[data-filter]"));
-  const items = Array.from(document.querySelectorAll(".staff-item"));
-  const empty = document.getElementById("staffEmpty");
-  const searchInput = document.getElementById("staffSearch");
-
-  if (!tabs.length || !items.length) return;
-
-  const DEFAULT_FILTER = (tabs[0]?.dataset.filter || "administration").toLowerCase();
-  const validFilters = new Set(tabs.map((t) => (t.dataset.filter || "").toLowerCase()));
-
-  function setActiveTab(filter) {
-    tabs.forEach((btn) => {
-      const f = (btn.dataset.filter || "").toLowerCase();
-      btn.classList.toggle("active", f === filter);
-    });
-  }
-
-  function applyFilter(filter) {
-    const q = (searchInput?.value || "").trim().toLowerCase();
-    let visibleCount = 0;
-
-    items.forEach((item) => {
-      const category = (item.dataset.category || "").toLowerCase();
-      const text = (item.dataset.name || item.innerText || "").toLowerCase();
-
-      const okCategory = category === filter;
-      const okSearch = q === "" || text.includes(q);
-
-      const show = okCategory && okSearch;
-
-      item.classList.toggle("d-none", !show);
-      if (show) visibleCount++;
-    });
-
-    if (empty) {
-      empty.classList.toggle("d-none", visibleCount !== 0);
-    }
-  }
-
-  function getFilterFromHash() {
-    const raw = (window.location.hash || "").replace("#", "").trim().toLowerCase();
-    return validFilters.has(raw) ? raw : DEFAULT_FILTER;
-  }
-
-  function goToFilter(filter, updateHash) {
-    if (!validFilters.has(filter)) filter = DEFAULT_FILTER;
-
-    setActiveTab(filter);
-    applyFilter(filter);
-
-    if (updateHash) {
-      history.replaceState(null, "", `#${filter}`);
-    }
-  }
-
-  tabs.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const filter = (btn.dataset.filter || "").toLowerCase();
-      goToFilter(filter, true);
-    });
-  });
-
-  if (searchInput) {
-    searchInput.addEventListener("input", () => {
-      goToFilter(getFilterFromHash(), false);
-    });
-  }
-
-  window.addEventListener("hashchange", () => {
-    goToFilter(getFilterFromHash(), false);
-  });
-
-  goToFilter(getFilterFromHash(), false);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const resetBtn = document.getElementById("resetSchedule");
-  const grade = document.getElementById("schGrade");
-  const curator = document.getElementById("schCurator");
-  const subject = document.getElementById("schSubject");
-
-  const weekBtn = document.getElementById("viewWeekBtn");
-  const dayBtn = document.getElementById("viewDayBtn");
-
-  if (resetBtn) {
-    resetBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (grade) grade.selectedIndex = 0;
-      if (curator) curator.selectedIndex = 0;
-      if (subject) subject.selectedIndex = 0;
-    });
-  }
-
-  function setActive(btnOn, btnOff) {
-    btnOn.classList.add("active");
-    btnOff.classList.remove("active");
-  }
-
-  if (weekBtn && dayBtn) {
-    weekBtn.addEventListener("click", () => setActive(weekBtn, dayBtn));
-    dayBtn.addEventListener("click", () => setActive(dayBtn, weekBtn));
-  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -962,31 +935,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const monthDisplay = document.getElementById("monthDisplay");
-  const input = document.getElementById("dateInput");
 
-  if (!monthDisplay || !input || typeof flatpickr === "undefined") return;
-
-  const fp = flatpickr(input, {
-    dateFormat: "F Y",
-    defaultDate: new Date(),
-    onChange: (selectedDates) => {
-      if (!selectedDates.length) return;
-
-      const date = selectedDates[0];
-
-      const month = date.toLocaleString("en", { month: "long" });
-      const year = date.getFullYear();
-
-      monthDisplay.innerHTML = `${month} <span>${year}</span>`;
-    },
-  });
-
-  monthDisplay.addEventListener("click", () => {
-    fp.open();
-  });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   const gradeSelect = document.getElementById("grade");
@@ -1327,34 +1276,83 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const askBtn = document.getElementById("askQuestionBtn");
-  const chatWindow = document.getElementById("supportChat");
-  const closeBtn = document.getElementById("closeChat");
+  const chatWidget = document.getElementById("chatWidget");
+  const closeChat = document.getElementById("closeChat");
+  const chatToggle = document.getElementById("chatToggle");
 
-  function toggleChat() {
-    chatWindow.classList.toggle("active");
-  }
+  if (!chatWidget || !closeChat || !chatToggle) return;
 
-  if (askBtn && chatWindow) {
-    askBtn.addEventListener("click", toggleChat);
-  }
+  chatWidget.inert = true;
+  let previousOverflow = null;
 
-  if (closeBtn && chatWindow) {
-    closeBtn.addEventListener("click", toggleChat);
-  }
+  chatToggle.addEventListener("click", () => {
+    chatWidget.style.display = "flex";
+    chatWidget.classList.add("open");
+    chatWidget.inert = false;
+    chatToggle.style.display = "none";
+    chatToggle.setAttribute("aria-expanded", "true");
+
+    if (window.innerWidth < 700) {
+      previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+    }
+
+    closeChat.focus({ preventScroll: true });
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.style.display = "none";
+    chatWidget.classList.remove("open");
+    chatWidget.inert = true;
+    chatToggle.style.display = "flex";
+    chatToggle.setAttribute("aria-expanded", "false");
+
+    if (previousOverflow !== null) {
+      document.body.style.overflow = previousOverflow;
+      previousOverflow = null;
+    }
+
+    chatToggle.focus({ preventScroll: true });
+  });
+
+  chatWidget.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeChat.click();
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const notificationBtn = document.getElementById("notificationBtn");
   const notificationWindow = document.getElementById("notificationWindow");
+  if (!notificationBtn || !notificationWindow) return;
+
+  const list = document.querySelector("#NotificationsDiv > ul");
+  const emptyTemplate = document.getElementById("tpl-empty-notification");
+  if (list && emptyTemplate && !list.children.length) {
+    list.appendChild(emptyTemplate.content.cloneNode(true));
+  }
+
+  notificationWindow.inert = true;
+  function setNotificationsOpen(isOpen) {
+    notificationWindow.classList.toggle("active", isOpen);
+    notificationWindow.inert = !isOpen;
+    notificationBtn.setAttribute("aria-expanded", String(isOpen));
+  }
 
   notificationBtn.addEventListener("click", () => {
-    notificationWindow.classList.toggle("active");
+    setNotificationsOpen(!notificationWindow.classList.contains("active"));
   });
-
-  document.addEventListener("click", (e) => {
-    if (!notificationBtn.contains(e.target) && !notificationWindow.contains(e.target)) {
-      notificationWindow.classList.remove("active");
+  document.addEventListener("click", (event) => {
+    if (!notificationBtn.contains(event.target) && !notificationWindow.contains(event.target)) {
+      setNotificationsOpen(false);
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && notificationWindow.classList.contains("active")) {
+      setNotificationsOpen(false);
+      notificationBtn.focus({ preventScroll: true });
     }
   });
 });
@@ -1389,87 +1387,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const dropdownElement = document.getElementById("loginDropdown");
-
-  if (dropdownElement) {
-    dropdownElement.addEventListener("click", function (e) {
-      e.stopImmediatePropagation();
-    });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const chatItems = document.querySelectorAll("#chatList a");
-  const usersBlock = document.getElementById("chat-users");
-  const chatBlock = document.getElementById("chat-content");
-  const backBtn = document.getElementById("backToUsers");
-
-  const headerName = document.getElementById("headerName");
-  const headerRole = document.getElementById("headerRole");
-  const headerAvatar = document.getElementById("headerAvatar");
-  const messagesContainer = document.getElementById("messagesContainer");
-
-  function loadChat(chatId) {
-    const template = document.getElementById("chat-" + chatId);
-
-    if (template && messagesContainer) {
-      messagesContainer.innerHTML = "";
-      messagesContainer.appendChild(template.content.cloneNode(true));
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }
-  }
-
-  chatItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      chatItems.forEach((i) => i.classList.remove("active"));
-      item.classList.add("active");
-
-      if (headerName) headerName.textContent = item.dataset.name || "";
-      if (headerRole) headerRole.textContent = (item.dataset.role || "") + " • Online";
-      if (headerAvatar) headerAvatar.src = item.dataset.avatar || "";
-
-      loadChat(item.dataset.chat);
-
-      if (window.innerWidth < 992 && usersBlock && chatBlock) {
-        usersBlock.classList.add("d-none");
-        chatBlock.classList.remove("d-none");
-      }
-    });
-  });
-
-  if (backBtn && usersBlock && chatBlock) {
-    backBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      usersBlock.classList.remove("d-none");
-      chatBlock.classList.add("d-none");
-    });
-  }
-
-  if (chatItems.length > 0) {
-    chatItems[0].click();
-  }
-});
-
-const initialUser = document.querySelector("#chatList a.active") || document.querySelector("#chatList a");
-
-if (initialUser) {
-  initialUser.classList.add("active");
-
-  headerName.textContent = initialUser.dataset.name;
-  headerRole.textContent = initialUser.dataset.role + " • Online";
-  headerAvatar.src = initialUser.dataset.avatar;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const dateInput = document.getElementById("dateInput");
   const monthDisplay = document.getElementById("monthDisplay");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
-  if (!dateInput || !monthDisplay) return;
+  if (!dateInput || !monthDisplay || typeof flatpickr === "undefined") return;
 
   let currentDate = new Date();
 
@@ -1528,5 +1452,181 @@ document.querySelectorAll(".reset-filters-btn").forEach((button) => {
     container.querySelectorAll(".filter-date").forEach((input) => {
       input.value = "";
     });
+  });
+});
+
+(function () {
+  function initializeBackToTop() {
+    if (document.querySelector(".btn-to-top button")) return;
+
+    const container = document.createElement("div");
+    const button = document.createElement("button");
+    const arrow = document.createElement("span");
+
+    container.className = "btn-to-top";
+
+    Object.assign(container.style, {
+      position: "fixed",
+      right: "1.25rem",
+      bottom: "6.25rem",
+      zIndex: "1050",
+      opacity: "0",
+      visibility: "hidden",
+      transform: "translateY(15px)",
+      transition:
+        "opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease",
+    });
+
+    button.type = "button";
+    button.className = "btn rounded-circle";
+    button.setAttribute("aria-label", "Go to top");
+
+    Object.assign(button.style, {
+      width: "2.875rem",
+      height: "2.875rem",
+      padding: "0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "#2f8ed9",
+      border: "none",
+      color: "#fff",
+      boxShadow: "0 4px 14px rgba(47, 142, 217, 0.35)",
+      transition:
+        "background-color 0.25s ease, box-shadow 0.25s ease",
+      cursor: "pointer",
+    });
+
+    button.style.setProperty("transform", "none", "important");
+
+    Object.assign(arrow.style, {
+      width: "0.625rem",
+      height: "0.625rem",
+      borderTop: "0.125rem solid #fff",
+      borderLeft: "0.125rem solid #fff",
+      transform: "rotate(45deg) translate(0.125rem, 0.125rem)",
+    });
+
+    arrow.style.setProperty(
+      "transform",
+      "rotate(45deg) translate(0.125rem, 0.125rem)",
+      "important"
+    );
+
+    arrow.style.transition = "none";
+
+    button.addEventListener("mouseenter", function () {
+      button.style.backgroundColor = "#247fc5";
+      button.style.boxShadow =
+        "0 8px 20px rgba(47, 142, 217, 0.45)";
+    });
+
+    button.addEventListener("mouseleave", function () {
+      button.style.backgroundColor = "#2f8ed9";
+      button.style.boxShadow =
+        "0 4px 14px rgba(47, 142, 217, 0.35)";
+    });
+
+    button.appendChild(arrow);
+    container.appendChild(button);
+    document.body.appendChild(container);
+
+    function updateVisibility() {
+      const isVisible = window.scrollY >= 250;
+
+      container.style.opacity = isVisible ? "1" : "0";
+      container.style.visibility = isVisible ? "visible" : "hidden";
+      container.style.transform = isVisible
+        ? "translateY(0)"
+        : "translateY(15px)";
+    }
+
+    window.addEventListener("scroll", updateVisibility, {
+      passive: true,
+    });
+
+    button.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    updateVisibility();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initializeBackToTop,
+      { once: true }
+    );
+  } else {
+    initializeBackToTop();
+  }
+})();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".school-header");
+  if (!header) return;
+
+  const nativeMenus = header.querySelectorAll("details");
+  const dropdownButtons = header.querySelectorAll('[data-bs-toggle="dropdown"]');
+
+  function closeOtherMenus(currentMenu) {
+    nativeMenus.forEach((menu) => {
+      if (menu !== currentMenu) menu.open = false;
+    });
+
+    dropdownButtons.forEach((button) => {
+      if (button !== currentMenu) {
+        window.bootstrap?.Dropdown.getInstance(button)?.hide();
+      }
+    });
+  }
+
+  nativeMenus.forEach((menu) => {
+    menu.addEventListener("toggle", () => {
+      if (menu.open) closeOtherMenus(menu);
+    });
+  });
+
+  header.addEventListener("show.bs.dropdown", (event) => {
+    closeOtherMenus(event.target);
+  });
+
+  document.addEventListener("click", (event) => {
+    nativeMenus.forEach((menu) => {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const messagesBtn = document.getElementById("messagesBtn");
+  const messagesWindow = document.getElementById("messagesWindow");
+  if (!messagesBtn || !messagesWindow) return;
+
+  messagesWindow.inert = true;
+  function setMessagesOpen(isOpen) {
+    messagesWindow.classList.toggle("active", isOpen);
+    messagesWindow.inert = !isOpen;
+    messagesBtn.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  messagesBtn.addEventListener("click", () => {
+    setMessagesOpen(!messagesWindow.classList.contains("active"));
+  });
+  document.addEventListener("click", (event) => {
+    if (!messagesBtn.contains(event.target) && !messagesWindow.contains(event.target)) {
+      setMessagesOpen(false);
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && messagesWindow.classList.contains("active")) {
+      setMessagesOpen(false);
+      messagesBtn.focus({ preventScroll: true });
+    }
   });
 });
