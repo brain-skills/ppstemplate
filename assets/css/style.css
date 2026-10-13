@@ -2847,6 +2847,26 @@ button.chat-translation-button:is(:hover, :focus, :active, [aria-expanded="true"
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+.chat-widget-container #chatHeader,
+.chat-widget-container .chat-translation-dropdown {
+  position: static;
+}
+.chat-widget-container .chat-translation-menu {
+  position: absolute !important;
+  inset: var(--support-header-height, 84px) 0 var(--support-footer-height, 90px) !important;
+  transform: none !important;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0 !important;
+  padding: 16px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--support-panel);
+}
 .chat-translation-menu .dropdown-item {
   display: flex;
   align-items: center;
@@ -2890,10 +2910,20 @@ button.chat-translation-button:is(:hover, :focus, :active, [aria-expanded="true"
 /* Адаптивность */
 @media (min-width: 701px) {
   .chat-widget-container #chatWidget {
-    right: 56px;
-    bottom: 24px;
+    right: 0px;
+    bottom: 50px;
     width: min(22.5rem, calc(100vw - 80px));
     height: min(31.25rem, calc(100dvh - 48px));
+  }
+}
+@media (min-width: 2200px) and (max-width: 2400px) {
+  .chat-widget-container #chatWidget {
+    min-height: 400px;
+  }
+}
+@media (width > 2400px) {
+  .chat-widget-container #chatWidget {
+    min-height: 500px;
   }
 }
 @media (max-width: 700px) {
@@ -2904,19 +2934,23 @@ button.chat-translation-button:is(:hover, :focus, :active, [aria-expanded="true"
   }
   .chat-widget-container #chatWidget {
     top: auto !important;
-    left: 12px;
-    right: 12px;
-    bottom: calc(max(12px, env(safe-area-inset-bottom)) + var(--support-viewport-bottom, 0px)) !important;
-    width: calc(100vw - 24px) !important;
+    left: 0;
+    right: 0;
+    bottom: var(--support-viewport-bottom, 0px) !important;
+    width: 100% !important;
     max-width: none !important;
-    height: min(32.5rem, calc(var(--support-viewport-height, 100dvh) - 24px)) !important;
+    height: var(--support-viewport-height, 100dvh) !important;
     max-height: none !important;
-    border-radius: 16px;
+    border: 0;
+    border-radius: 0;
     justify-content: space-between;
   }
   .chat-widget-container #chatHeader {
     min-height: 76px;
-    padding: 14px;
+    padding: calc(14px + env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) 14px max(14px, env(safe-area-inset-left));
+  }
+  .chat-widget-container .chat-footer {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
   }
 }
 @media (max-width: 360px) {

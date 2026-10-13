@@ -131,255 +131,255 @@ document.addEventListener("DOMContentLoaded", () => {
     setActive(location.hash?.slice("all"));
   })();
 
-     function initFontScaler() {
-        const sliders = document.querySelectorAll("#fontSlider");
-        const increaseBtns = document.querySelectorAll("#increase");
-        const decreaseBtns = document.querySelectorAll("#decrease");
-        const resetBtns = document.querySelectorAll("#resetFont");
-        const fontSizeLabels = document.querySelectorAll("#fontSizeLabel");
+  function initFontScaler() {
+    const sliders = document.querySelectorAll("#fontSlider");
+    const increaseBtns = document.querySelectorAll("#increase");
+    const decreaseBtns = document.querySelectorAll("#decrease");
+    const resetBtns = document.querySelectorAll("#resetFont");
+    const fontSizeLabels = document.querySelectorAll("#fontSizeLabel");
 
-        if (!sliders.length && !increaseBtns.length) return;
+    if (!sliders.length && !increaseBtns.length) return;
 
-        const FONT_MAP = {
-          80: 12,
-          90: 14,
-          100: 16,
-          110: 18,
-          125: 20,
-          150: 22,
-          175: 24,
-          200: 28,
-        };
+    const FONT_MAP = {
+      80: 12,
+      90: 14,
+      100: 16,
+      110: 18,
+      125: 20,
+      150: 22,
+      175: 24,
+      200: 28,
+    };
 
-        const ALL_STEPS = [80, 90, 100, 110, 125, 150, 175, 200];
-        const DEFAULT_PERCENT = 100;
-        const BASE_FONT_PX = 16;
+    const ALL_STEPS = [80, 90, 100, 110, 125, 150, 175, 200];
+    const DEFAULT_PERCENT = 100;
+    const BASE_FONT_PX = 16;
 
-        function getMaxPercent() {
-          const width = window.innerWidth;
+    function getMaxPercent() {
+      const width = window.innerWidth;
 
-          if (width > 1920) return 200;
-          if (width >= 1200) return 150;
+      if (width > 1920) return 200;
+      if (width >= 1200) return 150;
 
-          return 125;
+      return 125;
+    }
+
+    function getAvailableSteps() {
+      const maxPercent = getMaxPercent();
+
+      return ALL_STEPS.filter((step) => step <= maxPercent);
+    }
+
+    let savedPercent = parseInt(localStorage.getItem("fontPercent"), 10);
+
+    if (isNaN(savedPercent) || !(savedPercent in FONT_MAP)) {
+      savedPercent = DEFAULT_PERCENT;
+    }
+
+    let savedInteractionScroll = null;
+
+    function captureScrollPosition() {
+      return {
+        left: window.scrollX,
+        top: window.scrollY,
+        nested: Array.from(document.querySelectorAll(".offcanvas-body"), (element) => ({
+          element,
+          left: element.scrollLeft,
+          top: element.scrollTop,
+        })),
+      };
+    }
+
+    document.addEventListener(
+      "pointerdown",
+      (event) => {
+        if (event.target.closest(".scale-control, .scale-widget")) {
+          savedInteractionScroll = captureScrollPosition();
+        }
+      },
+      true,
+    );
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+        const control = event.target.closest(".scale-control, .scale-widget");
+
+        if (control && (event.key === "Enter" || event.key === " ")) {
+          savedInteractionScroll = captureScrollPosition();
+        }
+      },
+      true,
+    );
+
+    function rescaleIcons(currentPx) {
+      const scale = currentPx / BASE_FONT_PX;
+
+      const icons = document.querySelectorAll("svg, img[src*='icon'], img[src*='svg'], .scale-control img");
+
+      icons.forEach((icon) => {
+        if (!icon.dataset.baseWidth) {
+          const rect = icon.getBoundingClientRect();
+
+          const attrW = parseFloat(icon.getAttribute("width")) || rect.width || 16;
+
+          const attrH = parseFloat(icon.getAttribute("height")) || rect.height || 16;
+
+          icon.dataset.baseWidth = attrW;
+          icon.dataset.baseHeight = attrH;
         }
 
-        function getAvailableSteps() {
-          const maxPercent = getMaxPercent();
+        const baseW = parseFloat(icon.dataset.baseWidth);
+        const baseH = parseFloat(icon.dataset.baseHeight);
 
-          return ALL_STEPS.filter((step) => step <= maxPercent);
+        let newW;
+        let newH;
+
+        if (scale === 1) {
+          newW = baseW;
+          newH = baseH;
+        } else {
+          newW = Math.max(8, baseW * scale);
+          newH = Math.max(8, baseH * scale);
         }
 
-        let savedPercent = parseInt(localStorage.getItem("fontPercent"), 10);
+        icon.style.setProperty("width", `${newW}px`, "important");
+        icon.style.setProperty("height", `${newH}px`, "important");
+        icon.style.setProperty("max-width", "100%", "important");
+        icon.style.setProperty("max-height", "100%", "important");
+        icon.style.setProperty("flex-shrink", "0", "important");
+      });
+    }
 
-        if (isNaN(savedPercent) || !(savedPercent in FONT_MAP)) {
-          savedPercent = DEFAULT_PERCENT;
-        }
+    function updateUI(currentPercent) {
+      const availableSteps = getAvailableSteps();
+      const minStep = availableSteps[0];
+      const maxStep = availableSteps[availableSteps.length - 1];
 
-        let savedInteractionScroll = null;
+      fontSizeLabels.forEach((label) => {
+        label.textContent = `${currentPercent}%`;
+      });
 
-        function captureScrollPosition() {
-          return {
-            left: window.scrollX,
-            top: window.scrollY,
-            nested: Array.from(document.querySelectorAll(".offcanvas-body"), (element) => ({
-              element,
-              left: element.scrollLeft,
-              top: element.scrollTop,
-            })),
-          };
-        }
+      sliders.forEach((slider) => {
+        slider.min = 0;
+        slider.max = availableSteps.length - 1;
+        slider.step = 1;
+        slider.value = availableSteps.indexOf(currentPercent);
+      });
+    }
 
-        document.addEventListener(
-          "pointerdown",
-          (event) => {
-            if (event.target.closest(".scale-control, .scale-widget")) {
-              savedInteractionScroll = captureScrollPosition();
-            }
-          },
-          true,
-        );
+    function apply(targetPercent, preserveScrollPosition = false, anchorElement = null) {
+      const availableSteps = getAvailableSteps();
+      const minStep = availableSteps[0];
+      const maxStep = availableSteps[availableSteps.length - 1];
 
-        document.addEventListener(
-          "keydown",
-          (event) => {
-            const control = event.target.closest(".scale-control, .scale-widget");
+      let currentPercent = Math.max(minStep, Math.min(maxStep, targetPercent));
 
-            if (control && (event.key === "Enter" || event.key === " ")) {
-              savedInteractionScroll = captureScrollPosition();
-            }
-          },
-          true,
-        );
+      const scrollPosition = savedInteractionScroll || captureScrollPosition();
 
-        function rescaleIcons(currentPx) {
-          const scale = currentPx / BASE_FONT_PX;
+      savedInteractionScroll = null;
 
-          const icons = document.querySelectorAll("svg, img[src*='icon'], img[src*='svg'], .scale-control img");
+      const anchorTop = anchorElement?.getBoundingClientRect().top;
+      const root = document.documentElement;
+      const body = document.body;
 
-          icons.forEach((icon) => {
-            if (!icon.dataset.baseWidth) {
-              const rect = icon.getBoundingClientRect();
+      const previousScrollBehavior = root.style.scrollBehavior;
+      const previousRootOverflowAnchor = root.style.overflowAnchor;
+      const previousBodyOverflowAnchor = body.style.overflowAnchor;
 
-              const attrW = parseFloat(icon.getAttribute("width")) || rect.width || 16;
-
-              const attrH = parseFloat(icon.getAttribute("height")) || rect.height || 16;
-
-              icon.dataset.baseWidth = attrW;
-              icon.dataset.baseHeight = attrH;
-            }
-
-            const baseW = parseFloat(icon.dataset.baseWidth);
-            const baseH = parseFloat(icon.dataset.baseHeight);
-
-            let newW;
-            let newH;
-
-            if (scale === 1) {
-              newW = baseW;
-              newH = baseH;
-            } else {
-              newW = Math.max(8, baseW * scale);
-              newH = Math.max(8, baseH * scale);
-            }
-
-            icon.style.setProperty("width", `${newW}px`, "important");
-            icon.style.setProperty("height", `${newH}px`, "important");
-            icon.style.setProperty("max-width", "100%", "important");
-            icon.style.setProperty("max-height", "100%", "important");
-            icon.style.setProperty("flex-shrink", "0", "important");
-          });
-        }
-
-        function updateUI(currentPercent) {
-          const availableSteps = getAvailableSteps();
-          const minStep = availableSteps[0];
-          const maxStep = availableSteps[availableSteps.length - 1];
-
-          fontSizeLabels.forEach((label) => {
-            label.textContent = `${currentPercent}%`;
-          });
-
-          sliders.forEach((slider) => {
-            slider.min = 0;
-            slider.max = availableSteps.length - 1;
-            slider.step = 1;
-            slider.value = availableSteps.indexOf(currentPercent);
-          });
-        }
-
-        function apply(targetPercent, preserveScrollPosition = false, anchorElement = null) {
-          const availableSteps = getAvailableSteps();
-          const minStep = availableSteps[0];
-          const maxStep = availableSteps[availableSteps.length - 1];
-
-          let currentPercent = Math.max(minStep, Math.min(maxStep, targetPercent));
-
-          const scrollPosition = savedInteractionScroll || captureScrollPosition();
-
-          savedInteractionScroll = null;
-
-          const anchorTop = anchorElement?.getBoundingClientRect().top;
-          const root = document.documentElement;
-          const body = document.body;
-
-          const previousScrollBehavior = root.style.scrollBehavior;
-          const previousRootOverflowAnchor = root.style.overflowAnchor;
-          const previousBodyOverflowAnchor = body.style.overflowAnchor;
-
-          if (preserveScrollPosition) {
-            root.style.scrollBehavior = "auto";
-            root.style.overflowAnchor = "none";
-            body.style.overflowAnchor = "none";
-          }
-
-          currentPercent = availableSteps.reduce((nearest, step) => (Math.abs(step - currentPercent) < Math.abs(nearest - currentPercent) ? step : nearest));
-
-          const targetPx = FONT_MAP[currentPercent];
-
-          root.style.fontSize = `${targetPx}px`;
-
-          rescaleIcons(targetPx);
-
-          localStorage.setItem("fontPercent", currentPercent);
-          updateUI(currentPercent);
-
-          if (preserveScrollPosition) {
-            window.scrollTo(scrollPosition.left, scrollPosition.top);
-
-            scrollPosition.nested.forEach(({ element, left, top }) => {
-              element.scrollTo(left, top);
-            });
-
-            if (Number.isFinite(anchorTop) && anchorElement?.isConnected) {
-              window.scrollBy(0, anchorElement.getBoundingClientRect().top - anchorTop);
-            }
-
-            root.style.scrollBehavior = previousScrollBehavior;
-            root.style.overflowAnchor = previousRootOverflowAnchor;
-            body.style.overflowAnchor = previousBodyOverflowAnchor;
-          }
-
-          return currentPercent;
-        }
-
-        savedPercent = apply(savedPercent);
-
-        window.addEventListener("resize", () => {
-          const currentPercent = parseInt(localStorage.getItem("fontPercent"), 10) || DEFAULT_PERCENT;
-
-          savedPercent = apply(currentPercent, true);
-        });
-
-        function stepChange(direction, button) {
-          const availableSteps = getAvailableSteps();
-          const currentIndex = availableSteps.indexOf(savedPercent);
-
-          let nextIndex = currentIndex === -1 ? availableSteps.indexOf(DEFAULT_PERCENT) : currentIndex + direction;
-
-          if (nextIndex >= 0 && nextIndex < availableSteps.length) {
-            savedPercent = apply(availableSteps[nextIndex], true, button);
-          }
-        }
-
-        increaseBtns.forEach((button) => {
-          button.addEventListener("mousedown", (event) => {
-            event.preventDefault();
-          });
-
-          button.addEventListener("click", () => {
-            stepChange(1, button);
-          });
-        });
-
-        decreaseBtns.forEach((button) => {
-          button.addEventListener("mousedown", (event) => {
-            event.preventDefault();
-          });
-
-          button.addEventListener("click", () => {
-            stepChange(-1, button);
-          });
-        });
-
-        resetBtns.forEach((button) => {
-          button.addEventListener("mousedown", (event) => {
-            event.preventDefault();
-          });
-
-          button.addEventListener("click", () => {
-            savedPercent = apply(DEFAULT_PERCENT, true, button);
-          });
-        });
-
-        sliders.forEach((slider) => {
-          slider.addEventListener("input", () => {
-            const val = parseInt(slider.value, 10);
-            const availableSteps = getAvailableSteps();
-            savedPercent = apply(availableSteps[val], true, slider);
-          });
-        });
+      if (preserveScrollPosition) {
+        root.style.scrollBehavior = "auto";
+        root.style.overflowAnchor = "none";
+        body.style.overflowAnchor = "none";
       }
+
+      currentPercent = availableSteps.reduce((nearest, step) => (Math.abs(step - currentPercent) < Math.abs(nearest - currentPercent) ? step : nearest));
+
+      const targetPx = FONT_MAP[currentPercent];
+
+      root.style.fontSize = `${targetPx}px`;
+
+      rescaleIcons(targetPx);
+
+      localStorage.setItem("fontPercent", currentPercent);
+      updateUI(currentPercent);
+
+      if (preserveScrollPosition) {
+        window.scrollTo(scrollPosition.left, scrollPosition.top);
+
+        scrollPosition.nested.forEach(({ element, left, top }) => {
+          element.scrollTo(left, top);
+        });
+
+        if (Number.isFinite(anchorTop) && anchorElement?.isConnected) {
+          window.scrollBy(0, anchorElement.getBoundingClientRect().top - anchorTop);
+        }
+
+        root.style.scrollBehavior = previousScrollBehavior;
+        root.style.overflowAnchor = previousRootOverflowAnchor;
+        body.style.overflowAnchor = previousBodyOverflowAnchor;
+      }
+
+      return currentPercent;
+    }
+
+    savedPercent = apply(savedPercent);
+
+    window.addEventListener("resize", () => {
+      const currentPercent = parseInt(localStorage.getItem("fontPercent"), 10) || DEFAULT_PERCENT;
+
+      savedPercent = apply(currentPercent, true);
+    });
+
+    function stepChange(direction, button) {
+      const availableSteps = getAvailableSteps();
+      const currentIndex = availableSteps.indexOf(savedPercent);
+
+      let nextIndex = currentIndex === -1 ? availableSteps.indexOf(DEFAULT_PERCENT) : currentIndex + direction;
+
+      if (nextIndex >= 0 && nextIndex < availableSteps.length) {
+        savedPercent = apply(availableSteps[nextIndex], true, button);
+      }
+    }
+
+    increaseBtns.forEach((button) => {
+      button.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+      });
+
+      button.addEventListener("click", () => {
+        stepChange(1, button);
+      });
+    });
+
+    decreaseBtns.forEach((button) => {
+      button.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+      });
+
+      button.addEventListener("click", () => {
+        stepChange(-1, button);
+      });
+    });
+
+    resetBtns.forEach((button) => {
+      button.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+      });
+
+      button.addEventListener("click", () => {
+        savedPercent = apply(DEFAULT_PERCENT, true, button);
+      });
+    });
+
+    sliders.forEach((slider) => {
+      slider.addEventListener("input", () => {
+        const val = parseInt(slider.value, 10);
+        const availableSteps = getAvailableSteps();
+        savedPercent = apply(availableSteps[val], true, slider);
+      });
+    });
+  }
 
   initFontScaler();
 });
@@ -935,8 +935,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const gradeSelect = document.getElementById("grade");
   const subjectSelect = document.getElementById("subject");
@@ -1284,15 +1282,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   chatWidget.inert = true;
   let previousOverflow = null;
+  const chatHeader = chatWidget.querySelector(".chat-header");
+  const chatFooter = chatWidget.querySelector(".chat-footer");
+  const updateSupportLayout = () => {
+    chatWidget.style.setProperty("--support-header-height", `${chatHeader?.offsetHeight || 0}px`);
+    chatWidget.style.setProperty("--support-footer-height", `${chatFooter?.offsetHeight || 0}px`);
+    const viewport = window.visualViewport;
+    chatWidget.style.setProperty("--support-viewport-height", `${viewport ? viewport.height : window.innerHeight}px`);
+    chatWidget.style.setProperty("--support-viewport-bottom", `${viewport ? Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop) : 0}px`);
+  };
+  const supportResizeObserver = new ResizeObserver(updateSupportLayout);
+  if (chatHeader) supportResizeObserver.observe(chatHeader);
+  if (chatFooter) supportResizeObserver.observe(chatFooter);
+  window.addEventListener("resize", updateSupportLayout);
+  window.visualViewport?.addEventListener("resize", updateSupportLayout);
+  window.visualViewport?.addEventListener("scroll", updateSupportLayout);
 
   chatToggle.addEventListener("click", () => {
     chatWidget.style.display = "flex";
     chatWidget.classList.add("open");
     chatWidget.inert = false;
+    updateSupportLayout();
     chatToggle.style.display = "none";
     chatToggle.setAttribute("aria-expanded", "true");
 
-    if (window.innerWidth < 700) {
+    if (window.innerWidth <= 700) {
       previousOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
     }
@@ -1467,18 +1481,17 @@ document.querySelectorAll(".reset-filters-btn").forEach((button) => {
 
     Object.assign(container.style, {
       position: "fixed",
-      right: "1.25rem",
-      bottom: "6.25rem",
+      right: "0",
+      bottom: "0",
       zIndex: "1050",
       opacity: "0",
       visibility: "hidden",
       transform: "translateY(15px)",
-      transition:
-        "opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease",
+      transition: "opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease",
     });
 
     button.type = "button";
-    button.className = "btn rounded-circle";
+    button.className = "btn rounded-0";
     button.setAttribute("aria-label", "Go to top");
 
     Object.assign(button.style, {
@@ -1492,8 +1505,7 @@ document.querySelectorAll(".reset-filters-btn").forEach((button) => {
       border: "none",
       color: "#fff",
       boxShadow: "0 4px 14px rgba(47, 142, 217, 0.35)",
-      transition:
-        "background-color 0.25s ease, box-shadow 0.25s ease",
+      transition: "background-color 0.25s ease, box-shadow 0.25s ease",
       cursor: "pointer",
     });
 
@@ -1507,24 +1519,18 @@ document.querySelectorAll(".reset-filters-btn").forEach((button) => {
       transform: "rotate(45deg) translate(0.125rem, 0.125rem)",
     });
 
-    arrow.style.setProperty(
-      "transform",
-      "rotate(45deg) translate(0.125rem, 0.125rem)",
-      "important"
-    );
+    arrow.style.setProperty("transform", "rotate(45deg) translate(0.125rem, 0.125rem)", "important");
 
     arrow.style.transition = "none";
 
     button.addEventListener("mouseenter", function () {
       button.style.backgroundColor = "#247fc5";
-      button.style.boxShadow =
-        "0 8px 20px rgba(47, 142, 217, 0.45)";
+      button.style.boxShadow = "0 8px 20px rgba(47, 142, 217, 0.45)";
     });
 
     button.addEventListener("mouseleave", function () {
       button.style.backgroundColor = "#2f8ed9";
-      button.style.boxShadow =
-        "0 4px 14px rgba(47, 142, 217, 0.35)";
+      button.style.boxShadow = "0 4px 14px rgba(47, 142, 217, 0.35)";
     });
 
     button.appendChild(arrow);
@@ -1536,9 +1542,7 @@ document.querySelectorAll(".reset-filters-btn").forEach((button) => {
 
       container.style.opacity = isVisible ? "1" : "0";
       container.style.visibility = isVisible ? "visible" : "hidden";
-      container.style.transform = isVisible
-        ? "translateY(0)"
-        : "translateY(15px)";
+      container.style.transform = isVisible ? "translateY(0)" : "translateY(15px)";
     }
 
     window.addEventListener("scroll", updateVisibility, {
@@ -1556,16 +1560,11 @@ document.querySelectorAll(".reset-filters-btn").forEach((button) => {
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener(
-      "DOMContentLoaded",
-      initializeBackToTop,
-      { once: true }
-    );
+    document.addEventListener("DOMContentLoaded", initializeBackToTop, { once: true });
   } else {
     initializeBackToTop();
   }
 })();
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".school-header");
